@@ -1,0 +1,264 @@
+﻿crawling_list:
+    - Người Lao động:
+        url: https://nld.com.vn
+        date_tag:
+        date_class:
+            - ngayxuatban
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Nhân dân:
+        url: http://nhandan.com.vn
+        date_tag:
+        date_class:
+            - icon_date_top
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Đời sống pháp luật:
+        url: http://www.doisongphapluat.com
+        date_tag:
+        date_class:
+            - fl-right dt
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Thanh Niên:
+        url: http://thanhnien.vn
+        date_tag:
+            - time
+        date_class:
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Tiền Phong:
+        url: https://www.tienphong.vn
+        date_tag:
+        date_class:
+            - byline-dateline
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Tuổi trẻ:
+        url: https://tuoitre.vn
+        date_tag:
+        date_class:
+          - date
+          - publish-date
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - afamily:
+        url: http://afamily.vn/
+        date_tag:
+        date_class:
+            - kbwcm-time
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Giáo dục thời đại:
+        url: http://giaoducthoidai.vn
+        date_tag:
+        date_class:
+          - cms-date
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+    - Quân đội nhân dân:
+        url: http://www.qdnd.vn
+        date_tag:
+        date_class:
+          - post-subinfo
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Pháp luật Việt Nam:
+        url: http://baophapluat.vn
+        date_tag:
+        date_class:
+          - cms-date
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+    - Pháp luật TP.HCM:
+        url: http://plo.vn
+        date_tag:
+        date_class:
+          - cms-date
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+    - Thể thao & Văn hóa:
+        url: https://thethaovanhoa.vn
+        date_tag:
+        date_class:
+          - ovh pub_time
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Vietnam Plus:
+        url: https://www.vietnamplus.vn
+        date_tag:
+        date_class:
+          - article-header
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Báo Chính phủ:
+        url: http://baochinhphu.vn
+        date_tag:
+        date_class:
+            - meta
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - VTV News:
+        url: http://vtv.vn
+        date_tag:
+        date_class:
+            - time
+            - published-date
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - VOV News:
+        url: https://vov.vn
+        date_tag:
+            - time
+        date_class:
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - VTC Online:
+        url: https://vtc.vn
+        date_tag:
+            - time
+        date_class:
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Thời báo kinh tế VN:
+        url: http://vneconomy.vn
+        date_tag:
+        date_class:
+          - author
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Vietnamnet:
+        name: Vietnamnet
+        url: http://www.vietnamnet.vn
+        date_tag:
+        date_class:
+            - ArticleDate
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Vnexpress:
+        url: https://vnexpress.net
+        date_tag:
+        date_class:
+            - time left
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - VnMedia:
+        url: http://www.vnmedia.vn
+        date_tag:
+        date_class:
+          - date_time
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - 24h:
+        url: http://www.24h.com.vn
+        date_tag:
+        date_class:
+          - baiviet-ngay
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Dân Việt:
+        url: http://danviet.vn
+        date_tag:
+        date_class:
+          - datetimeup
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Saostar:
+        url: https://saostar.vn
+        date_tag:
+        date_class:
+          - time-ago
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+    - Zing News:
+        url: https://news.zing.vn
+        date_tag:
+        date_class:
+            - the-article-publish cms-date
+            - publish
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Kenh14.vn:
+        url: http://kenh14.vn
+        date_tag:
+        date_class:
+          - kbwcm-time
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+    - Thể thao 24/7:
+        url: https://thethao247.vn
+        date_tag:
+        date_class:
+          - date_news ArticleDateTime
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Soha.vn:
+        url: http://soha.vn
+        date_tag:
+        date_class:
+          - op-published
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Dân trí:
+        url: http://www.dantri.com.vn
+        date_tag:
+        date_class:
+            - fr fon7 mr2 tt-capitalize
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Người Lao động:
+        url: https://nld.com.vn
+        date_tag:
+        date_class:
+            - ngayxuatban
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - Cafef:
+        url: http://cafef.vn
+        date_tag:
+        date_class:
+            - pdate
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+category_list:
+    - Chính trị:
+        filename: category/chinh_tri.txt
+        index: 1
+    - Kinh tế:
+        filename: category/kinh_te.txt
+        index: 2
+    - Văn hóa:
+        filename: category/van_hoa.txt
+        index: 3
+    - Xã hội:
+        filename: category/xa_hoi.txt
+        index: 4
+    - Giáo dục:
+        filename: category/giao_duc.txt
+        index: 5
+    - Thể thao:
+        filename: category/the_thao.txt
+        index: 6
+    - Giải trí:
+        filename: category/giai_tri.txt
+        index: 7
+    - Khoa học Công nghệ:
+        filename: category/cong_nghe.txt
+        index: 8
+    - An ninh:
+        filename: category/an_ninh.txt
+        index: 9
+    - Quốc phòng:
+        filename: category/quoc_phong.txt
+        index: 10
+    - Sức khỏe:
+        filename: category/suc_khoe.txt
+        index: 11
+    - Đời sống:
+        filename: category/doi_song.txt
+        index: 12
+    - Giao thông:
+        filename: category/giao_thong.txt
+        index: 13
+    - Môi trường:
+        filename: category/moi_truong.txt
+        index: 14
+    - Quốc gia:
+        filename: category/quoc_gia.txt
+        index: 15
+    - Địa phương:
+        filename: category/dia_phuong.txt
+        index: 16
+    - Sự kiện:
+        filename: category/su_kien.txt
+        index: 17
+    - Nhân vật:
+        filename: category/nhan_vat.txt
+        index: 18
+    - Địa danh:
+        filename: category/dia_danh.txt
+        index: 19
+    - Tác phẩm:
+        filename: category/tac_pham.txt
+        index: 20
+minimum_topic_length: 3
+days_to_crawl: 2
+number_of_hot_keywords: 2000
+number_of_trending_keywords: 25
+minimum_freq_for_two_length_keyword_appear_in_hot_keywords: 20
+minimum_freq_for_more_than_two_length_keyword_appear_in_hot_keywords: 3
+mininum_freq_for_new_keyword_accepted: 1
+loop_interval_for_new_keyword_accepted: 3
+minimum_freq_for_fast_growing_keyword_accepted: 2
+minimum_freq_series_for_fast_growing_keyword_accepted: 3
+minimum_publish_speed: 40
+crawling_interval: 10

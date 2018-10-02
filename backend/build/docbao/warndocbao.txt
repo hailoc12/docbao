@@ -1,0 +1,29 @@
+missing module named resource - imported by posix, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named posix - imported by os, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named _posixsubprocess - imported by subprocess, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named org - imported by pickle, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named readline - imported by cmd, code, pdb, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named _winreg - imported by platform, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named java - imported by platform, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named 'java.lang' - imported by platform, xml.sax._exceptions, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named vms_lib - imported by platform, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named termios - imported by tty, getpass, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named grp - imported by shutil, tarfile, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, netrc, getpass, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named _dummy_threading - imported by dummy_threading, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named 'org.python' - imported by copy, xml.sax, G:\PROJECTS\tudonghoamaytinh\docbao\docbao v1.3\docbao.py
+missing module named _scproxy - imported by urllib.request
+missing module named cPickle - imported by xlsxwriter.compat_collections
+missing module named cStringIO - imported by cPickle
+missing module named copy_reg - imported by cPickle, cStringIO
+missing module named StringIO - imported by six, xlsxwriter.compatibility
+missing module named iconv_codec - imported by bs4.dammit
+missing module named cchardet - imported by bs4.dammit
+missing module named html5lib.treebuilders._base - imported by html5lib.treebuilders, bs4.builder._html5lib
+runtime module named six.moves - imported by html5lib._inputstream, html5lib.filters.sanitizer
+missing module named 'six.moves.urllib' - imported by 'six.moves.urllib'
+missing module named 'genshi.core' - imported by html5lib.treewalkers.genshi
+missing module named genshi - imported by html5lib.treewalkers.genshi
+missing module named datrie - imported by html5lib._trie.datrie
