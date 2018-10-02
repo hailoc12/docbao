@@ -17,6 +17,17 @@ Mọi đóng góp xin gửi về:
 
 Và đừng quên star cho mình nhé :d
 
+# Tính năng nổi bật:
+1. Quét được hầu hết các trang báo (cấu hình mặc định quét 31 báo)
+2. Phân tích từ khóa thông minh, chỉ giữ lại những từ khóa mạnh (có nội dung thông tin cao)
+3. Xác định các từ khóa đang là trends
+4. Xác định những từ khóa đang tăng trưởng nhanh
+5. Xác định những từ khóa mới xuất hiện
+6. Liệt kê toàn bộ các bài báo có chứa từ khóa chỉ trong một nút nhấn
+7. Tự động phân mục cho từ khóa
+8. Download dữ liệu báo chí dưới dạng excel để phân tích bổ sung
+9. Data mở dưới dạng json (click vào mục Tải dữ liệu)
+
 # Cài đặt frontend
 1. Chuẩn bị host php, tạo tài khoản ftp để đẩy file lên host (nếu bạn không có host, có thể liên hệ với mình qua email để mượn account)
 2. Cài rclone. Add new config với tên gọi "docbao" và account ftp đã tạo ỏ trên để đẩy file lên host
