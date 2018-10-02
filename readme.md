@@ -2,10 +2,10 @@
 Công cụ quét và phân tích từ khóa các trang báo mạng Việt Nam
 Demo: http://www.docbao.danghailoc.com
 
-Version: 1.9.0
-Author: hailoc12
-Email: danghailochp@gmail.com
-Published Date: 2/10/2018
+Version: 1.9.0  
+Author: hailoc12  
+Email: danghailochp@gmail.com  
+Published Date: 2/10/2018  
 
 # Note:
 Ứng dụng hoàn toàn miễn phí và sẽ luôn miễn phí. Các phiên bản tốt hơn vẫn sẽ liên tục được cập nhật. Nếu ứng dụng này hữu ích với công việc của bạn, rất mong bạn có thể ủng hộ để tác giả tiếp tục đầu tư cải tiến.
