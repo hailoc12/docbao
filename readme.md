@@ -18,7 +18,7 @@ Mọi đóng góp xin gửi về:
 Và đừng quên star cho mình nhé :d
 
 # Cài đặt frontend
-1. Chuẩn bị host php, tạo tài khoản ftp để đẩy file lên host
+1. Chuẩn bị host php, tạo tài khoản ftp để đẩy file lên host (nếu bạn không có host, có thể liên hệ với mình qua email để mượn account)
 2. Cài rclone. Add new config với tên gọi "docbao" và account ftp đã tạo ỏ trên để đẩy file lên host
 3. Đẩy frontend lên host
 ~~~~
