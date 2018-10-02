@@ -1,5 +1,5 @@
 # ỨNG DỤNG ĐỌC BÁO THEO TỪ KHÓA
-Công cụ quét và phân tích từ khóa các trang báo mạng Việt Nam
+Công cụ quét và phân tích từ khóa các trang báo mạng Việt Nam  
 Demo: http://www.docbao.danghailoc.com
 
 Version: 1.9.0  
