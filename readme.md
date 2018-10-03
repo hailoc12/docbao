@@ -49,10 +49,10 @@ chmod 755 ~/docbao/run_docbao.sh
 ~~~~
 bash ~/docbao/backend/run
 ~~~~
-Nếu báo lỗi thiếu thư viện thì sử dụng pip3 để cài bổ sung
-Quá trình chạy có thể kéo dài 10-20 phút
-4. Test kết quả: mở file ~/docbao/backend/export/local_html/index.html
-5. Test chạy và đẩy dữ liệu lên frontend
+Nếu báo lỗi thiếu thư viện thì sử dụng pip3 để cài bổ sung  
+Quá trình chạy có thể kéo dài 10-20 phút  
+4. Test kết quả: mở file ~/docbao/backend/export/local_html/index.html  
+5. Test chạy và đẩy dữ liệu lên frontend  
 ~~~~
 bash ~/docbao/run_docbao.sh
 ~~~~
