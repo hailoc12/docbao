@@ -1,0 +1,5 @@
+xlsxwriter
+bs4
+underthesea
+jsonpickle
+nltk
