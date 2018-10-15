@@ -9,6 +9,7 @@ Demo
 Version: 1.9.2  
 Author: hailoc12  
 Email: danghailochp@gmail.com  
+Facebook: https://www.facebook.com/danghailochp
 Updated: 15/10/2018  
 
 # Note:
