@@ -3,7 +3,7 @@ Công cụ quét và tổng hợp từ khóa từ các trang báo, blog tiếng 
 
 Demo
 1. Trang tổng hợp 31 báo tiếng Việt: http://www.docbao.danghailoc.com
-2. Chuyên trang công nghệ tiếng Việt + tiếng Anh: http://www.congnghe.danghailoc.c
+2. Chuyên trang công nghệ tiếng Việt + tiếng Anh: http://www.congnghe.danghailoc.com
 
 
 Version: 1.9.2  
