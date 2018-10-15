@@ -29,7 +29,7 @@ Và đừng quên star cho mình nhé :d
 4. Tự động phân keyword vào các chuyên mục. Có thể tùy biến chuyên mục theo nhu cầu cá nhân
 5. Phân tích nâng cao giúp xác định keyword mới xuất hiện, keyword có tần suất tăng trưởng nhanh, keyword đang là trends. Dễ dàng code mở rộng để thực hiện các phân tích khác
 6. Tìm kiếm nhanh chóng toàn bộ các bài báo có chứa keyword
-7. Hệ sinh thái phong phú, gồm backend quét và phân tích dữ liệu, frontend hiển thị cài đặt trên web, tool command-line để truy cập dữ liệu từ laptop/pc (hỗ trợ của Windows và Linux)
+7. Hệ sinh thái phong phú, gồm backend quét và phân tích dữ liệu, frontend hiển thị cài đặt trên web, [tool command-line](https://github.com/hailoc12/docbao-research-cli) để truy cập dữ liệu từ laptop/pc (hỗ trợ của Windows và Linux) 
 8. Hỗ trợ export database dễ dàng dưới dạng excel và json để phân tích bổ sung hoặc tái sử dụng trong các dự án khác
 
 # Ưu tiên phát triển (Backlog)
