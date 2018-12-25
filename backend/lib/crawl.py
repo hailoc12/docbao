@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from multiprocessing import Process
-
+from pyvirtualdisplay import Display 
 import random
 
 class BrowserCrawler:
@@ -9,13 +9,18 @@ class BrowserCrawler:
     _driver = None
     _has_error = False
     _quited = False
-
-    def __init__(self):
+    _diplay = None
+    def __init__(self, timeout=30):
         # Create a headless Firefox browser to crawl
-        options = Options()
-        options.add_argument("--headless")
-        self._driver = webdriver.Firefox(firefox_options=options)
-        self._driver.set_page_load_timeout(30)
+        #options = Options()
+        #options.add_argument("--headless")
+        #self._driver = webdriver.Firefox(firefox_options=options)
+
+        # Create a virtual screen to with Raspberry too
+        self._display = Display(visible=0, size=(1024,768))
+        self._display.start()
+        self._driver = webdriver.Firefox()
+        self._driver.set_page_load_timeout(timeout)
         self._quited = False
 
     def load_page(self, url, wait=5, entropy=3):
@@ -56,7 +61,9 @@ class BrowserCrawler:
 
     def quit(self):
         self._driver.quit()
+        self._display.stop()
         self._quited = True
+
 
 class NewspaperCrawler():
     # Function: this class crawl a website based on a config 
