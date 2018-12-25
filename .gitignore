@@ -1,11 +1,6 @@
 led / optimized / DLL files
-*.xlsx
-*.json
-frontend/
-!*.json
-data/
-*.dat
-*.log
+backend/export/*
+backend/data/*
 __pycache__/
 *.py[cod]
 *$py.class
