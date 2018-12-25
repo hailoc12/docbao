@@ -1,48 +1,20 @@
-[24-Sep-2018 22:15:21 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:15:21 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/docbao.danghailoc.com/category/system_m.php on line 1
-[24-Sep-2018 22:15:21 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/docbao.danghailoc.com/category/system_m.php on line 1
-[24-Sep-2018 22:15:21 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/docbao.danghailoc.com/category/system_m.php on line 1
-[24-Sep-2018 22:15:21 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/docbao.danghailoc.com/category/system_m.php on line 1
-[24-Sep-2018 22:15:27 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:20:02 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:20:03 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:22:52 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:22:52 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:25:19 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:25:20 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:27:31 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[24-Sep-2018 22:27:31 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; DbClass has a deprecated constructor in /home/tudongh1/docbao.danghailoc.com/category/engine_functions.php on line 1
-[03-Dec-2018 23:59:09 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[03-Dec-2018 23:59:09 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[03-Dec-2018 23:59:09 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[03-Dec-2018 23:59:09 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[03-Dec-2018 23:59:10 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[03-Dec-2018 23:59:12 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:02:10 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:02:11 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:04:19 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:04:20 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:06:12 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:06:12 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:07:52 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[04-Dec-2018 00:07:52 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:06:34 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:06:38 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:07:02 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[19-Dec-2018 21:07:02 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[19-Dec-2018 21:07:02 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[19-Dec-2018 21:07:02 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[19-Dec-2018 21:09:50 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:09:50 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:11:57 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:11:58 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:14:14 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:14:15 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:16:29 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[19-Dec-2018 21:16:29 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
-[20-Dec-2018 04:25:29 UTC] PHP Warning:  fopen(dfgecerctert.txt): failed to open stream: No such file or directory in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[20-Dec-2018 04:25:29 UTC] PHP Warning:  filesize(): stat failed for dfgecerctert.txt in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[20-Dec-2018 04:25:29 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[20-Dec-2018 04:25:29 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[20-Dec-2018 04:25:29 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
-[20-Dec-2018 04:25:29 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
+[19-Dec-2018 21:06:49 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:06:50 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:06:50 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[19-Dec-2018 21:06:50 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[19-Dec-2018 21:06:50 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[19-Dec-2018 21:06:50 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[19-Dec-2018 21:09:54 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:09:54 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:12:01 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:12:07 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:14:21 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:14:22 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:16:38 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[19-Dec-2018 21:16:40 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/test.theodoibaochi.com/category/engine_functions.php on line 1
+[20-Dec-2018 04:25:18 UTC] PHP Warning:  fopen(dfgecerctert.txt): failed to open stream: No such file or directory in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[20-Dec-2018 04:25:18 UTC] PHP Warning:  filesize(): stat failed for dfgecerctert.txt in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[20-Dec-2018 04:25:18 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[20-Dec-2018 04:25:18 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[20-Dec-2018 04:25:18 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
+[20-Dec-2018 04:25:18 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/test.theodoibaochi.com/category/system_m.php on line 1
