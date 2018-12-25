@@ -3,3 +3,4 @@ bs4
 underthesea
 jsonpickle
 nltk
+selenium

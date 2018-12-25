@@ -1,8 +1,8 @@
 #####################################################################################################################
 #Program: Doc bao theo tu khoa (keyword-based online journalism reader)
 #Author: hailoc12
-#Version: 1.9.2
-#Date: 15/10/2018 (Oct, 15 2018)
+#Version: 1.4.0
+#Date: 22/12/2018 (Dec, 15 2018)
 #Repository: http://github.com/hailoc12/docbao
 #Donation is welcomed if you feel this program useful
 #Bank: Vietcombank (Vietnam)
@@ -12,10 +12,8 @@
 
 # IMPORT LIB
 import xlsxwriter
-from _class._class import *
-from _class._utility import *
-#import jsonpickle
-#import sys
+from lib import *
+
 # CHECK IF ANOTHER SESSION IS RUNNING
 
 #Because unknown reason, os.remove() can't delete docbao.lock
@@ -27,6 +25,7 @@ from _class._utility import *
 #    new_session()
 
 # GLOBAL OBJECT
+
 config_manager = ConfigManager(get_independent_os_path(['input', 'config.txt'])) #config object
 data_manager = ArticleManager(config_manager, get_independent_os_path(["data", "article.dat"]),get_independent_os_path(["data","blacklist.dat"]) ) #article database object
 keyword_manager = KeywordManager(data_manager, config_manager, get_independent_os_path(["data", "keyword.dat"]), get_independent_os_path(["input", "collocation.txt"]), get_independent_os_path(["input", "keywords_to_remove.txt"]))    #keyword analyzer object
@@ -370,21 +369,21 @@ def write_log_data_to_json():
         stream.close()
 
 
-#MAIN PROGRAM
-#init data
+# MAIN PROGRAM
+# init data
 config_manager.load_data()
 data_manager.load_data()
 keyword_manager.load_data()
 
-#console output
-version = "1.9.2"
+# console output
+version = "1.0.0"
 print("DOC BAO VERSION " + version + "       Days to crawl: " + str(config_manager.get_maximum_day_difference()+1))
 
-#compress database
+# compress database
 data_manager.compress_database(keyword_manager)
 data_manager.compress_blacklist()
 
-#crawling data
+# crawling data
 print("PHASE I: CRAWLING DATA")
 for webconfig in config_manager.get_newspaper_list():
     data_manager.add_articles_from_newspaper(webconfig)
@@ -392,22 +391,25 @@ for webconfig in config_manager.get_newspaper_list():
 print("Number of articles in database: " + str(data_manager.count_database()))
 print("Number of link in blacklist database: " + str(data_manager.count_blacklist()))
 
-#analyze keyword
+# analyze keyword
 print("PHASE II: ANALYZE KEYWORDS FROM ARTICLE DATABASE")
 print("")
 keyword_manager.build_keyword_list()
 
-#export data
+# export data
 print("PHASE III: EXPORT DATA IN EXCEL, HTML, JSON FORMAT")
 
 export_result()
 write_log_data_to_json()
 
 print("PHASE IV: SAVE DATA")
-#luu du lieu
+# save data
 data_manager.save_data()
 keyword_manager.save_data()
 
+# close firefox browser
+quit_browser()
+
 print("FINISH")
 # clear lock file to finish this session
-#finish_session()
+# finish_session()

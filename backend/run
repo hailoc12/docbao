@@ -1,2 +1,2 @@
 /usr/bin/python3 docbao.py
-/usr/bin/python3 event_detect.py
+#/usr/bin/python3 event_detect.py

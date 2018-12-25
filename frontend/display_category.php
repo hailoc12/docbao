@@ -122,61 +122,67 @@ echo '
 
                       <div class="row">
                         <div class="col-md-3">
-                          <input type="checkbox" name="san_pham" value="yes" id="san_pham"></input>
-                          <label class="form-check-label" for="san_pham">San pham </label>
+                          <input type="checkbox" name="chinh_tri" value="yes" id="chinh_tri"></input>
+                          <label class="form-check-label" for="chinh_tri">   Chính Trị   </label>
                         </div>
                          <div class="col-md-3">
-                          <input type="checkbox" name="thiet_bi" value="yes" id="thiet_bi"></input>
-                         <label class="form-check-label" for="thiet_bi">Thiet bi</label>
+                          <input type="checkbox" name="kinh_te" value="yes" id="kinh_te"></input>
+                         <label class="form-check-label" for="kinh_te">   Kinh Tế   </label>
                         </div>
 
                          <div class="col-md-3">
-                          <input type="checkbox" name="game" value="yes">   Game   </input>
+                          <input type="checkbox" name="xa_hoi" value="yes">   Xã Hội   </input>
                         </div>
                         <div class="col-md-3">
-                          <input type="checkbox" name="thuong_hieu" value="yes">   Thuong hieu   </input>
+                          <input type="checkbox" name="an_ninh" value="yes">   An Ninh   </input>
                         </div>
                         
 
                       </div>
                       <div class="row">
                         <div class="col-md-3">
-                            <input type="checkbox" name="cong_nghe" value="yes">   Cong nghe   </input>
+                            <input type="checkbox" name="quoc_phong" value="yes">   Quốc Phòng   </input>
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" name="nghien_cuu" value="yes">   Nghien cuu   </input>
+                            <input type="checkbox" name="van_hoa" value="yes">   Văn Hoá   </input>
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" name="tri_tue_nhan_tao" value="yes">   Tri tue nhan tao   </input>
+                            <input type="checkbox" name="giao_duc" value="yes">   Giáo Dục   </input>
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" name="khoi_nghiep" value="yes">   Khoi nghiep   </input>
+                            <input type="checkbox" name="the_thao" value="yes">   Thể Thao   </input>
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-3">
-                              <input type="checkbox" name="huong_dan" value="yes">   Huong dan   </input>
+                              <input type="checkbox" name="giai_tri" value="yes">   Giải Trí   </input>
                         </div>
                        <div class="col-md-3">
-                              <input type="checkbox" name="quoc_gia" value="yes">   Quoc gia   </input>
+                              <input type="checkbox" name="cong_nghe" value="yes">   Công Nghệ   </input>
                         </div>
-                        <div class="col-md-3">
-                              <input type="checkbox" name="dia_phuong" value="yes">   Dia phuong   </input>
+                       <div class="col-md-3">
+                              <input type="checkbox" name="quoc_gia" value="yes">   Quốc Gia   </input>
                         </div>
                       </div>
 
                       <div class="row">
-                        <div class="col-md-3">
-                              <input type="checkbox" name="su_kien" value="yes">   Su kien   </input>
+                         <div class="col-md-3">
+                              <input type="checkbox" name="dia_danh" value="yes">   Địa Danh  </input>
                         </div>
                         <div class="col-md-3">
-                              <input type="checkbox" name="nhan_vat" value="yes">   Nhan vat   </input>
+                              <input type="checkbox" name="su_kien" value="yes">   Sự Kiện   </input>
                         </div>
                         <div class="col-md-3">
-                              <input type="checkbox" name="dia_danh" value="yes">   Dia danh   </input>
+                              <input type="checkbox" name="nhan_vat" value="yes">   Nhân Vật   </input>
                         </div>
-                      </div>
+                     </div>
+                      <div class="row">
+                         <div class="col-md-3">
+                              <input type="checkbox" name="giao_thong" value="yes">   Giao Thông   </input>
+                        </div>
+                    </div>
+
 
                       </div>
                     <div class="form-group">

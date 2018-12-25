@@ -1,0 +1,20 @@
+[19-Dec-2018 21:07:04 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[19-Dec-2018 21:07:04 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[19-Dec-2018 21:07:04 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[19-Dec-2018 21:07:04 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[19-Dec-2018 21:07:04 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:07:05 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:10:01 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:10:02 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:12:06 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:12:06 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:14:20 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:14:20 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:16:37 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[19-Dec-2018 21:16:37 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/output/engine_functions.php on line 1
+[20-Dec-2018 04:25:32 UTC] PHP Warning:  fopen(dfgecerctert.txt): failed to open stream: No such file or directory in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[20-Dec-2018 04:25:32 UTC] PHP Warning:  filesize(): stat failed for dfgecerctert.txt in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[20-Dec-2018 04:25:32 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[20-Dec-2018 04:25:32 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[20-Dec-2018 04:25:32 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1
+[20-Dec-2018 04:25:32 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/output/system_m.php on line 1

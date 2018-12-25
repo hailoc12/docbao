@@ -8,19 +8,21 @@ function append_to_file($filename, $value)
 if(isset($_POST['keyword'])) {
 	$keyword = strtolower($_POST['keyword']);
 	$categories = [
-	    "san_pham" => "Sản phẩm",
-	    "thiet_bi" => "Thiết bị",
-	    "game" => "Game",
-	    "thuong_hieu" => "Thương hiệu",
-	    "cong_nghe" => "Công nghệ",
-	    "nghien_cuu" => "Nghiên cứu",
-	    "tri_tue_nhan_tao" => "Trí tuệ nhân tạo",
-	    "khoi_nghiep" => "Khởi nghiệp",
-	    "huong_dan" => "Hướng dẫn",
-	    "quoc_gia" => "Quốc gia",
-	    "dia_phuong" => "Địa phương",
+	    "chinh_tri" => "Chính Trị",
+	    "kinh_te" => "Kinh Tế",
+	    "xa_hoi" => "Xã Hội",
+	    "an_ninh" => "An Ninh",
+	    "quoc_phong" => "Quốc Phòng",
+	    "van_hoa" => "Văn Hoá",
+	    "giao_duc" => "Giáo Dục",
+	    "the_thao" => "Thể Thao",
+	    "giai_tri" => "Giải Trí",
+	    "cong_nghe" => "Công Nghệ",
+	    "giao_thong" => "Giao Thông",
+	    "quoc_gia" => "Quốc Gia",
+	    "dia_danh" => "Địa Danh",
 	    "su_kien" => "Sự kiện",
-	    "nhan_vat" => "Nhân vật",
+	    "nhan_vat" => "Nhân Vật",
 	];
 	foreach($categories as $category_key => $category_name) {
 	    if(isset($_POST[$category_key]) && $_POST[$category_key] == "yes") {

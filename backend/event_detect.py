@@ -1,6 +1,6 @@
 # IMPORT LIB
 import xlsxwriter
-from _class._class import *
+from lib import *
 import jsonpickle
 
 # GLOBAL OBJECT
