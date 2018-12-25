@@ -1,11 +1,12 @@
 led / optimized / DLL files
+*.xlsx
+*.json
+data/
+*.dat
+*.log
 __pycache__/
 *.py[cod]
 *$py.class
-*.xlsx
-*.dat
-*.json
-*.log
 # C extensions
 *.so
 
