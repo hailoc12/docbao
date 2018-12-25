@@ -62,7 +62,6 @@ class BrowserCrawler:
 
     def quit(self):
         self._driver.quit()
-        self._display.stop()
         self._quited = True
 
 
