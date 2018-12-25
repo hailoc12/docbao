@@ -1,6 +1,8 @@
 led / optimized / DLL files
 *.xlsx
 *.json
+frontend/
+!*.json
 data/
 *.dat
 *.log
