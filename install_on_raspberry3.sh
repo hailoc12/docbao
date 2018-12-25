@@ -1,8 +1,11 @@
-echo "INSTALL DOCBAO ON UBUNTU"
+echo "INSTALL DOCBAO ON RASPBERRY PI"
+echo "Step 0: ensure that python3 and pip3 are installed"
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
 echo "Step 1: install python libraries"
 pip3 install -r requirements.txt
 echo "Step 2: install firefox and xvfb"
-sudo apt update
 sudo apt install iceweasel
 sudo apt install xvfb
 echo "Step 3: copy geckodriver to /usr/bin"
