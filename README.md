@@ -2,9 +2,9 @@
 Framework quét và tổng hợp từ khóa từ các trang báo, blog tiếng Việt và tiếng Anh 
 
 Demo
-1. Trang tổng hợp 35 báo tiếng Việt: http://theodoibaochi.com
+- Trang tổng hợp 35 báo tiếng Việt: http://theodoibaochi.com
+- Trang tổng hợp tin tức về Hải Phòng: http://haiphong.theodoibaochi.com
 
-Version: 1.4.0  
 Author: hailoc12  
 Email: danghailochp@gmail.com  
 Facebook: https://www.facebook.com/danghailochp
@@ -36,54 +36,59 @@ Và đừng quên star cho mình nhé :d
 7. Hỗ trợ export database dễ dàng dưới dạng excel và json để phân tích bổ sung hoặc tái sử dụng trong các dự án khác
 
 # Cài đặt
-## Cài đặt frontend
-1. Chuẩn bị host hỗ trợ php, tạo tài khoản ftp để đẩy file lên host (nếu bạn không có host, có thể liên hệ với mình qua email để mượn account)
-2. Cài rclone. Add new config với tên gọi "docbao" và account ftp đã tạo ỏ trên để đẩy file lên host
-3. Đẩy toàn bộ các file trong folder frontend lên host
-~~~~
-rclone copy -v ~/docbao/frontend docbao:
-~~~~
-4. Mở host bằng browser để kiểm tra
+Đọc Báo hiện có thể chạy trên Ubuntu, Raspberry Pi (model 3 / model B+) và Windows 10. Việc cài đặt được thực hiện tự động, tuy nhiên bạn sẽ cần nhập tài khoản fpt host để đẩy website hiển thị lên frontend.
 
-## Cài đặt backend
-### A. Cài trên linux (ubuntu)
-1. Cài trình duyệt Firefox nếu chưa có (bắt buộc)
-2. Clone mã nguồn về địa chỉ ~/docbao
-3. Chmod file
+## Yêu cầu chung:
+Để chạy được Đọc Báo, bạn cần một máy tính để quét và một host hỗ trợ php và ftp để chạy website hiển thị dữ liệu. Về máy tính quét thì bạn có thể mua VPS, dùng một con Raspberry Pi hoặc chạy trên máy tính cá nhân của bạn. Còn host nếu bạn chưa có thì có thể inbox mình để mượn hoặc dùng tạm tài khoản sau để test:
+
+host: ftp.tudonghoamaytinh.com
+user: admin@demo.theodoibaochi.com
+pass: docbaotheotukhoa
+
+## Cài đặt trên Ubuntu và Raspberry Pi
+
+#### Bước 1: Clone mã nguồn từ github
+Mở terminal trong Ubuntu (Ctr+Alt+T) và gõ dòng lệnh sau
 ~~~~
-chmod 755 ~/docbao/backend/run
-chmod 755 ~/docbao/run_docbao.sh
-~~~~
-4. Dùng pip3 để cài các package trong file requirements.md
-5. Chạy test, nếu các bài test đều báo OK thì bạn đã cài đặt thành công
-~~~~
-python3 ~/docbao/backend/test.py
-~~~~
-6. Chạy quét dữ liệu lần đầu
-~~~~
-bash ~/docbao/backend/run
+git clone http://github.com/hailoc12/docbao
 ~~~~
 
-Quá trình chạy có thể kéo dài 10-20 phút  
-5. Test kết quả: mở file ~/docbao/backend/export/local_html/index.html  
-6. Test chạy và đẩy dữ liệu lên frontend  
+#### Bước 2: Chạy trình cài đặt tự động
+Nếu bạn cài trên Ubuntu thì gõ lệnh sau:
 ~~~~
-bash ~/docbao/run_docbao.sh
+cd ~/docbao
+./install_on_ubuntu.sh
 ~~~~
-8. Mở địa chỉ host để kiểm tra kết quả
-9. Cài đặt crontab để chạy tự động
+Còn nếu dùng Raspberry Pi thì gõ lệnh:
 ~~~~
-crontab -e
+cd ~/docbao
+./install_on_raspberry.sh
 ~~~~
-Bổ sung dòng sau vào cuối file. Thay /home/pi bằng username của bạn
-Backend sẽ chạy tự động 10p / lần. Nếu bạn muốn thay đổi thông số này, thì cần thay đổi cả loop_interval trong ~/docbao/backend/input/config.txt
-~~~~
-*/10 * * * * /bin/bash /home/pi/docbao/run_docbao.sh > ~/cron_log
-~~~~
-10. Mở file ~/docbao/backend/input/config.txt để tùy biến theo nhu cầu
+Trình cài đặt sẽ tự động chạy. Bạn hãy chờ cho đến trình cài đặt dừng lại và hiện thông báo sau:
 
-### Cài trên Windows:  
-#### Cài thông qua Linux subsystem trên Windows 10 (khuyến khích)
-1. Cài Ubuntu trên Windows 10 [theo hướng dẫn](https://stackjava.com/linux/cai-dat-ubuntu-tren-windows-10-voi-windows-linux-subsystem.html)
-2. Cài docbao theo hướng dẫn của phần Linux
+~~~~
+"Step 5: config remoate ftp host in rclone as 'docbao'"
+REMEMBER: use remote hostname as 'docbao'
+~~~~
+
+#### Bước 3: Tạo và nhập tài khoản ftp để đẩy file lên host hiển thị website
+Tại bước này, bạn hãy nhập n + Enter để tạo một config mới. Tiếp đến hãy nhập name là docbao, nhập host, username, pass theo thông tin mình đã cung cấp ở trên 
+
+Sau khi tạo config, nhập q + Enter để trình cài đặt chạy tiếp.
+
+#### Bước 4: Chạy thử
+Khi trình cài đặt đã chạy xong, bạn hãy dùng lệnh sau để bắt đầu quét. Mặc định hệ thống sẽ quét trang Báo Mới
+
+~~~~
+cd ~/docbao
+bash run_docbao.sh
+~~~~
+
+Sau khi quét xong, bạn hãy mở trang http://demo.theodoibaochi.com để xem kết quả
+
+#### Bước 5: Tùy biến cấu hình quét để xây dựng trang thông tin của riêng bạn
+(đang xây dựng tài liệu)
+
+
+
 
