@@ -103,5 +103,7 @@ Sau khi quét xong, bạn hãy mở trang http://demo.theodoibaochi.com để xe
 Các bạn làm theo hướng dẫn trong bài sau: [Cài Ubuntu lên Windows 10](https://stackjava.com/linux/cai-dat-ubuntu-tren-windows-10-voi-windows-linux-subsystem.html)
 
 #### Bước 2: Mở bash trên Windows 10 và cài đặt y như phần cài đặt với Ubuntu đã được hướng dẫn ở trên
+
+[Clip Hướng dẫn cài đặt trên Windows 10](http://www.youtube.com/watch?v=dcYn8QiFYwI)
  
 
