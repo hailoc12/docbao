@@ -1,49 +1,47 @@
 # ĐỌC BÁO THEO TỪ KHÓA 
-Framework quét và tổng hợp từ khóa từ các trang báo, blog tiếng Việt và tiếng Anh 
+Công cụ quét báo mạng để xây dựng các trang theo dõi báo chí cá nhân hoá 
 
 Demo
 - Trang tổng hợp 35 báo tiếng Việt: http://theodoibaochi.com
-- Trang tổng hợp tin tức về Hải Phòng: http://haiphong.theodoibaochi.com
+- Trang tổng hợp tin tức báo chí về Hải Phòng: http://haiphong.theodoibaochi.com
 
 Author: hailoc12  
 Email: danghailochp@gmail.com  
 Facebook: https://www.facebook.com/danghailochp
-Updated: 22/12/2018  
 
 # Giới thiệu:
-Đọc Báo Theo Từ Khóa ban đầu là công cụ được xây dựng nhằm giải quyết nhu cầu theo dõi báo chí mỗi ngày với số lượng lớn của bản thân. Phương thức hoạt động của công cụ rất đơn giản: quét dữ liệu từ các báo, áp dụng các mô hình tách từ và thống kê từ khóa để tìm ra các từ khóa mới xuất hiện, đang tăng trưởng nhanh hoặc đang là trend. Từ đó công cụ có thể giúp các cá nhân hoặc tổ chức xây dựng các trang tổng hợp thông tin để theo dõi các nguồn trang xác định mà mình quan tâm. Ưu điểm lớn nhất của công cụ so với các hệ thống như scrapy là target vào bài toán cụ thể là quét báo, sử dụng file config dạng plain text nên không cần sửa code để dùng, cài đặt đơn giản.
+Đọc Báo Theo Từ Khoá là phiên bản mã nguồn mở để xây dựng các trang tổng hợp tin tức giống như [Báo Mới](http://baomoi.com), với vài điểm khác biệt:
 
-Sau một thời gian phát triển, nhận thấy việc khai thác dữ liệu từ báo chí có thể mang đến rất nhiều ứng dụng thực tế, cũng như hỗ trợ cho sự phát triển của lĩnh vực NLP, nên mình quyết định opensource mã nguồn và cố g81ng module hóa các chức năng để đưa ĐỌC BÁO THEO TỪ KHÓAtrở thành một framework giúp các developer nhanh chóng phát triển sản phẩm của mình, đồng thời cũng giúp Đọc Báo Theo Từ Khóa hoàn thiện hơn. 
+1. Người dùng chủ động nguồn báo để quét
+2. Dễ cài đặt, nhẹ, có thể chạy được trên máy tính cá nhân, raspberry PI,hay server
+3. Tích hợp chức năng phân tích từ khoá, xác định từ khoá nổi bật, từ khoá hot, từ khóa mới xuất hiện, phân từ khoá vào các chuyên mục
+4. Mã nguồn mở, miễn phí
 
-Framework hoàn toàn miễn phí và sẽ luôn miễn phí. Các phiên bản tốt hơn vẫn sẽ liên tục được cập nhật. Nếu ứng dụng này hữu ích với công việc của bạn, rất mong bạn có thể ủng hộ dự án theo các cách sau để dự án tiếp tục phát triển: 
-
-- Chia sẻ config của các trang báo mà bạn đã quét được
-- Chạy thử Đọc Báo và Issue các lỗi mà bạn phát hiện được
-- Issue các ý tưởng để cải tiến dự án
-- Fork project và giúp phát triển tính năng cho dự án
-- Cho mượn VPS để mình quét thêm được những trang mới (bạn nào cho mượn mình sẽ hỗ trợ build một trang Đọc Báo riêng cho nhu cầu của bạn)
-
-Và đừng quên star cho mình nhé :d
+Công cụ hướng đến nhiều đối tượng người dùng:  
+1. Độc giả thông thường: tiết kiệm thời gian đọc báo, chủ động chọn lựa nguồn báo uy tín để đọc  
+2. Phóng viên: tìm kiếm đề tài, kiểm chứng, theo dõi thông tin ngành / địa phương phân công phụ trách, làm quen với xu hướng Data Journalist  
+3. PR/Marketing/Agency: theo dõi thương hiệu trên báo chí, phân tích chiến dịch truyền thông của đối thủ, nắm bắt nhanh các vấn đề đang là trend  
+4. Nhà nghiên cứu truyền thông: theo dõi sự kiện, tìm kiếm nhanh các bài báo liên quan tới một sự kiện, lấy dữ liệu excel để phân tích  
+5. Developer: khai thác phần lõi quét báo để lấy dữ liệu phát triển các ứng dụng khác  
 
 # Tính năng nổi bật:
 
-1. Quét được hầu hết các trang báo, blog kể cả các trang dùng AJAX mà không bị block
-2. Sử dụng xử lý ngôn ngữ (NLP) để phân tích tiêu đề báo thành các keyword. Hỗ trợ cả tiếng Anh và tiếng Việt
-3. Thuật toán lọc từ khóa thông minh, giúp loại bỏ keyword yếu, chỉ giữ lại keyword mạnh, giàu thông tin
-4. Tự động phân keyword vào các chuyên mục. Có thể tùy biến chuyên mục theo nhu cầu cá nhân
-5. Phân tích nâng cao giúp xác định keyword mới xuất hiện, keyword có tần suất tăng trưởng nhanh, keyword đang là trends. Dễ dàng code mở rộng để thực hiện các phân tích khác
-6. Tìm kiếm nhanh chóng toàn bộ các bài báo có chứa keyword
-7. Hỗ trợ export database dễ dàng dưới dạng excel và json để phân tích bổ sung hoặc tái sử dụng trong các dự án khác
+1. Quét được hầu hết các trang báo, blog kể cả các trang dùng nhiều javascript mà không bị block  
+2. Sử dụng Xử lý ngôn ngữ tự nhiên (NLP) để phân tích tiêu đề báo thành các keyword. Hỗ trợ cả tiếng Anh và tiếng Việt.
+3. Tự động phân tích để xác định từ khoá nổi bật, từ khoá mới xuất hiện, từ khoá tăng trưởng nhanh.
+4. Có thể tuỳ biến các chuyên mục và phân tự động từ khoá vào các chuyên mục
+5. Tìm kiếm các bài báo mới xuất bản nhanh hơn Google (nếu hệ thống được cài đặt để quét đều đặn)
+6. Có thể export dữ liệu dưới dạng file excel và json để phân tích nâng cao
 
 # Cài đặt
-Đọc Báo hiện có thể chạy trên Ubuntu, Raspberry Pi (model 3 / model B+) và Windows 10. Việc cài đặt được thực hiện tự động, tuy nhiên bạn sẽ cần nhập tài khoản fpt host để đẩy website hiển thị lên frontend.
 
-## Yêu cầu chung:
-Để chạy được Đọc Báo, bạn cần một máy tính để quét và một host hỗ trợ php và ftp để chạy website hiển thị dữ liệu. Về máy tính quét thì bạn có thể mua VPS, dùng một con Raspberry Pi hoặc chạy trên máy tính cá nhân của bạn. Còn host nếu bạn chưa có thì có thể inbox mình để mượn hoặc dùng tạm tài khoản sau để test:
+Để chạy được Đọc Báo, bạn cần một máy tính để quét dữ liệu và một host hỗ trợ php và ftp để chạy website hiển thị dữ liệu. 
 
-host: ftp.tudonghoamaytinh.com
-user: admin@demo.theodoibaochi.com
-pass: docbaotheotukhoa
+Về máy tính quét thì bạn có thể mua VPS, dùng một con Raspberry Pi hoặc chạy trên máy tính cá nhân của bạn. Còn host nếu bạn chưa có thì có thể inbox mình để mượn hoặc dùng tạm tài khoản sau để test:
+
+host: ftp.tudonghoamaytinh.com  
+user: admin@demo.theodoibaochi.com  
+pass: docbaotheotukhoa  
 
 ## Cài đặt trên Ubuntu và Raspberry Pi
 
@@ -72,7 +70,17 @@ REMEMBER: use remote hostname as 'docbao'
 ~~~~
 
 #### Bước 3: Tạo và nhập tài khoản ftp để đẩy file lên host hiển thị website
-Tại bước này, bạn hãy nhập n + Enter để tạo một config mới. Tiếp đến hãy nhập name là docbao, nhập host, username, pass theo thông tin mình đã cung cấp ở trên 
+Tại bước này, bạn hãy nhập n + Enter để tạo một config mới. 
+
+Tiếp đến hãy nhập name là docbao
+
+Nhập tiếp 8 + Enter để tạo cấu hình host FTP
+
+Tiếp theo hãy nhập tài khoản FTP để đẩy file lên host của bạn. Nếu bạn chưa có host, thì có thể dùng tạm host demo của mình theo thông tin như sau:
+
+host: ftp.tudonghoamaytinh.com  
+user: admin@demo.theodoibaochi.com  
+pass: docbaotheotukhoa  
 
 Sau khi tạo config, nhập q + Enter để trình cài đặt chạy tiếp.
 
@@ -89,6 +97,11 @@ Sau khi quét xong, bạn hãy mở trang http://demo.theodoibaochi.com để xe
 #### Bước 5: Tùy biến cấu hình quét để xây dựng trang thông tin của riêng bạn
 (đang xây dựng tài liệu)
 
+## Cài đặt trên Windows 10  
 
+#### Bước 1: Cài Ubuntu lên Windows 10
+Các bạn làm theo hướng dẫn trong bài sau: [Cài Ubuntu lên Windows 10](https://stackjava.com/linux/cai-dat-ubuntu-tren-windows-10-voi-windows-linux-subsystem.html)
 
+#### Bước 2: Mở bash trên Windows 10 và cài đặt y như phần cài đặt với Ubuntu đã được hướng dẫn ở trên
+ 
 
