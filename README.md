@@ -74,7 +74,7 @@ Tại bước này, bạn hãy nhập n + Enter để tạo một config mới.
 
 Tiếp đến hãy nhập name là docbao
 
-Nhập tiếp 8 + Enter để tạo cấu hình host FTP
+Nhập tiếp 10 + Enter để tạo cấu hình host FTP
 
 Tiếp theo hãy nhập tài khoản FTP để đẩy file lên host của bạn. Nếu bạn chưa có host, thì có thể dùng tạm host demo của mình theo thông tin như sau:
 

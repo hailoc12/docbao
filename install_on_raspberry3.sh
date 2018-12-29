@@ -1,10 +1,11 @@
 echo "INSTALL DOCBAO ON RASPBERRY PI"
 sleep 1
-echo "Step 0: ensure that python3 and pip3 are installed"
+echo "Step 0: ensure that python3, pip3 and curl are installed"
 sleep 1
 sudo apt update
 sudo apt install python3
 sudo apt install python3-pip
+sudo apt install curl
 sleep 1
 echo "Step 1: install python libraries"
 sleep 1
