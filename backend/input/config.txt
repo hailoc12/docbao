@@ -360,7 +360,7 @@ crawling_list:
         date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
-        use_browser : False
+        use_browser : True
     - VOV News:
         web_url: http://vov.vn
         crawl_url: http://vov.vn
@@ -436,7 +436,7 @@ crawling_list:
         date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}  \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y  %H:%M" 
         output_html : False
-        use_browser : False
+        use_browser : True
     - Vnexpress:
         web_url: https://vnexpress.net
         crawl_url: https://vnexpress.net
