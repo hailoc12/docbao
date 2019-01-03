@@ -1,7 +1,7 @@
 # Backlog
 
 # Todo:
-	1.1.0: Docbao Newspaper với frontend được thiết kế lại
+	1.0.1: Docbao Newspaper với frontend được thiết kế lại
 		Minh: 
 			- Viết lại giao diện
 			- Sử dụng php để đọc json và trả về json theo query
@@ -14,3 +14,5 @@
 				+ code: trang tổng hợp thông tin lập trình
 				+ pr: trang thông tin pr, marketing, branding
 				+ review: review sách, phim
+			- Fix code để tự động bỏ qua trang khi bị lỗi
+	1.1.0: Cung cấp tính năng log lỗi và report trạng thái hoạt động
