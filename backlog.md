@@ -1,10 +1,8 @@
-# Backlog:
-	Cho phép cấu hình để export ra excel hoặc không
-	Refactor, tách mỗi object ra một file riêng
-	Sử dụng MySQL làm database chính thức
-	Sử dụng Ajax để load data từ json
+# Backlog
 
 # Todo:
-	Refactor: tách các tính năng export thành một class riêng
-	Fix Issues: ghi dữ liệu ra file temp trước, nếu thành công mới thay đổi file dữ liệu cũ
-	
+	1.1.0: Docbao Newspaper với frontend được thiết kế lại
+		- Viết lại giao diện
+		- Sử dụng php để đọc json và trả về json theo query
+		- Hỗ trợ pagination để giảm tải dữ liệu	
+		- Lọc kết quả hiển thị theo đầu báo và thời gian
