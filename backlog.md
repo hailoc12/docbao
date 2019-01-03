@@ -8,4 +8,9 @@
 			- Hỗ trợ pagination để giảm tải dữ liệu	
 			- Lọc kết quả hiển thị theo đầu báo và thời gian
 		Lộc:
-			- Build thêm chuyện trang công nghệ, business, marketing và bổ sung config vào template
+			- Build thêm một số chuyên trang để tận dụng cấu hình của VPS mới:
+				+ elite: trang chất lượng
+				+ business: trang thông tin kinh tế
+				+ code: trang tổng hợp thông tin lập trình
+				+ pr: trang thông tin pr, marketing, branding
+				+ review: review sách, phim
