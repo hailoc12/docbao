@@ -357,8 +357,8 @@ class ArticleManager:
         print()
         print("Crawling newspaper: " + webname)
         a=True
-        while a==True:
-        #try:
+        #while a==True:
+        try:
             soup = read_url_source_as_soup(crawl_url, use_browser)
             if soup is not None:
                 if get_topic: #from link
@@ -415,8 +415,8 @@ class ArticleManager:
             else:
                 print("Can't open: " + webname)
             a=False
-        #except:
-        #    print("Can't open: " + webname)
+        except:
+            print("Can't open: " + webname)
 
     def is_not_outdated(self, date):
         return (datetime.now() - date).days <= self._config_manager.get_maximum_day_difference()

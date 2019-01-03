@@ -1,5 +1,5 @@
 #!/bin/bash
-export local_dir="docbao"
+export local_dir="docbao_vietnam"
 export remote_dir="vietnam"
 echo $local_dir
 echo $remote_dir
