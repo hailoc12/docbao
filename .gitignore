@@ -1,6 +1,5 @@
 led / optimized / DLL files
-backend/export/*.json
-backend/export/*.xlsx
+backend/export/*
 backend/data/*.dat
 backend/data/*.log
 backend/data/*.optimized
