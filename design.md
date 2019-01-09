@@ -13,10 +13,17 @@ Tầng dữ liệu:
 			published_date
 			crawled_date
 Tầng ứng dụng:
-	crawl.py: quét dữ liệu đẩy lên mysql database
-		dữ liệu về blacklist link được lưu tại local
-		thông số quét cùng tài khoản database lưu tại config.txt
-		chỉ các trang báo mới (không nằm trong database) được đẩy lên database
-		yêu cầu config của các crawl.py không chứa tờ báo trùng lặp
-	analyse.py:
+	docbao_crawler:
+		tự động chia tập báo cần quét thành các tập nhỏ để quét song song. Số tập để quét song song quy định trong config --> dùng chung config_queue, blacklist database, log database
+		các crawler sẽ nhận job từ config_queue và quét
+			(có thể dùng chung firefox browser được không ?)
+		crawler quét xong báo nào thì đẩy dữ liệu lên mysql luôn cho nóng
+		blacklist database cũng được lưu luôn để đề phòng crash ?
+		kết thúc mỗi phiên chạy, blacklist database sẽ được optimize để tự động loại bỏ và lưu rra file
+	docbao_analyse.py:
 		phân tích từ khoá từ những bài viết mới, đếm trước và update kết quả lên mysql
+	docbao_manage:
+		dùng để report trạng thái số lần chạy, từ đó phát hiện ra các báo bị lỗi liên tục để có phương án xử lý
+		cung cấp shell để nghiên cứu trang / fix lỗi cấu hình báo
+	docbao_config:
+		build config mới từ config_database
