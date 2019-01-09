@@ -1,9 +1,9 @@
-﻿running_path: ~/docbao_haiphong/
+running_path: ~/docbao_test/
 crawling_list:
-    - Báo Hải Phòng:
-        web_url: http://www.baohaiphong.com.vn/baohp/vn/home/
-        crawl_url: http://www.baohaiphong.com.vn
-        url_pattern_re: (http|https)://www.baohaiphong.com.vn
+    - Báo mới:
+        web_url: https://baomoi.com
+        crawl_url: "https://baomoi.com"
+        url_pattern_re: (http|https)://baomoi.com
         language: vietnamese 
         get_topic_from_link: True 
         skip_checking_topic_length: False 
@@ -11,75 +11,14 @@ crawling_list:
         topic_class: 
         topic_id:  
         topic_re: "(.+)"
-        get_publish_date_as_crawl_date: False
-        date_tag:
-        date_class:
-            - row1 creatdate
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
-        date_pattern: "%d/%m/%Y %H:%M" 
-        output_html : False
-        use_browser : True
-        browser_timeout: 20
-    - An Ninh Hải Phòng:
-        web_url: http://anhp.vn/
-        crawl_url: http://anhp.vn
-        url_pattern_re: (http|https)://anhp.vn
-        language: vietnamese 
-        get_topic_from_link: True 
-        skip_checking_topic_length: False 
-        topic_tag:
-        topic_class: 
-        topic_id:  
-        topic_re: "(.+)"
-        get_publish_date_as_crawl_date: False
-        date_tag:
-        date_class:
-            - detailBox
-        date_re: (\d{1,2}:\d{1,2} \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
-        date_pattern: "%H:%M %d/%m/%Y" 
-        output_html : False
-        use_browser : False
-        browser_timeout: 10
-    - Truyền Hình Hải Phòng:
-        web_url: http://thp.org.vn/
-        crawl_url: http://thp.org.vn
-        url_pattern_re: (http|https)://thp.org.vn
-        language: vietnamese 
-        get_topic_from_link: True 
-        skip_checking_topic_length: False 
-        topic_tag:
-        topic_class: 
-        topic_id:  
-        topic_re: "(.+)"
-        get_publish_date_as_crawl_date: False
-        date_tag:
-        date_class:
-            - mnv-date
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} - \d{1,2}:\d{1,2})
-        date_pattern: "%d/%m/%Y - %H:%M" 
-        output_html : False
-        use_browser : False
-        browser_timeout: 10
-    - Cổng thông tin điện tử HP:
-        web_url: http://haiphong.gov.vn
-        crawl_url: http://haiphong.gov.vn/trang-chu
-        url_pattern_re: (http|https)://haiphong.gov.vn
-        language: vietnamese 
-        get_topic_from_link: True 
-        skip_checking_topic_length: False 
-        topic_tag:
-        topic_class: 
-        topic_id:  
-        topic_re: "(.+)"
-        get_publish_date_as_crawl_date: False
+        get_publish_date_as_crawl_date: True
         date_tag:
         date_class:
             - divDetail_DateCreate
         date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} - \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y - %H:%M" 
         output_html : False
-        use_browser : False
-        browser_timeout: 10
+        use_browser : True
 category_list:
     - Chính Trị:
         filename: category/chinh_tri.txt
@@ -126,7 +65,7 @@ category_list:
     - Nhân vật:
         filename: category/nhan_vat.txt
         index: 15
-waiting_time_between_each_crawl: 5
+waiting_time_between_each_crawl: 3
 maximum_url_to_visit_each_turn: 10
 minimum_topic_length: 4
 days_to_crawl: 7
@@ -140,4 +79,4 @@ loop_interval_for_new_keyword_accepted: 2
 minimum_freq_for_fast_growing_keyword_accepted: 2
 minimum_freq_series_for_fast_growing_keyword_accepted: 3
 minimum_publish_speed: 120
-crawling_interval: 10
+crawling_interval: 15
