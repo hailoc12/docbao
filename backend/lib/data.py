@@ -73,17 +73,20 @@ class Article:
 class ArticleManager:
     _data = dict()  # a dict of (href: article)
     _blacklist = dict()  # a dict if {href: lifecount}
+
     def __init__(self, config_manager, data_filename, blacklist_filename):
         self._config_manager = config_manager
         self._default_blacklist_count = 10 # will be removed after 10 compression
         self._data_filename = data_filename
         self._blacklist_filename = blacklist_filename
         self._id_iterator = 0
+
     def get_and_increase_id_iterator(self):
         self._id_iterator+=1
         if self._id_iterator==sys.maxsize:
             self._id_iterator = 1
         return self._id_iterator
+
     def load_data(self):
         stream = open_binary_file_to_read(self._data_filename)
         if stream is not None:
@@ -104,6 +107,9 @@ class ArticleManager:
         else:
             print("khong mo duoc file " + self._data_filename + ".log")
             self._id_iterator = 0 
+    # Pull data from mysql database
+    def pull_data(self):
+        pass
 
         
     def save_data(self):
