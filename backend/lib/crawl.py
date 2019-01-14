@@ -10,10 +10,11 @@ class BrowserCrawler:
     _has_error = False
     _quited = False
     _diplay = None
-    def __init__(self, timeout=30):
+    def __init__(self, timeout=30, headless=False):
         # Create a headless Firefox browser to crawl
         options = Options()
-        options.add_argument("--headless")
+        if headless==True:
+            options.add_argument("--headless")
         self._driver = webdriver.Firefox(firefox_options=options)
 
         # Create a virtual screen to with Raspberry too
