@@ -1,5 +1,4 @@
 beautifulsoup4==4.6.3
-fake-useragent==0.1.11
 jsonpickle==1.0
 lxml==4.2.5
 nltk==3.3
