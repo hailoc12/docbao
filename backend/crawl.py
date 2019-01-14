@@ -27,7 +27,7 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
     #   crawled_aritlces: contain new crawled articles
 
     print("Crawler %s has been started" % process_name)
-    browser = None 
+    browser = BrowserWrapper()
     while True:
         # get a web config from crawl_queue
         webconfig = None

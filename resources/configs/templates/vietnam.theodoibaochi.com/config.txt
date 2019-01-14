@@ -1,4 +1,5 @@
 ﻿running_path: ~/docbao_test/
+max_crawler: 5
 crawling_list:
     - CafeBiz:
         web_url: http://cafebiz.vn

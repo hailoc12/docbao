@@ -21,6 +21,7 @@ sleep 1
 sudo cp ./resources/firefox_driver/ubuntu/geckodriver /usr/bin/
 sudo cp ./resources/firefox_driver/ubuntu/crawl.py ./backend/lib/
 sudo cp ./resources/configs/templates/default/config.txt ./backend/input/
+sudo cp ./resources/firefox_extension/adblock.xpi ./backend/input/
 sleep 1
 echo "Step 4: install rclone"
 sleep 1

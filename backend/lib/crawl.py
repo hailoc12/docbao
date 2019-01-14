@@ -4,18 +4,43 @@ from multiprocessing import Process
 from pyvirtualdisplay import Display 
 import random
 
+class BrowserWrapper:
+    # Wrap browser variable so it can be passed as reference variable
+    _browser = None
+    def set_browser(self, new_browser):
+        self._browser = new_browser
+    def get_browser(self):
+        return self._browser
+    def quit(self):
+        if self._browser is not None:
+            self._browser.quit()
+
 class BrowserCrawler:
     # Function: this class use Firefox browser to fetch all rendered html of a page
     _driver = None
     _has_error = False
     _quited = False
     _diplay = None
-    def __init__(self, timeout=30, headless=False):
+    def __init__(self, timeout=30, headless=False, fast_load=True):
         # Create a headless Firefox browser to crawl
         options = Options()
         if headless==True:
             options.add_argument("--headless")
-        self._driver = webdriver.Firefox(firefox_options=options)
+
+        profile=webdriver.FirefoxProfile()
+        if fast_load==True:
+            profile.set_preference('permissions.default.stylesheet', 2)
+            # Disable images
+            profile.set_preference('permissions.default.image', 2)
+            # Disable notification
+            profile.set_preference('permissions.default.desktop-notification', 2)
+            # Disable Flash
+            profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', 'false')
+            # Adblock Extension
+            profile.exp = "input/adblock.xpi"
+            profile.add_extension(extension=profile.exp)
+
+        self._driver = webdriver.Firefox(firefox_options=options, firefox_profile=profile)
 
         # Create a virtual screen to with Raspberry too
         #self._display = Display(visible=0, size=(1024,768))

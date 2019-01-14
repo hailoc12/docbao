@@ -76,8 +76,8 @@ def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeo
     a=True
     result = False
     browser = None
-    #while a:
-    try:
+    while a:
+    #try:
         print(url)
         html_source = None
         if use_browser == False:
@@ -97,12 +97,12 @@ def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeo
                 html_source = f.read().decode('utf-8')
         else:
             print("Use Browser to open %s" % url)
-            if _firefox_browser is not None:
-                browser = _firefox_browser
+            if _firefox_browser.get_browser() is not None:
+                browser = _firefox_browser.get_browser()
             else:
                 print("Create new instance of Firefox browser")
                 browser = BrowserCrawler()
-                _firefox_browser = browser
+                _firefox_browser.set_browser(browser)
                 print(_firefox_browser)
 
             print("Load page: %s" % url)
@@ -111,7 +111,7 @@ def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeo
             if result == True:
                 try:
                     time.sleep(3) # There must be little delay between browser.load_page and get_page_html
-                    html_source = _firefox_browser.get_page_html() #Somehow this command occasionally have errors
+                    html_source = browser.get_page_html() #Somehow this command occasionally have errors
                 except:
                     result = False
         a = False
@@ -119,9 +119,9 @@ def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeo
             return BeautifulSoup(html_source,features="html.parser")
         else:
             return None
-    except:
-        print("Khong the mo trang: " + url)
-        return None
+    #except:
+    #    print("Khong the mo trang: " + url)
+    #    return None
 def quit_browser():
     global _firefox_browser
 
