@@ -1,4 +1,5 @@
 ﻿running_path: ~/docbao_haiphong/
+max_crawler: 3
 crawling_list:
     - Báo Hải Phòng:
         web_url: http://www.baohaiphong.com.vn/baohp/vn/home/

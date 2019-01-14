@@ -1,4 +1,5 @@
 running_path: ~/docbao_test/
+max_crawler: 1
 crawling_list:
     - Báo mới:
         web_url: https://baomoi.com

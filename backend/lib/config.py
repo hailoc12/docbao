@@ -138,4 +138,6 @@ class ConfigManager:
         return self._config['maximum_url_to_visit_each_turn']
     def get_minimum_weight(self):
         return self._config['minimum_weight']
+    def get_max_crawler(self):
+        return self._config['max_crawler']
 

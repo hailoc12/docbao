@@ -73,6 +73,7 @@ class Article:
 class ArticleManager:
     _data = dict()  # a dict of (href: article)
     _blacklist = dict()  # a dict if {href: lifecount}
+    _new_blacklist = dict()
 
     def __init__(self, config_manager, data_filename, blacklist_filename):
         self._config_manager = config_manager
@@ -107,10 +108,20 @@ class ArticleManager:
         else:
             print("khong mo duoc file " + self._data_filename + ".log")
             self._id_iterator = 0 
-    # Pull data from mysql database
-    def pull_data(self):
-        pass
 
+    def load_blacklist_data(self):
+        stream = open_binary_file_to_read(self._blacklist_filename)
+        if stream is not None:
+            self._blacklist = pickle.load(stream)
+        else:
+            print("khong mo duoc file " + self._blacklist_filename)
+            self._blacklist = {}
+        stream = open_binary_file_to_read(self._data_filename + ".log")
+        if stream is not None:
+            self._id_iterator = pickle.load(stream)
+        else:
+            print("khong mo duoc file " + self._data_filename + ".log")
+            self._id_iterator = 0 
         
     def save_data(self):
         stream = open_binary_file_to_write(self._data_filename)
@@ -125,6 +136,11 @@ class ArticleManager:
         pickle.dump(self._id_iterator, stream)
         stream.close()
 
+    def push_data_to_mysql(self):
+        print("push data to mysql")
+        print(len(self._data))
+        for article in self._data:
+            print(article.get_topic())
 
     def get_sorted_article_list(self):
         article_list = list(self._data.values())
@@ -330,6 +346,7 @@ class ArticleManager:
 
     def add_url_to_blacklist(self, href):
         self._blacklist[href] = self._default_blacklist_count
+        self._new_blacklist[href] = self._default_blacklist_count # note: new_blacklist is used for multiprocessing
 
     def remove_url_from_blacklist(self, href):
         self._blacklist.pop(href)
@@ -349,9 +366,12 @@ class ArticleManager:
     def add_article(self, new_article):
         self._data[new_article.get_href()]= new_article
 
-    def add_articles_from_newspaper(self, webconfig): #Get article list from newspaper with webconfig parsing
-        global count_lay, count_duyet
-        
+    def add_articles_from_newspaper_async(self, my_pid, lock, webconfig, browser): #Get article list from newspaper with webconfig parsing
+        count_duyet = 0
+        count_lay = 0
+        count_bo = 0
+
+        lock.acquire() 
         webname = webconfig.get_webname()
         weburl = webconfig.get_weburl()
         crawl_url = webconfig.get_crawl_url()
@@ -360,24 +380,25 @@ class ArticleManager:
         use_browser = webconfig.get_use_browser()
         count_visit = 0 # to limit number of url to visit in each turn
         maximum_url_to_visit = self._config_manager.get_maximum_url_to_visit_each_turn()
+        lock.release()
         print()
-        print("Crawling newspaper: " + webname)
+        print("Crawler pid %s: Crawling newspaper: %s" % (my_pid,webname))
         a=True
-        #while a==True:
-        try:
-            soup = read_url_source_as_soup(crawl_url, use_browser)
+        while a==True:
+        #try:
+            soup = read_url_source_as_soup(crawl_url, use_browser, browser)
             if soup is not None:
                 if get_topic: #from link
                     ataglist = soup.find_all("a", text=True, href=True)
                 else:
                     ataglist = soup.find_all("a", href=True)
                    
-                print("Getting data, please wait...")
+                print("Crawler pid %s: Getting data, please wait..." % my_pid)
                 for atag in ataglist:
                     # loc ket qua
                     fullurl = get_fullurl(weburl, atag['href'])
                     print()
-                    print("Processing page: " + fullurl)
+                    print("Crawler pid %s: Processing page: %s" % (my_pid, fullurl))
                     count_duyet += 1
 
                     if not self.is_blacklisted(fullurl):
@@ -385,7 +406,7 @@ class ArticleManager:
                             # check if fullurl satisfies url pattern
                             filter = re.compile(webconfig.get_url_pattern_re(), re.IGNORECASE)
                             if filter.match(fullurl) is None:
-                                print("Ignore. This url is from another site")
+                                print("Crawler pid %s: Ignore. This url is from another site" % my_pid)
                             else:
     
                                 count_visit +=1
@@ -395,34 +416,36 @@ class ArticleManager:
                                     (topic, publish_date) = result
 
                                     next_id = self.get_and_increase_id_iterator()
-                                    
+                                    lock.acquire() 
                                     self.add_article(Article(article_id=next_id,topic=topic, 
                                                      date = publish_date,
                                                      newspaper = webname, href=fullurl, language=web_language))
+                                    self.add_url_to_blacklist(fullurl)
+                                    lock.release()
                                     count_lay +=1
-                                    print("Crawled articles: " + str(count_lay))
+                                    print("Crawler pid %s: Crawled articles: %s" % (my_pid, str(count_lay)))
 
                                     # wait for n second before continue crawl
                                     waiting_time = self._config_manager.get_waiting_time_between_each_crawl()
-                                    print("Waiting %s seconds before continue crawling" % str(waiting_time))
+                                    print("Crawler pid %s: Waiting %s seconds before continue crawling" % (my_pid, str(waiting_time)))
                                     time.sleep(waiting_time + random.random()*3)
  
                                 else:
                                     self.add_url_to_blacklist(fullurl)
-                                    print("Add to blacklist")
+                                    print("Crawler pid %s: Add to blacklist" % my_pid)
                                 if count_visit >= maximum_url_to_visit:  # Stop crawling to not get caught by server
-                                    print("Stop crawling %s to avoid being caught by server" % webname)
+                                    print("Crawler pid %s: Stop crawling %s to avoid being caught by server" % (my_pid, webname))
                                     return None
                         else:
-                            print("This article has been in database")
+                            print("Crawler pid %s: This article has been in database" % my_pid)
                     else:
-                        print("This link is in blacklist database")
+                        print("Crawler pid %s: This link is in blacklist database" % my_pid)
                         self.refresh_url_in_blacklist(fullurl)
             else:
-                print("Can't open: " + webname)
+                print("Crawler pid %s: Can't open: %s" % (my_pid, webname))
             a=False
-        except:
-            print("Can't open: " + webname)
+        #except:
+        #    print("Crawler pid %s: Can't open: %s" % (my_pid, webname))
 
     def is_not_outdated(self, date):
         return (datetime.now() - date).days <= self._config_manager.get_maximum_day_difference()
@@ -460,4 +483,31 @@ class ArticleManager:
     def reset_tokenize_status(self):
         for href, article in self._data.items():
             article._tokenized = False
+    def export_to_json(self):
+        json_article_list = []
+        count = 0
+        for article in self.get_sorted_article_list():
+            count += 1
+            update_time = int((datetime.now() - article.get_creation_date()).total_seconds() / 60)
+            update_time_string=""
+            if update_time >= 720:
+                update_time = int(update_time / 720)
+                update_time_string = str(update_time) + " ngày trước"
+            else:
+                if update_time >= 60:
+                    update_time = int(update_time / 60)
+                    update_time_string = str(update_time) + " giờ trước"
+                else:
+                    update_time_string = str(update_time) + " phút trước"
 
+            json_article_list.append({'stt':str(count),
+                                      'topic':article.get_topic(),
+                                      'href':article.get_href(),
+                                      'newspaper': article.get_newspaper(),
+                                      'update_time': update_time_string, 
+                                      'publish_time': article.get_date_string()})
+        with open_utf8_file_to_write(get_independent_os_path(["export", "article_data.json"])) as stream:
+            stream.write(jsonpickle.encode({'article_list': json_article_list}))
+            stream.close()
+
+            

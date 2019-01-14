@@ -56,8 +56,7 @@ def open_binary_file_to_read(filename):
         return None
 
 
-def read_url_source_as_soup(url, use_browser=False, timeout=5):  # return page as soup of BeautifulSoup
-    global _firefox_browser
+def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeout=5):  # return page as soup of BeautifulSoup
 
     #f_hdr = {
     #    'User-Agent': UserAgent().chrome,
