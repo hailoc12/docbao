@@ -7,6 +7,11 @@ import yaml
 class WebParsingConfig:
     def __init__(self, web):
         self._web = web # dict of dict {"webname":{"url":...,date_tag:[...], date_class:[...]}
+    def get_config(self, key, default):
+        if key not in self._web[self.get_webname()]:
+            return default
+        else:
+            return self._web[self.get_webname()][key]
 
     def get_webname(self):
         return next(iter(self._web))
@@ -58,6 +63,8 @@ class WebParsingConfig:
         return self._web[self.get_webname()]['output_html']
     def get_use_browser(self):
         return self._web[self.get_webname()]['use_browser']
+    def get_display_browser(self):
+        return self.get_config("display_browser", False)
 
 # class that manage config defined in /input/config.txt
 class ConfigManager:

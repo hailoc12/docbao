@@ -450,7 +450,7 @@ class KeywordManager:
             stream.write(jsonpickle.encode(hot_dict))
             stream.close()
 
-    def write_uncategoried_keyword_to_text_file(self):
+    def write_uncategorized_keyword_to_text_file(self):
         tag_dict = self._other_keyword_dict
         with open_utf8_file_to_write(get_independent_os_path(["export","uncategorized_keyword.txt"])) as stream:
             for keyword in sorted(tag_dict, key=tag_dict.get, reverse=True):

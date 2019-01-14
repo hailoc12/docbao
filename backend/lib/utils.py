@@ -56,7 +56,7 @@ def open_binary_file_to_read(filename):
         return None
 
 
-def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeout=5):  # return page as soup of BeautifulSoup
+def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _firefox_browser=None, timeout=5):  # return page as soup of BeautifulSoup
 
     #f_hdr = {
     #    'User-Agent': UserAgent().chrome,
@@ -101,7 +101,7 @@ def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeo
                 browser = _firefox_browser.get_browser()
             else:
                 print("Create new instance of Firefox browser")
-                browser = BrowserCrawler()
+                browser = BrowserCrawler(display_browser=_display_browser)
                 _firefox_browser.set_browser(browser)
                 print(_firefox_browser)
 

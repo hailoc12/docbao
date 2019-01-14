@@ -20,6 +20,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %I:%M %p"  
         output_html : False
         use_browser : False
+        display_browser: False
     - Lao Động:
         web_url: https://laodong.vn
         crawl_url: https://laodong.vn
@@ -39,6 +40,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y | %H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - 24h:
         web_url: https://www.24h.com.vn
         crawl_url: https://www.24h.com.vn
@@ -58,6 +60,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Bóng Đá:
         web_url: http://bongdaplus.vn
         crawl_url: http://bongdaplus.vn
@@ -77,6 +80,7 @@ crawling_list:
         date_pattern: "%H:%M ngày %d-%m-%Y" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Báo mới:
         web_url: https://baomoi.com
         crawl_url: "https://baomoi.com"
@@ -96,6 +100,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y - %H:%M" 
         output_html : False
         use_browser : True
+        display_browser: False
     - Người Lao Động:
         web_url: https://nld.com.vn
         crawl_url: https://nld.com.vn
@@ -115,6 +120,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : True
+        display_browser: False
     - Nhân Dân:
         web_url: http://nhandan.com.vn
         crawl_url: http://nhandan.com.vn
@@ -134,6 +140,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y, %H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Đời Sống Pháp Luật:
         web_url: http://www.doisongphapluat.com
         crawl_url: http://www.doisongphapluat.com
@@ -153,6 +160,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y | %H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Thanh Niên:
         web_url: https://thanhnien.vn
         crawl_url: https://thanhnien.vn
@@ -172,6 +180,7 @@ crawling_list:
         date_pattern: "%H:%M - %d/%m/%Y" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Tiền Phong:
         web_url: http://www.tienphong.vn
         crawl_url: http://www.tienphong.vn
@@ -191,6 +200,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Tuổi Trẻ:
         web_url: http://tuoitre.vn
         crawl_url: http://tuoitre.vn
@@ -210,6 +220,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - aFamilty:
         web_url: http://afamily.vn
         crawl_url: http://afamily.vn
@@ -229,6 +240,7 @@ crawling_list:
         date_pattern: "%d/%m/%YT%H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Giáo Dục Thời Đại:
         web_url: http://giaoducthoidai.vn
         crawl_url: http://giaoducthoidai.vn
@@ -248,6 +260,7 @@ crawling_list:
         date_pattern: "%Y/%m/%dT%H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Báo Pháp Luật:
         web_url: http://baophapluat.vn
         crawl_url: http://baophapluat.vn
@@ -267,6 +280,7 @@ crawling_list:
         date_pattern: "%Y/%m/%dT%H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Pháp Luật TP.HCM:
         web_url: http://plo.vn
         crawl_url: http://plo.vn
@@ -286,6 +300,7 @@ crawling_list:
         date_pattern: "%Y/%m/%dT%H:%M" 
         output_html : False
         use_browser : False 
+        display_browser: False
     - Thể Thao & Văn Hoá:
         web_url: http://thethaovanhoa.vn
         crawl_url: http://thethaovanhoa.vn
@@ -305,6 +320,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Vietnam Plus:
         web_url: https://www.vietnamplus.vn
         crawl_url: https://www.vietnamplus.vn
@@ -324,6 +340,7 @@ crawling_list:
         date_pattern: "%Y/%m/%dT%H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Báo Chính Phủ:
         web_url: http://baochinhphu.vn
         crawl_url: http://baochinhphu.vn
@@ -343,6 +360,7 @@ crawling_list:
         date_pattern: "%H:%M, %d/%m/%Y" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - VTV News:
         web_url: http://vtv.vn
         crawl_url: http://vtv.vn
@@ -362,6 +380,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : True
+        display_browser: False
     - VOV News:
         web_url: http://vov.vn
         crawl_url: http://vov.vn
@@ -381,6 +400,7 @@ crawling_list:
         date_pattern: "%H:%M, %d/%m/%Y" 
         output_html : False
         use_browser : False
+        display_browser: False
     - VTC Online:
         web_url: https://vtc.vn
         crawl_url: http://vtc.vn
@@ -400,6 +420,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M %p" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Thời Báo Kinh Tế VN:
         web_url: https://vneconomy.vn
         crawl_url: http://vneconomy.vn
@@ -419,6 +440,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Vietnamnet:
         web_url: http://www.vietnamnet.vn
         crawl_url: http://www.vietnamnet.vn
@@ -438,6 +460,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y  %H:%M" 
         output_html : False
         use_browser : True
+        display_browser: False
     - Vnexpress:
         web_url: https://vnexpress.net
         crawl_url: https://vnexpress.net
@@ -457,6 +480,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y, %H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - VnMedia:
         web_url: http://www.vnmedia.vn
         crawl_url: http://www.vnmedia.vn
@@ -476,6 +500,7 @@ crawling_list:
         date_pattern: "%H:%M' %d/%m/%Y" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - 24h:
         web_url: http://www.24h.com.vn
         crawl_url: http://www.24h.com.vn
@@ -495,6 +520,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Dân Việt:
         web_url: http://danviet.vn
         crawl_url: http://danviet.vn
@@ -514,6 +540,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M %p" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Saostar:
         web_url: https://saostar.vn
         crawl_url: https://saostar.vn
@@ -533,6 +560,7 @@ crawling_list:
         date_pattern: "%d-%m-%YT%H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Zing News:
         web_url: https://news.zing.vn
         crawl_url: https://news.zing.vn
@@ -552,6 +580,7 @@ crawling_list:
         date_pattern: "%H:%M %d/%m/%Y" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Kenh14.vn:
         web_url: http://kenh14.vn
         crawl_url: http://kenh14.vn
@@ -571,6 +600,7 @@ crawling_list:
         date_pattern: "%d-%m-%YT%H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Thể Thao 24/7:
         web_url: https://thethao247.vn
         crawl_url: https://thethao247.vn
@@ -590,6 +620,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Soha.vn:
         web_url: http://soha.vn
         crawl_url: http://soha.vn
@@ -609,6 +640,7 @@ crawling_list:
         date_pattern: "%m/%d/%Y %H:%M:%S %p" 
         output_html : False
         use_browser : True 
+        display_browser: False
     - Dân Trí:
         web_url: http://www.dantri.com.vn
         crawl_url: http://www.dantri.com.vn
@@ -628,6 +660,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y - %H:%M" 
         output_html : False
         use_browser : False
+        display_browser: False
     - Cafef:
         web_url: http://cafef.vn
         crawl_url: http://cafef.vn
@@ -647,6 +680,7 @@ crawling_list:
         date_pattern: "%m-%d-%Y - %H:%M %p" 
         output_html : False
         use_browser : False
+        display_browser: False
 category_list:
     - Chính Trị:
         filename: category/chinh_tri.txt

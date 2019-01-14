@@ -137,6 +137,9 @@ with multiprocessing.Manager() as manager:
     keyword_manager.write_uncategorized_keyword_to_text_file() 
     keyword_manager.write_keyword_freq_series_to_json_file()
 
+    # save data
+    keyword_manager.save_data()
+
         # write log data
     with open_utf8_file_to_write(get_independent_os_path(["export", "log_data.json"])) as stream:
         log_dict = dict()

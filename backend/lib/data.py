@@ -171,9 +171,11 @@ class ArticleManager:
         '''
         use_browser = webconfig.get_use_browser()
         timeout = webconfig.get_browser_timeout()
+        display_browser = webconfig.get_display_browser()
+
         if soup is None:
             try:
-                soup = read_url_source_as_soup(url, use_browser, browser=browser)
+                soup = read_url_source_as_soup(url, use_browser, display_browser, browser=browser)
                 if soup is None:
                     return None
             except:
@@ -230,9 +232,11 @@ class ArticleManager:
 
         '''
         use_browser = webconfig.get_use_browser()
+        display_browser = webconfig.get_display_browser()
+
         if soup is None:
             try:
-                soup = read_url_source_as_soup(url, use_browser, browser)
+                soup = read_url_source_as_soup(url, use_browser, display_browser, browser)
                 if soup is None:
                     return None
             except:
@@ -378,6 +382,7 @@ class ArticleManager:
         web_language = webconfig.get_language()
         get_topic = webconfig.get_topic_from_link()
         use_browser = webconfig.get_use_browser()
+        display_browser = webconfig.get_display_browser()
         count_visit = 0 # to limit number of url to visit in each turn
         maximum_url_to_visit = self._config_manager.get_maximum_url_to_visit_each_turn()
         lock.release()
@@ -386,7 +391,7 @@ class ArticleManager:
         a=True
         while a==True:
         #try:
-            soup = read_url_source_as_soup(crawl_url, use_browser, browser)
+            soup = read_url_source_as_soup(crawl_url, use_browser, display_browser, browser)
             if soup is not None:
                 if get_topic: #from link
                     ataglist = soup.find_all("a", text=True, href=True)

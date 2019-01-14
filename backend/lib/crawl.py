@@ -21,10 +21,10 @@ class BrowserCrawler:
     _has_error = False
     _quited = False
     _diplay = None
-    def __init__(self, timeout=30, headless=False, fast_load=True):
+    def __init__(self, timeout=30, display_browser=False, fast_load=True):
         # Create a headless Firefox browser to crawl
         options = Options()
-        if headless==True:
+        if display_browser==False:
             options.add_argument("--headless")
 
         profile=webdriver.FirefoxProfile()

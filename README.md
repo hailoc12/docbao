@@ -1,8 +1,8 @@
-# ĐỌC BÁO THEO TỪ KHÓA 
+# ĐỌC BÁO THEO TỪ KHÓA (V1.1.0)
 Công cụ quét báo mạng để xây dựng các trang theo dõi báo chí cá nhân hoá 
 
 Demo
-- Trang tổng hợp 35 báo tiếng Việt: http://theodoibaochi.com
+- Trang tổng hợp 35 báo tiếng Việt: http://vietnam.theodoibaochi.com
 - Trang tổng hợp tin tức báo chí về Hải Phòng: http://haiphong.theodoibaochi.com
 
 Author: hailoc12  
@@ -13,7 +13,7 @@ Facebook: https://www.facebook.com/danghailochp
 Đọc Báo Theo Từ Khoá là phiên bản mã nguồn mở để xây dựng các trang tổng hợp tin tức giống như [Báo Mới](http://baomoi.com), với vài điểm khác biệt:
 
 1. Người dùng chủ động nguồn báo để quét
-2. Dễ cài đặt, nhẹ, có thể chạy được trên máy tính cá nhân, raspberry PI,hay server
+2. Dễ cài đặt, nhẹ, có thể chạy được trên máy tính cá nhân, raspberry PI, hay server
 3. Tích hợp chức năng phân tích từ khoá, xác định từ khoá nổi bật, từ khoá hot, từ khóa mới xuất hiện, phân từ khoá vào các chuyên mục
 4. Mã nguồn mở, miễn phí
 
@@ -27,11 +27,12 @@ Công cụ hướng đến nhiều đối tượng người dùng:
 # Tính năng nổi bật:
 
 1. Quét được hầu hết các trang báo, blog kể cả các trang dùng nhiều javascript mà không bị block  
-2. Sử dụng Xử lý ngôn ngữ tự nhiên (NLP) để phân tích tiêu đề báo thành các keyword. Hỗ trợ cả tiếng Anh và tiếng Việt.
-3. Tự động phân tích để xác định từ khoá nổi bật, từ khoá mới xuất hiện, từ khoá tăng trưởng nhanh.
-4. Có thể tuỳ biến các chuyên mục và phân tự động từ khoá vào các chuyên mục
-5. Tìm kiếm các bài báo mới xuất bản nhanh hơn Google (nếu hệ thống được cài đặt để quét đều đặn)
-6. Có thể export dữ liệu dưới dạng file excel và json để phân tích nâng cao
+2. Sử dụng công nghệ quét đa luồng, có thể ghép server để quét được số lượng lớn báo
+3. Sử dụng Xử lý ngôn ngữ tự nhiên (NLP) để phân tích tiêu đề báo thành các keyword. Hỗ trợ cả tiếng Anh và tiếng Việt.
+4. Tự động phân tích để xác định từ khoá nổi bật, từ khoá mới xuất hiện, từ khoá tăng trưởng nhanh.
+5. Có thể tuỳ biến các chuyên mục và phân tự động từ khoá vào các chuyên mục
+6. Tìm kiếm các bài báo mới xuất bản nhanh hơn Google (nếu hệ thống được cài đặt để quét đều đặn)
+7. Có thể export dữ liệu dưới dạng file excel và json để phân tích nâng cao
 
 # Cài đặt
 
@@ -94,7 +95,10 @@ bash run_docbao.sh
 
 Sau khi quét xong, bạn hãy mở trang http://demo.theodoibaochi.com để xem kết quả
 
-#### Bước 5: Tùy biến cấu hình quét để xây dựng trang thông tin của riêng bạn
+#### Bước 5: Tạo cron để quét tự động
+(đang xây dựng tài liệu)
+
+#### Bước 6: Tùy biến cấu hình quét để xây dựng trang thông tin của riêng bạn
 (đang xây dựng tài liệu)
 
 ## Cài đặt trên Windows 10  
