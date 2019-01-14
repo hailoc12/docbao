@@ -49,6 +49,7 @@ rclone ls docbao:
 sleep 1
 echo "Step 6: run test"
 sleep 1
-python3 ~/docbao/backend/test.py
+cd ~/docbao/backend
+python3 test.py
 sleep 1
 echo "Finish !"

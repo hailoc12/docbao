@@ -22,7 +22,7 @@ web_crawler.quit()
 
 print("Test 2: check if config file can be parsed")
 
-config_file = get_independent_os_path(["backend", "input", "config.txt"])
+config_file = get_independent_os_path(["input", "config.txt"])
 
 config_manager = ConfigManager(config_file)
 config_manager.load_data()

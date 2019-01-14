@@ -20,6 +20,7 @@ crawling_list:
         date_pattern: "%d/%m/%Y - %H:%M" 
         output_html : False
         use_browser : True
+        display_browser: False
 category_list:
     - Chính Trị:
         filename: category/chinh_tri.txt
