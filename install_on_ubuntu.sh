@@ -20,7 +20,7 @@ echo "Step 3: copy resources files"
 sleep 1
 sudo cp ./resources/firefox_driver/ubuntu/geckodriver /usr/bin/
 sudo cp ./resources/firefox_driver/ubuntu/crawl.py ./backend/lib/
-sudo cp ./resources/configs/templates/config.txt
+sudo cp ./resources/configs/templates/default/config.txt
 sleep 1
 echo "Step 4: install rclone"
 sleep 1
