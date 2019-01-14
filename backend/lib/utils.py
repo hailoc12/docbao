@@ -103,6 +103,8 @@ def read_url_source_as_soup(url, use_browser=False, _firefox_browser=None, timeo
                 print("Create new instance of Firefox browser")
                 browser = BrowserCrawler()
                 _firefox_browser = browser
+                print(_firefox_browser)
+
             print("Load page: %s" % url)
             result = browser.load_page(url, timeout, 5)
             print("Result %s" % str(result))

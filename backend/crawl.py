@@ -27,14 +27,21 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
     #   crawled_aritlces: contain new crawled articles
 
     print("Crawler %s has been started" % process_name)
+    browser = None 
     while True:
         # get a web config from crawl_queue
         webconfig = None
-        browser = None
         lock.acquire()
         if not crawl_queue.empty():
             webconfig = crawl_queue.get()
+            lock.release()
+            # crawl data
+            print("Crawler %s is crawling newspaper %s" % (process_name, webconfig.get_webname()))
+            data_manager.add_articles_from_newspaper_async(process_name, lock, webconfig, browser)
         else:
+            print("Browser is")
+            print(browser)
+
             if browser is not None:
                 print("Quit browser in Crawler %s" % process_name)
                 browser.quit()
@@ -48,12 +55,6 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
                 new_blacklists.put((href, count))
             lock.release()
             return None
-        lock.release()
-
-        # crawl data
-        if webconfig is not None:
-            print("Crawler %s is crawling newspaper %s" % (process_name, webconfig.get_webname()))
-            data_manager.add_articles_from_newspaper_async(process_name, lock, webconfig, browser)
 
 # Create Manager Proxy to host shared data for multiprocessed crawled
 with multiprocessing.Manager() as manager:
@@ -132,7 +133,7 @@ with multiprocessing.Manager() as manager:
     data_manager.export_to_json()
     keyword_manager.write_trending_keyword_to_json_file()
     keyword_manager.write_keyword_dicts_to_json_files()
-    keyword_manager.write_uncategorized_keyword_to_text_file() 
+    #keyword_manager.write_uncategorized_keyword_to_text_file() 
 
         # write log data
     with open_utf8_file_to_write(get_independent_os_path(["export", "log_data.json"])) as stream:

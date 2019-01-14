@@ -155,7 +155,7 @@ class ArticleManager:
             if self._data[key]._id == id:
                 return self._data[key]
         return None
-    def get_topic_of_an_url(self, url, webconfig, soup=None):
+    def get_topic_of_an_url(self, url, webconfig, soup=None, browser=None):
         '''
         function
         --------
@@ -173,7 +173,7 @@ class ArticleManager:
         timeout = webconfig.get_browser_timeout()
         if soup is None:
             try:
-                soup = read_url_source_as_soup(url, use_browser, timeout)
+                soup = read_url_source_as_soup(url, use_browser, browser=browser)
                 if soup is None:
                     return None
             except:
@@ -218,7 +218,7 @@ class ArticleManager:
         else:
             return None
 
-    def get_time_of_an_url(self, url, webconfig, soup=None):
+    def get_time_of_an_url(self, url, webconfig, soup=None, browser=None):
         '''
         function
         --------
@@ -232,7 +232,7 @@ class ArticleManager:
         use_browser = webconfig.get_use_browser()
         if soup is None:
             try:
-                soup = read_url_source_as_soup(url, use_browser)
+                soup = read_url_source_as_soup(url, use_browser, browser)
                 if soup is None:
                     return None
             except:
@@ -274,7 +274,7 @@ class ArticleManager:
                             return datetime.now()
         return None
 
-    def investigate_if_link_is_valid_article(self, atag, webconfig):
+    def investigate_if_link_is_valid_article(self, atag, webconfig, browser):
         '''
         function
         --------
@@ -304,7 +304,7 @@ class ArticleManager:
             topic_word_list = topic.split()
         else:
             #try to crawl topic
-            result = self.get_topic_of_an_url(fullurl, webconfig)            
+            result = self.get_topic_of_an_url(fullurl, webconfig, browser)            
             if result is not None:
                 (topic, soup) = result
                 print("Topic found: %s" % topic)
@@ -320,7 +320,7 @@ class ArticleManager:
                 print("Published at: " + newsdate.strftime("%d-%m-%y %H:%M"))
             else:
                 # try to find published date
-                newsdate = self.get_time_of_an_url(fullurl, webconfig, soup=soup) 
+                newsdate = self.get_time_of_an_url(fullurl, webconfig, soup=soup,browser=browser) 
 
             if (newsdate is not None): # found an article
                 if self.is_not_outdated(newsdate) or webconfig.get_skip_crawl_publish_date():
@@ -410,7 +410,7 @@ class ArticleManager:
                             else:
     
                                 count_visit +=1
-                                result = self.investigate_if_link_is_valid_article(atag, webconfig)
+                                result = self.investigate_if_link_is_valid_article(atag, webconfig, browser)
                                 if result is not None: # is valid article 
     
                                     (topic, publish_date) = result
@@ -435,6 +435,8 @@ class ArticleManager:
                                     print("Crawler pid %s: Add to blacklist" % my_pid)
                                 if count_visit >= maximum_url_to_visit:  # Stop crawling to not get caught by server
                                     print("Crawler pid %s: Stop crawling %s to avoid being caught by server" % (my_pid, webname))
+                                    print("Browser state: ")
+                                    print(browser)
                                     return None
                         else:
                             print("Crawler pid %s: This article has been in database" % my_pid)
