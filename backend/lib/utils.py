@@ -7,10 +7,19 @@ import os
 import urllib.request
 from  lib.crawl import *
 import time
+from psutil import virtual_memory
 
 _firefox_browser = None
 
 # UTILITY FUNCTION
+def get_max_crawler_can_be_run_more():
+    # Get max crawler that system can support (base on free ram)
+    ram_for_each_crawler = 250000
+    safe_margin = 0.8 # free 20% for safe
+    mem = virtual_memory()
+    mem_free = mem.free - mem.total * (1-safe_margin)
+    return int(mem_free  / ram_for_each_crawler)
+
 def is_another_session_running():
     return os.path.exists("docbao.lock")
 
@@ -87,7 +96,7 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
                 headers=hdr)
             f=None
             try:
-                f = urllib.request.urlopen(req)
+                f = urllib.request.urlopen(req, timeout=10)
             except:
                 f=None
             if f is None:

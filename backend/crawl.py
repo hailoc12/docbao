@@ -30,6 +30,7 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
     browser = BrowserWrapper()
     try:
         while True:
+            print("Crawler %s is running" % process_name)
             # get a web config from crawl_queue
             webconfig = None
             lock.acquire()
@@ -93,9 +94,22 @@ with multiprocessing.Manager() as manager:
 
     # Start crawl process
     max_crawler = config_manager.get_max_crawler()
+    print("%s crawlers are set to be run in parallel" % str(max_crawler))
+    supported_max_crawler = get_max_crawler_can_be_run()
+    if max_crawler > supported_max_crawler:
+        print("Current system can support only %s crawlers to be run in parallel" % str(supported_max_crawler))
+        print("You should reduce max_crawler in config.txt")
+        print("max_crawler will be set to %s in this run" % str(supported_max_crawler))
+        max_crawler = supported_max_crawler
+    elif: 
+        max_crawler < supported_max_crawler:
+        print("Current system can support up to %s crawlers to be run in parallel" % str(supported_max_crawler))
+        print("You should increase max_crawler in config.txt")
+
     crawler_processes = []
     time.sleep(1)
     print("Init %s crawlers" % str(max_crawler))
+
     for i in range(max_crawler):
         crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, crawl_queue, data_manager, crawled_articles, new_blacklists))
         crawler_processes.append(crawler)
