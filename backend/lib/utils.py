@@ -12,10 +12,10 @@ from psutil import virtual_memory
 _firefox_browser = None
 
 # UTILITY FUNCTION
-def get_max_crawler_can_be_run_more():
+def get_max_crawler_can_be_run():
     # Get max crawler that system can support (base on free ram)
-    ram_for_each_crawler = 250000
-    safe_margin = 0.8 # free 20% for safe
+    ram_for_each_crawler = 350000000
+    safe_margin = 0.6 # free 40% for safe
     mem = virtual_memory()
     mem_free = mem.free - mem.total * (1-safe_margin)
     return int(mem_free  / ram_for_each_crawler)

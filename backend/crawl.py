@@ -94,16 +94,21 @@ with multiprocessing.Manager() as manager:
 
     # Start crawl process
     max_crawler = config_manager.get_max_crawler()
+    time.sleep(1)
     print("%s crawlers are set to be run in parallel" % str(max_crawler))
     supported_max_crawler = get_max_crawler_can_be_run()
     if max_crawler > supported_max_crawler:
+        time.sleep(1)
         print("Current system can support only %s crawlers to be run in parallel" % str(supported_max_crawler))
+        time.sleep(1)
         print("You should reduce max_crawler in config.txt")
+        time.sleep(1)
         print("max_crawler will be set to %s in this run" % str(supported_max_crawler))
         max_crawler = supported_max_crawler
-    elif: 
-        max_crawler < supported_max_crawler:
+    elif max_crawler < supported_max_crawler:
+        time.sleep(1)
         print("Current system can support up to %s crawlers to be run in parallel" % str(supported_max_crawler))
+        time.sleep(1)
         print("You should increase max_crawler in config.txt")
 
     crawler_processes = []
