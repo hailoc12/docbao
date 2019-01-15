@@ -15,7 +15,7 @@ _firefox_browser = None
 def get_max_crawler_can_be_run():
     # Get max crawler that system can support (base on free ram)
     ram_for_each_crawler = 350000000
-    safe_margin = 0.6 # free 40% for safe
+    safe_margin = 0.55 # free 45% for safe
     mem = virtual_memory()
     mem_free = mem.free - mem.total * (1-safe_margin)
     return int(mem_free  / ram_for_each_crawler)
