@@ -28,33 +28,38 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
 
     print("Crawler %s has been started" % process_name)
     browser = BrowserWrapper()
-    while True:
-        # get a web config from crawl_queue
-        webconfig = None
-        lock.acquire()
-        if not crawl_queue.empty():
-            webconfig = crawl_queue.get()
-            lock.release()
-            # crawl data
-            print("Crawler %s is crawling newspaper %s" % (process_name, webconfig.get_webname()))
-            data_manager.add_articles_from_newspaper_async(process_name, lock, webconfig, browser)
-        else:
-            print("Browser is")
-            print(browser)
+    try:
+        while True:
+            # get a web config from crawl_queue
+            webconfig = None
+            lock.acquire()
+            if not crawl_queue.empty():
+                webconfig = crawl_queue.get()
+                lock.release()
+                # crawl data
+                print("Crawler %s is crawling newspaper %s" % (process_name, webconfig.get_webname()))
+                data_manager.add_articles_from_newspaper_async(process_name, lock, webconfig, browser)
+            else:
+                print("Browser is")
+                print(browser)
 
-            if browser is not None:
-                print("Quit browser in Crawler %s" % process_name)
-                browser.quit()
-            print("Crawler %s has finished" % process_name)
-            # output data to shared data
-                # push crawled articles to Queue
-            for href, article in data_manager._data.items():
-                crawled_articles.put(article)
-                # push newly added blacklist to Queue
-            for href, count in data_manager._new_blacklist.items():
-                new_blacklists.put((href, count))
-            lock.release()
-            return None
+                if browser is not None:
+                    print("Quit browser in Crawler %s" % process_name)
+                    browser.quit()
+                print("Crawler %s has finished" % process_name)
+                # output data to shared data
+                    # push crawled articles to Queue
+                for href, article in data_manager._data.items():
+                    crawled_articles.put(article)
+                    # push newly added blacklist to Queue
+                for href, count in data_manager._new_blacklist.items():
+                    new_blacklists.put((href, count))
+                lock.release()
+                return None
+    except:
+        if browser is not None:
+            print("Quit browser in Crawler %s" % process_name)
+            browser.quit()
 
 # Create Manager Proxy to host shared data for multiprocessed crawled
 with multiprocessing.Manager() as manager:

@@ -76,8 +76,8 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
     a=True
     result = False
     browser = None
-    while a:
-    #try:
+    #while a:
+    try:
         print(url)
         html_source = None
         if use_browser == False:
@@ -119,9 +119,9 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
             return BeautifulSoup(html_source,features="html.parser")
         else:
             return None
-    #except:
-    #    print("Khong the mo trang: " + url)
-    #    return None
+    except:
+        print("Khong the mo trang: " + url)
+        return None
 def quit_browser():
     global _firefox_browser
 
