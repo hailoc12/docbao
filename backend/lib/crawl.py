@@ -48,6 +48,7 @@ class BrowserCrawler:
         #self._driver = webdriver.Firefox()
 
         self._driver.set_page_load_timeout(timeout)
+        self._driver.implicitly_wait(timeout)
         self._quited = False
 
     def load_page(self, url, wait=5, entropy=3):

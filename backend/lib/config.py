@@ -79,6 +79,11 @@ class ConfigManager:
         stream = open_utf8_file_to_read(self._filename)
         self._config = yaml.load(stream)
         stream.close()
+    def get_timeout(self, default=1000):
+        if "time_out" in self._config:
+            return int(self._config['time_out'])
+        else:
+            return default
 
     def get_minimum_word(self):
         return int(self._config['minimum_topic_length'])

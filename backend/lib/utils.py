@@ -96,9 +96,10 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
                 headers=hdr)
             f=None
             try:
-                f = urllib.request.urlopen(req, timeout=10)
+                f = urllib.request.urlopen(req, timeout=30)
             except:
                 f=None
+                print("Request timeout")
             if f is None:
                 result = False
             else:
@@ -116,12 +117,13 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
 
             print("Load page: %s" % url)
             result = browser.load_page(url, timeout, 5)
-            print("Result %s" % str(result))
+            print("Browser load page result %s" % str(result))
             if result == True:
                 try:
                     time.sleep(3) # There must be little delay between browser.load_page and get_page_html
                     html_source = browser.get_page_html() #Somehow this command occasionally have errors
                 except:
+                    print("Get Page HTML Error")
                     result = False
         a = False
         if result == True:
