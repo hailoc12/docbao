@@ -1,10 +1,7 @@
 #!/bin/bash
 export local_dir="docbao_vietnam"
-<<<<<<< HEAD
 export remote_dir="vietnam"
 =======
-export remote_dir="demo"
->>>>>>> abf260b330c117dba4d438b594c41429f5fd77f9
 echo $local_dir
 echo $remote_dir
 PATH=/home/pi/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
