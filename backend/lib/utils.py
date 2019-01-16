@@ -7,10 +7,19 @@ import os
 import urllib.request
 from  lib.crawl import *
 import time
+from psutil import virtual_memory
 
 _firefox_browser = None
 
 # UTILITY FUNCTION
+def get_max_crawler_can_be_run():
+    # Get max crawler that system can support (base on free ram)
+    ram_for_each_crawler = 350000000
+    safe_margin = 0.55 # free 45% for safe
+    mem = virtual_memory()
+    mem_free = mem.free - mem.total * (1-safe_margin)
+    return int(mem_free  / ram_for_each_crawler)
+
 def is_another_session_running():
     return os.path.exists("docbao.lock")
 
@@ -87,9 +96,10 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
                 headers=hdr)
             f=None
             try:
-                f = urllib.request.urlopen(req)
+                f = urllib.request.urlopen(req, timeout=30)
             except:
                 f=None
+                print("Request timeout")
             if f is None:
                 result = False
             else:
@@ -107,12 +117,13 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
 
             print("Load page: %s" % url)
             result = browser.load_page(url, timeout, 5)
-            print("Result %s" % str(result))
+            print("Browser load page result %s" % str(result))
             if result == True:
                 try:
                     time.sleep(3) # There must be little delay between browser.load_page and get_page_html
                     html_source = browser.get_page_html() #Somehow this command occasionally have errors
                 except:
+                    print("Get Page HTML Error")
                     result = False
         a = False
         if result == True:

@@ -370,12 +370,11 @@ class ArticleManager:
     def add_article(self, new_article):
         self._data[new_article.get_href()]= new_article
 
-    def add_articles_from_newspaper_async(self, my_pid, lock, webconfig, browser): #Get article list from newspaper with webconfig parsing
+    def add_articles_from_newspaper(self, my_pid, webconfig, browser): #Get article list from newspaper with webconfig parsing
         count_duyet = 0
         count_lay = 0
         count_bo = 0
 
-        lock.acquire() 
         webname = webconfig.get_webname()
         weburl = webconfig.get_weburl()
         crawl_url = webconfig.get_crawl_url()
@@ -385,7 +384,6 @@ class ArticleManager:
         display_browser = webconfig.get_display_browser()
         count_visit = 0 # to limit number of url to visit in each turn
         maximum_url_to_visit = self._config_manager.get_maximum_url_to_visit_each_turn()
-        lock.release()
         print()
         print("Crawler pid %s: Crawling newspaper: %s" % (my_pid,webname))
         a=True
@@ -421,12 +419,10 @@ class ArticleManager:
                                     (topic, publish_date) = result
 
                                     next_id = self.get_and_increase_id_iterator()
-                                    lock.acquire() 
                                     self.add_article(Article(article_id=next_id,topic=topic, 
                                                      date = publish_date,
                                                      newspaper = webname, href=fullurl, language=web_language))
                                     self.add_url_to_blacklist(fullurl)
-                                    lock.release()
                                     count_lay +=1
                                     print("Crawler pid %s: Crawled articles: %s" % (my_pid, str(count_lay)))
 

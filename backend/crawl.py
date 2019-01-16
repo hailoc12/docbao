@@ -28,8 +28,11 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
 
     print("Crawler %s has been started" % process_name)
     browser = BrowserWrapper()
-    try:
+    a = True
+    while a:
+    #try:
         while True:
+            print("Crawler %s is running" % process_name)
             # get a web config from crawl_queue
             webconfig = None
             lock.acquire()
@@ -38,28 +41,33 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
                 lock.release()
                 # crawl data
                 print("Crawler %s is crawling newspaper %s" % (process_name, webconfig.get_webname()))
-                data_manager.add_articles_from_newspaper_async(process_name, lock, webconfig, browser)
+                data_manager.add_articles_from_newspaper(process_name, webconfig, browser)
             else:
+                lock.release()
                 print("Browser is")
                 print(browser)
 
                 if browser is not None:
                     print("Quit browser in Crawler %s" % process_name)
                     browser.quit()
-                print("Crawler %s has finished" % process_name)
                 # output data to shared data
                     # push crawled articles to Queue
+                print("Crawler %s is putting crawled data to main queues" % process_name)
+                lock.acquire()
                 for href, article in data_manager._data.items():
                     crawled_articles.put(article)
                     # push newly added blacklist to Queue
                 for href, count in data_manager._new_blacklist.items():
                     new_blacklists.put((href, count))
                 lock.release()
+                print("Crawler %s has finished" % process_name)
                 return None
-    except:
-        if browser is not None:
-            print("Quit browser in Crawler %s" % process_name)
-            browser.quit()
+        a= False
+    #except:
+    #    print("There are some error in crawler %s" % process_name)
+    #    if browser is not None:
+    #        print("Quit browser in Crawler %s" % process_name)
+    #        browser.quit()
 
 # Create Manager Proxy to host shared data for multiprocessed crawled
 with multiprocessing.Manager() as manager:
@@ -88,14 +96,45 @@ with multiprocessing.Manager() as manager:
     # Init crawl queue
     time.sleep(1)
     print("Init crawl queue")
-    for webconfig in config_manager.get_newspaper_list():
+    config_list = config_manager.get_newspaper_list()
+    number_of_job = len(config_list)
+    for webconfig in config_list:
         crawl_queue.put(webconfig)
 
     # Start crawl process
     max_crawler = config_manager.get_max_crawler()
+    time.sleep(1)
+    print("%s crawlers are set to be run in parallel" % str(max_crawler))
+    supported_max_crawler = get_max_crawler_can_be_run()
+    if supported_max_crawler == 0:
+        supported_max_crawler = 1
+    if max_crawler > supported_max_crawler:
+        time.sleep(1)
+        print("Current system can support only %s crawlers to be run in parallel" % str(supported_max_crawler))
+        time.sleep(1)
+        print("You should reduce max_crawler in config.txt")
+        time.sleep(1)
+        print("max_crawler will be set to %s in this run" % str(supported_max_crawler))
+        max_crawler = supported_max_crawler
+    elif max_crawler < supported_max_crawler:
+        time.sleep(1)
+        print("Current system can support up to %s crawlers to be run in parallel" % str(supported_max_crawler))
+        time.sleep(1)
+        print("You should increase max_crawler in config.txt")
+    if max_crawler > number_of_job:
+        time.sleep(1)
+        print("There are only %s newspaper to crawl" % str(number_of_job))
+        time.sleep(1)
+        print("max_crawler will be set to %s for efficience" % str(int(number_of_job / 2)))
+        max_crawler = int(number_of_job / 2)
+
     crawler_processes = []
     time.sleep(1)
     print("Init %s crawlers" % str(max_crawler))
+
+    timeout = config_manager.get_timeout()
+    start = time.time()
+
     for i in range(max_crawler):
         crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, crawl_queue, data_manager, crawled_articles, new_blacklists))
         crawler_processes.append(crawler)
@@ -103,9 +142,32 @@ with multiprocessing.Manager() as manager:
         time.sleep(1)
         print("Start crawler number %s (pid: %s)" % (str(i+1), crawler.pid))
 
+    # kill all process after timeout
+    while time.time() - start <= timeout:
+        print("Remaining seconds to timeout %s" % str(int(timeout - time.time() + start)))
+        running = False
+        running_crawler = ""
+        count = 0
+        for crawler in crawler_processes:
+            count += 1
+            if crawler.is_alive():
+                running_crawler = running_crawler + " %s " % str(count)
+                running = True
+        if running:    
+            print("Running crawler:")
+            print(running_crawler)
+            time.sleep(5)
+        else:
+            break
+    else:
+        print("Timeout, kill all processes")
+        for crawler in crawler_processes:
+            crawler.terminate()
+            crawler.join()
+
     # join process to wait for all crawler to finish
-    for crawler in crawler_processes:
-        crawler.join()
+    #for crawler in crawler_processes:
+    #    crawler.join()
         
     time.sleep(1)
     print("Finish crawling")

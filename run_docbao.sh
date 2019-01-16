@@ -1,6 +1,7 @@
 #!/bin/bash
 export local_dir="docbao_vietnam"
 export remote_dir="vietnam"
+=======
 echo $local_dir
 echo $remote_dir
 PATH=/home/pi/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
