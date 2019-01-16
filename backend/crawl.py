@@ -204,7 +204,7 @@ with multiprocessing.Manager() as manager:
     # save data
     time.sleep(1)
     print("Save data")
-   data_manager.save_data()
+    data_manager.save_data()
     keyword_manager.save_data()
 
     # write log data
