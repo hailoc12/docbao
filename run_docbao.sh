@@ -1,6 +1,6 @@
 #!/bin/bash
 export local_dir="docbao_vietnam"
-export remote_dir="vietnam"
+export remote_dir="theodoibaochi"
 =======
 echo $local_dir
 echo $remote_dir
