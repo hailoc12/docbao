@@ -185,13 +185,6 @@ with multiprocessing.Manager() as manager:
 
     # push crawled_articles to mysql
     time.sleep(1)
-    
-    # save data
-    time.sleep(1)
-    print("Save data")
-    data_manager.compress_database(keyword_manager)
-    data_manager.compress_blacklist()
-    data_manager.save_data()
 
     # analyze keyword
     keyword_manager.build_keyword_list()
@@ -200,11 +193,15 @@ with multiprocessing.Manager() as manager:
     data_manager.export_to_json()
     keyword_manager.write_trending_keyword_to_json_file()
     keyword_manager.write_keyword_dicts_to_json_files()
-
     keyword_manager.write_uncategorized_keyword_to_text_file() 
     keyword_manager.write_keyword_freq_series_to_json_file()
 
     # save data
+    time.sleep(1)
+    print("Save data")
+    data_manager.compress_database(keyword_manager)
+    data_manager.compress_blacklist()
+    data_manager.save_data()
     keyword_manager.save_data()
 
         # write log data
