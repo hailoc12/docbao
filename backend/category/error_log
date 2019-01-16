@@ -1,14 +1,14 @@
-[13-Jan-2019 21:07:56 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:07:57 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:07:57 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/demo.theodoibaochi.com/category/system_m.php on line 1
-[13-Jan-2019 21:07:57 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/demo.theodoibaochi.com/category/system_m.php on line 1
-[13-Jan-2019 21:07:57 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/demo.theodoibaochi.com/category/system_m.php on line 1
-[13-Jan-2019 21:07:57 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/demo.theodoibaochi.com/category/system_m.php on line 1
-[13-Jan-2019 21:12:56 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:13:01 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:17:47 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:17:48 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:22:38 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:22:38 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:27:34 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
-[13-Jan-2019 21:27:35 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/demo.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:07:29 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/vietnam.theodoibaochi.com/category/system_m.php on line 1
+[13-Jan-2019 21:07:29 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/vietnam.theodoibaochi.com/category/system_m.php on line 1
+[13-Jan-2019 21:07:29 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/vietnam.theodoibaochi.com/category/system_m.php on line 1
+[13-Jan-2019 21:07:29 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/vietnam.theodoibaochi.com/category/system_m.php on line 1
+[13-Jan-2019 21:07:29 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:07:44 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:12:59 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:13:00 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:17:49 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:17:50 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:22:39 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:22:42 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:27:32 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1
+[13-Jan-2019 21:27:33 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/vietnam.theodoibaochi.com/category/engine_functions.php on line 1

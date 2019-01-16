@@ -106,6 +106,8 @@ with multiprocessing.Manager() as manager:
     time.sleep(1)
     print("%s crawlers are set to be run in parallel" % str(max_crawler))
     supported_max_crawler = get_max_crawler_can_be_run()
+    if supported_max_crawler == 0:
+        supported_max_crawler = 1
     if max_crawler > supported_max_crawler:
         time.sleep(1)
         print("Current system can support only %s crawlers to be run in parallel" % str(supported_max_crawler))
