@@ -486,7 +486,7 @@ class ArticleManager:
     def reset_tokenize_status(self):
         for href, article in self._data.items():
             article._tokenized = False
-    def export_to_json(self):
+    def export_to_json(self, number=None):
         json_article_list = []
         count = 0
         for article in self.get_sorted_article_list():
@@ -513,4 +513,7 @@ class ArticleManager:
             stream.write(jsonpickle.encode({'article_list': json_article_list}))
             stream.close()
 
+    def export_suggestion_list_to_json_file(self):
+        pass
+    
             

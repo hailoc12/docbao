@@ -89,9 +89,13 @@ with multiprocessing.Manager() as manager:
     print("Load shared data from files")
     config_manager.load_data()
     data_manager.load_data()
+    keyword_manager.load_data()
+
+    data_manager.compress_database(keyword_manager)
+    data_manager.compress_blacklist()
+
     backup_old_articles = data_manager._data
     data_manager._data = dict()
-    keyword_manager.load_data()
     
     # Init crawl queue
     time.sleep(1)
@@ -191,6 +195,7 @@ with multiprocessing.Manager() as manager:
 
     # export data 
     data_manager.export_to_json()
+    data_manager.export_suggestion_list_to_json_file()
     keyword_manager.write_trending_keyword_to_json_file()
     keyword_manager.write_keyword_dicts_to_json_files()
     keyword_manager.write_uncategorized_keyword_to_text_file() 
@@ -199,12 +204,10 @@ with multiprocessing.Manager() as manager:
     # save data
     time.sleep(1)
     print("Save data")
-    data_manager.compress_database(keyword_manager)
-    data_manager.compress_blacklist()
-    data_manager.save_data()
+   data_manager.save_data()
     keyword_manager.save_data()
 
-        # write log data
+    # write log data
     with open_utf8_file_to_write(get_independent_os_path(["export", "log_data.json"])) as stream:
         log_dict = dict()
         log_dict['update_time'] = datetime.now().strftime("%d/%m/%Y %H:%M")
