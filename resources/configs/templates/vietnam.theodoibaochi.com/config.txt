@@ -1,5 +1,5 @@
 ﻿running_path: ~/docbao_test/
-max_crawler: 5
+max_crawler: 60
 crawling_list:
     - CafeBiz:
         web_url: http://cafebiz.vn
@@ -741,4 +741,4 @@ loop_interval_for_new_keyword_accepted: 2
 minimum_freq_for_fast_growing_keyword_accepted: 2
 minimum_freq_series_for_fast_growing_keyword_accepted: 3
 minimum_publish_speed: 120
-crawling_interval: 15
+crawling_interval: 10
