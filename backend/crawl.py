@@ -125,7 +125,7 @@ with multiprocessing.Manager() as manager:
         print("Current system can support up to %s crawlers to be run in parallel" % str(supported_max_crawler))
         time.sleep(1)
         print("You should increase max_crawler in config.txt")
-    if max_crawler > number_of_job:
+    if max_crawler > int(number_of_job/2):
         time.sleep(1)
         print("There are only %s newspaper to crawl" % str(number_of_job))
         time.sleep(1)
@@ -196,10 +196,10 @@ with multiprocessing.Manager() as manager:
     # export data 
     data_manager.export_to_json()
     data_manager.export_suggestion_list_to_json_file()
-    keyword_manager.write_trending_keyword_to_json_file()
     keyword_manager.write_keyword_dicts_to_json_files()
-    keyword_manager.write_uncategorized_keyword_to_text_file() 
     keyword_manager.write_keyword_freq_series_to_json_file()
+    keyword_manager.write_trending_keyword_to_json_file()
+    keyword_manager.write_uncategorized_keyword_to_text_file() 
 
     # save data
     time.sleep(1)
