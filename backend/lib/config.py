@@ -80,8 +80,8 @@ class ConfigManager:
         self._config = yaml.load(stream)
         stream.close()
     def get_timeout(self, default=1000):
-        if "time_out" in self._config:
-            return int(self._config['time_out'])
+        if "timeout" in self._config:
+            return int(self._config['timeout'])
         else:
             return default
 

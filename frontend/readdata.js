@@ -3,7 +3,10 @@
 var docbao =  angular.module('docbaoApp', []);
 var on_same_page = false;
 docbao.controller('logCtrl', function($scope, $http)
-{
+{	
+    waiting = $("#waiting")
+    waiting.show(300);
+
     $http.get('/export/log_data.json').then(function (response)
     {
         $scope.log = response.data; //success callback
@@ -56,13 +59,15 @@ docbao.controller('logCtrl', function($scope, $http)
         draw_article_table(response.data.article_list);
         
         setup_auto_complete(response.data.article_list);
+	console.log($scope.waiting);
+
     }
     , function (data){
         console.log("Khong doc duoc file article_data.json");
     }    //fail callback
     );
 
-
+    waiting.hide(300);
     setTimeout(function() {
     var fType = decodeURI(getUrlVars()["keyword"]);
     if (fType != "undefined" && !on_same_page) _search_article_table(fType);
