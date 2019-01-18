@@ -148,7 +148,7 @@ function create_article_table(article_list)
    $("#load_success").show(700);
    window.setTimeout(function(){
    	$("#load_success").hide(700);
-   }, 500);
+   }, 1000);
  
 }
 function draw_new_keyword_table(new_keyword_list)
@@ -272,11 +272,11 @@ function go_to_search_card()
 function setup_auto_complete(article_list)
 {
     var states = [];
-    var max_item = 2000;
+    var max_item = 3000;
     var isMobile = window.matchMedia("only screen and (max-width:480px)");
     if(isMobile)
 	{
-		max_item = 500;
+		max_item = 1000;
 	}	
     console.log("Max autocomplete items: ")
     console.log(max_item)
