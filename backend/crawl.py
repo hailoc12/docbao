@@ -218,7 +218,7 @@ with multiprocessing.Manager() as manager:
     keyword_manager.write_fast_growing_keyword_to_json_file()
     keyword_manager.write_uncategorized_keyword_to_text_file() 
     keyword_manager.write_trending_article_to_json_file()
-
+    keyword_manager.write_hot_growing_article_to_json_file()
     # save data
     time.sleep(1)
     print("Save data")

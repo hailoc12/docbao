@@ -85,6 +85,18 @@ class ConfigManager:
         else:
             return default
 
+    def get_minimum_freq_of_hot_growing_article(self, default=3):
+        if "minimum_freq_of_hot_growing_article" in self._config:
+            return int(self._config["minimum_freq_of_hot_growing_article"])
+        else:
+            return default
+
+    def get_maximum_freq_of_hot_growing_article(self, default=10):
+        if "maximum_freq_of_hot_growing_article" in self._config:
+            return int(self._config["maximum_freq_of_hot_growing_article"])
+        else:
+            return default
+
     def get_minimum_word(self):
         return int(self._config['minimum_topic_length'])
 

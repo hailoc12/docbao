@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Đọc báo theo từ khóa</title>
+  <title>Công Cụ Đọc Và Nghiên Cứu Báo Chí Thông Minh</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -32,8 +32,8 @@
 	<!--Search box--> 
          <div class="card mb-3">  
           <div class="card-header">
-            <a data-toggle="collapse" href="#search_card" aria-expanded="true" aria-controls="search_card">
-              <i class="fa fa-bar-chart"></i>Công cụ Theo Dõi Báo Chí
+            <a data-toggle="collapse" href="https://theodoibaochi.com" aria-expanded="true" aria-controls="search_card">
+              <i class="fa fa-bar-chart"></i> THEO DÕI BÁO CHÍ - CÔNG CỤ ĐỌC VÀ NGHIÊN CỨU BÁO CHÍ THÔNG MINH
               <i class="fa fa-angle-down rotate-icon"></i>
             </a>
             
@@ -63,6 +63,7 @@
               </div>
               <div class="col-sm-2 my-auto">
                 <button onclick="search_keyword()"><i class="fa fa-search"> Tìm kiếm </i></button>  
+                <button onclick="clear_search_text()"><i class="fa fa-search"> Xoá </i></button>  
             </div>
 
           </div>
@@ -71,8 +72,6 @@
        
  
        <!-- Area Chart Example-->
-  
-  
         <div class="card mb-3">
           <div class="card-header">
                 <a data-toggle="collapse" href="#chart_card" aria-expanded="true" aria-controls="chart_card">
@@ -81,8 +80,10 @@
                     <i class="fa fa-angle-down rotate-icon"></i>
                 </div>
             </a>
+	   
           </div>
               <div class="card-body" id="chart_card" class="collapse">
+
                 <div class="row">
                   <div class="col-sm-10 my-auto chart-container">
                     <canvas id="myBarChart" width="100" height="500"></canvas>
@@ -101,32 +102,33 @@
         </div>
 	<!-- Tin tức mới nhất về các chủ đề nổi bật -->
         <div class="card mb-3">
-          <a name="fast_growing_keyword_table"></a>
+          <a name="trending_article_table"></a>
           <div class="card-header">
-            <a data-toggle="collapse" href="#fast_growing_keyword_card" aria-expanded="true" aria-controls="fast_growing_keyword_card">
-            <i class="fa fa-table"></i> Tin nổi bật
+            <a data-toggle="collapse" href="#trending_article_card" aria-expanded="true" aria-controls="trending_article_card">
+            <i class="fa fa-table"></i> Thông tin mới nhất về các chủ đề nổi bật trên báo chí
             <i class="fa fa-angle-down rotate-icon"></i>
             </a>
           </div>
+
           <div class="card-body" id="trending_article_card" class="collapse">
             <div class="table-responsive">
-              <table class="table table-bordered" id="trending_article_table" width="100%" cellspacing="0">
+              <table class="table cell-bordered compact stripe hover" id="trending_article_table" width="100%" cellspacing="0">
               </table>
             </div>
           </div>
         </div>
 <!-- New Keyword Card -->
         <div class="card mb-3">
-          <a name="new_keyword_table"></a>
+          <a name="hot_growing_article__table"></a>
           <div class="card-header">
-            <a data-toggle="collapse" href="#new_keyword_card" aria-expanded="true" aria-controls="new_keyword_card">
-            <i class="fa fa-table"></i> Tin nóng 
+            <a data-toggle="collapse" href="#hot_growing_article_card" aria-expanded="true" aria-controls="hot_growing_article__card">
+            <i class="fa fa-table"></i> Tin nóng mới xuất hiện
             <i class="fa fa-angle-down rotate-icon"></i>
             </a>
           </div>
-          <div class="card-body" id="new_growing_article_card" class="collapse">
+          <div class="card-body" id="hot_growing_article_card" class="collapse">
             <div class="table-responsive">
-              <table class="table table-bordered" id="new_growing_article_table" width="100%" cellspacing="0">
+              <table class="table cell-bordered compact stripe hover" id="hot_growing_article_table" width="100%" cellspacing="0">
               </table>
             </div>
           </div>
@@ -139,7 +141,7 @@
           <a name="article_table"></a>
           <div class="card-header">
             <a data-toggle="collapse" href="#article_card" aria-expanded="true" aria-controls="article_card">
-              <i class="fa fa-table"></i> Những bài báo xuất bản trong tuần qua
+              <i class="fa fa-table"></i> Những bài báo xuất bản trong 7 ngày qua
               <i class="fa fa-angle-down rotate-icon"></i>
             </a>
           </div>
@@ -147,7 +149,7 @@
           <div class="card-body" id="article_card" class="collapse">
             <div class="table-responsive">
 
-              <table class="table table-bordered" id="article_table" cellspacing="0">
+              <table class="table cell-bordered compact stripe hover" id="article_table" cellspacing="0">
               </table>
             </div>
           </div>

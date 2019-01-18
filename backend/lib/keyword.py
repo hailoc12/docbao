@@ -485,7 +485,7 @@ class KeywordManager:
             stream.close()
 
     def write_trending_article_to_json_file(self):
-        number = 10
+        number = self._config_manager.get_number_of_trending_keywords()
         if number > len(self._fast_growing_list):
             number = len(self._fast_growing_list)
 
@@ -518,6 +518,40 @@ class KeywordManager:
                                 'update_time': update_time_string
                                 })
             stream.write(jsonpickle.encode({'trending_article_list': article_list}))
+            stream.close()
+
+    def write_hot_growing_article_to_json_file(self):
+        floor = self._config_manager.get_minimum_freq_of_hot_growing_article()
+        upper = self._config_manager.get_maximum_freq_of_hot_growing_article()
+        article_list = list()
+        with open_utf8_file_to_write(get_independent_os_path(["export","hot_growing_article.json"])) as stream:
+            for i in range(0, len(self._fast_growing_list)):
+                item = self._fast_growing_list[i]     
+                keyword = item["keyword"]
+                freq = item["count"]
+                if freq >= floor and freq <= upper:
+     
+                    article = self._data_manager.get_lastest_article_contain_keyword(keyword)
+                    if article is not None:
+                        update_time = int((datetime.now() - article.get_creation_date()).total_seconds() / 60)
+                        update_time_string=""
+                        if update_time >= 720:
+                            update_time = int(update_time / 720)
+                            update_time_string = str(update_time) + " ngày trước"
+                        else:
+                            if update_time >= 60:
+                                update_time = int(update_time / 60)
+                                update_time_string = str(update_time) + " giờ trước"
+                            else:
+                                update_time_string = str(update_time) + " phút trước"
+                        article_list.append({
+                                    'keyword': keyword,
+                                    'topic': article.get_topic(),
+                                    'href': article.get_href(),
+                                    'newspaper': article.get_newspaper(),
+                                    'update_time': update_time_string
+                                    })
+            stream.write(jsonpickle.encode({'hot_growing_article_list': article_list}))
             stream.close()
 
     def write_uncategorized_keyword_to_text_file(self):

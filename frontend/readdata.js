@@ -55,14 +55,14 @@ docbao.controller('logCtrl', function($scope, $http)
     }    //fail callback
     );
 
-   $http.get('/export/new_growing_article.json').then(function (response)
+   $http.get('/export/hot_growing_article.json').then(function (response)
     {
-        var data = response.data.new_growing_article_list;
-        draw_trending_article_table(data);
+        var data = response.data.hot_growing_article_list;
+        draw_hot_growing_article_table(data);
 
     }
     , function (data){
-        console.log("Khong doc duoc file trending_article.json");
+        console.log("Khong doc duoc file hot_growing_article.json");
     }    //fail callback
     );
     $http.get('/export/new_keyword.json').then(function (response)
@@ -165,7 +165,9 @@ function create_article_table(article_list)
             { responsivePriority: 2, targets: 2 }
         ],
         nowrap: true,
-	"pageLength": 10,
+	"pageLength": 50,
+	paging: false,
+	scrollY: 800,
     } );
    $("#waiting").hide(700);
    $("#load_success").show(700);
@@ -207,22 +209,24 @@ function create_trending_article_table(article_list)
         ],
         nowrap: true,
 	"pageLength": 5, 
+	paging: false,
+	scrollY: 400,
     } );
 }
 
-function draw_new_growing_article_table(article_list)
+function draw_hot_growing_article_table(article_list)
 {
  
 $(document).ready(function() {
-	create_new_growing_article_table(article_list);
+	create_hot_growing_article_table(article_list);
    } );
 }
 
-function create_new_growing_article_table(article_list)
+function create_hot_growing_article_table(article_list)
 {
 
     var dataset = article_list;
-    $('#new_growing_article_table').DataTable( 
+    $('#hot_growing_article_table').DataTable( 
 	{
         data: dataset,
         columns: [
@@ -242,6 +246,9 @@ function create_new_growing_article_table(article_list)
         ],
         nowrap: true,
 	"pageLength": 5, 
+	paging: false,
+	scrollY: 400,
+	compact: true
     } );
 }
 function draw_new_keyword_table(new_keyword_list)
@@ -345,7 +352,7 @@ function go_to_search_card()
 function setup_auto_complete(article_list)
 {
     var states = [];
-    var max_item = 3000;
+    var max_item = 5000;
     var isMobile = window.matchMedia("only screen and (max-width:480px)");
     if(isMobile)
 	{
@@ -365,8 +372,14 @@ function setup_auto_complete(article_list)
   $("#keyword_search_text").autocomplete({
     source:[states],
     visibleLimit: 10,
-    autoselect: false
-    });
+    autoselect: false,
+    openOnFocus: true
+    }).on('selected.xdsoft', function(e, data){
+	    search_keyword(data.value);});
+}
+function clear_search_text()
+{
+  $("#keyword_search_text").val("");
 }
 function addKeywordToUrl(keyword)
 {
