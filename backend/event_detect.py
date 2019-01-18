@@ -49,7 +49,7 @@ class FastGrowingKeywordDetector:
         iterator = self._keyword_manager._series_iterator
         count = 0
         print("Current iterator: " + str(iterator))
-        # a fast growing keyword is a keyword being updated frequently and have growth rate more than 5 min / article  
+        # a fast growing keyword is a keyword being updated frequently and have growth rate less than 5 min / article  
         min_freq_series = self._config_manager.get_minimum_freq_series_for_fast_growing_keyword()
         min_freq = self._config_manager.get_minimum_freq_for_fast_growing_keyword()
         crawl_interval = self._config_manager.get_crawling_interval()
