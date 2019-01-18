@@ -14,10 +14,11 @@ import multiprocessing
 import os
 import time
 
-def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_articles, new_blacklists):
+def crawler_process(process_name, lock, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists):
     # Function: work as an worker in multiprocessed crawling
     # Input:
     #   lock: to acquire and release shared data
+    #   browser_list: a shared queue of browser to release when timeout
     #   crawl_queue: a shared queue of "crawl task"
     #   data_manager: an object that support method to crawl. Important: this object can't be shared by multiprocessing lib, so output data must be shared in another queue. But input data have cleared _data articles but initial _blacklists link
     #   blacklists: Queue that contain blacklist links
@@ -27,7 +28,12 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
     #   crawled_aritlces: contain new crawled articles
 
     print("Crawler %s has been started" % process_name)
+
     browser = BrowserWrapper()
+    lock.acquire()
+    browser_list.put(browser)
+    lock.release()
+
     a = True
     while a:
     #try:
@@ -82,6 +88,7 @@ with multiprocessing.Manager() as manager:
     crawl_queue = manager.Queue() 
     crawled_articles = manager.Queue()
     new_blacklists = manager.Queue()
+    browser_list = manager.Queue() # keep all firefox browser to release when timeout
     lock = manager.Lock()
 
     # Load data from file
@@ -140,7 +147,7 @@ with multiprocessing.Manager() as manager:
     start = time.time()
 
     for i in range(max_crawler):
-        crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, crawl_queue, data_manager, crawled_articles, new_blacklists))
+        crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists))
         crawler_processes.append(crawler)
         crawler.start()
         time.sleep(1)
@@ -164,7 +171,13 @@ with multiprocessing.Manager() as manager:
         else:
             break
     else:
-        print("Timeout, kill all processes")
+        print("Timeout")
+        print("Kill unquited browser")
+        while not browser_list.empty():
+            browser = browser_list.get()
+            if browser is not None:
+                browser.quit()
+        print("Kill all processes")
         for crawler in crawler_processes:
             crawler.terminate()
             crawler.join()
