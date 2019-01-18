@@ -174,9 +174,13 @@ with multiprocessing.Manager() as manager:
         print("Timeout")
         print("Kill unquited browser")
         while not browser_list.empty():
+            lock.acquire()
             browser = browser_list.get()
-            if browser is not None:
-                browser.quit()
+            print("Found a running browser")
+            print(browser)
+            print("Close browser") 
+            lock.release()
+            browser.quit()
         print("Kill all processes")
         for crawler in crawler_processes:
             crawler.terminate()

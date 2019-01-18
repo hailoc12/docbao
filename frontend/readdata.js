@@ -5,8 +5,7 @@ var on_same_page = false;
 docbao.controller('logCtrl', function($scope, $http)
 {	
     waiting = $("#waiting")
-    waiting.show(300);
-
+    waiting.show(700);
     $http.get('/export/log_data.json').then(function (response)
     {
         $scope.log = response.data; //success callback
@@ -67,7 +66,6 @@ docbao.controller('logCtrl', function($scope, $http)
     }    //fail callback
     );
 
-    waiting.hide(300);
     setTimeout(function() {
     var fType = decodeURI(getUrlVars()["keyword"]);
     if (fType != "undefined" && !on_same_page) _search_article_table(fType);
@@ -146,6 +144,11 @@ function create_article_table(article_list)
         nowrap: true,
 	"pageLength": 10,
     } );
+   $("#waiting").hide(700);
+   $("#load_success").show(700);
+   window.setTimeout(function(){
+   	$("#load_success").hide(700);
+   }, 500);
  
 }
 function draw_new_keyword_table(new_keyword_list)

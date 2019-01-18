@@ -5,960 +5,18 @@ Create Manager Proxy
 Create shared object
 Load shared data from files
 {}
-ITERATOR: 92
+ITERATOR: 95
 Init crawl queue
 60 crawlers are set to be run in parallel
-Current system can support only 15 crawlers to be run in parallel
+Current system can support only 27 crawlers to be run in parallel
 You should reduce max_crawler in config.txt
-max_crawler will be set to 15 in this run
-Init 15 crawlers
-Start crawler number 1 (pid: 5295)
-Start crawler number 2 (pid: 5302)
-Start crawler number 3 (pid: 5325)
-Start crawler number 4 (pid: 5332)
-Crawler 4 has been started
-Crawler 4 is running
-Crawler 4 is crawling newspaper Bóng Đá
-
-Crawler pid 4: Crawling newspaper: Bóng Đá
-http://bongdaplus.vn
-Crawler pid 4: Getting data, please wait...
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-viet-nam.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoai-hang-anh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-duc.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-phap.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-y.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/champions-league-cup-c1.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/binh-luan-bong-da.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/europa-league.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/chuyen-nhuong.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoi-sao.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dam-me.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/biem-hoa.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://lichthidaubongda.vn
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaphui.net
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://banhni.vn
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://thethaoplus.vn
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-viet-nam.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoai-hang-anh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-duc.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-phap.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-y.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/champions-league-cup-c1.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/binh-luan-bong-da.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi/chau-a/asian-cup.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://lichthidaubongda.vn
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/tin-van/
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/chuyen-nhuong.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoi-sao.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dam-me.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/biem-hoa.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ban-doc-viet.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/nhan-dinh-bong-da.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/16/clip-suu-tam.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://thethaoplus.vn/
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaphui.net/
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://banhni.vn/
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/tin-tuc/2019/01/18/
-Topic found: Thứ sáu, 18-01-2019
-Ignore. Title is too short. It can't be an article
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/hau-truong-san-co-18-1-vo-vermaelen-len-bia-tap-chi-fhm-2400581901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dụ-doán-két-quả-vòng-23-ngoại-hạng-anh-m-u-tiép-dà-thang-hoa-arsenal-dả-bại-chelsea-2400551901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ronaldo-suyt-nga-sap-mat-tren-may-chay-2400711901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/nhung-dieu-chua-biet-ve-cau-thu-lebanon-gian-tiep-giup-viet-nam-vao-vong-1-8-2400721901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/viet-nam-vuon-len-xep-102-the-gioi-sau-tran-thang-yemen-2400671901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/nhan-dinh-bong-da-akhisarspor-vs-besiktas-00h30-ngay-19-1-2400641901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/asian-cup-tags.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/arsenal-vs-chelsea-tags.html
-Topic found: Arsenal vs Chelsea
-Ignore. Title is too short. It can't be an article
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-tags.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/tin-tuc/
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/lich-thi-dau/
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/danh-sach-cac-doi-tuyen-lot-vao-vong-1-8-asian-cup-2019-2395841901.htmlStart crawler number 5 (pid: 5340)
-Start crawler number 6 (pid: 5352)
-
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-vuot-qua-vong-bang-tot-go-tot-ca-nuoc-son-2400331901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ronaldo-suyt-nga-sap-mat-tren-may-chay-2400711901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/barca-3-0-levante-dembele-va-messi-dua-barca-vao-tu-ket-2400141901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/levante-kien-barca-vi-dung-cau-thu-khong-hop-le-2400171901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/morata-dong-y-toi-atlletico-2400281901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/m-u-co-tan-binh-dau-tien-duoi-thoi-hlv-solskjaer-2400161901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/lich-thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/lich-thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi/chau-a/asian-cup.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoai-hang-anh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoai-hang-anh/nhan-dinh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoai-hang-anh/thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/11/anh.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha/nhan-dinh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha/thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/12/tay-ban-nha.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-y.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-y/nhan-dinh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-y/thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/13/italia.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/tin-tuc/
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/lich-thi-dau-ket-qua-asian-cup-2019-2163361805.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/magazine4/muoi-nam-mot-giac-mo-do-tham-bac-trung-nam-2367681812.html
-Topic found: Mười năm, một giấc mơ đỏ thắm Bắc - Trung - Nam
-http://bongdaplus.vn/magazine4/muoi-nam-mot-giac-mo-do-tham-bac-trung-nam-2367681812.html
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/magazine6/12-su-kien-noi-bat-nhat-bong-da-nam-2018-2382611812.html
-Topic found: 12 sự kiện bóng đá nổi bật nhất năm 2018
-http://bongdaplus.vn/magazine6/12-su-kien-noi-bat-nhat-bong-da-nam-2018-2382611812.html
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/chuyen-nhuong.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/chuyen-nhuong/tin-don.html
-Topic found: Tin đồn
-Ignore. Title is too short. It can't be an article
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/chuyen-nhuong/tin-chuyen-nhuong.html
-Topic found: Tin chuyển nhượng
-Ignore. Title is too short. It can't be an article
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/chuyen-nhuong/tong-hop-chuyen-nhuong.html
-Topic found: Tổng hợp chuyển nhượng
-http://bongdaplus.vn/chuyen-nhuong/tong-hop-chuyen-nhuong.html
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-duc.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-duc/nhan-dinh.html
-Topic found: Nhận định
-Ignore. Title is too short. It can't be an article
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-duc/thi-dau.html
-Topic found: Thi đấu
-Ignore. Title is too short. It can't be an article
-Crawler pid 4: Add to blacklist
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/35/duc.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-phap.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-phap/nhan-dinh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-phap/thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/36/phap.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-viet-nam.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-viet-nam/asiad.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi/chau-a/asian-cup.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-viet-nam/v-league.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/42/viet-nam.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/nations-league.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi/u21-chau-au.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-the-gioi/chau-au.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://video.bongdaplus.vn/video/10/bong-da-quoc-te.bdmedia
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-cuoc-song.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/champions-league-cup-c1.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/champions-league-cup-c1/nhan-dinh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/champions-league-cup-c1/thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/europa-league.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/europa-league/nhan-dinh.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/europa-league/thi-dau.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dam-me.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dam-me/cong-nghe.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dam-me/xe-co.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoi-sao/wag.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/diem-tin.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ban-doc-viet.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaphui.net
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaphui.net/tin-tuc/a-quan-hpl-s6-mv-corp-khi-cuu-vuong-thuc-giac-2910.html
-Crawler pid 4: Ignore. This url is from another site
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ket-qua.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn#
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/ngoi-sao.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/biem-hoa.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/cau-thu-viet-nam-vo-oa-khi-vao-vong-1-8-asian-cup-2019-2400301901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/m-u-la-clb-giau-co-nhat-chau-au-theo-uefa-2400511901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/m-u-la-clb-giau-co-nhat-chau-au-theo-uefa-2400511901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/huong-dan-bo-sung-sat-va-axit-folic-dung-cach-truoc-va-trong-khi-mang-thai-2148721804.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dụ-doán-két-quả-vòng-23-ngoại-hạng-anh-m-u-tiép-dà-thang-hoa-arsenal-dả-bại-chelsea-2400551901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/m-u-la-clb-giau-co-nhat-chau-au-theo-uefa-2400511901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/cau-thu-viet-nam-vo-oa-khi-vao-vong-1-8-asian-cup-2019-2400301901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/m-u-la-clb-giau-co-nhat-chau-au-theo-uefa-2400511901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-chinh-thuc-gianh-quyen-di-tiep-2400121901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/barca-3-0-levante-dembele-va-messi-dua-barca-vao-tu-ket-2400141901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/m-u-la-clb-giau-co-nhat-chau-au-theo-uefa-2400511901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-chinh-thuc-gianh-quyen-di-tiep-2400121901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/bong-da-dong-nam-a-da-co-nhung-buoc-tien-lon-2400461901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dụ-doán-két-quả-vòng-23-ngoại-hạng-anh-m-u-tiép-dà-thang-hoa-arsenal-dả-bại-chelsea-2400551901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/cau-thu-viet-nam-vo-oa-khi-vao-vong-1-8-asian-cup-2019-2400301901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dụ-doán-két-quả-vòng-23-ngoại-hạng-anh-m-u-tiép-dà-thang-hoa-arsenal-dả-bại-chelsea-2400551901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/cau-thu-viet-nam-vo-oa-khi-vao-vong-1-8-asian-cup-2019-2400301901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/dt-viet-nam-tags.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/juventus-tags.html
-Crawler pid 4: This link is in blacklist database
-
-Crawler pid 4: Processing page: http://bongdaplus.vn/man-united-tags.htmlStart crawler number 7 (pid: 5446)
-Start crawler number 8 (pid: 5618)
-Start crawler number 9 (pid: 5834)
-Start crawler number 10 (pid: 5928)
-Start crawler number 11 (pid: 6058)
-Crawler 12 has been started
-Crawler 12 is running
-Crawler 12 is crawling newspaper Giáo Dục Thời Đại
-
-Crawler pid 12: Crawling newspaper: Giáo Dục Thời Đại
-http://giaoducthoidai.vn
-Crawler pid 12: Getting data, please wait...
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/chinh-tri/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/kinh-te-xa-hoi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/tieu-diem/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/dien-hinh/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/dia-phuong/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/tuyen-sinh-du-hoc/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/phap-luat/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/goc-nhin/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/ket-noi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/chinh-sach/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/chuyen-lang-giao/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/dieu-tra/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/chung-toi-noi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/cong-doan/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/trao-doi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/phuong-phap/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/ngoai-ngu/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/tu-nhien/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/xa-hoi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/khoa-hoc/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/bi-an-lich-su/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/moi-truong/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thiet-bi-day-hoc/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/vi-tinh/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/dien-thoai/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/tre/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/hoc-duong/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/ky-nang-song/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/trang-viet-nha-truong/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/nu-sinh/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/van-hoa/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/nhiet-ke/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/the-gioi-sao/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/doc-nghe-xem/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/gia-dinh/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/ban-cua-con/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/noi-tro/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/dan-so-khhgd/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/suc-khoe/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/gioi-tinh/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/bac-si-day/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/lam-dep/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/the-gioi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc-bon-phuong/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/nhip-dap/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/kieu-bao/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/chuyen-la/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/xa-xi-tret/
-Topic found: Xả xì trét
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/cuoi/
-Topic found: Cười
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giai-thoai/
-Topic found: Giai thoại
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/do-vui/
-Topic found: Đố vui
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/nhan-ai/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn#hot-news
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn#most-read
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn#latest-comment
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/lai-chau-du-thao-sua-doi-quy-dinh-thu-chi-hoc-phi-truong-cong-3976871-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/kinh-te-xa-hoi/hai-phong-khoi-to-vu-hon-21-tan-sua-nhap-lau-trai-phep-3976877-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/khoa-hoc/ve-tinh-micro-dragon-cua-viet-nam-da-duoc-phong-vao-quy-dao-3976900-l.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/co-hay-khong-csgt-thanh-hoa-quang-luoi-khien-hoc-sinh-bi-thuong-3976894-v.htmlStart crawler number 12 (pid: 6160)
-Start crawler number 13 (pid: 6349)
-Start crawler number 14 (pid: 6504)
-Crawler 14 has been started
-Crawler 14 is running
-Crawler 14 is crawling newspaper Pháp Luật TP.HCM
-
-Crawler pid 14: Crawling newspaper: Pháp Luật TP.HCM
-http://plo.vn
-Crawler pid 14: Getting data, please wait...
-
-Crawler pid 14: Processing page: http://plo.vn#
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn#
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn#
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn//datbao.plo.vn/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://tv.plo.vn
-Crawler pid 14: Ignore. This url is from another site
-
-Crawler pid 14: Processing page: http://plo.vn/thoi-su/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/thoi-su/chinh-tri/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/thoi-su/theo-dong/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/thoi-su/ca-phe-sang/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/phap-luat/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/phap-luat/chinh-sach-moi/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/phap-luat/luat-va-doi/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/phap-luat/vu-an/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/su-kien/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/kieu-bao/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/chuyen-gia/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/tu-lieu/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/quan-su/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/muon-mat/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/an-ninh-trat-tu/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/an-ninh-trat-tu/ho-so-pha-an/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/an-ninh-trat-tu/truy-na/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/xa-hoi/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/xa-hoi/giao-duc/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/kinh-te/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/kinh-te/quan-ly/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/kinh-te/doanh-nghiep-cong-dong/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://netluat.vn
-Crawler pid 14: Ignore. This url is from another site
-
-Crawler pid 14: Processing page: http://plo.vn/kinh-te/tet-viet/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/suc-khoe/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/van-hoa/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/giai-tri/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/giai-tri/xem-nghe-doc/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/giai-tri/chuyen-sao/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/giai-tri/thoi-trang-lam-dep/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/trong-nuoc/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/quoc-te/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/cac-mon-khac/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/video/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/hau-truong/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/cam-xuc-fair-play/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/do-thi/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/do-thi/giao-thong/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/do-thi/moi-truong/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/ban-doc/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/ban-doc/y-kien-ban-doc/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/ban-doc/tu-thong-tin-ban-doc/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/ban-doc/toi-muon-hoi/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/ban-doc/cai-chinh/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/kinh-te/du-lich/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/du-lich/trong-nuoc/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/du-lich/quoc-te/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/du-lich/kinh-nghiem/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn//quangcao.plo.vn/
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/event/xuan-ky-hoi-2019-160.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/event/asian-cup-2019-159.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/event/vu-kdt-thu-thiem-155.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/event/diem-nong-bat-dong-san-154.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/quoc-te/su-kien/ong-trump-ra-don-voi-chu-tich-ha-vien-my-813613.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/do-thi/giao-thong/thong-xe-nhanh-cuoi-cau-vuot-nga-7-nguyen-thai-son-813598.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/phap-luat/chieu-lua-tien-ti-cua-nguoi-dan-ba-o-ben-xe-mien-dong-813607.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/the-thao/dem-hai-hung-thu-thach-su-chiu-dung-hang-trieu-fan-viet-nam-813625.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/thoi-su/sap-xep-lai-bo-may-giam-hon-60000-bien-che-813568.html
-Crawler pid 14: This link is in blacklist database
-
-Crawler pid 14: Processing page: http://plo.vn/phap-luat/vu-hoang-cong-luong-khong-ai-nhan-trach-nhiem-ve-9-cai-chet-813571.htmlCrawler 1 has been started
+max_crawler will be set to 27 in this run
+There are only 34 newspaper to crawl
+max_crawler will be set to 17 for efficience
+Init 17 crawlers
+Start crawler number 1 (pid: 5942)
+Start crawler number 2 (pid: 5949)
+Crawler 1 has been started
 Crawler 1 is running
 Crawler 1 is crawling newspaper CafeBiz
 
@@ -976,1166 +34,630 @@ Crawler pid 1: Processing page: http://afamily.vn/
 Crawler pid 1: Ignore. This url is from another site
 
 Crawler pid 1: Processing page: http://kenh14.vn/
-Crawler pid 1: This link is in blacklist database
+Crawler pid 1: Ignore. This url is from another site
 
 Crawler pid 1: Processing page: http://genk.vn/
 Crawler pid 1: Ignore. This url is from another site
 
 Crawler pid 1: Processing page: http://cafebiz.vn/gui-tin-nhanh.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: Gửi tin nhanh
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/brand/3-case-study.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: Case study
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/brand/7-bai-hoc-cuoc-song.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: Bài học cuộc sống
+http://cafebiz.vn/brand/7-bai-hoc-cuoc-song.chn
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/brand/1-cau-chuyen-kinh-doanh.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: Câu chuyện kinh doanh
+http://cafebiz.vn/brand/1-cau-chuyen-kinh-doanh.chn
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/brand/5-shark-tank-viet-nam.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: Shark Tank Việt Nam
+http://cafebiz.vn/brand/5-shark-tank-viet-nam.chn
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/thoi-su.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: THỜI SỰ
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/vi-mo.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: KINH TẾ VĨ MÔ
+http://cafebiz.vn/vi-mo.chn
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/cau-chuyen-kinh-doanh.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: KINH DOANH
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/cong-nghe.chn
-Crawler pid 1: This link is in blacklist database
+Topic found: CÔNG NGHỆ
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
 
 Crawler pid 1: Processing page: http://cafebiz.vn/song.chn
+Topic found: SỐNG
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+Crawler pid 1: Stop crawling CafeBiz to avoid being caught by server
+Browser state: 
+<lib.crawl.BrowserWrapper object at 0x7f5d51d6aeb8>
+Crawler 1 is running
+Crawler 1 is crawling newspaper 24h
+
+Crawler pid 1: Crawling newspaper: 24h
+https://www.24h.com.vn
+Crawler pid 1: Getting data, please wait...
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/bong-da-c48.html
+Topic found: Bóng đá
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/asian-cup-2019-c838.html
+Topic found: Asian Cup
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/tai-chinh-bat-dong-san-c161.html
+Topic found: Tài chính
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/thi-truong-tieu-dung-c52.html
+Topic found: Thị trường
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/suc-khoe-doi-song-c62.html
+Topic found: Sức khỏe
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/thoi-trang-hi-tech-c407.html
+Topic found: Hi-tech
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/doi-song-showbiz-c729.html
+Topic found: Showbiz
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/tin-tuc-quoc-te-c415.html
+Topic found: Thế giới
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/the-thao-c101.html
+Topic found: Thể thao
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: https://eva.vn/
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: https://www.24h.com.vn/am-thuc-c460.html
+Topic found: Ẩm thực
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+Crawler pid 1: Stop crawling 24h to avoid being caught by server
+Browser state: 
+<lib.crawl.BrowserWrapper object at 0x7f5d51d6aeb8>
+Crawler 1 is running
+Crawler 1 is crawling newspaper Bóng Đá
+
+Crawler pid 1: Crawling newspaper: Bóng Đá
+http://bongdaplus.vn
+Crawler pid 1: Getting data, please wait...
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/tin-tuc.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-viet-nam.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/phap-luat.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/ngoai-hang-anh.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/tai-chinh.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/chinh-sach.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-duc.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/quan-tri.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-phap.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/nhan-vat.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-y.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/nghe-nghiep.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/champions-league-cup-c1.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/thuong-hieu.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/binh-luan-bong-da.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/ho-so.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/europa-league.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/bat-dong-san.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/chuyen-nhuong.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/welearn.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-the-gioi.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/doanh-nghiep-cong-nghe.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/ngoi-sao.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/startup.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/dam-me.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/khoa-hoc.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/biem-hoa.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/phong-cach.chn
+Crawler pid 1: Processing page: http://video.bongdaplus.vn
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://lichthidaubongda.vn
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaphui.net
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://banhni.vn
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://thethaoplus.vn
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/ky-nang.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/quan-diem.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-viet-nam.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/xem-doc.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/ngoai-hang-anh.html
+Crawler pid 1: This link is in blacklist databaseStart crawler number 3 (pid: 5956)
+Start crawler number 4 (pid: 5968)
+Start crawler number 5 (pid: 6046)
+Start crawler number 6 (pid: 6239)
+Start crawler number 7 (pid: 6389)
+Start crawler number 8 (pid: 6484)
+Start crawler number 9 (pid: 6581)
+Start crawler number 10 (pid: 6688)
+Start crawler number 11 (pid: 6814)
+Start crawler number 12 (pid: 6887)
+Start crawler number 13 (pid: 6951)
+Start crawler number 14 (pid: 7023)
+Start crawler number 15 (pid: 7115)
+Start crawler number 16 (pid: 7164)
+
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/videos.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-duc.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/ngoai-hang-anh.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-phap.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/videos.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-y.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/vi-dau-cac-hang-lu-hanh-nhu-vietravel-thuong-thue-chuyen-bay-charter-gia-tot-lich-trinh-linh-hoat-chang-khac-gi-dung-may-bay-rieng-nhung-khong-can-so-huu-va-bao-hanh-20190118084527546.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/champions-league-cup-c1.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/mot-cong-ty-han-quoc-duoc-cuu-song-nho-bai-hat-baby-shark-voi-hon-2-ty-luot-xem-2019011716332564.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/binh-luan-bong-da.html
 Crawler pid 1: This link is in blacklist database
 
-Crawler pid 1: Processing page: http://cafebiz.vn/dieu-kien-de-nguoi-viet-vao-choi-casino-phu-quoc-thu-nhap-tu-10-trieu-dong-thang-du-21-tuoi-va-khong-bi-nguoi-than-ngan-can-20190117142313875.chn
-Topic found: Điều kiện để người Việt vào chơi casino Phú Quốc: Thu nhập từ 10 triệu đồng/tháng, đủ 21 tuổi và không bị người thân ngăn cản
-http://cafebiz.vn/dieu-kien-de-nguoi-viet-vao-choi-casino-phu-quoc-thu-nhap-tu-10-trieu-dong-thang-du-21-tuoi-va-khong-bi-nguoi-than-ngan-can-20190117142313875.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-the-gioi/chau-a/asian-cup.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://lichthidaubongda.vn
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/tin-van/
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/chuyen-nhuong.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-the-gioi.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/ngoi-sao.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/dam-me.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/biem-hoa.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/ban-doc-viet.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/nhan-dinh-bong-da.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://video.bongdaplus.vn/video/16/clip-suu-tam.bdmedia
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://thethaoplus.vn/
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaphui.net/
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://banhni.vn/
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/tin-tuc/2019/01/18/
+Topic found: Thứ sáu, 18-01-2019
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/hau-truong-san-co-18-1-vo-vermaelen-len-bia-tap-chi-fhm-2400581901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/dụ-doán-két-quả-vòng-23-ngoại-hạng-anh-m-u-tiép-dà-thang-hoa-arsenal-dả-bại-chelsea-2400551901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/ronaldo-suyt-nga-sap-mat-tren-may-chay-2400711901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/nhung-dieu-chua-biet-ve-cau-thu-lebanon-gian-tiep-giup-viet-nam-vao-vong-1-8-2400721901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/dt-viet-nam-se-gap-chuong-ngai-vat-nao-tren-hanh-trinh-vao-chung-ket-asian-cup-2019-2400741901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/viet-nam-vuon-len-xep-102-the-gioi-sau-tran-thang-yemen-2400671901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/nhan-dinh-bong-da-akhisarspor-vs-besiktas-00h30-ngay-19-1-2400641901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/asian-cup-tags.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/arsenal-vs-chelsea-tags.html
+Topic found: Arsenal vs Chelsea
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/dt-viet-nam-tags.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/tin-tuc/
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/lich-thi-dau/
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/liverpool-giu-chan-thanh-cong-them-mot-cong-than-2400571901.html
+Topic found: Liverpool giữ chân thành công hậu vệ trái hay nhất Ngoại hạng Anh
+http://bongdaplus.vn/liverpool-giu-chan-thanh-cong-them-mot-cong-than-2400571901.html
 Crawler pid 1: Crawled articles: 1
 Crawler pid 1: Waiting 3 seconds before continue crawling
 
-Crawler pid 1: Processing page: http://cafebiz.vn/brand/1-cau-chuyen-kinh-doanh.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/triet-ly-kinh-doanh-nam-17-tuoi-giup-ong-chu-ikea-loi-keo-duoc-hang-trieu-nguoi-den-mua-hang-moi-nam-2019011716451489.chn
-Topic found: Triết lý kinh doanh năm 17 tuổi giúp ông chủ IKEA lôi kéo được hàng triệu người đến mua hàng mỗi năm
-http://cafebiz.vn/triet-ly-kinh-doanh-nam-17-tuoi-giup-ong-chu-ikea-loi-keo-duoc-hang-trieu-nguoi-den-mua-hang-moi-nam-2019011716451489.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/danh-sach-cac-doi-tuyen-lot-vao-vong-1-8-asian-cup-2019-2395841901.html
+Topic found: Các cặp đấu vòng 1/8 Asian Cup 2019
+http://bongdaplus.vn/danh-sach-cac-doi-tuyen-lot-vao-vong-1-8-asian-cup-2019-2395841901.html
 Crawler pid 1: Crawled articles: 2
 Crawler pid 1: Waiting 3 seconds before continue crawling
 
-Crawler pid 1: Processing page: http://cafebiz.vn/di-lam-mai-khong-duoc-thang-chuc-tang-luong-4-tat-xau-khien-ban-vinh-vien-khong-duoc-cap-tren-coi-trong-20190118100428453.chn
-Topic found: Đi làm mãi không được thăng chức, tăng lương: 4 tật xấu biến bạn trở thành "cái gai" trong mắt sếp
-http://cafebiz.vn/di-lam-mai-khong-duoc-thang-chuc-tang-luong-4-tat-xau-khien-ban-vinh-vien-khong-duoc-cap-tren-coi-trong-20190118100428453.chn
+Crawler pid 1: Processing page: http://bongdaplus.vn/dt-viet-nam-vuot-qua-vong-bang-tot-go-tot-ca-nuoc-son-2400331901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/ronaldo-suyt-nga-sap-mat-tren-may-chay-2400711901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/barca-3-0-levante-dembele-va-messi-dua-barca-vao-tu-ket-2400141901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/levante-kien-barca-vi-dung-cau-thu-khong-hop-le-2400171901.html
+Topic found: Levante kiện Barca vì dùng cầu thủ không hợp lệ
+http://bongdaplus.vn/levante-kien-barca-vi-dung-cau-thu-khong-hop-le-2400171901.html
 Crawler pid 1: Crawled articles: 3
 Crawler pid 1: Waiting 3 seconds before continue crawling
 
-Crawler pid 1: Processing page: http://cafebiz.vn/loi-nhuan-digiworld-nam-2018-dat-gan-110-ty-dong-tang-truong-gan-40-20190118121022906.chn
-Topic found: Lợi nhuận Digiworld năm 2018 đạt gần 110 tỷ đồng, tăng trưởng gần 40%
-http://cafebiz.vn/loi-nhuan-digiworld-nam-2018-dat-gan-110-ty-dong-tang-truong-gan-40-20190118121022906.chn
-Crawler pid 1: Crawled articles: 4
+Crawler pid 1: Processing page: http://bongdaplus.vn/morata-dong-y-toi-atlletico-2400281901.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn#
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://video.bongdaplus.vn
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/lich-thi-dau.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/lich-thi-dau.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-the-gioi/chau-a/asian-cup.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/ngoai-hang-anh.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/ngoai-hang-anh/nhan-dinh.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/ngoai-hang-anh/thi-dau.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://video.bongdaplus.vn/video/11/anh.bdmedia
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha/nhan-dinh.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-tay-ban-nha/thi-dau.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://video.bongdaplus.vn/video/12/tay-ban-nha.bdmedia
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-y.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-y/nhan-dinh.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/bong-da-y/thi-dau.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://video.bongdaplus.vn/video/13/italia.bdmedia
+Crawler pid 1: Ignore. This url is from another site
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/tin-tuc/
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/lich-thi-dau-ket-qua-asian-cup-2019-2163361805.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/magazine4/muoi-nam-mot-giac-mo-do-tham-bac-trung-nam-2367681812.html
+Topic found: Mười năm, một giấc mơ đỏ thắm Bắc - Trung - Nam
+http://bongdaplus.vn/magazine4/muoi-nam-mot-giac-mo-do-tham-bac-trung-nam-2367681812.html
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/magazine6/12-su-kien-noi-bat-nhat-bong-da-nam-2018-2382611812.html
+Topic found: 12 sự kiện bóng đá nổi bật nhất năm 2018
+http://bongdaplus.vn/magazine6/12-su-kien-noi-bat-nhat-bong-da-nam-2018-2382611812.html
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/chuyen-nhuong.html
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/chuyen-nhuong/tin-don.html
+Topic found: Tin đồn
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/chuyen-nhuong/tin-chuyen-nhuong.html
+Topic found: Tin chuyển nhượng
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://bongdaplus.vn/chuyen-nhuong/tong-hop-chuyen-nhuong.html
+Topic found: Tổng hợp chuyển nhượng
+http://bongdaplus.vn/chuyen-nhuong/tong-hop-chuyen-nhuong.html
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
+Crawler pid 1: Stop crawling Bóng Đá to avoid being caught by server
+Browser state: 
+<lib.crawl.BrowserWrapper object at 0x7f5d51d6aeb8>
+Crawler 1 is running
+Crawler 1 is crawling newspaper Dân Việt
+
+Crawler pid 1: Crawling newspaper: Dân Việt
+http://danviet.vn
+Crawler pid 1: Getting data, please wait...
+
+Crawler pid 1: Processing page: http://danviet.vn/video-anh/
+Topic found: Video - Ảnh
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/video-anh/
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://danviet.vn/tin-tuc/
+Topic found: Tin tức
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/tin-tuc/
+Crawler pid 1: This link is in blacklist database
+
+Crawler pid 1: Processing page: http://danviet.vn/chinh-tri/
+Topic found: Chính trị
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/xa-hoi/
+Topic found: Xã hội
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/giao-duc/
+Topic found: Giáo dục
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/y-te/
+Topic found: Y tế
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/kinh-da-trong/
+Topic found: Kính đa tròng
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/ngay-moi-tot-lanh/
+Topic found: Ngày mới tốt lành
+http://danviet.vn/ngay-moi-tot-lanh/
+Ignore. This href don't have published date. It is not an article.
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://danviet.vn/tin-tuc/jetstar-bat-ngo-doi-gio-bay-hang-tram-khach-hang-dung-ngoi-khong-yen-949100.html
+Topic found: Jetstar bất ngờ đổi giờ bay, hàng trăm khách hàng đứng ngồi không...
+http://danviet.vn/tin-tuc/jetstar-bat-ngo-doi-gio-bay-hang-tram-khach-hang-dung-ngoi-khong-yen-949100.html
+Crawler pid 1: Crawled articles: 1
 Crawler pid 1: Waiting 3 seconds before continue crawling
 
-Crawler pid 1: Processing page: http://cafebiz.vn/quang-ngai-muon-thu-phi-du-khach-den-ly-son-20190118113515218.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/flc-de-xuat-xay-san-van-dong-lon-va-hien-dai-nhat-the-gioi-tai-ngoai-thanh-ha-noi-20190118113513437.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/ki-nang-tu-co-khong-can-training-boc-hoi-bung-lam-nhay-viec-nguoi-tre-oi-bao-gio-moi-chiu-truong-thanh-20190118093433156.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/cau-chuyen-kinh-doanh.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/ikea-se-dau-tu-450-trieu-usd-vao-ha-noi-xay-dung-he-thong-cung-ung-hang-cho-toan-thi-truong-dong-nam-a-20190117133600937.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/ikea.html
-Topic found: #IKEA
-Ignore. Title is too short. It can't be an article
-Crawler pid 1: Add to blacklist
-
-Crawler pid 1: Processing page: http://cafebiz.vn/cau-chuyen-kinh-doanh.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/cao-sao-vang-len-amazon-co-gia-7-usd-phin-pha-ca-phe-gia-10-usd-choi-dot-gan-20-usd-ban-hang-tren-amazon-thuc-su-de-den-vay-sao-20190117112857703.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/amazon.html
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/cau-chuyen-kinh-doanh.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/vi-sao-phai-mat-toi-4-nam-tham-do-ikea-moi-can-nhac-dau-tu-400-trieu-usd-vao-viet-nam-20190117145750046.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/brand/1-cau-chuyen-kinh-doanh.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/9-viec-can-lam-truoc-buoi-trua-cua-nhung-nguoi-thanh-cong-de-co-mot-ngay-lam-viec-nang-suat-va-hieu-qua-20190118103654015.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/infographic-viet-nam-tren-ban-do-trieu-phu-the-gioi-20190118102629781.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/saudi-arabia-xay-dung-sieu-thanh-pho-500-ty-usd-2019011810294989.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/dieu-quan-trong-nhat-amazon-se-lam-o-viet-nam-ma-khong-phai-ai-cung-biet-20190118102551343.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/tai-sao-ikea-co-tru-so-o-ha-lan-nhung-van-duoc-goi-la-mot-cong-ty-thuy-dien-20190118094114218.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/chien-luoc-tam-dac-cua-ong-trinh-van-quyet-khi-doi-dau-voi-vna-va-vietjet-bay-di-quy-nhon-gia-ve-2-6-trieu-nguoi-nghi-duong-5-trieu-phong-nhung-bay-bamboo-va-o-resort-flc-thi-gia-chi-25-trieu-nguoi-201901140944457.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/ty-phu-pham-nhat-vuong-lan-dau-chia-se-cach-doc-sach-co-mot-cuon-sach-duoc-ong-tam-dac-nhieu-lan-dem-tang-va-giang-cho-nhan-vien-20190111150916715.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/nguyen-quoc-vuong-nha-nghien-cuu-sinh-tro-ve-viet-nam-ban-sach-rong-sau-8-nam-du-hoc-o-nhat-ban-20190118091638437.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/vi-sao-nguoi-nhat-co-tuoi-tho-trung-binh-cao-hon-80-3-bi-quyet-ma-ai-cung-muon-hoc-ngay-de-song-them-5-10-nam-nua-2019011810151375.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/chuyen-dong-troi-o-dak-lak-mao-danh-truong-day-lai-xe-bao-dau-100-20190118090756406.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/khong-phai-lam-viec-bao-lau-ma-10-nam-sau-khi-nghi-viec-nhan-su-noi-gi-ve-cong-ty-moi-la-dieu-ceo-dang-tu-hao-20190117174046453.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/mam-cay-trung-quoc-gieo-tren-mat-trang-da-chet-vi-dem-qua-lanh-20190118083209671.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/xac-dinh-8-cap-dau-vong-knock-out-asian-cup-2019-viet-nam-doi-dau-jordan-20190118090228875.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/ikea-se-dau-tu-450-trieu-usd-vao-ha-noi-xay-dung-he-thong-cung-ung-hang-cho-toan-thi-truong-dong-nam-a-20190117133600937.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/cao-sao-vang-len-amazon-co-gia-7-usd-phin-pha-ca-phe-gia-10-usd-choi-dot-gan-20-usd-ban-hang-tren-amazon-thuc-su-de-den-vay-sao-20190117112857703.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/lien-tuc-thua-lo-vi-dien-tu-momo-tiep-tuc-duoc-bom-hang-chuc-trieu-usd-de-dot-tien-20190116201904875.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/triet-ly-kinh-doanh-cua-ty-phu-ly-gia-thanh-neu-tim-duoc-nguoi-cho-ban-vay-tien-ma-khong-can-ky-giay-to-hay-tran-trong-boi-ho-la-nhung-nguoi-cao-quy-20190116172600046.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/day-la-ly-do-vi-sao-ban-nen-canh-giac-voi-trao-luu-10-nam-nhin-lai-dang-gay-sot-tren-facebook-20190117101107187.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/5-xu-huong-dinh-hinh-bat-dong-san-viet-nam-2019-20190118094150187.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/my-bat-thanh-nien-am-muu-tan-cong-nha-trang-bang-thuoc-no-ten-lua-chong-tang-201901180858235.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/nhung-nguoi-noi-tieng-nao-se-tham-gia-dien-dan-kinh-te-the-gioi-2019-20190118090315921.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/xuat-hien-vu-ro-ri-du-lieu-ca-nhan-lon-nhat-lich-su-773-trieu-email-21-trieu-mat-khau-bi-dang-tai-cong-khai-tren-internet-20190118082957265.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/thu-tuong-goi-y-nghien-cuu-doi-ten-bo-tttt-thanh-bo-cong-nghe-va-truyen-thong-2019011809183764.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/iphone-giam-gia-soc-can-tet-20190118083631531.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/videos/7606-neu-ban-can-dong-luc.chn
-Topic found: Nếu bạn cần động lực
-http://cafebiz.vn/videos/7606-neu-ban-can-dong-luc.chn
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 1: Add to blacklist
-
-Crawler pid 1: Processing page: http://cafebiz.vn/videos/7605-dung-nghi-ngo-chinh-minh-nua.chn
-Topic found: Đừng nghi ngờ chính mình nữa
-http://cafebiz.vn/videos/7605-dung-nghi-ngo-chinh-minh-nua.chn
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 1: Add to blacklist
-
-Crawler pid 1: Processing page: http://cafebiz.vn/videos/7603-nhung-dieu-gian-di-lai-la-thu-xa-xi-nhat.chn
-Topic found: Những điều giản dị lại là thứ xa xỉ nhất
-http://cafebiz.vn/videos/7603-nhung-dieu-gian-di-lai-la-thu-xa-xi-nhat.chn
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 1: Add to blacklist
-
-Crawler pid 1: Processing page: http://cafebiz.vn/can-cu-bu-thong-minh-cau-noi-tu-xa-xua-nhung-van-dung-cho-toi-tan-bay-gio-ly-do-la-vi-sao-20190117173154937.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/chi-tiet-ve-chi-so-cuc-ky-moi-me-da-giup-tuyen-viet-nam-vuot-qua-vong-bang-asian-cup-2019-mot-cach-thot-tim-201901180910315.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/ngoc-trai-kinh-van-hoa-co-50-trieu-trong-tai-khoan-thoi-dung-nghi-toi-chuyen-sinh-con-2019011809014475.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/ba-le-hoang-diep-thao-de-nghi-cua-doi-tai-san-phia-dang-le-nguyen-vu-phan-phao-chung-toi-khong-nhan-duoc-gi-ca-20190118090105031.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/cong-dong-mang-viet-nam-chet-di-song-lai-voi-nhung-pha-xu-ly-cua-thu-mon-chdcnd-trieu-tien-20190118083415093.chn
-Crawler pid 1: This link is in blacklist database
-
-Crawler pid 1: Processing page: http://cafebiz.vn/trung-quoc-giam-thue-tren-dien-rong-de-cuu-nen-kinh-te-20190118084736437.chnCrawler 2 has been started
-Crawler 2 is running
-Crawler 2 is crawling newspaper Lao Động
-
-Crawler pid 2: Crawling newspaper: Lao Động
-https://laodong.vn
-Crawler pid 2: Getting data, please wait...
-
-Crawler pid 2: Processing page: https://laodong.vn
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/media/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/video/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/photo/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/infographic/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/emagazine/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/thoi-su/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/cong-doan/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/cach-lam-hay-tu-co-so/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/vi-loi-ich-doan-vien/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/cong-doan-toan-quoc/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/thiet-che-cong-doan/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/chung-toi-la-can-bo-cong-doan/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/the-gioi/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/xa-hoi/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/y-te/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/giao-duc/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/moi-truong/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/giao-thong/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/phap-luat/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/tu-van-phap-luat/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/kinh-te/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/so-tay-kinh-te/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/tien-te-dau-tu/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/thi-truong/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/doanh-nghiep-doanh-nhan/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/bat-dong-san/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/van-hoa-giai-tri/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/van-hoa/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/giai-tri/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/the-thao/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/bong-da/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/bong-da-quoc-te/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/lich-thi-dau/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/xe/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/suc-khoe/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/dinh-duong-am-thuc/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/lam-dep/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/ban-doc/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/tam-long-vang/
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/the-thao/dt-viet-nam-lach-khe-cua-hep-vao-vong-18-asian-cup-can-cam-on-ai-652906.ldo
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/phap-luat/buoc-dung-san-xuat-luu-thong-ruou-vang-sieu-toc-gia-sieu-re-652944.ldo
-Topic found: Buộc dừng sản xuất, lưu thông rượu vang siêu tốc, giá siêu rẻ
-https://laodong.vn/phap-luat/buoc-dung-san-xuat-luu-thong-ruou-vang-sieu-toc-gia-sieu-re-652944.ldo
-Warning: published date 18/01/2019  is not in %d/%m/%Y | %H:%M pattern
-Crawler pid 2: Crawled articles: 1
-Crawler pid 2: Waiting 3 seconds before continue crawling
-
-Crawler pid 2: Processing page: https://laodong.vn/kinh-te/metro-ben-thanh--suoi-tien-lai-thieu-2245-ti-dong-tra-no-nha-thau-652962.ldo
-Topic found: Metro Bến Thành – Suối Tiên lại thiếu 2.245 tỉ đồng trả nợ nhà thầu
-https://laodong.vn/kinh-te/metro-ben-thanh--suoi-tien-lai-thieu-2245-ti-dong-tra-no-nha-thau-652962.ldo
-Warning: published date 18/01/2019  is not in %d/%m/%Y | %H:%M pattern
-Crawler pid 2: Crawled articles: 2
-Crawler pid 2: Waiting 3 seconds before continue crawling
-
-Crawler pid 2: Processing page: https://laodong.vn/the-gioi/trieu-tien-sap-khai-truong-khu-du-lich-ven-bien-sieu-hoanh-trang-652959.ldo
-Topic found: Triều Tiên sắp khai trương khu du lịch ven biển siêu hoành tráng
-https://laodong.vn/the-gioi/trieu-tien-sap-khai-truong-khu-du-lich-ven-bien-sieu-hoanh-trang-652959.ldo
-Warning: published date 18/01/2019  is not in %d/%m/%Y | %H:%M pattern
-Crawler pid 2: Crawled articles: 3
-Crawler pid 2: Waiting 3 seconds before continue crawling
-
-Crawler pid 2: Processing page: https://laodong.vn/bong-da/cac-tuyen-thu-viet-nam-gian-di-dao-pho-uae-trong-ngay-nghi-xa-hoi-652966.ldo
-Topic found: Các tuyển thủ Việt Nam giản dị dạo phố UAE trong ngày nghỉ xả hơi
-https://laodong.vn/bong-da/cac-tuyen-thu-viet-nam-gian-di-dao-pho-uae-trong-ngay-nghi-xa-hoi-652966.ldo
-Warning: published date 18/01/2019  is not in %d/%m/%Y | %H:%M pattern
-Crawler pid 2: Crawled articles: 4
-Crawler pid 2: Waiting 3 seconds before continue crawling
-
-Crawler pid 2: Processing page: https://laodong.vn/kinh-te/kinh-te-cua-jordan-doi-thu-cham-tran-dt-viet-nam-vong-18-ra-sao-652953.ldo
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/y-te/bao-ve-benh-vien-bo-viec-cong-benh-nhan-vao-vien-cap-cuu-652960.ldo
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/giao-thong/csgt-tphcm-nam-2018-toan-thanh-pho-khong-co-un-tac-giao-thong-652926.ldo
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/xa-hoi/bo-cong-an-co-them-81-xe-chua-chay-tri-gia-500-ti-dong-tu-han-quoc-652950.ldo
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/bong-da/doi-tuyen-viet-nam-hao-huc-len-duong-sang-dubai-chuan-bi-chien-jordan-652957.ldo
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/phap-luat/nguoi-lam-cong-tai-xuong-nau-duong-cuop-tai-san-cua-chu-652937.ldo
-Crawler pid 2: This link is in blacklist database
-
-Crawler pid 2: Processing page: https://laodong.vn/kinh-te/gia-vang-hom-nay-181-kim-loai-quy-phuc-hoi-day-gia-vang-di-len-652942.ldoCrawler 15 has been started
-Crawler 15 is running
-Crawler 15 is crawling newspaper Thể Thao & Văn Hoá
-
-Crawler pid 15: Crawling newspaper: Thể Thao & Văn Hoá
-http://thethaovanhoa.vn
-Crawler pid 15: Getting data, please wait...
-
-Crawler pid 15: Processing page: http://dulich.thethaovanhoa.vn
-Crawler pid 15: Ignore. This url is from another site
-
-Crawler pid 15: Processing page: http://conghien.thethaovanhoa.vn
-Crawler pid 15: Ignore. This url is from another site
-
-Crawler pid 15: Processing page: https://thethaovanhoa.vn/buixuanphai/home.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: https://thethaovanhoa.vn/biemhoa/
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/bong-da-trong-nuoc-128ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/v-league-144ct128.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/cac-dtqg-143ct128.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/hang-nhat-145ct128.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/bong-da-anh-149ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/mu-498ct149.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/arsenal-499ct149.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/chelsea-500ct149.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/liverpool-501ct149.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/man-city-502ct149.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/tay-ban-nha-151ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/real-madrid-504ct151.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/barcelona-505ct151.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/valencia-506ct151.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/atletico-madrid-507ct151.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/duc-152ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/bayern-munich-599ct152.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/borussia-dormunt-600ct152.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/italia-150ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/juventus-510ct150.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/ac-milan-509ct150.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/champions-league-155ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/europa-league-156ct155.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/du-doan-bong-da-692ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/the-thao-158ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/tennis-272ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/golf-647ct158.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/bong-ro-678ct158.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/toc-do-274ct158.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/the-gioi-sao-585ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/giai-tri-684ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/am-nhac-297ct133.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/phim-176ct133.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/truyen-hinh-thuc-te-588ct133.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/van-hoa-133ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/dien-dan-van-hoa-475ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/xa-hoi-132ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/the-gioi-131ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/video-clip-595ct0.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/bong-da-viet/viet-nam-gap-jordan-tai-vong-1-8-voi-chi-hai-buoi-tap-n20190118082406637.htm
-Topic found: Việt Nam gặp Jordan tại vòng 1/8 với chỉ hai buổi tập
-http://thethaovanhoa.vn/bong-da-viet/viet-nam-gap-jordan-tai-vong-1-8-voi-chi-hai-buoi-tap-n20190118082406637.htm
-Crawler pid 15: Crawled articles: 1
-Crawler pid 15: Waiting 3 seconds before continue crawling
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/bong-da-viet/bxh-asian-cup-bang-xep-hang-asian-cup-2019-bang-xep-hang-asian-cup-bxh-asian-cup-2019-viet-nam-n20190110151852365.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/video/bong-da-viet/ban-chan-khong-lo-la-li-do-giup-quang-hai-da-phat-bach-phat-bach-trung-n20190117094755526.htm
-Topic found: Bàn chân 'khổng lồ' là lí do giúp Quang Hải đá phạt 'bách phát bách trúng'
-http://thethaovanhoa.vn/video/bong-da-viet/ban-chan-khong-lo-la-li-do-giup-quang-hai-da-phat-bach-phat-bach-trung-n20190117094755526.htm
-Crawler pid 15: Crawled articles: 2
-Crawler pid 15: Waiting 3 seconds before continue crawling
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vnjavascript:void(0)
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/the-thao/chuyen-nhuong-18-1-de-gea-nhan-luong-cao-nhat-the-gioi-morata-sap-roi-chelsea-n20190118124446684.htm
-Topic found: CHUYỂN NHƯỢNG 18/1: De Gea nhận lương cao nhất thế giới, Morata sắp rời Chelsea
-http://thethaovanhoa.vn/the-thao/chuyen-nhuong-18-1-de-gea-nhan-luong-cao-nhat-the-gioi-morata-sap-roi-chelsea-n20190118124446684.htm
-Crawler pid 15: Crawled articles: 3
-Crawler pid 15: Waiting 3 seconds before continue crawling
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/video/bong-da-viet/cung-diem-cung-hieu-so-cung-so-ban-thang-viet-nam-vuot-qua-libanon-boi-2-the-vang-n20190118065243585.htm
-Crawler pid 15: This link is in blacklist database
-
-Crawler pid 15: Processing page: http://thethaovanhoa.vn/bong-da-viet/bang-xep-hang-doi-hang-ba-asian-cup-2019-viet-nam-gianh-ve-vao-vong-1-8-nho-the-vang-n20190117193945307.htmCrawler 3 has been started
-Crawler 3 is running
-Crawler 3 is crawling newspaper 24h
-
-Crawler pid 3: Crawling newspaper: 24h
-https://www.24h.com.vn
-Crawler pid 3: Getting data, please wait...
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da-c48.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/asian-cup-2019-c838.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tai-chinh-bat-dong-san-c161.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/thi-truong-tieu-dung-c52.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/suc-khoe-doi-song-c62.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/thoi-trang-hi-tech-c407.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/doi-song-showbiz-c729.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-quoc-te-c415.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/the-thao-c101.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://eva.vn/
-Crawler pid 3: Ignore. This url is from another site
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/am-thuc-c460.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tong-hop-video.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn#
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-trong-ngay/vo-chong-chet-duoi-banh-container-3-tre-choi-voi-trong-dem-dau-thieu-hoi-cha-me-c46a1022142.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/asian-cup-2019-c838.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/lich-thi-dau-bong-da-doi-tuyen-viet-nam-vong-chung-ket-asian-cup-2019-c48a957502.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/bang-xep-hang-bong-da-doi-tuyen-viet-nam-asian-cup-2019-c48a1014181.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/16-anh-hao-vao-vong-1-8-asian-cup-8-cap-dau-ruc-lua-nhu-the-nao-c48a1022128.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/asian-cup-2019-c48e4928.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/dt-viet-nam-doat-ve-vot-thot-tim-bao-chau-a-han-quoc-khen-choi-dep-c48a1022121.html
-Topic found: ĐT Việt Nam đoạt vé vớt thót tim: Báo châu Á, Hàn Quốc khen chơi đẹp
-https://www.24h.com.vn/bong-da/dt-viet-nam-doat-ve-vot-thot-tim-bao-chau-a-han-quoc-khen-choi-dep-c48a1022121.html
-Crawler pid 3: Crawled articles: 1
-Crawler pid 3: Waiting 3 seconds before continue crawling
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/dt-viet-nam-co-ve-nghet-tho-vong-1-8-gap-jordan-sieu-khung-hay-vua-tam-c48a1022116.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/video-ket-qua-bong-da-lebanon-trieu-tien-ruot-duoi-ban-thang-viet-nam-co-loi-c48a1022099.html
-Topic found: Asian Cup, Lebanon - Triều Tiên: Thót tim bàn thắng phút 90+8, Việt Nam thoát hiểm
-https://www.24h.com.vn/bong-da/video-ket-qua-bong-da-lebanon-trieu-tien-ruot-duoi-ban-thang-viet-nam-co-loi-c48a1022099.html
-Crawler pid 3: Crawled articles: 2
-Crawler pid 3: Waiting 3 seconds before continue crawling
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/asian-cup-2019-c838.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-trong-ngay-c46.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-ha-noi-c414.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tp-ho-chi-minh-c412.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-trong-ngay/7h50-sang-nay-ve-tinh-made-in-vietnam-bay-vao-vu-tru-c46a1022133.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-nong-c46e3908.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-trong-ngay/chu-tich-xa-giai-thich-gi-ve-viec-to-chuc-dam-cuoi-con-can-bo-ngay-tru-so-c46a1022240.html
-Topic found: Chủ tịch xã giải thích gì về việc tổ chức đám cưới con...
-https://www.24h.com.vn/tin-tuc-trong-ngay/chu-tich-xa-giai-thich-gi-ve-viec-to-chuc-dam-cuoi-con-can-bo-ngay-tru-so-c46a1022240.html
-Crawler pid 3: Crawled articles: 3
-Crawler pid 3: Waiting 3 seconds before continue crawling
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-trong-ngay/trau-co-cap-sung-chi-dia-ky-la-bao-nhieu-tien-chu-cung-khong-ban-c46a1022239.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-trong-ngay/chay-lon-tai-quan-an-singapore-giua-ha-noi-c46a1022207.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-trong-ngay/cuoi-tuan-mien-bac-troi-ret-nam-bo-nang-rao-c46a1022154.html
-Topic found: Cuối tuần, miền Bắc trời rét, Nam Bộ nắng ráo
-https://www.24h.com.vn/tin-tuc-trong-ngay/cuoi-tuan-mien-bac-troi-ret-nam-bo-nang-rao-c46a1022154.html
-Crawler pid 3: Crawled articles: 4
-Crawler pid 3: Waiting 3 seconds before continue crawling
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/tin-tuc-quoc-te/quoc-gia-dong-minh-muon-dung-du-an-nha-may-dien-2-ti-usd-cua-tq-c415a1022103.html
-Topic found: Quốc gia đồng minh muốn dừng dự án nhà máy điện 2...
-https://www.24h.com.vn/tin-tuc-quoc-te/quoc-gia-dong-minh-muon-dung-du-an-nha-may-dien-2-ti-usd-cua-tq-c415a1022103.html
-Crawler pid 3: Crawled articles: 5
-Crawler pid 3: Waiting 3 seconds before continue crawling
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da-c48.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/the-thao-c101.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/video-ban-thang-c297.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da-ngoai-hang-anh-c149.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/lich-thi-dau-bong-da/lich-thi-dau-bong-da-hom-nay-c287a364371.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/tuyen-thu-viet-nam-lam-gi-o-thoi-khac-gianh-ve-vot-vong-1-8-nghet-tho-c48a1022115.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/asian-cup-2019-c48e4928.html
-Crawler pid 3: This link is in blacklist database
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/dt-viet-nam-lay-ve-vot-gay-soc-chau-a-1-the-vang-hon-ngan-ban-thang-c48a1022131.html
-Topic found: ĐT Việt Nam vé vớt gây sốc châu Á: 1 thẻ vàng hơn ngàn...
-https://www.24h.com.vn/bong-da/dt-viet-nam-lay-ve-vot-gay-soc-chau-a-1-the-vang-hon-ngan-ban-thang-c48a1022131.html
-Crawler pid 3: Crawled articles: 6
-Crawler pid 3: Waiting 3 seconds before continue crawling
-
-Crawler pid 3: Processing page: https://www.24h.com.vn/bong-da/nga-ngua-trong-tai-giup-dtvn-gianh-ve-vot-tung-bi-trieu-fan-viet-cam-ghet-c48a1022157.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/hoc-sinh-son-la-nghi-tet-2-tuan-3976875-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/tre/sua-co-gai-ha-lan-truyen-cam-hung-bien-dieu-khong-the-thanh-co-the-3976797-v.html
-Topic found: Sữa Cô gái Hà Lan truyền cảm hứng biến điều không thể thành có thể
-http://giaoducthoidai.vn/tre/sua-co-gai-ha-lan-truyen-cam-hung-bien-dieu-khong-the-thanh-co-the-3976797-v.html
-Warning: published date 2019-01-18T08:02 is not in %Y/%m/%dT%H:%M pattern
-Crawler pid 12: Crawled articles: 1
-Crawler pid 12: Waiting 3 seconds before continue crawling
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/tre/lot-khe-cua-cuc-hep-viet-nam-gap-jordan-o-vong-18-asian-cup-2019-3976865-l.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/diem-nhan-chinh-sach-nha-giao-trong-du-thao-luat-giao-duc-sua-doi-3976636-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/hoi-nghi-toan-quoc-tong-ket-cong-tac-to-chuc-xay-dung-dang-nam-2018-3976913-t.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/quang-binh-quan-xa-chong-chi-dao-thuong-vu-huyen-uy-3976863-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/co-hay-khong-csgt-thanh-hoa-quang-luoi-khien-hoc-sinh-bi-thuong-3976894-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/danh-sach-den-khach-san-khong-du-dieu-kien-luu-tru-o-nha-trang-3976889-l.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/thoi-su/ky-luat-bang-hinh-thuc-khien-trach-chu-tich-ubnd-tinh-dak-nong-canh-cao-pho-chu-tich-ubnd-tinh-dak-nong-3976866-t.html
-Topic found: Kỷ luật bằng hình thức khiển trách Chủ tịch UBND tỉnh Đắk Nông, cảnh cáo Phó Chủ tịch UBND tỉnh Đắk Nông
-http://giaoducthoidai.vn/thoi-su/ky-luat-bang-hinh-thuc-khien-trach-chu-tich-ubnd-tinh-dak-nong-canh-cao-pho-chu-tich-ubnd-tinh-dak-nong-3976866-t.html
-Warning: published date 2019-01-18T07:55 is not in %Y/%m/%dT%H:%M pattern
-Crawler pid 12: Crawled articles: 2
-Crawler pid 12: Waiting 3 seconds before continue crawling
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/quan-hoan-kiem-ha-noi-tuyen-duong-hs-dat-thanh-tich-cao-cac-ky-thi-quoc-te-2018-3976932-v.html
-Topic found: Quận Hoàn Kiếm (Hà Nội) tuyên dương HS đạt thành tích cao các kỳ thi quốc tế 2018
-http://giaoducthoidai.vn/giao-duc/quan-hoan-kiem-ha-noi-tuyen-duong-hs-dat-thanh-tich-cao-cac-ky-thi-quoc-te-2018-3976932-v.html
-Warning: published date 2019-01-18T12:00 is not in %Y/%m/%dT%H:%M pattern
-Crawler pid 12: Crawled articles: 3
-Crawler pid 12: Waiting 3 seconds before continue crawling
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/chan-chinh-truong-hoc-to-chuc-giao-duc-ki-nang-song-sai-quy-dinh-3976649-v.html
-Topic found: Chấn chỉnh trường học tổ chức giáo dục kĩ năng sống sai quy định
-http://giaoducthoidai.vn/giao-duc/chan-chinh-truong-hoc-to-chuc-giao-duc-ki-nang-song-sai-quy-dinh-3976649-v.html
-Warning: published date 2019-01-18T10:35 is not in %Y/%m/%dT%H:%M pattern
-Crawler pid 12: Crawled articles: 4
-Crawler pid 12: Waiting 3 seconds before continue crawling
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/lai-chau-du-thao-sua-doi-quy-dinh-thu-chi-hoc-phi-truong-cong-3976871-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/giao-duc/diem-nhan-chinh-sach-nha-giao-trong-du-thao-luat-giao-duc-sua-doi-3976636-v.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/ket-noi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/ket-noi/nang-tam-van-hoa-tra-viet-3976776-b.html
-Topic found: Nâng tầm văn hóa trà Việt
-http://giaoducthoidai.vn/ket-noi/nang-tam-van-hoa-tra-viet-3976776-b.html
-Warning: published date 2019-01-18T07:18 is not in %Y/%m/%dT%H:%M pattern
-Crawler pid 12: Crawled articles: 5
-Crawler pid 12: Waiting 3 seconds before continue crawling
-
-Crawler pid 12: Processing page: http://giaoducthoidai.vn/ket-noi/truong-tieu-hoc-phu-la-cam-phu-huynh-vao-don-con-3976827-b.html
-Topic found: Trường Tiểu học Phú La cấm phụ huynh vào đón con?
-http://giaoducthoidai.vn/ket-noi/truong-tieu-hoc-phu-la-cam-phu-huynh-vao-don-con-3976827-b.html
-Warning: published date 2019-01-18T07:18 is not in %Y/%m/%dT%H:%M pattern
-Crawler pid 12: Crawled articles: 6
-Crawler pid 12: Waiting 3 seconds before continue crawling
-Crawler pid 12: Stop crawling Giáo Dục Thời Đại to avoid being caught by server
+Crawler pid 1: Processing page: http://danviet.vn/tin-tuc/bo-cong-an-tiet-kiem-duoc-bao-nhieu-tien-tu-tinh-gon-bo-may-949098.html
+Topic found: Bộ Công an tiết kiệm được bao nhiêu tiền từ tinh gọn bộ máy?
+http://danviet.vn/tin-tuc/bo-cong-an-tiet-kiem-duoc-bao-nhieu-tien-tu-tinh-gon-bo-may-949098.html
+Crawler pid 1: Crawled articles: 2
+Crawler pid 1: Waiting 3 seconds before continue crawling
+Crawler pid 1: Stop crawling Dân Việt to avoid being caught by server
 Browser state: 
-<lib.crawl.BrowserWrapper object at 0x7f25359b0eb8>
-Crawler 12 is running
-Crawler 12 is crawling newspaper VOV News
+<lib.crawl.BrowserWrapper object at 0x7f5d51d6aeb8>
+Crawler 1 is running
+Crawler 1 is crawling newspaper Kenh14.vn
 
-Crawler pid 12: Crawling newspaper: VOV News
-http://vov.vn
-Crawler pid 12: Getting data, please wait...
+Crawler pid 1: Crawling newspaper: Kenh14.vn
+http://kenh14.vn
+Crawler pid 1: Getting data, please wait...
 
-Crawler pid 12: Processing page: http://english.vov.vn/
-Crawler pid 12: Ignore. This url is from another site
-
-Crawler pid 12: Processing page: http://vov.vnjavascript:void(0);
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://tnvn.gov.vn
-Crawler pid 12: Ignore. This url is from another site
-
-Crawler pid 12: Processing page: http://vov.vn/rss.aspx
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/chinh-tri/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/chinh-tri/dang/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/chinh-tri/quoc-hoi/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/nhan-su/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/bien-dao/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/doi-song/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/tinh-yeu-gia-dinh/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/du-lich/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: http://vov.vn/nha-dep/
-Topic found: Nhà đẹp
+Crawler pid 1: Processing page: http://kenh14.vn/nhom-chu-de/magazine.chn
+Topic found: Magazine
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/blog/
-Topic found: Blog
+Crawler pid 1: Processing page: http://kenh14.vn/nhom-chu-de/doc-cham.chn
+Topic found: Đọc Chậm
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/the-gioi/
-Topic found: Thế giới
+Crawler pid 1: Processing page: http://kenh14.vn/nhom-chu-de/photo-story.chn
+Topic found: Photo Story
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/the-gioi/quan-sat/
-Topic found: Quan sát
+Crawler pid 1: Processing page: http://kenh14.vn/
+Topic found: 
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/the-gioi/cuoc-song-do-day/
-Topic found: Cuộc sống Đó đây
-http://vov.vn/the-gioi/cuoc-song-do-day/
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Processing page: http://kenh14.vn/
+Crawler pid 1: This link is in blacklist database
 
-Crawler pid 12: Processing page: http://vov.vn/the-gioi/ho-so/
-Topic found: Hồ sơ
+Crawler pid 1: Processing page: http://kenh14.vn/star.chn
+Topic found: Star
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/kinh-te/
-Topic found: Kinh tế
+Crawler pid 1: Processing page: http://kenh14.vn/tv-show.chn
+Topic found: TV Show
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/kinh-te/thi-truong/
-Topic found: Thị trường
+Crawler pid 1: Processing page: http://kenh14.vn/cine.chn
+Topic found: Ciné
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/khoi-nghiep/
-Topic found: Khởi nghiệp
+Crawler pid 1: Processing page: http://kenh14.vn/musik.chn
+Topic found: Musik
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
+Crawler pid 1: Add to blacklist
 
-Crawler pid 12: Processing page: http://vov.vn/kinh-te/doanh-nghiep/
-Topic found: Doanh nghiệp
+Crawler pid 1: Processing page: http://kenh14.vn/fashion.chn
+Topic found: Fashion
 Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-Crawler pid 12: Stop crawling VOV News to avoid being caught by server
+Crawler pid 1: Add to blacklist
+
+Crawler pid 1: Processing page: http://kenh14.vn/doi-song.chn
+Topic found: Đời sống
+Ignore. Title is too short. It can't be an article
+Crawler pid 1: Add to blacklist
+Crawler pid 1: Stop crawling Kenh14.vn to avoid being caught by server
 Browser state: 
-<lib.crawl.BrowserWrapper object at 0x7f25359b0eb8>
-Crawler 12 is running
-Crawler 12 is crawling newspaper VTC Online
+<lib.crawl.BrowserWrapper object at 0x7f5d51d6aeb8>
+Crawler 1 is running
+Crawler 1 is crawling newspaper Soha.vn
 
-Crawler pid 12: Crawling newspaper: VTC Online
-http://vtc.vn
-Crawler pid 12: Getting data, please wait...
-
-Crawler pid 12: Processing page: https://vtc.vn/
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/xa-hoi-28.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tin-tuc-trong-ngay-105.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/chinh-tri-47.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tin-tuc-24h-138.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/chuyen-xua-chep-lai-140.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/doi-song-48.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/gio-cao-diem-141.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tin-nhanh-24h-111.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-27.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/song-134.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/song-133.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/song-127.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/vtc-news-tv-99.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-chinh-tri-xa-hoi-38.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-ban-tin-113-online-43.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-van-hoa-giai-tri-41.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-quoc-te-40.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-kinh-te-39.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-goc-thu-gian-44.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/truyen-hinh-the-thao-42.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/kinh-te-29.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tin-gia-vang-113.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/bao-ve-nguoi-tieu-dung-51.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/chinh-sach-thue-va-cuoc-song-50.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/the-gioi-30.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tin-tuc-bien-dong-55.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/thoi-su-quoc-te-53.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/quan-su-49.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tu-lieu-54.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/giao-duc-31.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tuyen-sinh-2018-104.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/thi-thpt-quoc-gia-2018-145.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/tin-tuc-su-kien-56.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/phap-luat-32.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/an-ninh-hinh-su-106.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/an-ninh-hinh-su-110.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/chuyen-vu-an-59.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/ban-tin-113-online-58.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/giai-tri-33.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/sao-viet-64.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/gioi-tre-85.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/hoa-hau-60.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/sao-han-114.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/sao-the-gioi-63.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/nhac-62.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/thoi-trang-61.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/the-thao-34.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/song-cung-bong-da-174.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/aff-cup-2018-173.html
-Crawler pid 12: This link is in blacklist database
-
-Crawler pid 12: Processing page: https://vtc.vn/lich-thi-dau-bong-da-101.html
-Topic found: Lịch bóng đá
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: https://vtc.vn/truc-tiep-bong-da-125.html
-Topic found: Trực tiếp bóng đá
-https://vtc.vn/truc-tiep-bong-da-125.html
-Ignore. This href don't have published date. It is not an article.
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: https://vtc.vn/video-ban-thang-bong-da-120.html
-Topic found: Video bóng đá
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: https://vtc.vn/bong-da-anh-66.html
-Topic found: Bóng đá Anh
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: https://vtc.vn/cup-c1-champions-league-116.html
-Topic found: Cup C1 2018
-Ignore. Title is too short. It can't be an article
-Crawler pid 12: Add to blacklist
-
-Crawler pid 12: Processing page: https://vtc.vn/bong-da-viet-nam-115.html
-Topic found: Bóng đá Việt Nam
-https://vtc.vn/bong-da-viet-nam-115.html
-Ignore. This href don't have published date. It is not an article.Start crawler number 15 (pid: 6601)
-Remaining seconds to timeout 44
+Crawler pid 1: Crawling newspaper: Soha.vn
+http://soha.vn
+Use Browser to open http://soha.vn
+Create new instance of Firefox browserStart crawler number 17 (pid: 7255)
+Remaining seconds to timeout 42
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 39
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 37
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 34
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 32
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 29
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 27
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 24
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 22
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 19
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 17
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 14
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 12
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 9
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 7
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
-Remaining seconds to timeout 4
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
+Remaining seconds to timeout 2
 Running crawler:
- 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15 
+ 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17 
 Timeout
 Kill unquited browser
 Kill all processes
@@ -15323,7 +13845,7 @@ tokenized
 Analyzing article 6590/6590:
 tokenized
 UPDATE OLD KEYWORD FREQ
-Keyword_Iterator: 93 loops
+Keyword_Iterator: 96 loops
 Updating keyword 1/7750:
 -keyword: phái đoàn
 -old_freq: 6
@@ -95208,7 +93730,7 @@ keyword bất động sản ven biển việt nam năm 2019
 freq: 1
 weight: 1
 weight of bất động sản ven biển việt nam năm 2019 is too low to add to hot keyword dict
-{"iterator":93,"time":"18-01-2019 13:18:47"}
+{"iterator":96,"time":"18-01-2019 14:17:11"}
 Write Trending keyword to file
 asian cup
 532
@@ -95263,3 +93785,4 @@ cô gái
 Save data
 data/keyword.dat
 FINISH
+stop docbao
