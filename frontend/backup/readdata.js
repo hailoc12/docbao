@@ -3,25 +3,15 @@
 var docbao =  angular.module('docbaoApp', []);
 var on_same_page = false;
 docbao.controller('logCtrl', function($scope, $http)
-{
+{	
+    waiting = $("#waiting")
+    waiting.show(700);
     $http.get('/export/log_data.json').then(function (response)
     {
         $scope.log = response.data; //success callback
     }
     , function (data){
         console.log("Khong doc duoc file log_data.json");
-    }    //fail callback
-    );
-
-   $http.get('/export/article_data.json').then(function (response)
-    {
-        $scope.articles = response.data.article_list; //success callback
-        draw_article_table(response.data.article_list);
-        
-        setup_auto_complete(response.data.article_list);
-    }
-    , function (data){
-        console.log("Khong doc duoc file article_data.json");
     }    //fail callback
     );
 
@@ -38,12 +28,33 @@ docbao.controller('logCtrl', function($scope, $http)
     {
         var data = response.data;
         draw_hot_keyword_barchart(data);
+
+	//build recommended keyword to search
+	var keyword_string = ""
+	keywords = Object.keys(data)
+	for(var i=0; i<keywords.length; i++)
+	    {
+		    keyword_string = keyword_string + keywords[i] + " - "
+	    }
+	$scope.keyword_string = keyword_string; 
         
     }
     , function (data){
         console.log("Khong doc duoc file trending_keyword.json");
     }    //fail callback
     );
+
+   $http.get('/export/trending_article.json').then(function (response)
+    {
+        var data = response.data;
+        draw_trending_article_table(data);
+
+    }
+    , function (data){
+        console.log("Khong doc duoc file trending_article.json");
+    }    //fail callback
+    );
+
     $http.get('/export/new_keyword.json').then(function (response)
     {
         var data = response.data;
@@ -62,6 +73,20 @@ docbao.controller('logCtrl', function($scope, $http)
         console.log("Khong doc duoc file fast_growing_keyword.json");
     }    //fail callback
     );
+   $http.get('/export/article_data.json').then(function (response)
+    {
+        $scope.articles = response.data.article_list; //success callback
+        draw_article_table(response.data.article_list);
+        
+        setup_auto_complete(response.data.article_list);
+	console.log($scope.waiting);
+
+    }
+    , function (data){
+        console.log("Khong doc duoc file article_data.json");
+    }    //fail callback
+    );
+
     setTimeout(function() {
     var fType = decodeURI(getUrlVars()["keyword"]);
     if (fType != "undefined" && !on_same_page) _search_article_table(fType);
@@ -140,8 +165,48 @@ function create_article_table(article_list)
         nowrap: true,
 	"pageLength": 10,
     } );
+   $("#waiting").hide(700);
+   $("#load_success").show(700);
+   window.setTimeout(function(){
+   	$("#load_success").hide(700);
+   }, 1000);
  
 }
+
+function draw_trending_article_table(article_list)
+{
+ 
+$(document).ready(function() {
+	create_trending_article_table(article_list);
+   } );
+}
+function create_trending_article_table(article_list)
+{
+
+    var dataset = article_list;
+    $('#trending_article_table').DataTable( 
+	{
+        data: dataset,
+        columns: [
+            { title: "Chủ đề", data:"keyword", "searchable": false, className: "min-desktop"},
+            { title: "Tên bài", data:"topic", "searchable": true, className:"all"},
+            { title: "Nguồn báo", data:"newspaper", "searchable": false, className:"min-desktop"},
+            { title: "Cập nhật", data:"update_time", "searchable": false, className: "min-desktop" },
+        ],
+        "rowCallback": function( row, data, index ) {
+            topic = $('td:eq(1)', row).html();
+            $('td:eq(1)', row).html('<a href="' + data.href + '" target="_blank">' + topic + '</a>');
+          },
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 1 },
+            { responsivePriority: 2, targets: 2 }
+        ],
+        nowrap: true,
+	"pageLength": 10
+    } );
+}
+
 function draw_new_keyword_table(new_keyword_list)
 {
 var data = new_keyword_list;
@@ -262,8 +327,16 @@ function go_to_search_card()
 
 function setup_auto_complete(article_list)
 {
-    var states = []
-    var max_item = 2000
+    var states = [];
+    var max_item = 3000;
+    var isMobile = window.matchMedia("only screen and (max-width:480px)");
+    if(isMobile)
+	{
+		max_item = 1000;
+	}	
+    console.log("Max autocomplete items: ")
+    console.log(max_item)
+
     if(max_item > article_list.length)
 	{
 		max_item = article_list.length;
@@ -273,7 +346,9 @@ function setup_auto_complete(article_list)
         states.push({"title":article_list[i].topic + " (" + article_list[i].newspaper + ")", "value": article_list[i].topic});
     }
   $("#keyword_search_text").autocomplete({
-    source:[states]
+    source:[states],
+    visibleLimit: 10,
+    autoselect: false
     });
 }
 function addKeywordToUrl(keyword)

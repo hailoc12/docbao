@@ -462,28 +462,67 @@ class KeywordManager:
         min_three_keywords = self._config_manager.get_minimum_freq_for_more_than_two_length_keyword()
         min_weight = self._config_manager.get_minimum_weight()
 
-        tag_list = self._hot_keyword_list
-        tag_dict = self._hot_keyword_dict
-        count = 0
-        hot_dict = dict()
+        trending_dict = dict()
         if max_trending_keyword > len(self._fast_growing_list):
             max_trending_keyword = len(self._fast_growing_list)
+
+        count = 0
+        i=0
         print("Write Trending keyword to file")
         with open_utf8_file_to_write(get_independent_os_path(["export","trending_keyword.json"])) as stream:
             while count < max_trending_keyword:
-                count+=1
-                (keyword, freq) = self._fast_growing_list.pop(0)
+                item = self._fast_growing_list[i]
+                keyword = item["keyword"]
+                freq = item["count"]
                 if keyword.strip() not in self.stopwords:
                         if count <= max_trending_keyword:
+                            count+=1
                             print(keyword)
                             print(freq)
-                            #hot_dict[keyword] = freq
-                            #hot_dict[keyword] = tag_dict[keyword]
-                            hot_dict[keyword] = self._data_manager.count_articles_contain_keyword(keyword) # count by actual articles contain keywords
-            stream.write(jsonpickle.encode(hot_dict))
+                            trending_dict[keyword] = self._data_manager.count_articles_contain_keyword(keyword) # count by actual articles contain keywords
+                i+=1
+            stream.write(jsonpickle.encode(trending_dict))
+            stream.close()
+
+    def write_trending_article_to_json_file(self):
+        number = 10
+        if number > len(self._fast_growing_list):
+            number = len(self._fast_growing_list)
+
+        # Write trending articles to json file
+        article = None
+        article_list = list()
+        with open_utf8_file_to_write(get_independent_os_path(["export","trending_article.json"])) as stream:
+            for i in range(0, number):
+                article = None
+                item = self._fast_growing_list[i]
+                keyword = item["keyword"]
+                article = self._data_manager.get_lastest_article_contain_keyword(keyword)
+                if article is not None:
+                    update_time = int((datetime.now() - article.get_creation_date()).total_seconds() / 60)
+                    update_time_string=""
+                    if update_time >= 720:
+                        update_time = int(update_time / 720)
+                        update_time_string = str(update_time) + " ngày trước"
+                    else:
+                        if update_time >= 60:
+                            update_time = int(update_time / 60)
+                            update_time_string = str(update_time) + " giờ trước"
+                        else:
+                            update_time_string = str(update_time) + " phút trước"
+                    article_list.append({
+                                'keyword': keyword,
+                                'topic': article.get_topic(),
+                                'href': article.get_href(),
+                                'newspaper': article.get_newspaper(),
+                                'update_time': update_time_string
+                                })
+            stream.write(jsonpickle.encode({'trending_article_list': article_list}))
             stream.close()
 
     def write_uncategorized_keyword_to_text_file(self):
+        if self._hot_keyword_dict is None:
+            self.get_hot_keyword_dict()
         tag_dict = self._other_keyword_dict
         with open_utf8_file_to_write(get_independent_os_path(["export","uncategorized_keyword.txt"])) as stream:
             for keyword in sorted(tag_dict, key=tag_dict.get, reverse=True):
@@ -512,11 +551,11 @@ class KeywordManager:
             stream.write(jsonpickle.encode(self._new_keyword))
             stream.close()
             
-        self._fast_growing_list = list() 
 
     def detect_fast_growing_keyword(self):
         print("DETECT FAST GROWING KEYWORDS")
         keyword_list = self._optimized_keyword_list
+        self._fast_growing_list = list()
         result = self._fast_growing_list
         iterator = self._series_iterator
         count = 0
@@ -542,12 +581,15 @@ class KeywordManager:
                     print("Duration: " + str(duration))
                     print("Articles: " + str(item.get_freq_series()))
                     print("Speed: " + str(speed) + " min/article")
-                    result.append((item.get_keyword(),item.get_freq_series()))
-        # sort fast growing keyword by descending frequency
-        result = sorted(result, key=lambda k:k[1], reverse=True)
+                    result.append({"keyword": item.get_keyword(),"count": item.get_freq_series()})
 
-    def write_fast_growing_keyword_to_json_file(self, filename):
-        with open_utf8_file_to_write(filename) as stream:
+        # sort fast growing keyword by descending frequency
+        self._fast_growing_list = sorted(result, key=lambda k:k["count"], reverse=True)
+
+        print(self._fast_growing_list)
+        print("Fast Growing List")
+
+    def write_fast_growing_keyword_to_json_file(self):
+        with open_utf8_file_to_write(get_independent_os_path(["export","fast_growing_keyword.json"])) as stream:
             stream.write(jsonpickle.encode(self._fast_growing_list))
             stream.close()
-   

@@ -43,6 +43,28 @@ docbao.controller('logCtrl', function($scope, $http)
         console.log("Khong doc duoc file trending_keyword.json");
     }    //fail callback
     );
+
+   $http.get('/export/trending_article.json').then(function (response)
+    {
+        var data = response.data.trending_article_list;
+        draw_trending_article_table(data);
+
+    }
+    , function (data){
+        console.log("Khong doc duoc file trending_article.json");
+    }    //fail callback
+    );
+
+   $http.get('/export/new_growing_article.json').then(function (response)
+    {
+        var data = response.data.new_growing_article_list;
+        draw_trending_article_table(data);
+
+    }
+    , function (data){
+        console.log("Khong doc duoc file trending_article.json");
+    }    //fail callback
+    );
     $http.get('/export/new_keyword.json').then(function (response)
     {
         var data = response.data;
@@ -52,15 +74,7 @@ docbao.controller('logCtrl', function($scope, $http)
         console.log("Khong doc duoc file new_keyword.json");
     }    //fail callback
     );
-    $http.get('/export/fast_growing_keyword.json').then(function (response)
-    {
-        var data = response.data;
-        draw_fast_growing_keyword_table(data);
-    }
-    , function (data){
-        console.log("Khong doc duoc file fast_growing_keyword.json");
-    }    //fail callback
-    );
+
    $http.get('/export/article_data.json').then(function (response)
     {
         $scope.articles = response.data.article_list; //success callback
@@ -160,6 +174,76 @@ function create_article_table(article_list)
    }, 1000);
  
 }
+
+function draw_trending_article_table(article_list)
+{
+ 
+$(document).ready(function() {
+	create_trending_article_table(article_list);
+   } );
+}
+
+function create_trending_article_table(article_list)
+{
+
+    var dataset = article_list;
+    $('#trending_article_table').DataTable( 
+	{
+        data: dataset,
+        columns: [
+            { title: "Chủ đề", data:"keyword", "searchable": false, className: "min-desktop"},
+            { title: "Tên bài", data:"topic", "searchable": false, className:"all"},
+            { title: "Nguồn báo", data:"newspaper", "searchable": false, className:"min-desktop"},
+            { title: "Cập nhật", data:"update_time", "searchable": false, className: "min-desktop" },
+        ],
+        "rowCallback": function( row, data, index ) {
+            topic = $('td:eq(1)', row).html();
+            $('td:eq(1)', row).html('<a href="' + data.href + '" target="_blank">' + topic + '</a>');
+          },
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 1 },
+            { responsivePriority: 2, targets: 2 }
+        ],
+        nowrap: true,
+	"pageLength": 5, 
+    } );
+}
+
+function draw_new_growing_article_table(article_list)
+{
+ 
+$(document).ready(function() {
+	create_new_growing_article_table(article_list);
+   } );
+}
+
+function create_new_growing_article_table(article_list)
+{
+
+    var dataset = article_list;
+    $('#new_growing_article_table').DataTable( 
+	{
+        data: dataset,
+        columns: [
+            { title: "Chủ đề", data:"keyword", "searchable": false, className: "min-desktop"},
+            { title: "Tên bài", data:"topic", "searchable": false, className:"all"},
+            { title: "Nguồn báo", data:"newspaper", "searchable": false, className:"min-desktop"},
+            { title: "Cập nhật", data:"update_time", "searchable": false, className: "min-desktop" },
+        ],
+        "rowCallback": function( row, data, index ) {
+            topic = $('td:eq(1)', row).html();
+            $('td:eq(1)', row).html('<a href="' + data.href + '" target="_blank">' + topic + '</a>');
+          },
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 1 },
+            { responsivePriority: 2, targets: 2 }
+        ],
+        nowrap: true,
+	"pageLength": 5, 
+    } );
+}
 function draw_new_keyword_table(new_keyword_list)
 {
 var data = new_keyword_list;
@@ -175,26 +259,6 @@ $(document).ready(function()
          }
 
                 $("#new_keyword_row").html(keyword_string);
-
-   }
-             );
-}
-
-function draw_fast_growing_keyword_table(fast_growing_keyword_list)
-{
-var data = fast_growing_keyword_list;
-console.log(data);
-$(document).ready(function() 
-    {
-        keyword_string = "";
-        for(i=0; i< data.length; i++)
-        {
-           keyword_string = keyword_string + '<a href="#article_table" onclick ="search_article_table(this)">' + 
-           data[i].keyword + '</a>' + '<sub>(' + data[i].count +
-                     ')</sub>' + ' - ';
-         }
-
-                $("#fast_growing_keyword_row").html(keyword_string);
 
    }
              );
