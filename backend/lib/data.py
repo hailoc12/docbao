@@ -472,6 +472,14 @@ class ArticleManager:
             if (article.is_tokenized is True) and (keyword in article.get_topic().lower()):
                 count+=1
         return count
+    def count_articles_contain_keyword(self, keyword):
+        count = 0
+        for href in self._data:
+            article = self._data[href]
+            if keyword in article.get_topic().lower():
+                count+=1
+        return count
+
 
     def compress_database(self, _keyword_manager):
         remove = []

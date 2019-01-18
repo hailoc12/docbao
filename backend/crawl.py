@@ -212,11 +212,10 @@ with multiprocessing.Manager() as manager:
 
     # export data 
     data_manager.export_to_json()
-    data_manager.export_suggestion_list_to_json_file()
-    keyword_manager.write_keyword_dicts_to_json_files()
-    keyword_manager.write_keyword_freq_series_to_json_file()
-    keyword_manager.write_trending_keyword_to_json_file()
-    keyword_manager.write_uncategorized_keyword_to_text_file() 
+    #keyword_manager.write_keyword_dicts_to_json_files()
+    #keyword_manager.write_keyword_freq_series_to_json_file()
+    keyword_manager.write_trending_keyword_by_growing_speed_to_json_file()
+    #keyword_manager.write_uncategorized_keyword_to_text_file() 
 
     # save data
     time.sleep(1)

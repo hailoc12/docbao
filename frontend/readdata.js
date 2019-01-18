@@ -28,6 +28,15 @@ docbao.controller('logCtrl', function($scope, $http)
     {
         var data = response.data;
         draw_hot_keyword_barchart(data);
+
+	//build recommended keyword to search
+	var keyword_string = ""
+	keywords = Object.keys(data)
+	for(var i=0; i<keywords.length; i++)
+	    {
+		    keyword_string = keyword_string + keywords[i] + " - "
+	    }
+	$scope.keyword_string = keyword_string; 
         
     }
     , function (data){
