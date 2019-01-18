@@ -13,18 +13,6 @@ docbao.controller('logCtrl', function($scope, $http)
     }    //fail callback
     );
 
-   $http.get('/export/article_data.json').then(function (response)
-    {
-        $scope.articles = response.data.article_list; //success callback
-        draw_article_table(response.data.article_list);
-        
-        setup_auto_complete(response.data.article_list);
-    }
-    , function (data){
-        console.log("Khong doc duoc file article_data.json");
-    }    //fail callback
-    );
-
    $http.get('/export/keyword_dict.json').then(function (response)
     {
         draw_category_table(response.data.data);
@@ -62,6 +50,19 @@ docbao.controller('logCtrl', function($scope, $http)
         console.log("Khong doc duoc file fast_growing_keyword.json");
     }    //fail callback
     );
+   $http.get('/export/article_data.json').then(function (response)
+    {
+        $scope.articles = response.data.article_list; //success callback
+        draw_article_table(response.data.article_list);
+        
+        setup_auto_complete(response.data.article_list);
+    }
+    , function (data){
+        console.log("Khong doc duoc file article_data.json");
+    }    //fail callback
+    );
+
+
     setTimeout(function() {
     var fType = decodeURI(getUrlVars()["keyword"]);
     if (fType != "undefined" && !on_same_page) _search_article_table(fType);
@@ -262,8 +263,16 @@ function go_to_search_card()
 
 function setup_auto_complete(article_list)
 {
-    var states = []
-    var max_item = 2000
+    var states = [];
+    var max_item = 2000;
+    var isMobile = window.matchMedia("only screen and (max-width:480px)");
+    if(isMobile)
+	{
+		max_item = 500;
+	}	
+    console.log("Max autocomplete items: ")
+    console.log(max_item)
+
     if(max_item > article_list.length)
 	{
 		max_item = article_list.length;
@@ -273,7 +282,9 @@ function setup_auto_complete(article_list)
         states.push({"title":article_list[i].topic + " (" + article_list[i].newspaper + ")", "value": article_list[i].topic});
     }
   $("#keyword_search_text").autocomplete({
-    source:[states]
+    source:[states],
+    visibleLimit: 10,
+    autoselect: false
     });
 }
 function addKeywordToUrl(keyword)
