@@ -166,7 +166,7 @@ function create_article_table(article_list)
         ],
         nowrap: true,
 	"pageLength": 50,
-	paging: false,
+	paging: true,
 	scrollY: 800,
     } );
    $("#waiting").hide(700);
@@ -248,7 +248,6 @@ function create_hot_growing_article_table(article_list)
 	"pageLength": 5, 
 	paging: false,
 	scrollY: 400,
-	compact: true
     } );
 }
 function draw_new_keyword_table(new_keyword_list)
@@ -352,11 +351,11 @@ function go_to_search_card()
 function setup_auto_complete(article_list)
 {
     var states = [];
-    var max_item = 5000;
+    var max_item = 2000;
     var isMobile = window.matchMedia("only screen and (max-width:480px)");
     if(isMobile)
 	{
-		max_item = 1000;
+		max_item = 500;
 	}	
     console.log("Max autocomplete items: ")
     console.log(max_item)
