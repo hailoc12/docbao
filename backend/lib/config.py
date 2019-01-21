@@ -84,6 +84,11 @@ class ConfigManager:
             return int(self._config['timeout'])
         else:
             return default
+    def get_trending_duration(self, default=600):
+        if "trending_duration" in self._config:
+            return int(self._config['trending_duration'])
+        else:
+            return default
 
     def get_minimum_freq_of_hot_growing_article(self, default=3):
         if "minimum_freq_of_hot_growing_article" in self._config:
