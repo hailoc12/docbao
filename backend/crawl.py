@@ -136,8 +136,8 @@ with multiprocessing.Manager() as manager:
         time.sleep(1)
         print("There are only %s newspaper to crawl" % str(number_of_job))
         time.sleep(1)
-        print("max_crawler will be set to %s for efficience" % str(int(number_of_job / 2)))
-        max_crawler = int(number_of_job / 2)
+        print("max_crawler will be set to %s for efficience" % str(int(number_of_job / 2)+1))
+        max_crawler = int(number_of_job / 2) + 1
 
     crawler_processes = []
     time.sleep(1)
