@@ -80,8 +80,25 @@ class ConfigManager:
         self._config = yaml.load(stream)
         stream.close()
     def get_timeout(self, default=1000):
-        if "time_out" in self._config:
-            return int(self._config['time_out'])
+        if "timeout" in self._config:
+            return int(self._config['timeout'])
+        else:
+            return default
+    def get_trending_duration(self, default=600):
+        if "trending_duration" in self._config:
+            return int(self._config['trending_duration'])
+        else:
+            return default
+
+    def get_minimum_freq_of_hot_growing_article(self, default=3):
+        if "minimum_freq_of_hot_growing_article" in self._config:
+            return int(self._config["minimum_freq_of_hot_growing_article"])
+        else:
+            return default
+
+    def get_maximum_freq_of_hot_growing_article(self, default=10):
+        if "maximum_freq_of_hot_growing_article" in self._config:
+            return int(self._config["maximum_freq_of_hot_growing_article"])
         else:
             return default
 

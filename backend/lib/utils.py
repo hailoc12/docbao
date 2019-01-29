@@ -7,7 +7,7 @@ import os
 import urllib.request
 from  lib.crawl import *
 import time
-from psutil import virtual_memory
+import psutil
 
 _firefox_browser = None
 
@@ -15,9 +15,10 @@ _firefox_browser = None
 def get_max_crawler_can_be_run():
     # Get max crawler that system can support (base on free ram)
     ram_for_each_crawler = 350000000
-    safe_margin = 0.55 # free 45% for safe
-    mem = virtual_memory()
-    mem_free = mem.free - mem.total * (1-safe_margin)
+    safe_margin = 0.5 # free 45% for safe
+    mem = psutil.virtual_memory()
+    swap_free = psutil.swap_memory().free
+    mem_free = (mem.free + swap_free) * safe_margin
     return int(mem_free  / ram_for_each_crawler)
 
 def is_another_session_running():

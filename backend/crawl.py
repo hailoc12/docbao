@@ -14,10 +14,11 @@ import multiprocessing
 import os
 import time
 
-def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_articles, new_blacklists):
+def crawler_process(process_name, lock, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists):
     # Function: work as an worker in multiprocessed crawling
     # Input:
     #   lock: to acquire and release shared data
+    #   browser_list: a shared queue of browser to release when timeout
     #   crawl_queue: a shared queue of "crawl task"
     #   data_manager: an object that support method to crawl. Important: this object can't be shared by multiprocessing lib, so output data must be shared in another queue. But input data have cleared _data articles but initial _blacklists link
     #   blacklists: Queue that contain blacklist links
@@ -27,7 +28,12 @@ def crawler_process(process_name, lock, crawl_queue, data_manager, crawled_artic
     #   crawled_aritlces: contain new crawled articles
 
     print("Crawler %s has been started" % process_name)
+
     browser = BrowserWrapper()
+    lock.acquire()
+    browser_list.put(browser)
+    lock.release()
+
     a = True
     while a:
     #try:
@@ -82,6 +88,7 @@ with multiprocessing.Manager() as manager:
     crawl_queue = manager.Queue() 
     crawled_articles = manager.Queue()
     new_blacklists = manager.Queue()
+    browser_list = manager.Queue() # keep all firefox browser to release when timeout
     lock = manager.Lock()
 
     # Load data from file
@@ -125,12 +132,12 @@ with multiprocessing.Manager() as manager:
         print("Current system can support up to %s crawlers to be run in parallel" % str(supported_max_crawler))
         time.sleep(1)
         print("You should increase max_crawler in config.txt")
-    if max_crawler > number_of_job:
+    if max_crawler > int(number_of_job/2):
         time.sleep(1)
         print("There are only %s newspaper to crawl" % str(number_of_job))
         time.sleep(1)
-        print("max_crawler will be set to %s for efficience" % str(int(number_of_job / 2)))
-        max_crawler = int(number_of_job / 2)
+        print("max_crawler will be set to %s for efficience" % str(int(number_of_job / 2)+1))
+        max_crawler = int(number_of_job / 2) + 1
 
     crawler_processes = []
     time.sleep(1)
@@ -140,7 +147,7 @@ with multiprocessing.Manager() as manager:
     start = time.time()
 
     for i in range(max_crawler):
-        crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, crawl_queue, data_manager, crawled_articles, new_blacklists))
+        crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists))
         crawler_processes.append(crawler)
         crawler.start()
         time.sleep(1)
@@ -164,7 +171,17 @@ with multiprocessing.Manager() as manager:
         else:
             break
     else:
-        print("Timeout, kill all processes")
+        print("Timeout")
+        print("Kill unquited browser")
+        while not browser_list.empty():
+            lock.acquire()
+            browser = browser_list.get()
+            print("Found a running browser")
+            print(browser)
+            print("Close browser") 
+            lock.release()
+            browser.quit()
+        print("Kill all processes")
         for crawler in crawler_processes:
             crawler.terminate()
             crawler.join()
@@ -195,12 +212,15 @@ with multiprocessing.Manager() as manager:
 
     # export data 
     data_manager.export_to_json()
-    data_manager.export_suggestion_list_to_json_file()
-    keyword_manager.write_trending_keyword_to_json_file()
-    keyword_manager.write_keyword_dicts_to_json_files()
+    #keyword_manager.write_keyword_dicts_to_json_files()
+    #keyword_manager.write_keyword_freq_series_to_json_file()
+    keyword_manager.write_trending_keyword_by_growing_speed_to_json_file()
+    keyword_manager.write_fast_growing_keyword_to_json_file()
     keyword_manager.write_uncategorized_keyword_to_text_file() 
+    keyword_manager.write_trending_article_to_json_file()
+    keyword_manager.write_hot_growing_article_to_json_file()
+    keyword_manager.write_keyword_dicts_to_json_file()
     keyword_manager.write_keyword_freq_series_to_json_file()
-
     # save data
     time.sleep(1)
     print("Save data")

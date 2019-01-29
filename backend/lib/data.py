@@ -74,6 +74,7 @@ class ArticleManager:
     _data = dict()  # a dict of (href: article)
     _blacklist = dict()  # a dict if {href: lifecount}
     _new_blacklist = dict()
+    _sorted_article_list = None
 
     def __init__(self, config_manager, data_filename, blacklist_filename):
         self._config_manager = config_manager
@@ -145,6 +146,7 @@ class ArticleManager:
     def get_sorted_article_list(self):
         article_list = list(self._data.values())
         article_list.sort(key=lambda x: x.get_creation_date(), reverse=True)
+
         return article_list
 
     def get_article(self, href):
@@ -155,6 +157,16 @@ class ArticleManager:
             if self._data[key]._id == id:
                 return self._data[key]
         return None
+
+    def get_lastest_article_contain_keyword(self, keyword):
+        if self._sorted_article_list is None:
+            self._sorted_article_list = self.get_sorted_article_list()
+        for i in range(0, len(self._sorted_article_list)):
+            article = self._sorted_article_list[i]
+            if keyword.strip() in article.get_topic().lower():
+                return article
+        return None
+
     def get_topic_of_an_url(self, url, webconfig, soup=None, browser=None):
         '''
         function
@@ -472,6 +484,14 @@ class ArticleManager:
             if (article.is_tokenized is True) and (keyword in article.get_topic().lower()):
                 count+=1
         return count
+    def count_articles_contain_keyword(self, keyword):
+        count = 0
+        for href in self._data:
+            article = self._data[href]
+            if keyword in article.get_topic().lower():
+                count+=1
+        return count
+
 
     def compress_database(self, _keyword_manager):
         remove = []

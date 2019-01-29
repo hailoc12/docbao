@@ -43,6 +43,19 @@ class Keyword:
                 break
         if not has_set:
             self._freq_timeseries.append([series, freq])
+    def get_keyword_freq(self, series):
+        has_found = False
+        freq = 0
+        for i in range(0, len(self._freq_timeseries)):
+            if self._freq_timeseries[i][0] == series:
+                freq = self._freq_timeseries[i][1] 
+                has_found = True
+                break
+        if not has_found:
+            return None
+        else:
+            return freq
+
     def get_keyword(self):
         return self._keyword
     def get_keyword_length(self):
@@ -58,8 +71,20 @@ class Keyword:
         return len(self._freq_timeseries)
     def get_last_iterator(self):
         return self._freq_timeseries[len(self._freq_timeseries)-1][0]
-    def get_first_iterator(self):
-        return self._freq_timeseries[0][0]
+    def get_first_iterator(self, crawl_duration, trending_duration):
+        #function: return first iterator that happended duration < trending_duration before
+        i = 2
+        last_ite = self._freq_timeseries[-1][0]
+        duration = 0
+        # while haven't reach the first ite and duration still smaller than trending_duration
+        while i <= len(self._freq_timeseries) and duration < trending_duration:
+            current_ite = self._freq_timeseries[-i][0]
+            duration = (last_ite - current_ite) * crawl_duration
+            i+=1
+        i-=1
+        current_ite = self._freq_timeseries[-i][0]
+        return current_ite
+
     def accumulate_tf(self, topic): # accumulate tf when found new article contain keyword
         self._accumulated_tf += len(self._keyword.split())/len(topic.split())
     
@@ -104,6 +129,7 @@ class KeywordManager:
     _hot_keyword_list = None
     _keyword_list = None
     _optimized_keyword_list = None
+    _fast_growing_list = list()
     def __init__(self, data_manager, config_manager, filename, collocation_filename, remove_keywords_filename):
         self._data_manager = data_manager
         self._config_manager = config_manager
@@ -301,13 +327,17 @@ class KeywordManager:
         for keyword in new_keyword:
             count+=1
             print("Optimizing with " + str(count) + "/" + str(total) + " keyword: " + keyword.get_keyword())
-            self.optimize_keyword_list_with_new_keyword(keyword)
+            self._with_new_keyword(keyword)
         count=0
         for keyword in self._keyword_list:
             if keyword.is_covering_nothing():
                 count+=1
                 print("remove " + str(count) + " keyword: " + keyword.get_keyword())
         self._optimized_keyword_list = [x for x in self._keyword_list if not x.is_covering_nothing()]
+
+        # find fast growing keyword 
+        self.detect_fast_growing_keyword()
+
     def is_contain_category_keyword(self, tag):
         for keyword in self._category_set:
             if keyword.strip() not in ["", " "] and keyword.strip() in tag:
@@ -315,7 +345,7 @@ class KeywordManager:
         return False
 
     # reduce common covering article then reduce covering nothing keyword
-    def optimize_keyword_list_with_new_keyword(self,keyword):
+    def _with_new_keyword(self,keyword):
         for other_keyword in self._keyword_list:
             if other_keyword is not keyword:
                 common = other_keyword.get_covering_article() & keyword.get_covering_article()
@@ -386,6 +416,7 @@ class KeywordManager:
             except:
                 open_utf8_file_to_write(category._filename).close()
                 return dict()
+
     def write_keyword_freq_series_to_json_file(self):
         with open_utf8_file_to_write(get_independent_os_path(["export","keyword_freq_series.json"])) as stream:
             data = dict()
@@ -403,7 +434,7 @@ class KeywordManager:
             stream.write(data)
             stream.close()
 
-    def write_keyword_dicts_to_json_files(self):
+    def write_keyword_dicts_to_json_file(self):
         category_list = list()
         for category in self._config_manager.get_categories():
             keyword_list = list()
@@ -450,11 +481,180 @@ class KeywordManager:
             stream.write(jsonpickle.encode(hot_dict))
             stream.close()
 
+    def write_trending_keyword_by_growing_speed_to_json_file(self):
+        max_trending_keyword = self._config_manager.get_number_of_trending_keywords()
+        min_two_keywords = self._config_manager.get_minimum_freq_for_two_length_keyword()
+        min_three_keywords = self._config_manager.get_minimum_freq_for_more_than_two_length_keyword()
+        min_weight = self._config_manager.get_minimum_weight()
+
+        trending_dict = dict()
+        if max_trending_keyword > len(self._fast_growing_list):
+            max_trending_keyword = len(self._fast_growing_list)
+
+        count = 0
+        i=0
+        print("Write Trending keyword to file")
+        with open_utf8_file_to_write(get_independent_os_path(["export","trending_keyword.json"])) as stream:
+            while count < max_trending_keyword:
+                item = self._fast_growing_list[i]
+                keyword = item["keyword"]
+                freq = item["count"]
+                if keyword.strip() not in self.stopwords:
+                        if count <= max_trending_keyword:
+                            count+=1
+                            print(keyword)
+                            print(freq)
+                            trending_dict[keyword] = self._data_manager.count_articles_contain_keyword(keyword) # count by actual articles contain keywords
+                i+=1
+            stream.write(jsonpickle.encode(trending_dict))
+            stream.close()
+
+    def write_trending_article_to_json_file(self):
+        number = self._config_manager.get_number_of_trending_keywords()
+        if number > len(self._fast_growing_list):
+            number = len(self._fast_growing_list)
+
+        # Write trending articles to json file
+        article = None
+        article_list = list()
+        with open_utf8_file_to_write(get_independent_os_path(["export","trending_article.json"])) as stream:
+            for i in range(0, number):
+                article = None
+                item = self._fast_growing_list[i]
+                keyword = item["keyword"]
+                article = self._data_manager.get_lastest_article_contain_keyword(keyword)
+                if article is not None:
+                    update_time = int((datetime.now() - article.get_creation_date()).total_seconds() / 60)
+                    update_time_string=""
+                    if update_time >= 720:
+                        update_time = int(update_time / 720)
+                        update_time_string = str(update_time) + " ngày trước"
+                    else:
+                        if update_time >= 60:
+                            update_time = int(update_time / 60)
+                            update_time_string = str(update_time) + " giờ trước"
+                        else:
+                            update_time_string = str(update_time) + " phút trước"
+                    article_list.append({
+                                'keyword': keyword,
+                                'topic': article.get_topic(),
+                                'href': article.get_href(),
+                                'newspaper': article.get_newspaper(),
+                                'update_time': update_time_string
+                                })
+            stream.write(jsonpickle.encode({'trending_article_list': article_list}))
+            stream.close()
+
+    def write_hot_growing_article_to_json_file(self):
+        floor = self._config_manager.get_minimum_freq_of_hot_growing_article()
+        upper = self._config_manager.get_maximum_freq_of_hot_growing_article()
+        article_list = list()
+        with open_utf8_file_to_write(get_independent_os_path(["export","hot_growing_article.json"])) as stream:
+            for i in range(0, len(self._fast_growing_list)):
+                item = self._fast_growing_list[i]     
+                keyword = item["keyword"]
+                freq = item["count"]
+                if freq >= floor and freq <= upper:
+     
+                    article = self._data_manager.get_lastest_article_contain_keyword(keyword)
+                    if article is not None:
+                        update_time = int((datetime.now() - article.get_creation_date()).total_seconds() / 60)
+                        update_time_string=""
+                        if update_time >= 720:
+                            update_time = int(update_time / 720)
+                            update_time_string = str(update_time) + " ngày trước"
+                        else:
+                            if update_time >= 60:
+                                update_time = int(update_time / 60)
+                                update_time_string = str(update_time) + " giờ trước"
+                            else:
+                                update_time_string = str(update_time) + " phút trước"
+                        article_list.append({
+                                    'keyword': keyword,
+                                    'topic': article.get_topic(),
+                                    'href': article.get_href(),
+                                    'newspaper': article.get_newspaper(),
+                                    'update_time': update_time_string
+                                    })
+            stream.write(jsonpickle.encode({'hot_growing_article_list': article_list}))
+            stream.close()
+
     def write_uncategorized_keyword_to_text_file(self):
+        if self._hot_keyword_dict is None:
+            self.get_hot_keyword_dict()
         tag_dict = self._other_keyword_dict
         with open_utf8_file_to_write(get_independent_os_path(["export","uncategorized_keyword.txt"])) as stream:
             for keyword in sorted(tag_dict, key=tag_dict.get, reverse=True):
                 stream.write(keyword + '\r\n')
             stream.close()
             
+    def detect_new_keyword(self):
+        print("DETECT NEW KEYWORDS")
+        #keyword first appear in three iterator will be considered new keyword
+        keyword_list = self._keyword_manager._optimized_keyword_list
+        new_keyword = self._new_keyword 
+        current_iterator = self._keyword_manager._series_iterator
+        count = 0
+        print("Current iterator: " + str(current_iterator))
+        min_freq = self._config_manager.get_minimum_freq_for_new_keyword()
+        loop_interval = self._config_manager.get_loop_interval_for_new_keyword_accepted()
+        for item in keyword_list:
+            print("Processing keyword: " + item.get_keyword())
+            if item.get_len_of_freq_series() >= 1 and current_iterator - item.get_first_iterator() <= loop_interval and item.get_freq_series() >= min_freq and item.get_keyword_length() > 2:
+                new_keyword.append({"keyword":item.get_keyword(),"count": item.get_freq_series()})
+                count+=1
+                print("Found " + str(count) + " new keywords: " + item.get_keyword())
 
+    def write_new_keyword_to_json_file(self, filename):
+        with open_utf8_file_to_write(filename) as stream:
+            stream.write(jsonpickle.encode(self._new_keyword))
+            stream.close()
+            
+
+    def detect_fast_growing_keyword(self):
+        # Function: detect fast growing keyword in trending duration time
+        print("DETECT FAST GROWING KEYWORDS")
+        keyword_list = self._optimized_keyword_list
+        self._fast_growing_list = list()
+        result = self._fast_growing_list
+        iterator = self._series_iterator
+        count = 0
+        print("Current iterator: " + str(iterator))
+        # a fast growing keyword is a keyword being updated frequently and have growth rate less than 5 min / article  
+        min_freq_series = self._config_manager.get_minimum_freq_series_for_fast_growing_keyword()
+        min_freq = self._config_manager.get_minimum_freq_for_fast_growing_keyword()
+        crawl_interval = self._config_manager.get_crawling_interval()
+        publish_speed = self._config_manager.get_minimum_publish_speed()
+        trending_duration = self._config_manager.get_trending_duration()
+        print("trending_duration: %s" % str(trending_duration))
+        for item in keyword_list:
+            length = item.get_len_of_freq_series()
+            last_iterator= item.get_last_iterator()
+            print("Processing keyword: " + item.get_keyword())
+            
+            if length >= min_freq_series and item.get_keyword_length() > 2:
+                first_iterator = item.get_first_iterator(crawl_interval, trending_duration)
+                duration = (iterator - first_iterator) * crawl_interval
+                speed = duration / item.get_freq_series() 
+                increase_freq = item.get_keyword_freq(last_iterator) - item.get_keyword_freq(first_iterator)
+                if speed < publish_speed:
+                    count+=1
+                    print("Found " + str(count) + " fast growing keywords: " + item.get_keyword())
+                    print("First Iterator: %s" % str(first_iterator))
+                    print("Duration: " + str(duration))
+                    print("Articles: " + str(item.get_freq_series()))
+                    print("Speed: " + str(speed) + " min/article")
+                    result.append({"keyword": item.get_keyword(),
+                                    "count": item.get_freq_series(),
+                                    "increase_freq": increase_freq})
+
+        # sort fast growing keyword by descending increased frequency
+        self._fast_growing_list = sorted(result, key=lambda k:k["increase_freq"], reverse=True)
+
+        print(self._fast_growing_list)
+        print("Fast Growing List")
+
+    def write_fast_growing_keyword_to_json_file(self):
+        with open_utf8_file_to_write(get_independent_os_path(["export","fast_growing_keyword.json"])) as stream:
+            stream.write(jsonpickle.encode(self._fast_growing_list))
+            stream.close()

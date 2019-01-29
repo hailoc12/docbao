@@ -1,4 +1,5 @@
 ﻿running_path: ~/docbao_test/
+timeout: 600
 max_crawler: 60
 crawling_list:
     - CafeBiz:
@@ -681,6 +682,369 @@ crawling_list:
         output_html : False
         use_browser : False
         display_browser: False
+    - Đảng Cộng Sản:
+        web_url: http://www.cpv.org.vn
+        crawl_url: http://www.cpv.org.vn
+        url_pattern_re: (http|https)://www.cpv.org.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "post-subinfo"
+        date_re: (\d{1,2}:\d{1,2} \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%H:%M %d/%m/%Y" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Tổ Quốc:
+        web_url: http://toquoc.vn
+        crawl_url: http://toquoc.vn
+        url_pattern_re: (http|https)://toquoc.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - publishdate
+            - datetime
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Kinh tế Sài Gòn:
+        web_url: https://www.thesaigontimes.vn
+        crawl_url: https://www.thesaigontimes.vn
+        url_pattern_re: (http|https)://www.thesaigontimes.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "m_DateCreated"
+            - "Date"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}, \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y, %H:%M" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Đất Việt:
+        web_url: http://baodatviet.vn
+        crawl_url: http://baodatviet.vn
+        url_pattern_re: (http|https)://baodatviet.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - sharedetail
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Đầu tư:
+        web_url: https://baodautu.vn
+        crawl_url: https://baodautu.vn
+        url_pattern_re: (http|https)://baodautu.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "time_detail f14"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Công Thương:
+        web_url: https://congthuong.vn
+        crawl_url: https://congthuong.vn
+        url_pattern_re: (http|https)://congthuong.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "bx-time lt"
+        date_re: (\d{1,2}:\d{1,2} | \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%H:%M | %d/%m/%Y" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Đại Biểu Nhân Dân:
+        web_url: http://www.daibieunhandan.vn
+        crawl_url: http://www.daibieunhandan.vn
+        url_pattern_re: (http|https)://www.daibieunhandan.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "NewsDate"
+        date_re: (\d{1,2}:\d{1,2} | \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%H:%M | %d/%m/%Y" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Sài Gòn Giải Phóng:
+        web_url: http://www.sggp.org.vn
+        crawl_url: http://www.sggp.org.vn
+        url_pattern_re: (http|https)://www.sggp.org.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+            - time
+        date_class:
+            -
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
+        output_html : False
+        use_browser : False
+        display_browser: False
+    - Công Luận:
+        web_url: https://congluan.vn
+        crawl_url: https://congluan.vn
+        url_pattern_re: (http|https)://congluan.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "timeStamp"
+        date_re: (\d{1,2}:\d{1,2}, \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} )
+        date_pattern: "%H:%M, %d/%m/%Y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Hải Quan:
+        web_url: https://baohaiquan.vn
+        crawl_url: https://baohaiquan.vn
+        url_pattern_re: (http|https)://baohaiquan.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "date-line"
+        date_re: (\d{1,2}:\d{1,2} | \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} )
+        date_pattern: "%H:%M | %d/%m/%Y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Doanh Nhân Sài Gòn:
+        web_url: https://doanhnhansaigon.vn
+        crawl_url: https://doanhnhansaigon.vn
+        url_pattern_re: (http|https)://doanhnhansaigon.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "date"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%d/%m/%Y" 
+        output_html : False 
+        use_browser : True
+        display_browser: False
+    - Tầm Nhìn:
+        web_url: http://tamnhin.net.vn
+        crawl_url: http://tamnhin.net.vn
+        url_pattern_re: (http|https)://tamnhin.net.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+            - "head"
+        date_class:
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
+        date_pattern: "%Y-%m-%dT%H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Người Đưa Tin:
+        web_url: https://www.nguoiduatin.vn
+        crawl_url: https://www.nguoiduatin.vn
+        url_pattern_re: (http|https)://www.nguoiduatin.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "datetime mb-3"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} | \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y | %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Thanh Niên Việt:
+        web_url: http://thanhnienviet.vn
+        crawl_url: http://thanhnienviet.vn
+        url_pattern_re: (http|https)://thanhnienviet.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "entry-date published"
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
+        date_pattern: "%Y-%m-%dT%H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Thanh Niên Việt:
+        web_url: http://thanhnienviet.vn
+        crawl_url: http://thanhnienviet.vn
+        url_pattern_re: (http|https)://thanhnienviet.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "entry-date published"
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
+        date_pattern: "%Y-%m-%dT%H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Giáo Dục VN:
+        web_url: http://giaoduc.net.vn
+        crawl_url: http://giaoduc.net.vn
+        url_pattern_re: (http|https)://giaoduc.net.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "cms-date"
+        date_re: (\d{1,2}:\d{1,2} \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+        date_pattern: "%H:%M %d/%m/%y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Nhịp Sống Số:
+        web_url: http://www.nss.vn
+        crawl_url: http://www.nss.vn
+        url_pattern_re: (http|https)://www.nss.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "summary clearfix"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Tri Thức Trẻ:
+        web_url: http://ttvn.vn
+        crawl_url: http://ttvn.vn
+        url_pattern_re: (http|https)://ttvn.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "dateandcat"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} - \d{1,2}:\d{1,2} (A|P)M)
+        date_pattern: "%d/%m/%Y %H:%M %p" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
 category_list:
     - Chính Trị:
         filename: category/chinh_tri.txt
@@ -728,17 +1092,20 @@ category_list:
         filename: category/nhan_vat.txt
         index: 15
 waiting_time_between_each_crawl: 3
-maximum_url_to_visit_each_turn: 10
+maximum_url_to_visit_each_turn: 15
 minimum_topic_length: 4
 days_to_crawl: 7
 number_of_hot_keywords: 2000
 number_of_trending_keywords: 25
-minimum_weight: 0.002
-minimum_freq_for_two_length_keyword_appear_in_hot_keywords: 2 
-minimum_freq_for_more_than_two_length_keyword_appear_in_hot_keywords: 5 
+minimum_weight: 0.000002
+minimum_freq_for_two_length_keyword_appear_in_hot_keywords: 10 
+minimum_freq_for_more_than_two_length_keyword_appear_in_hot_keywords: 3 
 mininum_freq_for_new_keyword_accepted: 1
 loop_interval_for_new_keyword_accepted: 2
 minimum_freq_for_fast_growing_keyword_accepted: 2
-minimum_freq_series_for_fast_growing_keyword_accepted: 3
-minimum_publish_speed: 120
+minimum_freq_series_for_fast_growing_keyword_accepted: 2
+minimum_publish_speed: 60
+minimum_freq_of_hot_growing_article: 3
+maximum_freq_of_hot_growing_article: 8
+trending_duration: 120
 crawling_interval: 10

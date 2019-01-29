@@ -1,6 +1,6 @@
-# ĐỌC BÁO THEO TỪ KHÓA (V1.1.0)
+# ĐỌC BÁO THEO TỪ KHÓA (V1.2.0)
 Công cụ quét báo mạng theo mô hình phân tán để xây dựng các trang theo dõi báo chí cá nhân hoá 
-- Trang tổng hợp 35 báo tiếng Việt: https://theodoibaochi.com
+- Trang tổng hợp 52 báo tiếng Việt: https://theodoibaochi.com
 - Trang tổng hợp tin tức báo chí về Hải Phòng: http://haiphong.theodoibaochi.com
 
 Demo quét song song 35 tờ báo sử dụng 10 trình duyệt Firefox cùng lúc
