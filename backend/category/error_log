@@ -12,3 +12,11 @@
 [24-Jan-2019 23:01:26 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
 [24-Jan-2019 23:06:17 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
 [24-Jan-2019 23:06:18 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
+[28-Jan-2019 16:21:31 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
+[28-Jan-2019 16:21:31 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
+[28-Jan-2019 16:21:31 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
+[28-Jan-2019 16:21:31 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/theodoibaochi.com/category/system_m.php on line 1
+[28-Jan-2019 16:21:31 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
+[28-Jan-2019 16:22:07 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
+[28-Jan-2019 16:28:17 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
+[28-Jan-2019 16:28:22 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/theodoibaochi.com/category/engine_functions.php on line 1
