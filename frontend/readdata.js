@@ -351,12 +351,8 @@ function go_to_search_card()
 function setup_auto_complete(article_list)
 {
     var states = [];
-    var max_item = 2000;
-    var isMobile = window.matchMedia("only screen and (max-width:480px)");
-    if(isMobile)
-	{
-		max_item = 500;
-	}	
+    var max_item = 5000;
+	
     console.log("Max autocomplete items: ")
     console.log(max_item)
 
@@ -364,7 +360,8 @@ function setup_auto_complete(article_list)
 	{
 		max_item = article_list.length;
 	}
-    for(var i=0; i < max_item; i++)
+
+    for(var i=0; i < max_item ; i++)
     {
         states.push({"title":article_list[i].topic + " (" + article_list[i].newspaper + ")", "value": article_list[i].topic});
     }
