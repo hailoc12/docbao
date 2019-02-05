@@ -262,7 +262,8 @@ class ArticleManager:
         datetag = webconfig.get_date_tag_list()
         dateclass = webconfig.get_date_class_list()
         date_pattern = webconfig.get_date_pattern()
-        filter = re.compile(datere)
+        flags = re.UNICODE
+        filter = re.compile(datere, flags = flags)
 
         if datetag is not None:
             for tag in datetag:
