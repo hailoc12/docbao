@@ -14,12 +14,13 @@ import sys
 
 # class represent single keyword that is extracted form article topic
 class Keyword:
-    def __init__(self, keyword, topic):
+    def __init__(self, keyword, article):
         self._keyword = keyword
         self._freq_timeseries = deque(maxlen=90) 
         self._article_set = set()
         
         # For TF-IDF algorithm
+        topic = article.get_topic()
         self._accumulated_tf = len(keyword) / len(topic)
 
     def add_covering_article(self, article_id):
@@ -34,6 +35,7 @@ class Keyword:
         self._article_set.discard(article_id)
     def reduce_covering_article(self, reduce_set):
         self._article_set= self._article_set - reduce_set
+        
     def set_keyword_freq(self, freq, series): #set new freq at series time
         has_set = False
         for i in range(0, len(self._freq_timeseries)):
@@ -56,6 +58,41 @@ class Keyword:
         else:
             return freq
 
+    def remove_keyword_freq_with_article(self, article, current_iterator):
+        article_iterator = int(current_iterator - ((datetime.now() - article.get_date()).total_seconds()/60/ crawl_duration))  
+        for series in self._freq_timeseries:
+            if series[0] >= article_iterator:
+                series[1] = series[1]-1
+
+    def update_keyword_freq_with_new_article(self, article, current_iterator, crawl_duration):
+        article_iterator = int(current_iterator - ((datetime.now() - article.get_date()).total_seconds()/60/ crawl_duration))  
+        
+        has_freq = False 
+        set_new_freq_pos = False 
+        new_freq_pos = 0
+        
+        for i in range(0, len(self._freq_timeseries)):
+            series = self._freq_timeseries[i]
+            if series[0] == article_iterator:
+                has_freq = True
+                series[1] = series[1]+1
+
+            if series[0] > aritcle_iterator:
+                if has_freq == False:
+                    # remember to create new freq series here
+                    new_freq_pos = i-1
+                    has_freq == True
+                    set_new_freq_pos == True
+                series[1] = series[1]+1
+
+        if has_freq is False or set_new_freq_pos == True:
+            if new_freq_pos >= 0:
+                new_freq = self._freq_timeseries[new_freq_pos][1] + 1
+                self._freq_timeseries.insert(new_freq_pos, [article_iterator, new_freq]) #note: article_iterator may be negative
+            else:
+                new_freq = 1
+                self._freq_timeseries.append([article_iterator, new_freq]) #note: article_iterator may be negative
+                
     def get_keyword(self):
         return self._keyword
     def get_keyword_length(self):
@@ -144,8 +181,10 @@ class KeywordManager:
         self._series_iterator+=1
     def get_series_iterator(self):
         return self._series_iterator
+
     def add_new_keyword(self,keyword):
         self._keyword_list.append(keyword)
+
     def load_data(self):
 
         stream = open_binary_file_to_read(self._data_filename)
@@ -246,7 +285,7 @@ class KeywordManager:
             item = self._keyword_list[pos]
             if item.get_keyword() in topic.lower(): #Note: topic is in original format, so it's important to add .lower() here
                 # update keyword after removing article
-                item.set_keyword_freq(item.get_freq_series()-1, self.get_series_iterator())
+                item.remove_keyword_freq_with_article(article, self.get_series_iterator)
                 item.remove_covering_article(article.get_id)
 
                 if item.get_freq_series() <=0: 
@@ -290,8 +329,8 @@ class KeywordManager:
                 new_article.append(article)
                 for keyword in article.get_keywords():
                     if not self.is_in_keyword_list(keyword):
-                        new_obj = Keyword(keyword, article.get_topic()) #provide article topic to calculate keyword TF
-                        self.add_new_keyword(new_obj)
+                        new_obj = Keyword(keyword, article) #provide article topic to calculate keyword TF
+                        self.add_new_keyword(new_obj) 
                         new_keyword.append(new_obj)
             else:
                 print("tokenized")
@@ -313,7 +352,7 @@ class KeywordManager:
                 if keyword.get_keyword() in article.get_topic().lower():
                     print('found "' + keyword.get_keyword() + '" in article: "' + article.get_topic() + '"')
                     print("article id: " + str(article.get_id()))
-                    keyword.set_keyword_freq(keyword.get_freq_series()+1, self._series_iterator)
+                    keyword.update_keyword_freq_with_new_article(article, self._series_iterator, self._config_manager.get_crawling_interval())
                     keyword.add_covering_article(article.get_id())
                     keyword.accumulate_tf(article.get_topic())
             print("-new_freq: " + str(keyword.get_freq_series()))
@@ -620,7 +659,7 @@ class KeywordManager:
         iterator = self._series_iterator
         count = 0
         print("Current iterator: " + str(iterator))
-        # a fast growing keyword is a keyword being updated frequently and have growth rate less than 5 min / article  
+        # a fast growing keyword is a keyword being updated frequently and have publish speed greater than minimum 
         min_freq_series = self._config_manager.get_minimum_freq_series_for_fast_growing_keyword()
         min_freq = self._config_manager.get_minimum_freq_for_fast_growing_keyword()
         crawl_interval = self._config_manager.get_crawling_interval()
