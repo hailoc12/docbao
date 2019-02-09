@@ -37,7 +37,7 @@ crawling_list:
         date_tag:
         date_class:
             - f-datetime
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} | \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \| \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y | %H:%M" 
         output_html : False
         use_browser : False
@@ -97,7 +97,7 @@ crawling_list:
         date_tag:
         date_class:
             - divDetail_DateCreate
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} - \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \- \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y - %H:%M" 
         output_html : False
         use_browser : True
@@ -137,7 +137,7 @@ crawling_list:
         date_tag:
         date_class:
             - icon_date_top
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}, \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\, \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y, %H:%M" 
         output_html : False
         use_browser : False
@@ -157,7 +157,7 @@ crawling_list:
         date_tag:
         date_class:
             - fl-right dt
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} | \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \| \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y | %H:%M" 
         output_html : False
         use_browser : True 
@@ -238,7 +238,7 @@ crawling_list:
         date_class:
             - afcbat-data
         date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}T\d{1,2}:\d{1,2})
-        date_pattern: "%d/%m/%YT%H:%M" 
+        date_pattern: "%d-%m-%YT%H:%M" 
         output_html : False
         use_browser : True 
         display_browser: False
@@ -258,7 +258,7 @@ crawling_list:
         date_class:
             - cms-date 
         date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
-        date_pattern: "%Y/%m/%dT%H:%M" 
+        date_pattern: "%Y-%m-%dT%H:%M" 
         output_html : False
         use_browser : False
         display_browser: False
@@ -278,7 +278,7 @@ crawling_list:
         date_class:
             - cms-date
         date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
-        date_pattern: "%Y/%m/%dT%H:%M" 
+        date_pattern: "%Y-%m-%dT%H:%M" 
         output_html : False
         use_browser : True 
         display_browser: False
@@ -298,7 +298,7 @@ crawling_list:
         date_class:
             - cms-date
         date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
-        date_pattern: "%Y/%m/%dT%H:%M" 
+        date_pattern: "%Y-%m-%dT%H:%M" 
         output_html : False
         use_browser : False 
         display_browser: False
@@ -338,7 +338,7 @@ crawling_list:
         date_class:
             - article-header
         date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
-        date_pattern: "%Y/%m/%dT%H:%M" 
+        date_pattern: "%Y-%m-%dT%H:%M" 
         output_html : False
         use_browser : True 
         display_browser: False
@@ -357,7 +357,7 @@ crawling_list:
         date_tag:
         date_class:
             - article-header
-        date_re: (\d{1,2}:\d{1,2}, \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+        date_re: (\d{1,2}:\d{1,2}\, \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
         date_pattern: "%H:%M, %d/%m/%Y" 
         output_html : False
         use_browser : True 
@@ -397,7 +397,7 @@ crawling_list:
         date_tag:
             - time
         date_class:
-        date_re: (\d{1,2}:\d{1,2}, \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+        date_re: (\d{1,2}:\d{1,2}\, \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
         date_pattern: "%H:%M, %d/%m/%Y" 
         output_html : False
         use_browser : False
@@ -477,7 +477,7 @@ crawling_list:
         date_tag:
         date_class:
             - time left
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}, \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\, \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y, %H:%M" 
         output_html : False
         use_browser : False
@@ -577,7 +577,7 @@ crawling_list:
         date_tag:
         date_class:
             - the-article-publish cms-date
-        date_re: (\d{1,2}:\d{1,2} \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+        date_re: (\d{1,2}:\d{1,2} \d{l,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
         date_pattern: "%H:%M %d/%m/%Y" 
         output_html : False
         use_browser : True 
@@ -598,7 +598,7 @@ crawling_list:
         date_class:
             - kbwcm-time
         date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}T\d{1,2}:\d{1,2})
-        date_pattern: "%d-%m-%YT%H:%M" 
+        date_pattern: "%Y-%m-%dT%H:%M" 
         output_html : False
         use_browser : False
         display_browser: False
@@ -638,7 +638,7 @@ crawling_list:
         date_class:
             - op-published
         date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2}:\d{1,2} [AP]M)
-        date_pattern: "%m/%d/%Y %H:%M:%S %p" 
+        date_pattern: "%d/%m/%Y %H:%M:%S %p" 
         output_html : False
         use_browser : True 
         display_browser: False
@@ -657,7 +657,7 @@ crawling_list:
         date_tag:
         date_class:
             - fr fon7 mr2 tt-capitalize 
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} - \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \- \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y - %H:%M" 
         output_html : False
         use_browser : False
@@ -677,8 +677,8 @@ crawling_list:
         date_tag:
         date_class:
             - pdate
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} - \d{1,2}:\d{1,2} [AP]M)
-        date_pattern: "%m-%d-%Y - %H:%M %p" 
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \- \d{1,2}:\d{1,2} [AP]M)
+        date_pattern: "%d-%m-%Y - %H:%M %p" 
         output_html : False
         use_browser : False
         display_browser: False
@@ -739,7 +739,7 @@ crawling_list:
         date_class:
             - "m_DateCreated"
             - "Date"
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}, \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\, \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y, %H:%M" 
         output_html : False
         use_browser : False
@@ -799,7 +799,7 @@ crawling_list:
         date_tag:
         date_class:
             - "bx-time lt"
-        date_re: (\d{1,2}:\d{1,2} | \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_re: (\d{1,2}:\d{1,2} \| \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
         date_pattern: "%H:%M | %d/%m/%Y" 
         output_html : False
         use_browser : False
@@ -819,7 +819,7 @@ crawling_list:
         date_tag:
         date_class:
             - "NewsDate"
-        date_re: (\d{1,2}:\d{1,2} | \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_re: (\d{1,2}:\d{1,2} \| \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
         date_pattern: "%H:%M | %d/%m/%Y" 
         output_html : False
         use_browser : False
@@ -860,7 +860,7 @@ crawling_list:
         date_tag:
         date_class:
             - "timeStamp"
-        date_re: (\d{1,2}:\d{1,2}, \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} )
+        date_re: (\d{1,2}:\d{1,2}\, \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
         date_pattern: "%H:%M, %d/%m/%Y" 
         output_html : False 
         use_browser : False
@@ -880,7 +880,7 @@ crawling_list:
         date_tag:
         date_class:
             - "date-line"
-        date_re: (\d{1,2}:\d{1,2} | \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} )
+        date_re: (\d{1,2}:\d{1,2} \| \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} )
         date_pattern: "%H:%M | %d/%m/%Y" 
         output_html : False 
         use_browser : False
@@ -940,7 +940,7 @@ crawling_list:
         date_tag:
         date_class:
             - "datetime mb-3"
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} | \d{1,2}:\d{1,2})
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \| \d{1,2}:\d{1,2})
         date_pattern: "%d/%m/%Y | %H:%M" 
         output_html : False 
         use_browser : False
@@ -1040,8 +1040,289 @@ crawling_list:
         date_tag:
         date_class:
             - "dateandcat"
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} - \d{1,2}:\d{1,2} (A|P)M)
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \- \d{1,2}:\d{1,2} (A|P)M)
         date_pattern: "%d/%m/%Y %H:%M %p" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Tuổi Trẻ Thủ Đô:
+        web_url: https://tuoitrethudo.com.vn
+        crawl_url: https://tuoitrethudo.com.vn
+        url_pattern_re: (http|https)://tuoitrethudo.com.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "cate-date"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Bảo Vệ Pháp Luật:
+        web_url: https://baovephapluat.vn
+        crawl_url: https://baovephapluat.vn
+        url_pattern_re: (http|https)://baovephapluat.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "post-subinfo"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%d/%m/%Y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - An Ninh Thế Giới:
+        web_url: http://antg.cand.com.vn
+        crawl_url: http://antg.cand.com.vn
+        url_pattern_re: (http|https)://antg.cand.com.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "detail-timer"
+        date_re: (\d{1,2}:\d{1,2} \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%H:%M %d/%m/%Y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Người Đồng Hành:
+        web_url: http://ndh.vn
+        crawl_url: http://ndh.vn
+        url_pattern_re: (http|https)://ndh.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+            - meta
+        date_class:
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2} \d{1,2}:\d{1,2})
+        date_pattern: "%Y-%m-%d %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Kinh Tế Đô Thị:
+        web_url: http://kinhtedothi.vn
+        crawl_url: http://kinhtedothi.vn
+        url_pattern_re: (http|https)://kinhtedothi.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "time_detail_news f11 fl"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d-%m-%Y %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Người Hà Nội:
+        web_url: http://nguoihanoi.com.vn
+        crawl_url: http://nguoihanoi.com.vn
+        url_pattern_re: (http|https)://nguoihanoi.com.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "pull-left mgb0"
+        date_re: (ngày \d{1,2} tháng \d{1,2} \, \d{2,4})
+        date_pattern: "ngày %d tháng %m , %Y" 
+        output_html : False 
+        use_browser : True
+        display_browser: False
+    - Tin Tức Online:
+        web_url: https://tintuconline.com.vn
+        crawl_url: https://tintuconline.com.vn
+        url_pattern_re: (http|https)://tintuconline.com.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "datetime"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Nông Nghiệp:
+        web_url: https://nongnghiep.vn
+        crawl_url: https://nongnghiep.vn
+        url_pattern_re: (http|https)://nongnghiep.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "nn-time-post"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\, \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y, %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Ngôi Sao:
+        web_url: https://ngoisao.net
+        crawl_url: https://ngoisao.net
+        url_pattern_re: (http|https)://ngoisao.net
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "spanDateTime fl"
+            - "metadate mb15"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\, \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y, %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Phụ Nữ Việt Nam:
+        web_url: http://phunuvietnam.vn
+        crawl_url: http://phunuvietnam.vn
+        url_pattern_re: (http|https)://phunuvietnam.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "pull-left"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%d/%m/%Y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Đại Đoàn Kết:
+        web_url: http://daidoanket.vn
+        crawl_url: http://daidoanket.vn
+        url_pattern_re: (http|https)://daidoanket.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "time-share fl w100pt"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%d/%m/%Y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Công An Nhân Dân:
+        web_url: http://cand.com.vn
+        crawl_url: http://cand.com.vn
+        url_pattern_re: (http|https)://cand.com.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "box-widget timepost"
+        date_re: (\d{1,2}:\d{1,2} \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+        date_pattern: "%H:%M %d/%m/%Y" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Sức Khỏe Đời Sống:
+        web_url: http://suckhoedoisong.vn
+        crawl_url: http://suckhoedoisong.vn
+        url_pattern_re: (http|https)://suckhoedoisong.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "time_index"
+        date_re: (NGÀY \d{1,2} THÁNG \d{1,2}, \d{2,4} \| \d{1,2}:\d{1,2})
+        date_pattern: "NGÀY %d THÁNG %m, %Y | %H:%M" 
+        output_html : False 
+        use_browser : False
+        display_browser: False
+    - Một Thế Giới:
+        web_url: https://motthegioi.vn
+        crawl_url: https://motthegioi.vn
+        url_pattern_re: (http|https)://motthegioi.vn
+        language: vietnamese 
+        get_topic_from_link: True 
+        skip_checking_topic_length: False 
+        topic_tag:
+        topic_class: 
+        topic_id:  
+        topic_re: "(.+)"
+        get_publish_date_as_crawl_date: False
+        date_tag:
+        date_class:
+            - "post-tags"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+        date_pattern: "%d/%m/%Y %H:%M" 
         output_html : False 
         use_browser : False
         display_browser: False

@@ -145,7 +145,7 @@ class ArticleManager:
 
     def get_sorted_article_list(self):
         article_list = list(self._data.values())
-        article_list.sort(key=lambda x: x.get_creation_date(), reverse=True)
+        article_list.sort(key=lambda x: x.get_date(), reverse=True)
 
         return article_list
 
@@ -262,7 +262,8 @@ class ArticleManager:
         datetag = webconfig.get_date_tag_list()
         dateclass = webconfig.get_date_class_list()
         date_pattern = webconfig.get_date_pattern()
-        filter = re.compile(datere)
+        flags = re.UNICODE
+        filter = re.compile(datere, flags = flags)
 
         if datetag is not None:
             for tag in datetag:
@@ -506,15 +507,17 @@ class ArticleManager:
     def reset_tokenize_status(self):
         for href, article in self._data.items():
             article._tokenized = False
+
     def export_to_json(self, number=None):
         json_article_list = []
         count = 0
         for article in self.get_sorted_article_list():
             count += 1
-            update_time = int((datetime.now() - article.get_creation_date()).total_seconds() / 60)
+            update_time = int((datetime.now() - article.get_date()).total_seconds() / 60)
             update_time_string=""
-            if update_time >= 720:
-                update_time = int(update_time / 720)
+
+            if update_time >= 720: # more than 12 hours
+                update_time = int(update_time / 1440)
                 update_time_string = str(update_time) + " ngày trước"
             else:
                 if update_time >= 60:
