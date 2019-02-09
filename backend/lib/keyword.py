@@ -17,6 +17,7 @@ class Keyword:
     def __init__(self, keyword, article):
         self._keyword = keyword
         self._freq_timeseries = deque(maxlen=90) 
+        self._freq_timeseries_maxlen = 90
         self._article_set = set()
         
         # For TF-IDF algorithm
@@ -45,6 +46,7 @@ class Keyword:
                 break
         if not has_set:
             self._freq_timeseries.append([series, freq])
+
     def get_keyword_freq(self, series):
         has_found = False
         freq = 0
@@ -58,40 +60,63 @@ class Keyword:
         else:
             return freq
 
-    def remove_keyword_freq_with_article(self, article, current_iterator):
+    def remove_keyword_freq_with_article(self, article, current_iterator, crawl_duration):
         article_iterator = int(current_iterator - ((datetime.now() - article.get_date()).total_seconds()/60/ crawl_duration))  
         for series in self._freq_timeseries:
             if series[0] >= article_iterator:
                 series[1] = series[1]-1
 
     def update_keyword_freq_with_new_article(self, article, current_iterator, crawl_duration):
+        print("update keyword freq: %s" % self._keyword)
+
         article_iterator = int(current_iterator - ((datetime.now() - article.get_date()).total_seconds()/60/ crawl_duration))  
         
+        print("article_iterator: %s" % str(article_iterator))
+
         has_freq = False 
         set_new_freq_pos = False 
         new_freq_pos = 0
-        
+        new_freq = 0 
+
         for i in range(0, len(self._freq_timeseries)):
             series = self._freq_timeseries[i]
             if series[0] == article_iterator:
                 has_freq = True
-                series[1] = series[1]+1
+                self._freq_timeseries[i][1] += 1
 
-            if series[0] > aritcle_iterator:
-                if has_freq == False:
+            if series[0] > article_iterator:
+                if set_new_freq_pos == False:
                     # remember to create new freq series here
-                    new_freq_pos = i-1
-                    has_freq == True
-                    set_new_freq_pos == True
-                series[1] = series[1]+1
+                    new_freq_pos = i
+                    set_new_freq_pos = True
+                self._freq_timeseries[i][1] += 1
 
-        if has_freq is False or set_new_freq_pos == True:
-            if new_freq_pos >= 0:
-                new_freq = self._freq_timeseries[new_freq_pos][1] + 1
-                self._freq_timeseries.insert(new_freq_pos, [article_iterator, new_freq]) #note: article_iterator may be negative
-            else:
-                new_freq = 1
+        if has_freq == False:
+            if set_new_freq_pos == False: # there is no freq greater than article_iterator
+                if len(self._freq_timeseries) == 0: # there is no freq_series yet 
+                    new_freq = 1
+                else:
+                    new_freq = self._freq_timeseries[len(self._freq_timeseries)-1][1] + 1 #get freq of last iterator plus 1
                 self._freq_timeseries.append([article_iterator, new_freq]) #note: article_iterator may be negative
+            else: # there is series hat have greater iterator than article_iterator
+                if new_freq_pos == 0:
+                    new_freq = 1
+                else: 
+                    new_freq = self._freq_timeseries[new_freq_pos-1][1]+1
+                print("new freq: %s" % str(new_freq))
+                print("new_freq_post: %s" % str(new_freq_pos))
+
+                if len(self._freq_timeseries) == self._freq_timeseries_maxlen: # deque is full
+                    self._freq_timeseries.popleft()
+                    new_freq_pos -= 1
+
+                if new_freq_pos >= 0: 
+                    self._freq_timeseries.insert(new_freq_pos, [article_iterator, new_freq]) #note: article_iterator may be negative
+
+        print("has_freq: %s" % str(has_freq))
+        print("freq_timeseries")
+        print(self._freq_timeseries)
+        print()
                 
     def get_keyword(self):
         return self._keyword
@@ -285,7 +310,7 @@ class KeywordManager:
             item = self._keyword_list[pos]
             if item.get_keyword() in topic.lower(): #Note: topic is in original format, so it's important to add .lower() here
                 # update keyword after removing article
-                item.remove_keyword_freq_with_article(article, self.get_series_iterator)
+                item.remove_keyword_freq_with_article(article, self.get_series_iterator(), self._config_manager.get_crawling_interval())
                 item.remove_covering_article(article.get_id)
 
                 if item.get_freq_series() <=0: 
@@ -366,7 +391,7 @@ class KeywordManager:
         for keyword in new_keyword:
             count+=1
             print("Optimizing with " + str(count) + "/" + str(total) + " keyword: " + keyword.get_keyword())
-            self._with_new_keyword(keyword)
+            self.optimize_with_new_keyword(keyword)
         count=0
         for keyword in self._keyword_list:
             if keyword.is_covering_nothing():
@@ -384,7 +409,7 @@ class KeywordManager:
         return False
 
     # reduce common covering article then reduce covering nothing keyword
-    def _with_new_keyword(self,keyword):
+    def optimize_with_new_keyword(self,keyword):
         for other_keyword in self._keyword_list:
             if other_keyword is not keyword:
                 common = other_keyword.get_covering_article() & keyword.get_covering_article()
@@ -563,7 +588,7 @@ class KeywordManager:
                 keyword = item["keyword"]
                 article = self._data_manager.get_lastest_article_contain_keyword(keyword)
                 if article is not None:
-                    update_time = int((datetime.now() - article.get_creation_date()).total_seconds() / 60)
+                    update_time = int((datetime.now() - article.get_date()).total_seconds() / 60)
                     update_time_string=""
                     if update_time >= 720:
                         update_time = int(update_time / 720)
@@ -696,4 +721,3 @@ class KeywordManager:
     def write_fast_growing_keyword_to_json_file(self):
         with open_utf8_file_to_write(get_independent_os_path(["export","fast_growing_keyword.json"])) as stream:
             stream.write(jsonpickle.encode(self._fast_growing_list))
-            stream.close()
