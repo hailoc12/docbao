@@ -26,15 +26,14 @@ docbao.controller('logCtrl', function($scope, $http)
 
    $http.get('/export/trending_keyword.json').then(function (response)
     {
-        var data = response.data;
+        var data = response.data.trending_keyword_list;
         draw_hot_keyword_barchart(data);
 
 	//build recommended keyword to search
 	var keyword_string = ""
-	keywords = Object.keys(data)
-	for(var i=0; i<keywords.length; i++)
+	for(var i=0; i<data.length; i++)
 	    {
-		    keyword_string = keyword_string + keywords[i] + " - "
+		    keyword_string = keyword_string + data[i].keyword + " - "
 	    }
 	$scope.keyword_string = keyword_string; 
         
@@ -96,20 +95,31 @@ docbao.controller('logCtrl', function($scope, $http)
 
 });
 
-function draw_hot_keyword_barchart(hot_keyword_dict)
+function draw_hot_keyword_barchart(trending_keyword_list)
 {
     // -- Bar Chart Example
-console.log(hot_keyword_dict);
+console.log(trending_keyword_list);
 var ctx = document.getElementById("myBarChart");
+var keywords = []
+var increase_freqs = []
+  for (var i=0; i< trending_keyword_list.length; i++)
+	{
+		var item = trending_keyword_list[i];
+		console.log(item);
+		keywords.push(item.keyword);
+		increase_freqs.push(item.increase_freq);
+	}
+console.log(keywords);
+console.log(increase_freqs)
 var myLineChart = new Chart(ctx, {
   type: 'horizontalBar',
   data: {
-    labels: Object.keys(hot_keyword_dict),
+    labels: keywords,
     datasets: [{
-      label: "số bài báo chứa từ khóa này",
+      label: "số bài báo mới xuất bản trong 5h qua chứa từ khóa này",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: Object.values(hot_keyword_dict),
+      data: increase_freqs,
     }],
   },
   options: {
@@ -126,7 +136,7 @@ var myLineChart = new Chart(ctx, {
     },
     onClick: function(evt){
     var activeElement = myLineChart.getElementAtEvent(evt)[0]._index;
-    var search_string = Object.keys(hot_keyword_dict)[activeElement];
+    var search_string = keywords[activeElement];
     on_same_page = true;
     _search_article_table(search_string);
     
@@ -211,6 +221,7 @@ function create_trending_article_table(article_list)
 	"pageLength": 5, 
 	paging: false,
 	scrollY: 400,
+	ordering: false
     } );
 }
 

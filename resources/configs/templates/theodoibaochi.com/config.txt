@@ -1,5 +1,5 @@
 ﻿running_path: ~/docbao_test/
-timeout: 600
+timeout: 500
 max_crawler: 60
 crawling_list:
     - CafeBiz:
@@ -356,8 +356,8 @@ crawling_list:
         get_publish_date_as_crawl_date: False
         date_tag:
         date_class:
-            - article-header
-        date_re: (\d{1,2}:\d{1,2}\, \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+            - "article-header"
+        date_re: (\d{1,2}:\d{1,2}\, \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
         date_pattern: "%H:%M, %d/%m/%Y" 
         output_html : False
         use_browser : True 
@@ -397,7 +397,7 @@ crawling_list:
         date_tag:
             - time
         date_class:
-        date_re: (\d{1,2}:\d{1,2}\, \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+        date_re: (\d{1,2}:\d{1,2}\, \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
         date_pattern: "%H:%M, %d/%m/%Y" 
         output_html : False
         use_browser : False
@@ -496,8 +496,8 @@ crawling_list:
         get_publish_date_as_crawl_date: False
         date_tag:
         date_class:
-            - date_time
-        date_re: (\d{1,2}:\d{1,2}' \d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})
+            - "date_time"
+        date_re: (\d{1,2}:\d{1,2}' \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
         date_pattern: "%H:%M' %d/%m/%Y" 
         output_html : False
         use_browser : True 
@@ -556,9 +556,9 @@ crawling_list:
         get_publish_date_as_crawl_date: False
         date_tag:
         date_class:
-            - time-ago
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}T\d{1,2}:\d{1,2})
-        date_pattern: "%d-%m-%YT%H:%M" 
+            - "time-ago"
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
+        date_pattern: "%Y-%m-%dT%H:%M" 
         output_html : False
         use_browser : False
         display_browser: False
@@ -596,8 +596,8 @@ crawling_list:
         get_publish_date_as_crawl_date: False
         date_tag:
         date_class:
-            - kbwcm-time
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}T\d{1,2}:\d{1,2})
+            - "kbwcm-time"
+        date_re: (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
         date_pattern: "%Y-%m-%dT%H:%M" 
         output_html : False
         use_browser : False
@@ -636,9 +636,9 @@ crawling_list:
         get_publish_date_as_crawl_date: False
         date_tag:
         date_class:
-            - op-published
-        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2}:\d{1,2} [AP]M)
-        date_pattern: "%d/%m/%Y %H:%M:%S %p" 
+            - "op-published"
+        date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2}:\d{1,2} (A|P)M)
+        date_pattern: "%m/%d/%Y %I:%M:%S %p" 
         output_html : False
         use_browser : True 
         display_browser: False
@@ -1041,7 +1041,7 @@ crawling_list:
         date_class:
             - "dateandcat"
         date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \- \d{1,2}:\d{1,2} (A|P)M)
-        date_pattern: "%d/%m/%Y %H:%M %p" 
+        date_pattern: "%d-%m-%Y - %H:%M %p" 
         output_html : False 
         use_browser : False
         display_browser: False
@@ -1388,5 +1388,5 @@ minimum_freq_series_for_fast_growing_keyword_accepted: 2
 minimum_publish_speed: 60
 minimum_freq_of_hot_growing_article: 3
 maximum_freq_of_hot_growing_article: 8
-trending_duration: 120
+trending_duration: 300
 crawling_interval: 10

@@ -122,30 +122,42 @@ class Keyword:
         return self._keyword
     def get_keyword_length(self):
         return len(self._keyword.split())
-    def get_freq_series(self):
+
+    def get_freq_series(self, iterator=None):
+        # Return freq at specific iterator or last iterator if iterator = None
+        # Output:
+        #   0: if there are no series
+        #   number: if there are exact iterator
+        #   None: if can't find exact iterator
         if len(self._freq_timeseries) == 0:
             return 0
         else:
-            return self._freq_timeseries[len(self._freq_timeseries)-1][1]
+            if iterator is not None:
+                for series in self._freq_timeseries:
+                    if series[0] == iterator:
+                        return series[1]
+            else:
+                return self._freq_timeseries[-1][1]
+        return None
     def get_length(self):
         return len(self._keyword)
     def get_len_of_freq_series(self):
         return len(self._freq_timeseries)
     def get_last_iterator(self):
         return self._freq_timeseries[len(self._freq_timeseries)-1][0]
-    def get_first_iterator(self, crawl_duration, trending_duration):
-        #function: return first iterator that happended duration < trending_duration before
-        i = 2
-        last_ite = self._freq_timeseries[-1][0]
-        duration = 0
+
+    def get_first_iterator(self, current_iterator, crawl_duration, trending_duration):
+        #function: return first iterator that happended after (now - trending_duration)
+        found = False
         # while haven't reach the first ite and duration still smaller than trending_duration
-        while i <= len(self._freq_timeseries) and duration < trending_duration:
-            current_ite = self._freq_timeseries[-i][0]
-            duration = (last_ite - current_ite) * crawl_duration
-            i+=1
-        i-=1
-        current_ite = self._freq_timeseries[-i][0]
-        return current_ite
+        for i in range(0, len(self._freq_timeseries)):
+            iterator = self._freq_timeseries[i][0]
+            gap = (current_iterator - iterator) * crawl_duration
+            if gap < trending_duration:
+                found = True
+                return iterator
+        if not found:
+            return None
 
     def accumulate_tf(self, topic): # accumulate tf when found new article contain keyword
         self._accumulated_tf += len(self._keyword.split())/len(topic.split())
@@ -551,7 +563,7 @@ class KeywordManager:
         min_three_keywords = self._config_manager.get_minimum_freq_for_more_than_two_length_keyword()
         min_weight = self._config_manager.get_minimum_weight()
 
-        trending_dict = dict()
+        trending_list = list()
         if max_trending_keyword > len(self._fast_growing_list):
             max_trending_keyword = len(self._fast_growing_list)
 
@@ -562,15 +574,15 @@ class KeywordManager:
             while count < max_trending_keyword:
                 item = self._fast_growing_list[i]
                 keyword = item["keyword"]
-                freq = item["count"]
+                increase_freq = item["increase_freq"]
                 if keyword.strip() not in self.stopwords:
                         if count <= max_trending_keyword:
                             count+=1
                             print(keyword)
-                            print(freq)
-                            trending_dict[keyword] = self._data_manager.count_articles_contain_keyword(keyword) # count by actual articles contain keywords
+                            print(increase_freq)
+                            trending_list.append({"keyword": keyword, "increase_freq": increase_freq})
                 i+=1
-            stream.write(jsonpickle.encode(trending_dict))
+            stream.write(jsonpickle.encode({"trending_keyword_list":trending_list}))
             stream.close()
 
     def write_trending_article_to_json_file(self):
@@ -689,7 +701,7 @@ class KeywordManager:
         min_freq = self._config_manager.get_minimum_freq_for_fast_growing_keyword()
         crawl_interval = self._config_manager.get_crawling_interval()
         publish_speed = self._config_manager.get_minimum_publish_speed()
-        trending_duration = self._config_manager.get_trending_duration()
+        trending_duration = self._config_manager.get_trending_duration() # in minutes
         print("trending_duration: %s" % str(trending_duration))
         for item in keyword_list:
             length = item.get_len_of_freq_series()
@@ -697,20 +709,21 @@ class KeywordManager:
             print("Processing keyword: " + item.get_keyword())
             
             if length >= min_freq_series and item.get_keyword_length() > 2:
-                first_iterator = item.get_first_iterator(crawl_interval, trending_duration)
-                duration = (iterator - first_iterator) * crawl_interval
-                speed = duration / item.get_freq_series() 
-                increase_freq = item.get_keyword_freq(last_iterator) - item.get_keyword_freq(first_iterator)
-                if speed < publish_speed:
-                    count+=1
-                    print("Found " + str(count) + " fast growing keywords: " + item.get_keyword())
-                    print("First Iterator: %s" % str(first_iterator))
-                    print("Duration: " + str(duration))
-                    print("Articles: " + str(item.get_freq_series()))
-                    print("Speed: " + str(speed) + " min/article")
-                    result.append({"keyword": item.get_keyword(),
-                                    "count": item.get_freq_series(),
-                                    "increase_freq": increase_freq})
+                first_iterator = item.get_first_iterator(iterator, crawl_interval, trending_duration)
+                if (first_iterator is not None) and (first_iterator != last_iterator): 
+                    duration = (iterator - first_iterator) * crawl_interval
+                    increase_freq = item.get_keyword_freq(last_iterator) - item.get_keyword_freq(first_iterator)
+                    speed = duration / increase_freq
+                    if speed < publish_speed:
+                        count+=1
+                        print("Found " + str(count) + " fast growing keywords: " + item.get_keyword())
+                        print("First Iterator: %s" % str(first_iterator))
+                        print("Duration: " + str(duration))
+                        print("Articles: " + str(item.get_freq_series()))
+                        print("Speed: " + str(speed) + " min/article")
+                        result.append({"keyword": item.get_keyword(),
+                                        "count": item.get_freq_series(),
+                                        "increase_freq": increase_freq})
 
         # sort fast growing keyword by descending increased frequency
         self._fast_growing_list = sorted(result, key=lambda k:k["increase_freq"], reverse=True)
