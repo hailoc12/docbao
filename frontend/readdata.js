@@ -116,7 +116,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: keywords,
     datasets: [{
-      label: "số bài báo mới xuất bản trong 5h qua chứa từ khóa này",
+      label: "số bài báo mới xuất bản trong 12h qua chứa từ khóa này",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
       data: increase_freqs,

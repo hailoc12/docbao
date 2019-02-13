@@ -713,6 +713,10 @@ class KeywordManager:
                 if (first_iterator is not None) and (first_iterator != last_iterator): 
                     duration = (iterator - first_iterator) * crawl_interval
                     increase_freq = item.get_keyword_freq(last_iterator) - item.get_keyword_freq(first_iterator)
+                    print("first_iterator: %s" % str(first_iterator))
+                    print("last_iterator: %s" % str(last_iterator))
+                    print("increase_freq: %s" % str(increase_freq))
+
                     speed = duration / increase_freq
                     if speed < publish_speed:
                         count+=1
