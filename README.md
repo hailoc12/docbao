@@ -39,7 +39,7 @@ Công cụ hướng đến nhiều đối tượng người dùng:
 
 Về máy tính quét thì bạn có thể mua VPS, dùng một con Raspberry Pi hoặc chạy trên máy tính cá nhân của bạn. Còn host nếu bạn chưa có thì có thể inbox mình để mượn hoặc dùng tạm tài khoản sau để test:
 
-host: ftp.tudonghoamaytinh.com  
+host: ftp.theodoibaochi.com  
 user: admin@demo.theodoibaochi.com  
 pass: docbaotheotukhoa  
 
@@ -48,8 +48,10 @@ pass: docbaotheotukhoa
 #### Bước 1: Clone mã nguồn từ github
 Mở terminal trong Ubuntu (Ctr+Alt+T) và gõ dòng lệnh sau
 ~~~~
+cd ~
 git clone http://github.com/hailoc12/docbao
 ~~~~
+Lưu ý: phải cài đặt chính xác tại địa chỉ ~/docbao
 
 #### Bước 2: Chạy trình cài đặt tự động
 Nếu bạn cài trên Ubuntu thì gõ lệnh sau:
