@@ -21,7 +21,7 @@ class BrowserCrawler:
     _has_error = False
     _quited = False
     _diplay = None
-    def __init__(self, timeout=180, display_browser=False, fast_load=True):
+    def __init__(self, timeout=30, display_browser=False, fast_load=True):
         # Create a headless Firefox browser to crawl
         options = Options()
         if display_browser==False:
@@ -48,7 +48,6 @@ class BrowserCrawler:
         #self._driver = webdriver.Firefox()
 
         self._driver.set_page_load_timeout(timeout)
-        self._driver.implicitly_wait(timeout)
         self._quited = False
 
     def load_page(self, url, wait=5, entropy=3):
