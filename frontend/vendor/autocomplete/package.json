@@ -1,0 +1,32 @@
+{
+  "name": "jquery-autocomplete",
+  "version": "1.2.8",
+  "description": "Simple autocomplete like Google",
+  "main": "jquery.autocomplete.js",
+  "scripts": {
+    "newversion": "npm version patch --no-git-tag-version && npm run newversiongit && npm publish ./",
+    "newversiongit": "git add --all  && git commit -m \"New version %npm_package_version%. Read more https://github.com/xdan/autocomplete/releases/tag/%npm_package_version% \" && git tag %npm_package_version% && git push --tags origin HEAD:master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xdan/autocomplete.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "autocomplete",
+    "ajax",
+    "complete",
+    "form",
+    "ui",
+    "input",
+    "accents",
+    "jquery"
+  ],
+  "author": "Chupurnov <chupurnov@gmail.com> (http://xdsoft.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xdan/autocomplete/issues"
+  },
+  "homepage": "https://xdsoft.net"
+}
