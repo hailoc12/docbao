@@ -193,19 +193,31 @@ with multiprocessing.Manager() as manager:
     time.sleep(1)
     print("Finish crawling")
     time.sleep(1)
+
+	# Save all new crawled articles and push to ElasticSearch
     print("New crawled articles")
     data_manager._data = backup_old_articles
+
+    try:
+        es = ElasticSearch_Client()
+    except:
+        pass
+
     while not crawled_articles.empty():
         article = crawled_articles.get()
+
+        try:
+            if article._href not in data_manager._data:
+                es.put_article(article) # put new article to ElasticSearch
+        except:
+            pass
+
         data_manager._data[article._href] = article
         print("%s: %s" % (article.get_newspaper(), article.get_topic()))
 
     while not new_blacklists.empty():
         href, count = new_blacklists.get()
         data_manager._blacklist[href] = count
-
-    # push crawled_articles to mysql
-    time.sleep(1)
 
     # analyze keyword
     keyword_manager.build_keyword_list()

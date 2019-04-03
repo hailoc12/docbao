@@ -1,4 +1,4 @@
-# ĐỌC BÁO THEO TỪ KHÓA (V1.1.0)
+# ĐỌC BÁO THEO TỪ KHÓA (V1.3.0)
 Công cụ quét báo mạng theo mô hình phân tán để xây dựng các trang theo dõi báo chí cá nhân hoá 
 - Trang tổng hợp 35 báo tiếng Việt: https://theodoibaochi.com
 - Trang tổng hợp tin tức báo chí về Hải Phòng: http://haiphong.theodoibaochi.com
@@ -16,7 +16,8 @@ Facebook: https://www.facebook.com/danghailochp
 1. Người dùng chủ động nguồn báo để quét
 2. Dễ cài đặt, nhẹ, có thể chạy được trên máy tính cá nhân, raspberry PI, hay server
 3. Tích hợp chức năng phân tích từ khoá, xác định từ khoá nổi bật, từ khoá hot, từ khóa mới xuất hiện, phân từ khoá vào các chuyên mục
-4. Mã nguồn mở, miễn phí
+4. Tích hợp với elasticsearch + kibana để thực hiện các truy vấn nâng cao trên dữ liệu
+5. Mã nguồn mở, miễn phí
 
 Công cụ hướng đến nhiều đối tượng người dùng:  
 1. Độc giả thông thường: tiết kiệm thời gian đọc báo, chủ động chọn lựa nguồn báo uy tín để đọc  
@@ -34,6 +35,7 @@ Công cụ hướng đến nhiều đối tượng người dùng:
 5. Có thể tuỳ biến các chuyên mục và phân tự động từ khoá vào các chuyên mục
 6. Tìm kiếm các bài báo mới xuất bản nhanh hơn Google (nếu hệ thống được cài đặt để quét đều đặn)
 7. Có thể export dữ liệu dưới dạng file excel và json để phân tích nâng cao
+8. Lưu trữ dữ liệu trên Elasticsearch và thực hiện các truy vấn nâng cao trên Kibana
 
 # Cài đặt
 
@@ -101,6 +103,10 @@ Sau khi quét xong, bạn hãy mở trang http://demo.theodoibaochi.com để xe
 
 #### Bước 6: Tùy biến cấu hình quét để xây dựng trang thông tin của riêng bạn
 (đang xây dựng tài liệu)
+
+#### Bước 7: Thực hiện các truy vấn nâng cao trên Kibana  
+Mặc định, bạn có thể truy cập vào kibana tại điạ chỉ: locahost:5601  
+TOàn bộ dữ liệu do Đọc Báo quét sẽ được đẩy vào index docbao
 
 ## Cài đặt trên Windows 10  
 

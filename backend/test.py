@@ -2,15 +2,16 @@ from lib.crawl import *
 from lib.config import * 
 from lib.utils import *
 
-web_crawler = BrowserCrawler()
 
 # Test 1: Test firefox, geckodrive and selenium are installed ok
 print("Test 1: check if Firefox, Geckodrive and Selenium are installed ok")
-
-web_crawler.load_page("http://dantri.com.vn", 2, 0.5)
+web_crawler = BrowserCrawler()
+print("Try to load Dantri")
+web_crawler.load_page("https://dantri.com.vn")
 title = web_crawler.get_title()
+print("title: %s" % title)
 
-if "Dân trí" in title:
+if title is not None: 
     print("Result: OK")
 else:
     print("Result: FAIL")

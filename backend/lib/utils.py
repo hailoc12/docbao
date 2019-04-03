@@ -66,7 +66,7 @@ def open_binary_file_to_read(filename):
         return None
 
 
-def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _firefox_browser=None, timeout=5):  # return page as soup of BeautifulSoup
+def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _firefox_browser=None, timeout=60):  # return page as soup of BeautifulSoup
 
     #f_hdr = {
     #    'User-Agent': UserAgent().chrome,
@@ -86,8 +86,8 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
     a=True
     result = False
     browser = None
-    #while a:
-    try:
+    while a:
+    #try:
         print(url)
         html_source = None
         if use_browser == False:
@@ -131,9 +131,10 @@ def read_url_source_as_soup(url, use_browser=False, _display_browser=False, _fir
             return BeautifulSoup(html_source,features="html.parser")
         else:
             return None
-    except:
-        print("Khong the mo trang: " + url)
-        return None
+    #except:
+    #    print("Khong the mo trang: " + url)
+    #    return None
+
 def quit_browser():
     global _firefox_browser
 

@@ -1,6 +1,6 @@
 ﻿running_path: ~/docbao_test/
-timeout: 600
-max_crawler: 60
+timeout: 800
+max_crawler: 20
 crawling_list:
     - Gia Đình Mới:
         web_url: https://www.giadinhmoi.vn
@@ -1410,4 +1410,4 @@ minimum_publish_speed: 180
 minimum_freq_of_hot_growing_article: 3
 maximum_freq_of_hot_growing_article: 8
 trending_duration: 720
-crawling_interval: 10
+crawling_interval: 15

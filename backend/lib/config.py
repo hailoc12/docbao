@@ -65,6 +65,8 @@ class WebParsingConfig:
         return self._web[self.get_webname()]['use_browser']
     def get_display_browser(self):
         return self.get_config("display_browser", False)
+    def get_browser_timeout(self):
+        return self.get_config("browser_timeout", 60)
 
 # class that manage config defined in /input/config.txt
 class ConfigManager:

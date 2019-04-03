@@ -12,3 +12,4 @@ PyVirtualDisplay==0.2.1
 xvfbwrapper==0.2.9
 bs4==0.0.1
 psutil==5.4.8
+elasticsearch-dsl==6.3.1

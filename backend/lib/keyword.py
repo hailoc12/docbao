@@ -717,7 +717,11 @@ class KeywordManager:
                     print("last_iterator: %s" % str(last_iterator))
                     print("increase_freq: %s" % str(increase_freq))
 
-                    speed = duration / increase_freq
+                    if increase_freq == 0:
+                        speed = 2 * publish_speed
+                    else:
+                        speed = duration / increase_freq
+
                     if speed < publish_speed:
                         count+=1
                         print("Found " + str(count) + " fast growing keywords: " + item.get_keyword())

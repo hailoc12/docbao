@@ -24,7 +24,7 @@ class Article:
         self._id = article_id
         self._href=href
         self._topic=topic
-        self._date=date # date is string ìn format %d/%m%/%Y
+        self._date=date 
         self._summary=summary
         self._newspaper=newspaper
         self._creation_date = datetime.now()
@@ -186,12 +186,12 @@ class ArticleManager:
         display_browser = webconfig.get_display_browser()
 
         if soup is None:
-            try:
-                soup = read_url_source_as_soup(url, use_browser, display_browser, browser=browser)
-                if soup is None:
-                    return None
-            except:
+            #try:
+            soup = read_url_source_as_soup(url, use_browser, display_browser, browser)
+            if soup is None:
                 return None
+            #except:
+            #    return None
 
         if webconfig.get_output_html(): 
             print(soup) #for test
@@ -321,7 +321,7 @@ class ArticleManager:
             topic_word_list = topic.split()
         else:
             #try to crawl topic
-            result = self.get_topic_of_an_url(fullurl, webconfig, browser)            
+            result = self.get_topic_of_an_url(fullurl, webconfig, soup=None, browser=browser)            
             if result is not None:
                 (topic, soup) = result
                 print("Topic found: %s" % topic)
@@ -400,8 +400,8 @@ class ArticleManager:
         print()
         print("Crawler pid %s: Crawling newspaper: %s" % (my_pid,webname))
         a=True
-        #while a==True:
-        try:
+        while a==True:
+        #try:
             soup = read_url_source_as_soup(crawl_url, use_browser, display_browser, browser)
             if soup is not None:
                 if get_topic: #from link
@@ -460,8 +460,8 @@ class ArticleManager:
             else:
                 print("Crawler pid %s: Can't open: %s" % (my_pid, webname))
             a=False
-        except:
-            print("Crawler pid %s: Can't open: %s" % (my_pid, webname))
+        #except:
+        #    print("Crawler pid %s: Can't open: %s" % (my_pid, webname))
 
     def is_not_outdated(self, date):
         return (datetime.now() - date).days <= self._config_manager.get_maximum_day_difference()
