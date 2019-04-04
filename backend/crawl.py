@@ -14,9 +14,10 @@ import multiprocessing
 import os
 import time
 
-def crawler_process(process_name, lock, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists):
+def crawler_process(process_name, lock, timeout_flag, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists):
     # Function: work as an worker in multiprocessed crawling
     # Input:
+    #   timeout_flag: shared variable to check if timeout happen
     #   lock: to acquire and release shared data
     #   browser_list: a shared queue of browser to release when timeout
     #   crawl_queue: a shared queue of "crawl task"
@@ -42,7 +43,7 @@ def crawler_process(process_name, lock, browser_list, crawl_queue, data_manager,
             # get a web config from crawl_queue
             webconfig = None
             lock.acquire()
-            if not crawl_queue.empty():
+            if (not crawl_queue.empty()) and (timeout_flag.value == 0): # have more job and not timeout
                 webconfig = crawl_queue.get()
                 lock.release()
                 # crawl data
@@ -90,6 +91,7 @@ with multiprocessing.Manager() as manager:
     new_blacklists = manager.Queue()
     browser_list = manager.Queue() # keep all firefox browser to release when timeout
     lock = manager.Lock()
+    timeout_flag = manager.Value('i', 0) # shared variable to inform processes if timeout happends
 
     # Load data from file
     time.sleep(1)
@@ -147,15 +149,31 @@ with multiprocessing.Manager() as manager:
     start = time.time()
 
     for i in range(max_crawler):
-        crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists))
+        crawler = multiprocessing.Process(target=crawler_process, args=(str(i+1), lock, timeout_flag, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists))
         crawler_processes.append(crawler)
         crawler.start()
         time.sleep(1)
         print("Start crawler number %s (pid: %s)" % (str(i+1), crawler.pid))
 
     # kill all process after timeout
-    while time.time() - start <= timeout:
-        print("Remaining seconds to timeout %s" % str(int(timeout - time.time() + start)))
+    running = True
+    start_timeout = 0
+    is_timeout = False
+    terminate_time = 120 # 2 min
+
+    while running:
+        if not is_timeout:
+            print("Remaining seconds to timeout %s" % str(int(timeout - time.time() + start)))
+        else:
+            print("Remaining seconds to terminate %s" % str(int(terminate_time - time.time() + start_timeout)))
+        if (time.time() - start > timeout) and (not is_timeout):
+            start_timeout = time.time()
+
+            print("Timeout")
+            print("Inform all processes about timeout. Terminate all after 2 min")
+            timeout_flag.value = 1
+            is_timeout = True
+
         running = False
         running_crawler = ""
         count = 0
@@ -170,21 +188,21 @@ with multiprocessing.Manager() as manager:
             time.sleep(5)
         else:
             break
-    else:
-        print("Timeout")
-        print("Kill unquited browser")
-        while not browser_list.empty():
-            lock.acquire()
-            browser = browser_list.get()
-            print("Found a running browser")
-            print(browser)
-            print("Close browser") 
-            lock.release()
-            browser.quit()
-        print("Kill all processes")
-        for crawler in crawler_processes:
-            crawler.terminate()
-            crawler.join()
+
+        if (timeout_flag.value == 1) and (time.time() - start_timeout >= terminate_time):
+            print("Kill unquited browser")
+            while not browser_list.empty():
+                lock.acquire()
+                browser = browser_list.get()
+                print("Found a running browser")
+                print(browser)
+                print("Close browser") 
+                lock.release()
+                browser.quit()
+            print("Kill all processes")
+            for crawler in crawler_processes:
+                crawler.terminate()
+                crawler.join()
 
     # join process to wait for all crawler to finish
     #for crawler in crawler_processes:
