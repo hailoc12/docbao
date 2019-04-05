@@ -1,5 +1,5 @@
 echo "INSTALL DOCBAO ON UBUNTU"
-export install_dir="/home/$USER/docbao_vietnam"
+export install_dir="/home/$USER/docbao"
 sleep 1
 echo "Step 0: ensure python3, pip3 and curl are installed"
 sleep 1
