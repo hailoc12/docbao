@@ -1,6 +1,5 @@
 led / optimized / DLL files
 backend/input/*.php
-backend/input/config.txt
 backend/export/*.json
 backend/export/*.xlsx
 backend/export/*.html

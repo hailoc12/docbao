@@ -12,6 +12,7 @@
 from lib import *
 import os
 import time
+from datetime import datetime
 
 config_manager = ConfigManager(get_independent_os_path(['input', 'config.txt'])) #config object
 
@@ -20,21 +21,23 @@ data_manager = ArticleManager(config_manager, get_independent_os_path(["data", "
 keyword_manager = KeywordManager(data_manager, config_manager, get_independent_os_path(["data", "keyword.dat"]), get_independent_os_path(["input", "collocation.txt"]), get_independent_os_path(["input", "keywords_to_remove.txt"]))    #keyword analyzer object
 
 print("Load shared data from files")
+data_manager.load_data()
 config_manager.load_data()
+keyword_manager.load_data()
 
 # load data from files
 articles=[]
 with open_utf8_file_to_read(get_independent_os_path(['input', 'article_data.json'])) as f:
-    articles = jsonpickle.encode(f.read())['article_list']
-
+    articles = jsonpickle.decode(f.read())['article_list']
+    
 for article in articles:
-    article_date = strptime(article['publish_time'], "%d-%m-%y %H:%M")
+    article_date = datetime.strptime(article['publish_time'], "%d-%m-%y %H:%M")
 
-    item = Article(article_id=article['id'], href=article['href'], topic=article['topic'], date=article_date, newspaper = article['newspaper'], language=article['language'])
+    item = Article(article_id=article['stt'], href=article['href'], topic=article['topic'], date=article_date, newspaper = article['newspaper'], language='vietnamese')
 
-print("%s: %s" % (article.get_newspaper(), article.get_topic()))
+    print("%s: %s" % (item.get_newspaper(), item.get_topic()))
 
-data_manager.add_article(item)
+    data_manager.add_article(item)
 
 # analyze keyword
 
