@@ -1,20 +1,21 @@
 # BỘ QUÉT ĐỌC BÁO CRAWLER (Version 2.0)  
 
-
 ### Giới thiệu   
 *"Đọc báo Crawler"* là bộ quét chuyên dụng viết bằng Python, dùng để thu thập tin tức/bài viết trên các trang báo mạng điện tử và website, blog tiếng Việt. Dự án có thể được sử dụng để đơn giản hoá nhiệm vụ thu thập dữ liệu trong các Data Project, hoặc dùng trong mục đích giáo dục để giúp sinh viên và những người mới học có thể hiểu được cách sử dụng nhiều kĩ thuật thực tế trong Python (OOP, multiprocessing, parse HTML, json, yaml...)  
 
-Một số ví dụ sử dụng *"Đọc báo Crawler"*
+Một số ví dụ sử dụng *"Đọc báo Crawler"* (xem thêm CASE_STUDY.md để có danh sách đầy đủ)
  - [Demo *"Đọc báo Crawler"* thực hiện quét song song 35 nguồn báo sử dụng 10 trình duyệt Firefox cùng lúc](https://youtu.be/cPZ1XlAAIsk)  
- - [Theodoibaochi.com](https://theodoibaochi.com): site tổng hợp tin tức từ 35 nguồn báo mạng phổ biến tại Việt Nam 
+ - [Theodoibaochi.com](https://theodoibaochi.com): site sử dụng *"Đọc báo Crawler"* để tổng hợp tin tức từ 35 nguồn báo mạng phổ biến tại Việt Nam. Site này cũng là giao diện frontend mặc định tích hợp cùng bộ quét    
  - [VnAlert](https://vnalert.vn) - Ứng dụng thương mại sử dụng *"Đọc báo Crawler"* làm bộ cung cấp dữ liệu  
 
+Trước khi sử dụng dự án, mời đọc qua CODE_OF_CONDUCT.md để nắm được một số lưu ý về pháp lý khi sử dụng *Docbao Crawler*. Để đóng góp cho dự án, mời bạn tham khảo HOW_TO_CONTRIBUTE.md 
 
 ### Nguyên tắc hoạt động  
 
 *"Đọc báo Crawler"* hoạt động theo nguyên tắc quét nhiều trang cùng lúc theo chu kỳ định sẵn (qua crontab). Mỗi chu kỳ quét (cách nhau tối thiểu 10-15 phút), bộ quét sẽ duyệt qua tất cả các trang có trong thiết lập cấu hình. Với mỗi trang bộ quét sẽ duyệt qua một số lượng đường link nhất định, xác định những link dẫn tới bài viết và lấy về dữ liệu. Cuối chu kỳ quét, toàn bộ dữ liệu sẽ được lưu vào database và đẩy ra các kênh dữ liệu khác (như Elasticsearch, RabbitMQ, export json) tuỳ thuộc thiết lập. 
 
 Ưu điểm chính của *"Đọc báo Crawler"* so với cách sử dụng trực tiếp các thư viện scrapy, requests, selenium...là tối ưu cho việc quét nhiều site cùng một lúc, và đơn giản hoá việc phân tích cấu trúc site cần quét thành các file plain text dễ chia sẻ, giúp những người không có kiến thức, kinh nghiệm parse HTML, sử dụng xpath, css selection...cũng có thể tự thiết lập bộ quét và có được dữ liệu mong muốn (xem chi tiết ở mục "Những tính năng chính")
+
 
 ### Những tính năng chính  
 
@@ -34,7 +35,12 @@ Thay vì phải code để quét được dữ liệu của từng site (giống
 Một điểm mạnh của *"Đọc báo Crawler"* là trả về dữ liệu bài viết có cấu trúc (gồm tiêu đề, mô tả/sapo, thời gian xuất bản, nội dung bài viết). Đặc biệt nội dung bài viết có độ chi tiết tới từng đoạn văn và giữ nguyên được cấu trúc của bài viết gốc (ví dụ: ảnh 1, đoạn văn 1, ảnh 2, ảnh 3, đoạn văn 3, đoạn văn 4...). Các chi tiết khác (như tên tác giả, lượt like, share...) có thể mở rộng để lấy được trong tương lai.  
 
 **6. Tích hợp đa dạng hình thức lấy dữ liệu quét** 
-*"Đọc báo Crawler"* có thể lưu dữ liệu thu thập được vào các cơ sở dữ liệu phổ biến như Elasticsearch hoặc cấp dữ liệu theo cơ chế queue qua RabbitMQ để hoạt động như một service trong một dự án lớn hơn. Ngoài ra chế độ hoạt động mặc định của *"Đọc báo Crawler"* cũng xuất dữ liệu ra định dạng json để phục vụ hiển thị trên frontend tích hợp sẵn (xem phần tiếp)  
+*"Đọc báo Crawler"* hỗ trợ nhiều hình thức để lấy ra dữ liệu và sử dụng trong các dự án lớn hơn: 
+- Đổ dữ liệu vào Elasticsearch 
+- Đỗ dữ liệu vào queue của RabbitMQ 
+- Truy cập dữ liệu qua API Server được tích hợp sẵn 
+- Truy cập dữ liệu qua file json được export cuối mỗi chu kỳ quét 
+- Xem dữ liệu trực tiếp qua frontend tích hợp sẵn cùng dự án 
 
 **7. Tích hợp sẵn thuật toán phân tích xu hướng dựa trên từ khoá & frontend hiển thị dữ liệu**  
 *"Đọc báo Crawler"* tích hợp sẵn thuật toán phân tích từ khoá từ dữ liệu tin tức thu thập được (sử dụng chức năng tokenize của thư viện underthesea) và phát hiện xu hướng thông tin dựa trên sự tăng trưởng của các từ khoá. *"Đọc báo Crawler"* cũng tích hợp sẵn một frontend đơn giản hoạt động độc lập với backend (đọc dữ liệu qua file json), để giúp người vận hành dễ dàng kiểm tra và tìm kiếm dữ liệu quét 
@@ -42,36 +48,14 @@ Một điểm mạnh của *"Đọc báo Crawler"* là trả về dữ liệu b�
 **8. Tài liệu đầy đủ và chi tiết (đang xây dựng)**  
 *"Đọc báo Crawler"* hướng tới mục tiêu trở thành một dự án có tính giáo dục và là một mô hình vận hành theo đúng triết lý opensource (bởi vì bản thân mình cũng đã học được và nhận được rất nhiều sự hỗ trợ khi theo đuổi dự án này). Vì vậy việc xây dựng tài liệu hướng dẫn đầy đủ, chi tiết để mọi người, kể cả những người không có nhiều kinh nghiệm lập trình cũng có thể hiểu và có hứng thú cài đặt, vận hành thử dự án, là một mục tiêu mà tác giả dự án đặt ra. 
 
+### Tổ chức thư mục  
+- docs: chứa các tài liệu kĩ thuật của dự án  
+- resources: chứa một số file cần thiết cho việc cài đặt và kho file cấu hình để thêm vào bộ quét   
+- src: folder chứa mã nguồn backend (bộ quét) và frontend (site hiển thị dữ liệu quét được)  
+- scripts: các script cần thiết để cài đặt và vận hành bộ quét 
+- tools: công cụ dùng để quản lý cấu hình quét và các thông số quét 
 
-
-# Giới thiệu:
-Đọc Báo Theo Từ Khoá là phiên bản mã nguồn mở để xây dựng các trang tổng hợp tin tức giống như [Báo Mới](http://baomoi.com), với vài điểm khác biệt:
-
-1. Người dùng chủ động nguồn báo để quét
-2. Dễ cài đặt, nhẹ, có thể chạy được trên máy tính cá nhân, raspberry PI, hay server
-3. Tích hợp chức năng phân tích từ khoá, xác định từ khoá nổi bật, từ khoá hot, từ khóa mới xuất hiện, phân từ khoá vào các chuyên mục
-4. Tích hợp với elasticsearch + kibana để thực hiện các truy vấn nâng cao trên dữ liệu
-5. Mã nguồn mở, miễn phí
-
-Công cụ hướng đến nhiều đối tượng người dùng:  
-1. Độc giả thông thường: tiết kiệm thời gian đọc báo, chủ động chọn lựa nguồn báo uy tín để đọc  
-2. Phóng viên: tìm kiếm đề tài, kiểm chứng, theo dõi thông tin ngành / địa phương phân công phụ trách, làm quen với xu hướng Data Journalist  
-3. PR/Marketing/Agency: theo dõi thương hiệu trên báo chí, phân tích chiến dịch truyền thông của đối thủ, nắm bắt nhanh các vấn đề đang là trend  
-4. Nhà nghiên cứu truyền thông: theo dõi sự kiện, tìm kiếm nhanh các bài báo liên quan tới một sự kiện, lấy dữ liệu excel để phân tích  
-5. Developer: khai thác phần lõi quét báo để lấy dữ liệu phát triển các ứng dụng khác  
-
-# Tính năng nổi bật:
-
-1. Quét được hầu hết các trang báo, blog kể cả các trang dùng nhiều javascript mà không bị block  
-2. Sử dụng công nghệ quét đa luồng, có thể ghép server để quét được số lượng lớn báo
-3. Sử dụng Xử lý ngôn ngữ tự nhiên (NLP) để phân tích tiêu đề báo thành các keyword. Hỗ trợ cả tiếng Anh và tiếng Việt.
-4. Tự động phân tích để xác định từ khoá nổi bật, từ khoá mới xuất hiện, từ khoá tăng trưởng nhanh.
-5. Có thể tuỳ biến các chuyên mục và phân tự động từ khoá vào các chuyên mục
-6. Tìm kiếm các bài báo mới xuất bản nhanh hơn Google (nếu hệ thống được cài đặt để quét đều đặn)
-7. Có thể export dữ liệu dưới dạng file excel và json để phân tích nâng cao
-8. Lưu trữ dữ liệu trên Elasticsearch và thực hiện các truy vấn nâng cao trên Kibana
-
-# Cài đặt
+### Cài đặt
 
 Để chạy được Đọc Báo, bạn cần một máy tính để quét dữ liệu và một host hỗ trợ php và ftp để chạy website hiển thị dữ liệu. 
 
@@ -122,34 +106,8 @@ pass: docbaotheotukhoa
 
 Sau khi tạo config, nhập q + Enter để trình cài đặt chạy tiếp.
 
-#### Bước 4: Chạy thử
-Khi trình cài đặt đã chạy xong, bạn hãy dùng lệnh sau để bắt đầu quét. Mặc định hệ thống sẽ quét trang Báo Mới
+### Vận hành  
 
-~~~~
-cd ~/docbao
-bash run_docbao.sh
-~~~~
-
-Sau khi quét xong, bạn hãy mở trang http://demo.theodoibaochi.com để xem kết quả
-
-#### Bước 5: Tạo cron để quét tự động
-(đang xây dựng tài liệu)
-
-#### Bước 6: Tùy biến cấu hình quét để xây dựng trang thông tin của riêng bạn
-(đang xây dựng tài liệu)
-
-#### Bước 7: Thực hiện các truy vấn nâng cao trên Kibana  
-Mặc định, bạn có thể truy cập vào kibana tại điạ chỉ: locahost:5601  
-TOàn bộ dữ liệu do Đọc Báo quét sẽ được đẩy vào index docbao
-
-## Cài đặt trên Windows 10  
-
-#### Bước 1: Cài Ubuntu lên Windows 10
-Các bạn làm theo hướng dẫn trong bài sau: [Cài Ubuntu lên Windows 10](https://stackjava.com/linux/cai-dat-ubuntu-tren-windows-10-voi-windows-linux-subsystem.html)
-
-#### Bước 2: Mở bash trên Windows 10 và cài đặt y như phần cài đặt với Ubuntu đã được hướng dẫn ở trên
-
-[Clip Hướng dẫn cài đặt trên Windows 10](http://www.youtube.com/watch?v=dcYn8QiFYwI)
  
 ### Lịch sử phát triển  
 

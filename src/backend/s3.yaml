@@ -1,6 +1,0 @@
----
-s3:
-    access_key_id: "s3user101281"
-    secret_access_key: "u//IiBXrkTGStObS6Wx4brT0mRqrnxPT/GhsBNi6"
-    default_bucket: "bangtin"
-    endpoint: "s1.cloudstorage.com.vn"
