@@ -1,0 +1,486 @@
+###############################################################################
+# Program: Docbao API                                                         #
+# Function: Provide API to work with docbao backend from client               #
+# Author: hailoc12                                                            #
+# Created: 2019-08-15                                                         #
+###############################################################################
+
+"""
+Important API
+
+/v1/relate: return relate post of a post for a specific user
+/v1/recommend: return recommend post for a specific user
+
+Important Function
+
+encode_auth_token(self, user_id): return token for user_id to use in API call
+"""
+
+from flask import Flask, request, jsonify
+from lib import *
+import random
+import jwt
+import datetime
+import uuid
+import jsonpickle
+
+SECRET_KEY = "J\x19\xdaS\x88q\xc8\xfe\x97@\xear\xf3]Jn\xa6,\xcc\xba%P\xa5P"
+USER_ID = "bangtin_ainews"
+API_PORT = 8080
+THEODOIBAOCHI_USER_ID = "theodoibaochi"
+
+# Database function
+def load_data():
+    '''
+    load data to use in API
+    :output:
+        tuple (config_manager, data_manager, keyword_manager)
+        else None
+    '''
+    try:
+        config_manager = ConfigManager(get_independent_os_path(['input', 'config.yaml']),
+                                       get_independent_os_path(['input', 'kols_list.txt']),
+                                       get_independent_os_path(['input', 'fb_list.txt'])) #config object
+
+        data_manager = ArticleManager(config_manager, get_independent_os_path(["data", "article.dat"]),get_independent_os_path(["data","blacklist.dat"]) ) #article database object
+        keyword_manager = KeywordManager(data_manager, config_manager, get_independent_os_path(["data", "keyword.dat"]), get_independent_os_path(["input", "collocation.txt"]), get_independent_os_path(["input", "keywords_to_remove.txt"]))    #keyword analyzer object
+        config_manager.load_data(crawl_newspaper=False, crawl_kols=False, crawl_kols_by_smcc=False)
+        data_manager.load_data()
+        keyword_manager.load_data()
+        return (config_manager, data_manager, keyword_manager)
+    except:
+        return None
+
+
+def get_relate_post(post_id):
+    """return an array of 6 post relating to current post_id"""
+    NUMBER_OF_POST = 6
+
+    result = load_data()
+    if result:
+        config_manager, data_manager, keyword_manager = result
+    else:
+        print("Can't load data")
+        return None
+   
+    article = data_manager.get_article(post_id)
+    if article:
+        relate_posts = []
+        for keyword in article.get_keywords():
+            keyword_obj = keyword_manager.get_keyword(keyword)
+            if keyword_obj:
+                relate_posts.extend([relate_id for relate_id in keyword_obj.get_covering_article() if relate_id != post_id])
+        count = 0
+        random_relates = []
+        while count < 6 and count < len(relate_posts):
+            index = random.randint(0, len(relate_posts) -1)
+            random_relates.append(relate_posts.pop(index)) 
+            count += 1
+
+        result = random_relates
+        print(result)
+
+        if result:
+            if len(result) < NUMBER_OF_POST:
+                latest_posts= [post.get_id() for post in data_manager.get_articles(NUMBER_OF_POST - len(result))]
+                result.extend(latest_posts)
+            else:
+                pass
+        else:
+            latest_posts= [post.get_id() for post in data_manager.get_articles(NUMBER_OF_POST - len(result))]
+            result.extend(latest_posts)
+        print(result)
+
+        return result
+    else:
+        print("Can't find article has id %s" % post_id)
+        return None
+
+
+def get_trend_post():
+    """
+    Return latest post relating to trending keywords
+    :output:
+        list of post_id (n <= 100)
+    """
+    result = load_data()
+    if result:
+        config_manager, data_manager, keyword_manager = result
+    else:
+        print("Can't load data")
+        return None
+
+    result = []
+
+    for count, keyword in enumerate(keyword_manager.get_trending_keywords(), 1):
+        if count > 100:
+            break
+        else:
+            result.extend([post.get_id() for post in data_manager.get_latest_article_contain_keyword(keyword['keyword'], number=max(2, 4//count))])
+
+    if result:
+        return result
+    else:
+        return None
+
+
+def encode_auth_token(user_id=USER_ID):
+    """Generates the Auth Token 
+    :return: string 
+    """
+    try:
+        payload = {
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1000, seconds=5),
+                'iat': datetime.datetime.utcnow(),
+                'sub': user_id
+                }
+        return jwt.encode(
+                    payload,
+                    SECRET_KEY,
+                    algorithm='HS256'
+                )
+    except Exception as e:
+        return e
+
+
+def decode_auth_token(auth_token):
+    """    Decodes the auth token    
+    :param auth_token:    
+    :return: integer|string    
+    """
+    try:
+        payload = jwt.decode(auth_token, SECRET_KEY)
+        return payload['sub']
+    except jwt.ExpiredSignatureError:
+        return 'Signature expired. Please log in again.'
+    except jwt.InvalidTokenError:
+        return 'Invalid token. Please log in again.'
+
+
+# API PART
+app = Flask(__name__)
+
+
+@app.route('/v1/article/similarity')
+def get_similarity():
+    """
+    return similarity between two article
+    :input:
+        request body: {'article1': id, 'article2': id, full_content:True/False, algorithm: 'cosine'}
+    :output:
+        normalized_similiarty (0..1)
+    """
+    #TODO: replace this with query from database
+    result = load_data()
+    if result:
+        config_manager, data_manager, keyword_manager = result
+    else:
+        print("Can't load data")
+        return jsonify("Can't load database")
+
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+
+    if decode_auth_token(auth_token) == THEODOIBAOCHI_USER_ID:
+        if 'article1' in body and 'article2' in body:
+            id1 = body['article1']
+            id2 = body['article2']
+            full_content = body['full_content']
+            algorithm = body['algorithm']
+            similarity = data_manager.get_similarity(id1, id2, full_content, algorithm)
+            if similarity:
+                return jsonify(similarity)
+            else:
+                return jsonify("Can't find article to compare")
+        else:
+            return jsonify("Can't find article1 and article2 id in request")
+    else:
+        print("Can't authorize")
+        return jsonify({"error": "Can't authorize"})
+ 
+
+@app.route('/v1/articles/<number>')
+def get_articles(number):
+    """
+    return list of lastest articles with length=number
+    :output:
+        - an array of dict with format like in article_data.json
+        - else None
+    """
+    #TODO: replace this with query from database
+    result = load_data()
+    if result:
+        config_manager, data_manager, keyword_manager = result
+    else:
+        print("Can't load data")
+        return None
+
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+
+    if decode_auth_token(auth_token) == THEODOIBAOCHI_USER_ID:
+        articles = data_manager.get_articles_as_json(int(number))
+        if articles:
+            return jsonify({'article_list': articles })
+        else:
+            return jsonify({"error": "Can't get any articles"})
+    else:
+        print("Can't authorize")
+        return jsonify({"error": "Can't authorize"})
+ 
+@app.route('/v1/image/upload', methods=['POST'])
+def upload_image():
+    """
+    upload image and return image url
+    :input:
+        - {'data': image_byte_stream, 'type': in ['feature_image', 'content_image', 'avatar', 'category']}
+    :output:
+        - if type in ['feature_image', 'content_image']:
+                return {'large': url, 'small': url}
+          elif type in ['avatar', 'category']:
+              return url
+        - else None
+    """
+
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+    print(auth_token)
+
+    if decode_auth_token(auth_token) == THEODOIBAOCHI_USER_ID:
+        cdn_manager = CDNManager()
+        data = request.files['data']
+        image_type = request.form['image_type']
+        image_url = cdn_manager.convert_image(data.read(), type=image_type, mode='data')
+        if image_url:
+            return jsonify(image_url)
+        else:
+            return jsonify({"error": "Can't convert and uploate image"})
+    else:
+        print("Can't authorize")
+        return jsonify({"error": "Can't authorize"})
+ 
+@app.route('/v1/article/<id>')
+def get_article(id):
+    """
+    return article that have id=id
+    :output:
+        - body of an article if id exists in database
+        - else None
+    """
+    #TODO: replace this with query from database
+    result = load_data()
+    if result:
+        config_manager, data_manager, keyword_manager = result
+    else:
+        print("Can't load data")
+        return None
+
+
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+
+    if decode_auth_token(auth_token) == THEODOIBAOCHI_USER_ID:
+        article = data_manager.get_article(id)
+        if article:
+            content = [x['content']for x in article.get_content() if x['type']=='text']
+            result = {
+              'topic':article.get_topic(),
+              'href':article.get_href(),
+              'newspaper': article.get_newspaper(),
+              'publish_time': article.get_date_string(config_manager.get_display_timezone()),
+              'sapo': article.get_sapo(),
+              'content': content
+            }
+            return jsonify(result)
+        else:
+            return jsonify({"error": "Can't get any articles"})
+ 
+
+@app.route('/v1/search')
+def search_articles_API():
+    """return articles that satisfy search_string format
+    input
+        - search: search string
+        - full_search: true/false
+    output
+        - list of dict that contain article information
+    """
+    #TODO: replace this with query from database
+    result = load_data()
+    if result:
+        config_manager, data_manager, keyword_manager = result
+    else:
+        print("Can't load data")
+        return None
+
+
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+
+    if decode_auth_token(auth_token) == THEODOIBAOCHI_USER_ID:
+        search_string = body['search']
+        full_search = body['full_search']
+        if 'tag_filter' in body:
+            tag_filter = body['tag_filter']
+        else:
+            tag_filter = None
+
+        # TODO: cache request with Redis
+        search_result = data_manager.search_in_database(search_string, search_content=full_search, tag_filter=tag_filter)
+        max_length = config_manager.get_maximum_topic_display_length()
+        article_list = []
+        if search_result:
+            for article in search_result:
+                article_list.append({
+                              'id': article.get_id(),
+                              'topic':trim_topic(article.get_topic(), max_length),
+                              'href':article.get_href(),
+                              'newspaper': article.get_newspaper(),
+                              'update_time': article.get_creation_date_string(config_manager.get_display_timezone()),
+                              'publish_time': article.get_date_string(config_manager.get_display_timezone()),
+                              'sapo': article.get_sapo()
+                             })
+
+            return jsonify({'posts': article_list})
+        else:
+            return jsonify({'error': "Can't get any result"})
+    else:
+        return jsonify({'error': 'Wrong authorization token'})
+
+
+@app.route('/v1/relate')
+def get_relate_post_API():
+    """return relate post for a specific user
+    input
+        - user_id: can be omitted
+        - post_id
+    output
+        - list of post_id that relate to input post_id
+    """
+
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+
+    if decode_auth_token(auth_token) == USER_ID:
+        if 'user_id' in body:
+            user_id = body['user_id']
+        else:
+            user_id = None
+        if 'post_id' in body:
+            post_id = body['post_id']
+
+            # TODO: cache request with Redis
+            result = get_relate_post(post_id)
+            if result:
+                return jsonify({'posts': result})
+            else:
+                return jsonify({'error': "Can't find related posts"})
+        else:
+            return jsonify({'error': "Not post_id in request"})
+    else:
+        return jsonify({'error': 'Wrong authorization token'})
+
+
+@app.route('/v1/recommend')
+def get_recommended_post_API():
+    """return relate post for a specific user
+    input
+        - user_id: can be omitted
+        - type:
+            + 0: recommendation
+            + 1: top trends
+    output
+        - list of post_id that relate to input post_id
+    """
+
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+
+    if decode_auth_token(auth_token) == USER_ID:
+        if 'user_id' in body:
+            user_id = body['user_id']
+        else:
+            user_id = None
+        type = body['type']
+
+        # TODO: cache request with Redis
+        if type == 0:
+            result = get_trend_post()
+
+            #for index, post in enumerate(result):
+            #    print(post)
+            #result = get_recommend_post(user_id)
+        else:
+            result = get_trend_post()
+
+        if result:
+            return jsonify({'posts': result})
+        else:
+            return jsonify({'error': "Can't find recommended posts"})
+    else:
+        return jsonify({'error': 'Wrong authorization token'})
+
+
+@app.route("/v1/voice",methods=['GET'])
+def get_audio():
+    '''
+    Transform text to speech and get back mp3 data
+    :input:
+        body: {'voice': 0..4, 'text': string, ['id': id], ['without_filter: boolean], [speed: 0.7-1.3]}
+    :output:
+        mp3 data in response body
+    '''
+        
+    lst_voice=['doanngocle','trinhthiviettrinh','phamtienquan','lethiyen','nguyenthithuyduyen']
+
+    #data get from request article_API
+    body = request.json
+    header = request.headers
+    auth_token = header['Authorization'].replace('Bearer ', '')
+
+    if decode_auth_token(auth_token) == THEODOIBAOCHI_USER_ID:
+        # prepare data to call Viettel TTS API
+        # https://viettelgroup.ai/document/tts
+        data = body
+        if 'id' not in body:
+            data['id'] = str(uuid.uuid4())
+        if 'without_filter' not in body:
+            data['without_filter'] = False
+        if 'speed' not in body:
+            data['speed'] = 1.0
+        if 'voice' not in body:
+            data['voice'] = lst_voice[0]
+        else:
+            data['voice']=lst_voice[body['voice']]
+        data['tts_return_option'] = 3 # mp3
+        print(data)
+
+        url = "https://vtcc.ai/voice/api/tts/v1/rest/syn"
+        headers = {'Content-type': 'application/json', 'token': 'kzrnyfWGD9hOUGDOSV164YGqiUmxGY-Ln5q6wpn9Y68hiJ-h3H8cvNABiFdLJGFO'}
+        response = requests.post(url, data=json.dumps(data), headers=headers)
+        
+        if response.status_code == 200:
+            return response.content
+        else:
+            print("Error in calling Viettel TTS API. Error code %s" % str(response.status_code))
+            return jsonify("Can't transform text to audio. Error code from TTS API: %s" % str(response.status_code))
+    else:
+        print("Can't authorize")
+        return jsonify({"error": "Can't authorize"})
+
+
+
+
+if __name__ == '__main__':
+    # load database
+    print("Start Docbao API Server")
+    # start API server
+    app.run(host='0.0.0.0', port=API_PORT, debug=True)
+

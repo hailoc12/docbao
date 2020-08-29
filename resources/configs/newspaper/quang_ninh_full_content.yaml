@@ -1,0 +1,65 @@
+- Báo Quảng Ninh điện tử:
+    browser_fast_load: true
+    avatar_url: http://123.31.36.69/common/v1/image/logo_qn.jpg
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    browser_timeout: 60
+    output_html: false
+    web_url: http://baoquangninh.com.vn
+    contain: ''
+    use_browser: false
+    prevent_auto_redirect: false
+    browser_profile: ''
+    audio_title_xpath: []
+    text_xpath:
+    - ./p
+    audio_box_xpath: []
+    avatar_xpath: ''
+    sapo_xpath:
+    - //*[@id="content"]/p[1]
+    - //*[@id="content"]/p[1]
+    get_publish_date_as_crawl_date: false
+    crawl_url: http://baoquangninh.com.vn
+    extract_xpath:
+    - ./text()
+    - ./@title
+    minimum_topic_length: 4
+    video_box_xpath: []
+    remove_content_html_xpaths:
+    - //*[@id="content"]/p[1]
+    - //node()[@class="rl center"]
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class="date"]
+    - //node()[@class="date"]
+    date_place: detail_page
+    get_detail_content: true
+    image_title_xpath:
+    - ./tbody/tr[2]/td
+    skip_checking_topic_length: false
+    crawl_type: newspaper
+    minimum_duration_between_crawls: 15
+    maximum_url: 30
+    skip_repeat_topic: true
+    display_browser: false
+    content_xpath:
+    - //node()[@class="content"]
+    - //node()[@class="content"]
+    timezone: Asia/Ho_Chi_Minh
+    remove_content_html: true
+    image_box_xpath:
+    - ./table[descendant::img]
+    last_run: 02/06/2019 21:56
+    id_type: href
+    use_index_number: false
+    language: vietnamese
+    topic_type: href
+    remove_date_tag_html: false
+    url_pattern_re: http://baoquangninh.com.vn
+    video_title_xpath: []
+    avatar_type: url
+    ignore_topic_not_have_publish_date: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]

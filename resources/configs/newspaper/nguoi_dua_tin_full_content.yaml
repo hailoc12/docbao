@@ -1,0 +1,62 @@
+- Người Đưa Tin:
+    minimum_duration_between_crawls: 15
+    remove_content_html_xpaths:
+    - //node()[contains(@class,"sapo")]
+    get_publish_date_as_crawl_date: false
+    contain: ''
+    display_browser: false
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/1ab28f6b-614d-4865-98c9-09ad38592fd8_small.jpg
+    extract_xpath:
+    - ./text()
+    - ./@title
+    maximum_url: 10
+    crawl_url: https://www.nguoiduatin.vn
+    avatar_type: url
+    text_xpath:
+    - ./p
+    get_topic_from_link: true
+    id_type: href
+    video_title_xpath: []
+    url_pattern_re: https://www.nguoiduatin.vn
+    image_box_xpath:
+    - ./figure
+    audio_title_xpath: []
+    get_detail_content: true
+    timezone: Asia/Ho_Chi_Minh
+    audio_box_xpath: []
+    topic_type: href
+    use_index_number: false
+    sapo_xpath:
+    - //node()[contains(@class,"sapo")]
+    - //node()[contains(@class,"sapo")]
+    image_title_xpath:
+    - .//figcaption/h3
+    browser_profile: ''
+    video_box_xpath: []
+    avatar_xpath: ''
+    content_xpath:
+    - //article
+    - //article
+    remove_date_tag_html: false
+    minimum_topic_length: 4
+    skip_checking_topic_length: false
+    language: vietnamese
+    date_place: detail_page
+    use_browser: false
+    browser_fast_load: true
+    ignore_topic_not_have_publish_date: true
+    remove_content_html: true
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    output_html: false
+    last_run: 02/06/2019 21:56
+    web_url: https://www.nguoiduatin.vn
+    skip_repeat_topic: true
+    crawl_type: newspaper
+    date_xpath:
+    - //node()[@class="fs2"]
+    - //node()[@class="fs2"]

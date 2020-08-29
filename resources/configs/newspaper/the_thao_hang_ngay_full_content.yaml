@@ -1,0 +1,63 @@
+- Thể Thao Hàng Ngày:
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    ignore_topic_not_have_publish_date: true
+    url_pattern_re: https://thethaohangngay.com.vn
+    sapo_xpath:
+    - //div[@class='intro']/text()
+    - //div[@class='intro']/text()
+    contain: ''
+    get_detail_content: true
+    audio_title_xpath: []
+    text_xpath:
+    - .//h2[text()]
+    - .//p[text()]
+    remove_date_tag_html: false
+    avatar_xpath: ''
+    video_title_xpath: []
+    minimum_topic_length: 4
+    date_xpath:
+    - //div[@class='info']
+    - //div[@class='info']
+    skip_repeat_topic: true
+    timezone: Asia/Ho_Chi_Minh
+    audio_box_xpath: []
+    browser_fast_load: true
+    remove_content_html: true
+    skip_checking_topic_length: false
+    crawl_url: https://thethaohangngay.com.vn
+    display_browser: false
+    use_index_number: false
+    get_topic_from_link: true
+    get_publish_date_as_crawl_date: false
+    content_xpath:
+    - //section[@class='news news-text']
+    - //section[@class='news news-tect']
+    minimum_duration_between_crawls: 15
+    last_run: 02/06/2019 21:56
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    video_box_xpath: []
+    avatar_type: url
+    topic_type: href
+    id_type: href
+    image_box_xpath:
+    - .//img/..
+    extract_xpath:
+    - ./text()
+    - ./@title
+    output_html: false
+    browser_profile: ''
+    image_title_xpath:
+    - ./following::p[@style='text-align:center']
+    web_url: https://thethaohangngay.com.vn
+    crawl_type: newspaper
+    avatar_url: ''
+    use_browser: false
+    date_place: detail_page
+    maximum_url: 10
+    language: vietnamese
+    remove_content_html_xpaths:
+    - //node()[@class='multi-share-box']

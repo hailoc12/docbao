@@ -1,0 +1,66 @@
+- Văn Nghệ:
+    web_url: http://baovannghe.com.vn
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    video_title_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    date_xpath:
+    - //node()[@class="publish-date"]/i
+    - //node()[@class="publish-date"]/i
+    get_topic_from_link: true
+    browser_profile: ''
+    browser_fast_load: true
+    use_browser: false
+    topic_type: href
+    id_type: href
+    crawl_url: http://baovannghe.com.vn
+    minimum_topic_length: 4
+    skip_checking_topic_length: false
+    content_xpath:
+    - //node()[@class="entry-content"]
+    - //node()[@class="entry-content"]
+    remove_date_tag_html: false
+    prevent_auto_redirect: false
+    last_run: 02/06/2019 21:56
+    audio_box_xpath: []
+    avatar_xpath: ''
+    url_pattern_re: http://baovannghe.com.vn
+    skip_repeat_topic: true
+    get_publish_date_as_crawl_date: false
+    image_title_xpath:
+    - .//node()[contains(@style,"text-align")]//node()[text()]
+    use_index_number: false
+    timezone: Asia/Ho_Chi_Minh
+    remove_content_html: true
+    maximum_url: 30
+    remove_content_html_xpaths:
+    - ./p[descendant::img]
+    - ./p[descendant::img]/preceding-sibling::*
+    - ./span[child::em]
+    video_box_xpath: []
+    audio_title_xpath: []
+    image_box_xpath:
+    - .//table[descendant::img]
+    display_browser: false
+    date_place: detail_page
+    text_xpath:
+    - ./p[contains(@style,"text-align")]
+    sapo_xpath:
+    - //node()[@class="entry-content"]/node()[descendant::strong][1]
+    - //node()[@class="entry-content"]/node()[descendant::strong][1]
+    output_html: false
+    get_detail_content: true
+    ignore_topic_not_have_publish_date: true
+    browser_timeout: 60
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/a5f208b2-e60d-45a5-8232-43a64cd20f6a_small.jpg
+    crawl_type: newspaper
+    contain: ''
+    avatar_type: url

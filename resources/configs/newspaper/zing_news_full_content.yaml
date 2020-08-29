@@ -1,0 +1,65 @@
+- Zing:
+    content_xpath:
+    - //node()[@class='the-article-body']
+    - //node()[@class='the-article-body']
+    browser_timeout: 60
+    image_title_xpath:
+    - //node()[@class='pCaption caption']
+    remove_date_tag_html: false
+    extract_xpath:
+    - ./text()
+    - ./@title
+    display_browser: false
+    contain: ''
+    timezone: Asia/Ho_Chi_Minh
+    use_browser: true
+    browser_profile: ''
+    use_index_number: false
+    url_pattern_re: https://news.zing.vn
+    output_html: false
+    audio_box_xpath: []
+    minimum_duration_between_crawls: 15
+    id_type: href
+    get_topic_from_link: true
+    video_box_xpath: []
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/d86dfeef-2567-42b3-a638-72737bc3f4da_small.jpg
+    sapo_xpath:
+    - //node()[@class='the-article-summary']/text()
+    - //node()[@class='the-article-summary']/text()
+    crawl_url: https://news.zing.vn
+    feature_image_xpath:
+    - //node()[@class='the-article-body']//img/@src
+    - //node()[@class='the-article-body']//img/@src
+    get_detail_content: true
+    minimum_topic_length: 4
+    skip_checking_topic_length: false
+    remove_content_html: true
+    audio_title_xpath: []
+    date_place: detail_page
+    crawl_type: newspaper
+    avatar_type: url
+    date_xpath:
+    - //node()[@class='the-article-publish']
+    - //node()[@class='the-article-publish']
+    maximum_url: 30
+    prevent_auto_redirect: false
+    remove_content_html_xpaths:
+    - //node()[@class='notebox ncenter']
+    - //node()[@class='interview']
+    get_publish_date_as_crawl_date: false
+    video_title_xpath: []
+    topic_type: href
+    last_run: 02/06/2019 21:56
+    avatar_xpath: ''
+    browser_fast_load: true
+    language: vietnamese
+    text_xpath:
+    - //node()[@class='the-article-body']/p
+    ignore_topic_not_have_publish_date: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    web_url: https://news.zing.vn
+    image_box_xpath:
+    - //node()[@class='picture']
+    skip_repeat_topic: true

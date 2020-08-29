@@ -1,0 +1,41 @@
+{
+	"name":"autocompletelikegoogle",
+	"version":"1.2.6",
+	"main": [
+		"jquery.autocomplete.js",
+		"jquery.autocomplete.css"
+	],
+	"ignore": [
+		"**/demo",
+		"**/autocomplete.jquery.json",
+		"**/*.png",
+		"**/*.txt",
+		"**/*.md",
+		"**/*.html",
+		"**/*.tpl"
+	  ],
+	"keywords": [
+		"autocomplete",
+		"ajax",
+		"complete",
+		"form",
+		"ui",
+		"input",
+		"accents",
+		"jquery"
+    ],
+	"dependencies": {
+    "jquery": ">= 1.7.2"
+  },
+	"authors": [
+		{
+			"name": 	"Chupurnov Valeriy",
+			"email": 	"chupurnov@gmail.com",
+			"homepage": 		"http://xdsoft.net/contacts.html"
+    }
+	],
+	"homepage":"http://xdsoft.net/jqplugins/autocomplete/",
+	"repository": {
+		"type": "git", "url": "git://github.com:xdan/autocomplete.git"
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "name": "autocompletelikegoogle",
+    "version": "1.2.6",
+	"title": "Autocomplete like Google",
+    "description": "Simple autocomplete like Google",
+    "keywords": [
+		"autocomplete",
+		"ajax",
+		"complete",
+		"form",
+		"ui",
+		"input",
+		"accents",
+		"accents",
+		"jquery"
+    ],
+   "author": {
+		"name": 	"Chupurnov Valeriy",
+		"email": 	"chupurnov@gmail.com",
+		"url": 		"http://xdsoft.net/contacts.html"
+	},
+	"maintainers": [{
+		"name": 	"Chupurnov Valeriy",
+		"email": 	"chupurnov@gmail.com",
+		"url": 		"http://xdsoft.net"
+	}],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/xdan/datetimepicker/blob/master/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/xdan/autocomplete/issues",
+    "homepage": "http://xdsoft.net/jqplugins/autocomplete/",
+    "docs": "http://xdsoft.net/jqplugins/autocomplete/",
+    "download": "https://github.com/xdan/autocomplete/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}

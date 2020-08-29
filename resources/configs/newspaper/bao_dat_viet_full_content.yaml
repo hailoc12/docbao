@@ -1,0 +1,63 @@
+- Đất Việt:
+    extract_xpath:
+    - ./text()
+    - ./@title
+    get_publish_date_as_crawl_date: false
+    get_topic_from_link: true
+    crawl_url: http://baodatviet.vn
+    timezone: Asia/Ho_Chi_Minh
+    crawl_type: newspaper
+    remove_content_html_xpaths:
+    - //node()[contains(@id, "container")]
+    video_box_xpath: []
+    sapo_xpath:
+    - //node()[@class= "lead"]
+    - //node()[@class= "lead"]
+    image_box_xpath:
+    - //table[@class="tblImage"]
+    skip_checking_topic_length: false
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/27f030c7-56f0-4409-90ec-2359e67b4561_small.jpg
+    date_xpath:
+    - //node()[@class= "time"]
+    - //node()[@class= "time"]
+    browser_profile: ''
+    contain: ''
+    get_detail_content: true
+    remove_content_html: true
+    text_xpath:
+    - //p[@class= "Normal"]
+    - ./p
+    ignore_topic_not_have_publish_date: true
+    use_index_number: false
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    display_browser: false
+    feature_image_xpath:
+    - //table[@class="tblImage"]//img/@src
+    - //table[@class="tblImage"]//img/@src
+    avatar_type: url
+    minimum_duration_between_crawls: 15
+    topic_type: href
+    url_pattern_re: http://baodatviet.vn
+    remove_date_tag_html: false
+    audio_title_xpath: []
+    audio_box_xpath: []
+    date_place: detail_page
+    last_run: 02/06/2019 21:56
+    use_browser: false
+    id_type: href
+    avatar_xpath: ''
+    maximum_url: 10
+    skip_repeat_topic: true
+    minimum_topic_length: 4
+    browser_fast_load: true
+    content_xpath:
+    - //node()[@id= "divContent"]
+    - //node()[@id= "divContent"]
+    video_title_xpath: []
+    web_url: http://baodatviet.vn
+    image_title_xpath:
+    - //node()[@class= "Image"]
+    output_html: false
+    language: vietnamese

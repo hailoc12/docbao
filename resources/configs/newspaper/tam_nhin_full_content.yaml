@@ -1,0 +1,65 @@
+- Tầm Nhìn:
+    crawl_type: newspaper
+    get_topic_from_link: true
+    crawl_url: http://tamnhin.net.vn
+    browser_profile: ''
+    use_index_number: false
+    browser_fast_load: true
+    audio_box_xpath: []
+    maximum_url: 50
+    sapo_xpath:
+    - //node()[@class="sapo sapo-detail"]
+    - //node()[@class="sapo sapo-detail"]
+    remove_content_html_xpaths: []
+    ignore_topic_not_have_publish_date: true
+    date_place: detail_page
+    date_xpath:
+    - //node()[@class="date-time"]
+    - //node()[@class="date-time"]
+    avatar_xpath: ''
+    display_browser: false
+    image_title_xpath:
+    - .//tr//node()[text()]
+    remove_content_html: true
+    last_run: 02/06/2019 21:56
+    content_xpath:
+    - //node()[contains(@class,"article-content")]
+    - //node()[contains(@class,"article-content")]
+    get_publish_date_as_crawl_date: false
+    avatar_type: url
+    audio_title_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    skip_repeat_topic: true
+    id_type: href
+    minimum_duration_between_crawls: 15
+    image_box_xpath:
+    - .//table
+    web_url: http://tamnhin.net.vn
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    timezone: Asia/Ho_Chi_Minh
+    contain: ''
+    prevent_auto_redirect: false
+    url_pattern_re: http://tamnhin.net.vn
+    topic_type: href
+    feature_image_xpath:
+    - .//table//img/@src
+    - .//table//img/@src
+    remove_date_tag_html: true
+    browser_timeout: 60
+    text_xpath:
+    - .//p
+    video_title_xpath: []
+    output_html: false
+    use_browser: false
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/bf64c7cd-f932-4e09-b785-b73408f2a238_small.jpg
+    minimum_topic_length: 4
+    video_box_xpath: []
+    get_detail_content: true
+    language: vietnamese
+    skip_checking_topic_length: false
+    only_quality_post: true
+    tags: []

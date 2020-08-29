@@ -1,0 +1,62 @@
+- Người Tiêu Dùng:
+    extract_xpath:
+    - ./text()
+    - ./@title
+    video_title_xpath: []
+    avatar_xpath: ''
+    audio_box_xpath: []
+    audio_title_xpath: []
+    image_title_xpath:
+    - .//tr[@class='figcaption']/td
+    timezone: Asia/Ho_Chi_Minh
+    content_xpath:
+    - //div[@id='detail']
+    - //div[@id='detail']
+    skip_repeat_topic: true
+    avatar_type: url
+    get_publish_date_as_crawl_date: false
+    sapo_xpath:
+    - //h2[@class='intro']/text()
+    - //h2[@class='intro']/text()
+    web_url: http://www.nguoitieudung.com.vn
+    feature_image_xpath:
+    - //img/@src
+    - //img/@src
+    get_topic_from_link: true
+    minimum_topic_length: 4
+    url_pattern_re: http://www.nguoitieudung.com.vn
+    browser_profile: ''
+    date_xpath:
+    - //time[@class='pushdate']
+    - //time[@class='pushdate']
+    crawl_url: http://www.nguoitieudung.com.vn
+    skip_checking_topic_length: false
+    contain: ''
+    id_type: href
+    text_xpath:
+    - .//p[text()]
+    display_browser: false
+    use_browser: true
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/78ab4743-6870-4d25-a747-991211160f80_small.jpg
+    remove_content_html: true
+    crawl_type: newspaper
+    maximum_url: 10
+    image_box_xpath:
+    - //table[@class='figure']
+    date_place: detail_page
+    minimum_duration_between_crawls: 15
+    remove_date_tag_html: false
+    use_index_number: false
+    language: vietnamese
+    ignore_topic_not_have_publish_date: true
+    browser_fast_load: true
+    video_box_xpath: []
+    remove_content_html_xpaths:
+    - //node()[@class='contain-share']
+    topic_type: href
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    last_run: 02/06/2019 21:56
+    get_detail_content: true
+    output_html: false

@@ -1,0 +1,72 @@
+- Báo Cà Mau điện tử:
+    minimum_topic_length: 4
+    last_run: 02/06/2019 21:56
+    contain: ''
+    audio_title_xpath: []
+    sapo_xpath:
+    - //node()[@class="title-italic"]
+    - //node()[@class="title-italic"]
+    skip_checking_topic_length: false
+    video_box_xpath: []
+    remove_content_html_xpaths: []
+    image_box_xpath:
+    - ./node()[descendant::img]
+    - ./table[count(./tbody/tr)=2]
+    - ./table/tbody[count(./tr)>2]/tr[descendant::img]
+    ignore_topic_not_have_publish_date: true
+    date_xpath:
+    - //node()[@class="date-time"]
+    - //node()[@class="date-time"]
+    crawl_type: newspaper
+    prevent_auto_redirect: false
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    audio_box_xpath: []
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    remove_content_html: true
+    extract_xpath:
+    - ./text()
+    - ./@title
+    skip_repeat_topic: true
+    display_browser: false
+    use_index_number: false
+    avatar_type: url
+    crawl_url: http://baocamau.com.vn
+    browser_timeout: 60
+    date_place: detail_page
+    id_type: href
+    get_topic_from_link: true
+    content_xpath:
+    - //node()[@class="newscontent"]
+    - //node()[@class="newscontent"]
+    language: vietnamese
+    browser_fast_load: true
+    avatar_url: https://yt3.ggpht.com/a/AGF-l782yWi-Zo0DQvThc7XZWH5Q5bxjOYpdf5hswA=s900-c-k-c0xffffffff-no-rj-mo
+    remove_date_tag_html: false
+    video_title_xpath: []
+    avatar_xpath: ''
+    get_publish_date_as_crawl_date: false
+    minimum_duration_between_crawls: 15
+    output_html: false
+    use_browser: false
+    text_xpath:
+    - ./p[not(descendant::img)][not(contains(@style,"center"))]
+    maximum_url: 30
+    image_title_xpath:
+    - .//em[not(./span)]
+    - ./following-sibling::*[1][not(descendant::img)]//span[parent::em]
+    - ./following-sibling::*[1][not(descendant::img)][contains(@style,"center")]//em
+    - .//span/span
+    - .//em/span
+    - ./following::em[text()]
+    - ./tbody/tr[2]/td
+    - ./following-sibling::*[1][not(descendant::img)][contains(@style,"center")]
+    timezone: Asia/Ho_Chi_Minh
+    topic_type: href
+    web_url: http://baocamau.com.vn
+    get_detail_content: true
+    browser_profile: ''
+    url_pattern_re: http://baocamau.com.vn

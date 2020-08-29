@@ -1,0 +1,69 @@
+- 24h.com.vn:
+    minimum_duration_between_crawls: 15
+    browser_fast_load: true
+    remove_content_html: true
+    feature_image_xpath:
+    - .//img/src
+    - .//img/src
+    browser_profile: ''
+    avatar_xpath: ''
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    display_browser: false
+    extract_xpath:
+    - ./text()
+    - ./@title
+    maximum_url: 10
+    remove_content_html_xpaths:
+    - ./header
+    - .//node()[@class="updTm updTmD mrT5"]
+    - .//node()[@class="bmTpSeoBlk bmTpSeoBlkD clF"]
+    - .//node()[@class="ctTp"]
+    - .//node()[@class="sbNws"]
+    - .//node()[@class="pgS2 txtCent grnBxBg bld clrGrn mgt20"]
+    - .//node()[@class="bv-lq"]
+    - .//node()[contains(@id,"ADS")]
+    sapo_xpath:
+    - //node()[@class="ctTp"]
+    - //node()[@class="ctTp"]
+    language: vietnamese
+    image_title_xpath:
+    - ./following-sibling::*[position()<3][contains(@class,"img_chu_thich")]
+    audio_box_xpath: []
+    crawl_type: newspaper
+    audio_title_xpath: []
+    skip_repeat_topic: true
+    date_xpath:
+    - //node()[@class="updTm updTmD mrT5"]
+    - //node()[@class="updTm updTmD mrT5"]
+    id_type: href
+    skip_checking_topic_length: false
+    video_title_xpath: []
+    image_box_xpath:
+    - ./node()[.//img]
+    use_browser: true
+    video_box_xpath: []
+    minimum_topic_length: 4
+    get_detail_content: true
+    output_html: false
+    avatar_url: https://cdn.24h.com.vn/images/2014/24h_logo_trang_chu_2015.png
+    text_xpath:
+    - ./p[not(.//img)]
+    remove_date_tag_html: false
+    timezone: Asia/Ho_Chi_Minh
+    use_index_number: false
+    topic_type: href
+    content_xpath:
+    - //node()[@class="nwsHt nwsUpgrade"]
+    - //node()[@class="nwsHt nwsUpgrade"]
+    last_run: 02/06/2019 21:56
+    contain: ''
+    crawl_url: https://www.24h.com.vn
+    avatar_type: url
+    date_place: detail_page
+    web_url: https://www.24h.com.vn
+    url_pattern_re: https://www.24h.com.vn
+    ignore_topic_not_have_publish_date: true
+    get_publish_date_as_crawl_date: false
+    get_topic_from_link: true

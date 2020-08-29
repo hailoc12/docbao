@@ -1,0 +1,66 @@
+- Bảo Vệ Pháp Luật:
+    date_xpath:
+    - //node()[@class='col-md-6 col-sm-12 pdl0 lbPublishedDate']
+    - //node()[@class='col-md-6 col-sm-12 pdl0 lbPublishedDate']
+    browser_profile: ''
+    get_topic_from_link: true
+    browser_fast_load: true
+    skip_repeat_topic: true
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/5b11ddb5-76e5-4aee-a067-99f703c4f15a_small.jpg
+    minimum_topic_length: 4
+    last_run: 02/06/2019 21:56
+    image_title_xpath:
+    - //node()[@class='alt_imgEditor']/td
+    skip_checking_topic_length: false
+    date_place: detail_page
+    extract_xpath:
+    - ./text()
+    - ./@title
+    video_box_xpath: []
+    timezone: Asia/Ho_Chi_Minh
+    output_html: false
+    sapo_xpath:
+    - //node()[@class='post-summary']/h2/text()
+    - //node()[@class='post-summary']/h2/text()
+    display_browser: false
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    crawl_url: https://baovephapluat.vn
+    contain: ''
+    remove_content_html: true
+    audio_title_xpath: []
+    remove_content_html_xpaths: []
+    avatar_xpath: ''
+    browser_timeout: 60
+    remove_date_tag_html: false
+    get_publish_date_as_crawl_date: false
+    use_browser: false
+    crawl_type: newspaper
+    web_url: https://baovephapluat.vn
+    audio_box_xpath: []
+    get_detail_content: true
+    url_pattern_re: https://baovephapluat.vn
+    id_type: href
+    video_title_xpath: []
+    content_xpath:
+    - //node()[@class='post-content']
+    - //node()[@class='post-content']
+    use_index_number: false
+    image_box_xpath:
+    - .//table/tbody/tr[2]
+    minimum_duration_between_crawls: 15
+    topic_type: href
+    feature_image_xpath:
+    - //node()[@class='post-content']//tr[2]//img/@src
+    - //node()[@class='post-content']//tr[2]//img/@src
+    ignore_topic_not_have_publish_date: true
+    language: vietnamese
+    text_xpath:
+    - //node()[@class='post-content']/div/div/p
+    - //node()[@class='tacgia']
+    prevent_auto_redirect: false
+    maximum_url: 30
+    avatar_type: url
+    only_quality_post: true
+    tags: []

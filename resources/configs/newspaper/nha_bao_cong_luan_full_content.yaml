@@ -1,0 +1,65 @@
+- Nhà báo và Công luận:
+    feature_image_xpath:
+    - ./img/@src
+    - ./img/@src
+    crawl_type: newspaper
+    skip_checking_topic_length: false
+    display_browser: false
+    avatar_xpath: ''
+    minimum_duration_between_crawls: 15
+    contain: ''
+    crawl_url: https://congluan.vn
+    web_url: https://congluan.vn
+    prevent_auto_redirect: false
+    id_type: href
+    remove_content_html_xpaths:
+    - //node()[@class='clear' or @class='qc20' or @class='clear:both' or @class='bottom_content']
+    maximum_url: 30
+    use_browser: true
+    get_publish_date_as_crawl_date: false
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    topic_type: href
+    output_html: false
+    last_run: 02/06/2019 21:56
+    date_xpath:
+    - //time[@class='timeStamp']
+    - //time[@class='timeStamp']
+    remove_content_html: true
+    sapo_xpath:
+    - //div[@class='w100 intro_detail']/h2/text()
+    - //div[@class='w100 intro_detail']/h2/text()
+    extract_xpath:
+    - ./text()
+    - ./@title
+    language: vietnamese
+    remove_date_tag_html: true
+    video_title_xpath: []
+    image_box_xpath:
+    - //figure[@class='expNoEdit']
+    ignore_topic_not_have_publish_date: true
+    audio_box_xpath: []
+    url_pattern_re: https://congluan.vn
+    browser_fast_load: true
+    get_topic_from_link: true
+    avatar_type: url
+    video_box_xpath: []
+    text_xpath:
+    - .//h2[text()]
+    - .//p[text()]
+    audio_title_xpath: []
+    get_detail_content: true
+    timezone: Asia/Ho_Chi_Minh
+    browser_timeout: 60
+    skip_repeat_topic: true
+    content_xpath:
+    - //div[@class='detail']
+    - //div[@class='detail']
+    avatar_url: https://static.ex-cdn.com/congluan.vn/v0.0.387/templates/themes/images/logo.png
+    image_title_xpath:
+    - .//figcaption
+    use_index_number: false
+    browser_profile: ''
+    minimum_topic_length: 4
+    date_place: detail_page

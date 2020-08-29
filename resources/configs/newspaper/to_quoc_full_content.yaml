@@ -1,0 +1,62 @@
+- Tổ Quốc:
+    use_index_number: false
+    get_detail_content: true
+    display_browser: false
+    remove_content_html_xpaths:
+    - //node()[@class='hsl-audio loading' or @class='like-share-mail fr' or @class='clearfix']
+    audio_title_xpath: []
+    text_xpath:
+    - .//div[@data-role="content"]//node()[text() and not(parent::node()[@class="PhotoCMS_Caption"])]
+    crawl_url: http://toquoc.vn
+    skip_repeat_topic: true
+    sapo_xpath:
+    - //div[@class='sapo']/text()
+    - //div[@class='sapo']/text()
+    maximum_url: 10
+    output_html: false
+    ignore_topic_not_have_publish_date: true
+    remove_date_tag_html: false
+    minimum_topic_length: 4
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    avatar_type: url
+    image_title_xpath:
+    - .//node()[@class='PhotoCMS_Caption']
+    video_title_xpath: []
+    use_browser: false
+    browser_profile: ''
+    crawl_type: newspaper
+    contain: ''
+    audio_box_xpath: []
+    date_place: detail_page
+    topic_type: href
+    timezone: Asia/Ho_Chi_Minh
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/264d8893-7415-488c-9ad8-385a0ca6a2ed_small.jpg
+    content_xpath:
+    - //div[@class='w640 fr']
+    - //div[@class='w640 fr']
+    url_pattern_re: http://toquoc.vn
+    minimum_duration_between_crawls: 15
+    browser_fast_load: true
+    date_xpath:
+    - //span[@class='publishdate']
+    - //span[@class='publishdate']
+    last_run: 02/06/2019 21:56
+    video_box_xpath: []
+    id_type: href
+    web_url: http://toquoc.vn
+    remove_content_html: true
+    skip_checking_topic_length: false
+    get_publish_date_as_crawl_date: false
+    get_topic_from_link: true
+    language: vietnamese
+    image_box_xpath:
+    - .//node()[@class='VCSortableInPreviewMode']
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    avatar_xpath: ''
+    extract_xpath:
+    - ./text()
+    - ./@title

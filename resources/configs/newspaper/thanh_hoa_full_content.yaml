@@ -1,0 +1,66 @@
+- Báo Thanh Hóa điện tử:
+    browser_fast_load: true
+    avatar_url: http://cdn.vietlong.org/cdn/apps/cms/baothanhhoa/logo/FB_share.png
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    browser_timeout: 60
+    output_html: false
+    web_url: http://baothanhhoa.vn
+    contain: ''
+    use_browser: false
+    prevent_auto_redirect: false
+    browser_profile: ''
+    audio_title_xpath: []
+    text_xpath:
+    - ./node()[contains(@class,"pBody")][not(descendant::img)]
+    - ./node()[@class="pAuthor"]
+    audio_box_xpath: []
+    avatar_xpath: ''
+    sapo_xpath:
+    - //node()[@class="sapo_detail"]
+    - //node()[@class="sapo_detail"]
+    get_publish_date_as_crawl_date: false
+    crawl_url: http://baothanhhoa.vn
+    extract_xpath:
+    - ./text()
+    - ./@title
+    minimum_topic_length: 4
+    video_box_xpath: []
+    remove_content_html_xpaths:
+    - //node()[@class="pHead"]
+    - //node()[@class="drelated"]
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class="date_news"]
+    - //node()[@class="date_news"]
+    date_place: detail_page
+    get_detail_content: true
+    image_title_xpath:
+    - ./following-sibling::*[@class="pCaption"]
+    skip_checking_topic_length: false
+    crawl_type: newspaper
+    minimum_duration_between_crawls: 15
+    maximum_url: 30
+    skip_repeat_topic: true
+    display_browser: false
+    content_xpath:
+    - //node()[@id="main-detail"]
+    - //node()[@id="main-detail"]
+    timezone: Asia/Ho_Chi_Minh
+    remove_content_html: true
+    image_box_xpath:
+    - ./node()[descendant::img]
+    last_run: 02/06/2019 21:56
+    id_type: href
+    use_index_number: false
+    language: vietnamese
+    topic_type: href
+    remove_date_tag_html: true
+    url_pattern_re: http://baothanhhoa.vn
+    video_title_xpath: []
+    avatar_type: url
+    ignore_topic_not_have_publish_date: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]

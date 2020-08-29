@@ -1,0 +1,62 @@
+- Nhịp Sống Số:
+    topic_type: href
+    contain: ''
+    remove_date_tag_html: true
+    crawl_type: newspaper
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/84297d6f-0604-4594-a757-7baa793ecfdc_small.jpg
+    sapo_xpath:
+    - //node()[@class="short-text"]
+    - //node()[@class="short-text"]
+    date_xpath:
+    - //node()[@class="author"]
+    - //node()[@class="author"]
+    language: vietnamese
+    use_browser: false
+    image_box_xpath:
+    - ./p[descendant::img]
+    use_index_number: false
+    prevent_auto_redirect: false
+    remove_content_html: true
+    output_html: false
+    text_xpath:
+    - ./*[not(contains(@style,"center"))]
+    last_run: 02/06/2019 21:56
+    date_place: detail_page
+    id_type: href
+    remove_content_html_xpaths: []
+    browser_profile: ''
+    get_topic_from_link: true
+    video_box_xpath: []
+    skip_repeat_topic: true
+    get_detail_content: true
+    audio_title_xpath: []
+    timezone: Asia/Ho_Chi_Minh
+    content_xpath:
+    - //node()[@id="abody"]
+    - //node()[@id="abody"]
+    browser_timeout: 60
+    browser_fast_load: true
+    minimum_duration_between_crawls: 15
+    audio_box_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    minimum_topic_length: 4
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    image_title_xpath: []
+    maximum_url: 30
+    video_title_xpath: []
+    avatar_type: url
+    ignore_topic_not_have_publish_date: true
+    avatar_xpath: ''
+    display_browser: false
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    web_url: http://www.nss.vn
+    skip_checking_topic_length: false
+    crawl_url: http://www.nss.vn
+    get_publish_date_as_crawl_date: false
+    url_pattern_re: http://www.nss.vn

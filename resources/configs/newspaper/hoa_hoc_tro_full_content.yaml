@@ -1,0 +1,64 @@
+- Hoa Học Trò:
+    last_run: 02/06/2019 21:56
+    timezone: Asia/Ho_Chi_Minh
+    remove_content_html: true
+    language: vietnamese
+    output_html: false
+    skip_repeat_topic: true
+    avatar_xpath: ''
+    url_pattern_re: http://hoahoctro.vn
+    prevent_auto_redirect: false
+    image_title_xpath:
+    - ./figcaption
+    web_url: http://hoahoctro.vn
+    get_publish_date_as_crawl_date: false
+    crawl_type: newspaper
+    browser_profile: ''
+    avatar_type: url
+    audio_title_xpath: []
+    content_xpath:
+    - //node()[@class="news-content video-content"]
+    - //node()[@class="news-content video-content"]
+    get_topic_from_link: true
+    audio_box_xpath: []
+    browser_timeout: 60
+    video_title_xpath: []
+    contain: ''
+    image_box_xpath:
+    - ./node()[descendant::img]
+    display_browser: false
+    crawl_url: http://hoahoctro.vn
+    browser_fast_load: true
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/671418ff-87df-48a5-8c5b-e7b2309054e2_small.jpg
+    get_detail_content: true
+    text_xpath:
+    - './p[@style="text-align: justify;"]'
+    date_place: detail_page
+    use_browser: false
+    ignore_topic_not_have_publish_date: true
+    extract_xpath:
+    - ./text()
+    - ./@title
+    video_box_xpath: []
+    minimum_topic_length: 4
+    use_index_number: false
+    minimum_duration_between_crawls: 15
+    skip_checking_topic_length: false
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    remove_date_tag_html: false
+    date_xpath:
+    - //*[@id="group-news-0-1"]/div[1]/span[2]/i
+    - //*[@id="group-news-0-1"]/div[1]/span[2]/i
+    topic_type: href
+    id_type: href
+    maximum_url: 30
+    sapo_xpath:
+    - //node()[@class="text-left fs-16"]/strong
+    - //node()[@class="text-left fs-16"]/strong
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    remove_content_html_xpaths:
+    - //node()[@class="text-left fs-16"]/strong

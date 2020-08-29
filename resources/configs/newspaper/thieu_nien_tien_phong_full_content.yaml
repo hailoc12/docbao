@@ -1,0 +1,63 @@
+- Thiếu Niên Tiền Phong:
+    ignore_topic_not_have_publish_date: true
+    date_xpath:
+    - //node()[@class="news-detail-time"]
+    - //node()[@class="news-detail-time"]
+    skip_repeat_topic: true
+    timezone: Asia/Ho_Chi_Minh
+    image_box_xpath:
+    - ./p[descendant::img]
+    image_title_xpath:
+    - ./following-sibling::*[1][contains(@style,"center")]//node()[text()]
+    get_topic_from_link: true
+    avatar_type: url
+    web_url: http://thieunien.vn
+    get_detail_content: true
+    video_box_xpath: []
+    skip_checking_topic_length: false
+    audio_box_xpath: []
+    remove_date_tag_html: false
+    extract_xpath:
+    - ./text()
+    - ./@title
+    maximum_url: 30
+    crawl_url: http://thieunien.vn
+    browser_profile: ''
+    crawl_type: newspaper
+    text_xpath:
+    - './p[@style="text-align: justify;"]'
+    audio_title_xpath: []
+    url_pattern_re: http://thieunien.vn
+    video_title_xpath: []
+    date_place: detail_page
+    output_html: false
+    topic_type: href
+    sapo_xpath:
+    - //node()[@class="text-left fs-16"]
+    - //node()[@class="text-left fs-16"]
+    avatar_xpath: ''
+    last_run: 02/06/2019 21:56
+    use_index_number: false
+    content_xpath:
+    - //node()[@class="news-content video-content"]
+    - //node()[@class="news-content video-content"]
+    prevent_auto_redirect: false
+    id_type: href
+    feature_image_xpath:
+    - //p/img/@src
+    - //p/img/@src
+    contain: ''
+    display_browser: false
+    language: vietnamese
+    use_browser: false
+    get_publish_date_as_crawl_date: false
+    minimum_duration_between_crawls: 15
+    browser_fast_load: true
+    browser_timeout: 60
+    remove_content_html: true
+    minimum_topic_length: 4
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/a0e9a40b-a8ed-4a2b-ab98-7fa4276b47ed_small.jpg
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    remove_content_html_xpaths: []

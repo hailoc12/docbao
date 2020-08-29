@@ -1,0 +1,67 @@
+- Vietnamnet:
+    date_place: detail_page
+    remove_content_html: true
+    prevent_auto_redirect: false
+    display_browser: false
+    get_detail_content: true
+    minimum_topic_length: 4
+    remove_content_html_xpaths:
+    - .//node()[@class='bold ArticleLead' or @class='article-relate']
+    - //div[@class='inner-article']
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/028b5766-50bc-4b5b-8c0b-e99ff05821c5_small.jpg
+    minimum_duration_between_crawls: 15
+    avatar_type: url
+    image_box_xpath:
+    - .//table[contains(@class, "image")]
+    sapo_xpath:
+    - //div[@class='bold ArticleLead']
+    - //div[@class='bold ArticleLead']
+    browser_profile: ''
+    maximum_url: 80
+    language: vietnamese
+    content_xpath:
+    - //div[@class='ArticleContent']
+    - //div[@class='ArticleContent']
+    browser_fast_load: true
+    use_browser: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    text_xpath:
+    - .//p[text()]
+    id_type: href
+    contain: ''
+    get_publish_date_as_crawl_date: false
+    ignore_topic_not_have_publish_date: true
+    video_box_xpath: []
+    crawl_type: newspaper
+    crawl_url: https://vietnamnet.vn
+    audio_box_xpath: []
+    last_run: 22/07/2019 07:54
+    timezone: Asia/Ho_Chi_Minh
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    image_title_xpath:
+    - ./tbody/tr[2]/td
+    use_index_number: false
+    date_xpath:
+    - //span[@class="ArticleDate"]
+    - //span[@class="ArticleDate"]
+    skip_repeat_topic: true
+    web_url: https://vietnamnet.vn
+    browser_timeout: 60
+    video_title_xpath: []
+    url_pattern_re: https://vietnamnet.vn
+    skip_checking_topic_length: false
+    output_html: false
+    audio_title_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    get_topic_from_link: true
+    avatar_xpath: ''
+    topic_type: href
+    remove_date_tag_html: true
+    only_quality_post: true
+    tags: []

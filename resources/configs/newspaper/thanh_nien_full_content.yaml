@@ -1,0 +1,62 @@
+- Báo Thanh niên:
+    get_topic_from_link: true
+    video_box_xpath: []
+    web_url: https://thanhnien.vn
+    skip_checking_topic_length: false
+    remove_content_html: true
+    browser_fast_load: true
+    url_pattern_re: https://thanhnien.vn
+    use_browser: false
+    text_xpath:
+    - .//p[text()]
+    minimum_duration_between_crawls: 15
+    avatar_xpath: ''
+    display_browser: false
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    video_title_xpath: []
+    minimum_topic_length: 4
+    output_html: false
+    image_title_xpath:
+    - .//node()[@class="imgcaption"]
+    audio_title_xpath: []
+    remove_date_tag_html: false
+    language: vietnamese
+    ignore_topic_not_have_publish_date: true
+    image_box_xpath:
+    - .//div/div[descendant::img]
+    avatar_url: https://static.thanhnien.vn/v2/App_Themes/images/logo-tn-2.png
+    crawl_url: https://thanhnien.vn
+    crawl_type: newspaper
+    avatar_type: url
+    audio_box_xpath: []
+    topic_type: href
+    date_xpath:
+    - //node()[@class="details__meta"]//time
+    - //node()[@class="details__meta"]//time
+    browser_profile: ''
+    maximum_url: 10
+    id_type: href
+    use_index_number: false
+    feature_image_xpath:
+    - ../div/div[descendant::img]//img/@src
+    - ../div/div[descendant::img]//img/@src
+    timezone: Asia/Ho_Chi_Minh
+    skip_repeat_topic: true
+    sapo_xpath:
+    - //node()[@class="sapo"]
+    - //node()[@class="sapo"]
+    remove_content_html_xpaths:
+    - //node()[@class="dable_placeholder"]
+    get_detail_content: true
+    contain: ''
+    last_run: 02/06/2019 21:56
+    extract_xpath:
+    - ./text()
+    - ./@title
+    content_xpath:
+    - //node()[@id="abody"]
+    - //node()[@id="abody"]
+    get_publish_date_as_crawl_date: false
+    date_place: detail_page

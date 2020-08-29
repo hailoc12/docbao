@@ -1,0 +1,64 @@
+- Báo Sóc Trăng điện tử:
+    browser_timeout: 60
+    contain: ''
+    date_place: detail_page
+    topic_type: href
+    language: vietnamese
+    crawl_url: http://baosoctrang.org.vn
+    date_xpath:
+    - //node()[@class="list-unstyled"]/li[2]
+    - //node()[@class="list-unstyled"]/li[2]
+    output_html: false
+    remove_content_html: true
+    audio_box_xpath: []
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    last_run: 02/06/2019 21:56
+    content_xpath:
+    - //node()[@class="newscontent"]
+    - //node()[@class="newscontent"]
+    browser_fast_load: true
+    browser_profile: ''
+    web_url: http://baosoctrang.org.vn
+    ignore_topic_not_have_publish_date: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    avatar_url: http://baosoctrang.org.vn/css/images/logo.png
+    remove_date_tag_html: false
+    video_title_xpath: []
+    audio_title_xpath: []
+    use_browser: false
+    skip_repeat_topic: true
+    get_topic_from_link: true
+    image_title_xpath:
+    - ./following-sibling::*[1][contains(@style,"center")]//*[text()]
+    - ./following-sibling::*[1][contains(@style,"center")]
+    maximum_url: 30
+    crawl_type: newspaper
+    url_pattern_re: http://baosoctrang.org.vn
+    remove_content_html_xpaths: []
+    id_type: href
+    video_box_xpath: []
+    get_publish_date_as_crawl_date: false
+    skip_checking_topic_length: false
+    use_index_number: false
+    get_detail_content: true
+    avatar_type: url
+    sapo_xpath:
+    - //article/p
+    - //article/p
+    minimum_topic_length: 4
+    image_box_xpath:
+    - ./node()[descendant::img]
+    avatar_xpath: ''
+    minimum_duration_between_crawls: 15
+    text_xpath:
+    - ./p[not(contains(@style,"center"))]
+    prevent_auto_redirect: false
+    timezone: Asia/Ho_Chi_Minh
+    display_browser: false

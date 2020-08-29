@@ -1,0 +1,69 @@
+- Báo CA TP HCM điện tử:
+    display_browser: false
+    avatar_xpath: ''
+    text_xpath:
+    - ./p
+    - //div[contains(@class,"article_author")]
+    language: vietnamese
+    skip_repeat_topic: true
+    video_box_xpath: []
+    content_xpath:
+    - //node()[@id="article_content"]
+    - //node()[@id="article_content"]
+    get_detail_content: true
+    remove_content_html: true
+    ignore_topic_not_have_publish_date: true
+    timezone: Asia/Ho_Chi_Minh
+    prevent_auto_redirect: false
+    topic_type: href
+    crawl_type: newspaper
+    output_html: false
+    use_browser: false
+    contain: ''
+    extract_xpath:
+    - ./text()
+    - ./@title
+    browser_profile: ''
+    video_title_xpath: []
+    avatar_url: http://congan.com.vn/thumbnail/200-Sites_CATP_css_images/logo.png
+    crawl_url: http://congan.com.vn
+    image_box_xpath:
+    - ./div[contains(@style,"width:100%")]
+    - ./div[@class="image-gallery"]
+    sapo_xpath:
+    - //node()[contains(@class,"article_head")]
+    - //node()[contains(@class,"article_head")]
+    maximum_url: 30
+    web_url: http://congan.com.vn
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    date_xpath:
+    - '//node()[@style="white-space: nowrap;"]'
+    - '//node()[@style="white-space: nowrap;"]'
+    skip_checking_topic_length: false
+    get_topic_from_link: true
+    use_index_number: false
+    id_type: href
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    minimum_topic_length: 4
+    audio_title_xpath: []
+    last_run: 02/06/2019 21:56
+    browser_timeout: 60
+    url_pattern_re: http://congan.com.vn
+    remove_content_html_xpaths:
+    - //node()[contains(@class,"col-sm-12 col-md-6 fLeft")]
+    - //div[./div[@class="inner-article"]]
+    remove_date_tag_html: true
+    image_title_xpath:
+    - ./div[@class="d-imgcaption"][not(./strong)]
+    - .//strong
+    - .//figcaption
+    avatar_type: url
+    get_publish_date_as_crawl_date: false
+    minimum_duration_between_crawls: 15
+    date_place: detail_page
+    audio_box_xpath: []
+    browser_fast_load: true

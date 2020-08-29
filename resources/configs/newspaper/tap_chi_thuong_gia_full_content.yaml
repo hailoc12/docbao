@@ -1,0 +1,64 @@
+- Tạp chí thương gia:
+    get_publish_date_as_crawl_date: false
+    get_detail_content: true
+    language: vietnamese
+    browser_fast_load: true
+    use_browser: false
+    sapo_xpath:
+    - //node()[@class="post-desc"]
+    - //node()[@class="post-desc"]
+    skip_repeat_topic: true
+    output_html: false
+    maximum_url: 30
+    date_xpath:
+    - //node()[@class="fa fa-clock-o"]
+    - //node()[@class="fa fa-clock-o"]
+    avatar_xpath: ''
+    image_box_xpath:
+    - ./p[descendant::img]
+    web_url: http://thuonggiaonline.vn
+    topic_type: href
+    audio_title_xpath: []
+    remove_date_tag_html: false
+    date_place: detail_page
+    url_pattern_re: http://thuonggiaonline.vn
+    minimum_topic_length: 4
+    crawl_type: newspaper
+    crawl_url: http://thuonggiaonline.vn
+    remove_content_html_xpaths: []
+    remove_content_html: true
+    image_title_xpath:
+    - './following-sibling::p[@style="text-align: center;"]//node()[text()]'
+    feature_image_xpath:
+    - //p[descendant::img]//img/@src
+    - //p[descendant::img]//img/@src
+    audio_box_xpath: []
+    video_box_xpath: []
+    last_run: 02/06/2019 21:56
+    video_title_xpath: []
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    display_browser: false
+    text_xpath:
+    - ./node()[descendant::text()][not(contains(@style,"center") or descendant::img)]
+    - ./node()[descendant::text()][not(contains(@style,"center") or descendant::img)]
+    get_topic_from_link: true
+    contain: ''
+    minimum_duration_between_crawls: 15
+    skip_checking_topic_length: false
+    browser_profile: ''
+    use_index_number: false
+    extract_xpath:
+    - ./text()
+    - ./@title
+    content_xpath:
+    - //node()[@class="post-content"]
+    - //node()[@class="post-content"]
+    avatar_url: http://thuonggiaonline.vn/images/logo.png
+    avatar_type: url
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    timezone: Asia/Ho_Chi_Minh
+    id_type: href
+    ignore_topic_not_have_publish_date: true

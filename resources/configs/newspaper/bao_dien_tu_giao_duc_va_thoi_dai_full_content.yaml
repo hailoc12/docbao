@@ -1,0 +1,67 @@
+- Báo điện tử Giáo dục và Thời đại:
+    id_type: href
+    browser_profile: ''
+    web_url: https://giaoducthoidai.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //node()[@class='quote-03']
+    - //node()[contains(@class, 'quote') or contains(@class, 'box-relate')]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - //div[@id='articlecontent']//img/@src
+    - //div[@id='articlecontent']//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class='summary cms-desc']/div/text()
+    - //node()[@class='summary cms-desc']/div/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 02/06/2019 21:56
+    contain: ''
+    crawl_url: https://giaoducthoidai.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class='toolbar clearfix']/span
+    - //node()[@class='toolbar clearfix']/span
+    topic_type: href
+    maximum_url: 30
+    get_detail_content: true
+    content_xpath:
+    - //node()[@class='cms-body']
+    - //node()[@class='cms-body']
+    text_xpath:
+    - //node()[@class='cms-body']/p[text()]
+    - //node()[@class='cms-body']/p/strong[text()]
+    image_box_xpath:
+    - //node()[@class='avatar' or @class='contentimg']
+    image_title_xpath:
+    - //node()[@class='avatar']/span
+    - '//td[@style=''text-align: center;'']/em'
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: xpath
+    avatar_url: ''
+    avatar_xpath: //a[@title='Báo Giáo dục & Thời đại Online']//img/@src
+    crawl_type: newspaper
+    url_pattern_re: https://giaoducthoidai.vn
+    minimum_topic_length: 4
+    browser_timeout: 60
+    prevent_auto_redirect: false

@@ -1,0 +1,69 @@
+- Thế Giới Điện Ảnh:
+    audio_title_xpath: []
+    video_box_xpath: []
+    timezone: Asia/Ho_Chi_Minh
+    skip_repeat_topic: true
+    display_browser: false
+    remove_date_tag_html: false
+    crawl_type: newspaper
+    minimum_topic_length: 4
+    browser_timeout: 60
+    audio_box_xpath: []
+    date_xpath:
+    - //node()[@class="social-detail"]/span
+    - //node()[@class="social-detail"]/span
+    get_publish_date_as_crawl_date: false
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/3ad61ee0-f2df-41a9-99fc-09ac843ae8f5_small.jpg
+    prevent_auto_redirect: false
+    ignore_topic_not_have_publish_date: true
+    minimum_duration_between_crawls: 15
+    remove_content_html_xpaths:
+    - //node()[@id="amg-in-article-wrapper"]
+    - //node()[@class="__MB_ARTICLE_A"]
+    - //node()[contains(@class,"__mb_article_in_image")]
+    id_type: href
+    video_title_xpath: []
+    get_detail_content: true
+    maximum_url: 30
+    sapo_xpath:
+    - //node()[@class="desc-detail"]
+    - //node()[@class="desc-detail"]
+    image_box_xpath:
+    - ./table[descendant::img]
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    output_html: false
+    date_place: detail_page
+    content_xpath:
+    - //node()[@id="htmlContent"]
+    - //node()[@id="htmlContent"]
+    browser_fast_load: true
+    contain: ''
+    use_browser: false
+    use_index_number: false
+    browser_profile: ''
+    avatar_xpath: ''
+    extract_xpath:
+    - ./text()
+    - ./@title
+    remove_content_html: true
+    image_title_xpath:
+    - ./tbody/tr[2]/td
+    - .//tbody/tr[2]/td//*[text()]
+    - .//tbody/tr[2]/td
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    last_run: 02/06/2019 21:56
+    get_topic_from_link: true
+    language: vietnamese
+    skip_checking_topic_length: false
+    crawl_url: https://thegioidienanh.vn
+    topic_type: href
+    web_url: https://thegioidienanh.vn
+    url_pattern_re: https://thegioidienanh.vn
+    avatar_type: url
+    text_xpath:
+    - ./p
+    - ./table[@class="__MB_template_d"]

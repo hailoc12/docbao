@@ -1,0 +1,66 @@
+- Báo Dân Việt:
+    web_url: http://danviet.vn
+    feature_image_xpath:
+    - //p[descendant::img]/span/img/@src
+    - //p[descendant::img]/span/img/@src
+    video_title_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    date_xpath:
+    - //node()[@class="datetimeup"]
+    - //node()[@class="datetimeup"]
+    get_topic_from_link: true
+    browser_profile: ''
+    browser_fast_load: true
+    use_browser: false
+    topic_type: href
+    id_type: href
+    crawl_url: http://danviet.vn
+    minimum_topic_length: 4
+    skip_checking_topic_length: false
+    content_xpath:
+    - //node()[@class="contentbaiviet"]
+    - //node()[@class="contentbaiviet"]
+    remove_date_tag_html: true
+    prevent_auto_redirect: false
+    last_run: 02/06/2019 21:56
+    audio_box_xpath: []
+    avatar_xpath: ''
+    url_pattern_re: http://danviet.vn
+    skip_repeat_topic: true
+    get_publish_date_as_crawl_date: false
+    image_title_xpath:
+    - ./following-sibling::*[1][contains(@class,"img_chu_thich")]
+    use_index_number: false
+    timezone: Asia/Ho_Chi_Minh
+    remove_content_html: true
+    maximum_url: 30
+    remove_content_html_xpaths:
+    - //span[@onclick]
+    video_box_xpath: []
+    audio_title_xpath: []
+    image_box_xpath:
+    - //p[descendant::img]
+    display_browser: false
+    date_place: detail_page
+    text_xpath:
+    - ./p[descendant-or-self::text()][not(@*)]
+    - ./table//p[descendant-or-self::text()]
+    - ./following-sibling::*[@class="nguonbaiviet"]
+    sapo_xpath:
+    - //node()[@class="sapobaiviet"]
+    - //node()[@class="sapobaiviet"]
+    output_html: false
+    get_detail_content: true
+    ignore_topic_not_have_publish_date: true
+    browser_timeout: 60
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    avatar_url: http://streaming1.danviet.vn/images/2014/logo-3-7.png
+    crawl_type: newspaper
+    contain: ''
+    avatar_type: url

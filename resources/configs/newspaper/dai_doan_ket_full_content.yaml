@@ -1,0 +1,65 @@
+- Đại Đoàn Kết:
+    crawl_url: http://daidoanket.vn
+    url_pattern_re: http://daidoanket.vn
+    use_browser: false
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    video_title_xpath: []
+    get_publish_date_as_crawl_date: false
+    browser_profile: ''
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/9e8129d5-ff1a-4d02-a5c5-ccc11205ecb7_small.jpg
+    video_box_xpath: []
+    crawl_type: newspaper
+    use_index_number: false
+    browser_timeout: 60
+    display_browser: false
+    skip_checking_topic_length: false
+    avatar_type: url
+    maximum_url: 30
+    extract_xpath:
+    - ./text()
+    - ./@title
+    image_box_xpath:
+    - .//node()[child::img]
+    text_xpath:
+    - './/p[@style="text-align: justify;" or @style="text-align: right;" ][not(descendant::img)]'
+    browser_fast_load: true
+    sapo_xpath:
+    - //node()[@class="txtNewsDetail fl w100pt"]/p/strong/text()
+    - //node()[@class="txtNewsDetail fl w100pt"]/p/strong/text()
+    remove_content_html: true
+    contain: ''
+    audio_box_xpath: []
+    audio_title_xpath: []
+    content_xpath:
+    - //node()[@class="left content-newsTxt"]
+    - //node()[@class="left content-newsTxt"]
+    image_title_xpath:
+    - ./following-sibling::*[contains(@style,"center") and not(descendant::img)]/*
+    - ../following-sibling::*[contains(@style,"center") and not(descendant::img)]/*
+    id_type: href
+    minimum_duration_between_crawls: 15
+    avatar_xpath: ''
+    language: vietnamese
+    date_place: detail_page
+    date_xpath:
+    - //node()[@class="fa fa-clock-o"]
+    - //node()[@class="fa fa-clock-o"]
+    output_html: false
+    minimum_topic_length: 4
+    web_url: http://daidoanket.vn
+    get_topic_from_link: true
+    last_run: 02/06/2019 21:56
+    timezone: Asia/Ho_Chi_Minh
+    get_detail_content: true
+    remove_date_tag_html: false
+    prevent_auto_redirect: false
+    topic_type: href
+    ignore_topic_not_have_publish_date: true
+    feature_image_xpath:
+    - //node()[@class="left content-newsTxt"]/.//node()[child::img]//img/@src
+    - //node()[@class="left content-newsTxt"]/.//node()[child::img]//img/@src
+    skip_repeat_topic: true
+    remove_content_html_xpaths:
+    - './/node()[contains(@style,"text-align: right")]/following-sibling::*'

@@ -1,0 +1,72 @@
+- Bảo Khôi:
+    browser_fast_load: true
+    get_publish_date_as_crawl_date: false
+    audio_title_xpath: []
+    browser_timeout: 60
+    video_box_xpath: []
+    avatar_url: https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-1/p74x74/45000661_947625415447654_8983136829314170880_o.jpg?_nc_cat=101&_nc_oc=AQnrkXhJ1obpUJ3qOacqUXRJsSBvGijUNUlfnKK3l_S8vsWIRNGxheZs0T2LgVovR-o&_nc_ht=scontent.fhan2-3.fna&oh=629aa755adf3ad9dfaa41defef7df0d5&oe=5E992461
+    prevent_auto_redirect: false
+    maximum_url: 50
+    remove_content_html: true
+    id_type: href
+    language: vietnamese
+    timezone: Asia/Ho_Chi_Minh
+    minimum_duration_between_crawls: 15
+    image_box_xpath:
+    - //div[@class="imgCon"]
+    - //node()[@class="insert-center-image"]
+    remove_date_tag_html: false
+    output_html: false
+    topic_type: href
+    skip_checking_topic_length: false
+    date_place: detail_page
+    sapo_xpath:
+    - //p[@class="abs"]
+    - //p[@class="abs"]
+    skip_repeat_topic: true
+    extract_xpath:
+    - ./text()
+    - ./@title
+    ignore_topic_not_have_publish_date: true
+    browser_profile: ''
+    use_browser: false
+    get_topic_from_link: true
+    content_xpath:
+    - //node()[@class="_photo-content summary"]
+    - //node()[@class="_photo-content summary"]
+    minimum_topic_length: 4
+    use_index_number: false
+    get_detail_content: true
+    avatar_type: url
+    avatar_xpath: ''
+    text_xpath:
+    - ./div/p[not(@class)]
+    - //footer
+    image_title_xpath:
+    - .//div[@class="description"]
+    - .//node()[@class="image-caption"]
+    video_title_xpath: []
+    feature_image_xpath:
+    - //node()[@class="insert-center-image"]/img/@src
+    - //node()[@class="insert-center-image"]/img/@src
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    remove_content_html_xpaths:
+    - .//node()[@class="author-wrapper"]/following-sibling::*
+    - ./div/div[@class]
+    - .//node()[contains(@class,"for-reading-mode")]
+    display_browser: false
+    crawl_type: newspaper
+    last_run: 03/01/2020 14:35
+    date_xpath:
+    - //node()[@class="f-datetime"]
+    - //node()[@class="f-datetime"]
+    web_url: https://laodong.vn
+    audio_box_xpath: []
+    contain: ''
+    url_pattern_re: https://laodong.vn
+    crawl_url: https://laodong.vn
+    remove_me: false
+    only_quality_post: false
+    tags: []

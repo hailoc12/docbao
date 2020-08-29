@@ -1,0 +1,66 @@
+- An ninh Thủ đô:
+    use_index_number: false
+    audio_box_xpath: []
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    get_detail_content: true
+    crawl_url: https://anninhthudo.vn
+    avatar_url: ''
+    text_xpath:
+    - ./p[not(contains(@style, "center"))][not(.//img)]
+    - ./div/p[not(contains(@style, "center"))][not(.//img)]
+    web_url: https://anninhthudo.vn
+    topic_type: href
+    avatar_xpath: //node()[@class="logo"]
+    minimum_topic_length: 4
+    tags: []
+    timezone: Asia/Ho_Chi_Minh
+    output_html: false
+    content_xpath:
+    - //node()[@id="main_detail"]
+    - //node()[@id="main_detail"]
+    maximum_url: 30
+    remove_content_html_xpaths:
+    - //node()[@class="google-auto-placed ap_container"]
+    video_title_xpath: []
+    prevent_auto_redirect: false
+    get_publish_date_as_crawl_date: false
+    crawl_type: newspaper
+    display_browser: false
+    audio_title_xpath: []
+    id_type: href
+    get_topic_from_link: true
+    remove_content_html: true
+    date_xpath:
+    - //time
+    - //time
+    contain: ''
+    use_browser: false
+    sapo_xpath:
+    - //node()[@class="summary cms-desc"]
+    - //node()[@class="summary cms-desc"]
+    avatar_type: xpath
+    remove_date_tag_html: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    last_run: 02/06/2019 21:56
+    url_pattern_re: https://anninhthudo.vn
+    ignore_topic_not_have_publish_date: true
+    image_title_xpath:
+    - ./em
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    browser_fast_load: true
+    browser_timeout: 60
+    extract_xpath:
+    - ./text()
+    - ./@title
+    date_place: detail_page
+    browser_profile: ''
+    skip_checking_topic_length: false
+    image_box_xpath:
+    - .//node()[./img]
+    video_box_xpath: []
+    skip_repeat_topic: true

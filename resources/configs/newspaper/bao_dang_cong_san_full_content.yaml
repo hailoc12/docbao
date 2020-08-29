@@ -1,0 +1,90 @@
+- Báo Đảng Cộng sản:
+    sapo_xpath:
+    - //div[@class='post-summary']//node()[string-length(text())>20]/text()
+    - //div[@class='post-summary']//node()[string-length(text())>20]/text()
+    browser_timeout: 60
+    ignore_topic_not_have_publish_date: true
+    contain: ''
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    last_run: 02/06/2019 21:56
+    date_re:
+    - (\d{1,2}:\d{1,2} \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - (\d{1,2}:\d{1,2} \- \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2}T\d{1,2}:\d{1,2})
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2} [AP]M)
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \| \d{1,2}:\d{1,2})
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})
+    - (\d{1,2}:\d{1,2} ngày \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\, \d{1,2}:\d{1,2})
+    - (\d{1,2}:\d{1,2}\, \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - (\d{1,2}:\d{1,2}' \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2}:\d{1,2} (A|P)M)
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \- \d{1,2}:\d{1,2})
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \- \d{1,2}:\d{1,2} [AP]M)
+    - (\d{1,2}:\d{1,2} \| \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
+    - (\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2} \d{1,2}:\d{1,2})
+    - (ngày \d{1,2} tháng \d{1,2} \, \d{2,4})
+    - (NGÀY \d{1,2} THÁNG \d{1,2}, \d{2,4} \| \d{1,2}:\d{1,2})
+    crawl_type: home_detail
+    skip_repeat_topic: true
+    prevent_auto_redirect: false
+    language: vietnamese
+    remove_content_html_type: advanced
+    crawl_url: http://dangcongsan.vn
+    date_pattern:
+    - '%H:%M %d/%m/%Y'
+    - '%H:%M - %d/%m/%Y'
+    - '%Y-%m-%dT%H:%M'
+    - '%d/%m/%Y %I:%M %p'
+    - '%d/%m/%Y | %H:%M'
+    - '%d/%m/%Y %H:%M'
+    - '%H:%M ngày %d-%m-%Y'
+    - '%d/%m/%Y, %H:%M'
+    - '%H:%M, %d/%m/%Y'
+    - '%H:%M'' %d/%m/%Y'
+    - '%m/%d/%Y %I:%M:%S %p'
+    - '%d/%m/%Y - %H:%M'
+    - '%d-%m-%Y - %I:%M %p'
+    - '%H:%M | %d/%m/%Y'
+    - '%d/%m/%Y'
+    - '%Y-%m-%d %H:%M'
+    - ngày %d tháng %m , %Y
+    - NGÀY %d THÁNG %m, %Y | %H:%M
+    minimum_duration_between_crawls: 15
+    web_url: http://dangcongsan.vn
+    remove_date_tag_html: false
+    browser_profile: ''
+    topic_type: href
+    use_index_number: false
+    get_publish_date_as_crawl_date: false
+    remove_content_html_xpaths:
+    - //node()[@class='post-content']//img | //node()[@class='post-tag']
+    get_topic_from_link: true
+    get_detail_content: true
+    date_xpath:
+    - //span[@class='post-subinfo']
+    - //span[@class='post-subinfo']
+    maximum_url: 10
+    id_type: href
+    output_html: false
+    use_browser: true
+    remove_content_html: true
+    date_place: detail_page
+    feature_image_xpath:
+    - //div[@class='post-content']//img/@src
+    - //div[@class='post-content']//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    content_xpath:
+    - //div[@class='post-content']
+    - //div[@class='post-content']
+    url_pattern_re: http://dangcongsan.vn
+    browser_fast_load: true
+    skip_checking_topic_length: false
+    display_browser: false
+    timezone: Asia/Ho_Chi_Minh
+    minimum_topic_length: 4

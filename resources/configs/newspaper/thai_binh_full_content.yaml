@@ -1,0 +1,66 @@
+- Báo Thái Bình điện tử:
+    display_browser: false
+    use_browser: false
+    crawl_type: newspaper
+    id_type: href
+    last_run: 02/06/2019 21:56
+    remove_content_html_xpaths:
+    - //node()[@class="date" or @class="views" or @class="desc"]
+    date_place: detail_page
+    use_index_number: false
+    video_title_xpath: []
+    image_title_xpath:
+    - ./following-sibling::*[1][@class="caption" or child::em]/*[text()]
+    - ./em[text()]
+    date_xpath:
+    - //node()[@class="date"]
+    - //node()[@class="date"]
+    extract_xpath:
+    - ./text()
+    - ./@title
+    url_pattern_re: https://baothaibinh.com.vn
+    avatar_url: https://baothaibinh.com.vn/templates/frontend/btbv2/Assets/img/logo_black.jpg
+    ignore_topic_not_have_publish_date: true
+    audio_title_xpath: []
+    skip_checking_topic_length: false
+    minimum_duration_between_crawls: 15
+    minimum_topic_length: 4
+    image_box_xpath:
+    - .//p[descendant::img]
+    get_topic_from_link: true
+    browser_fast_load: true
+    avatar_xpath: ''
+    output_html: false
+    remove_content_html: true
+    get_publish_date_as_crawl_date: false
+    audio_box_xpath: []
+    video_box_xpath: []
+    timezone: Asia/Ho_Chi_Minh
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    contain: ''
+    maximum_url: 50
+    browser_profile: ''
+    sapo_xpath:
+    - //node()[@class="desc"]
+    - //node()[@class="desc"]
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    crawl_url: https://baothaibinh.com.vn
+    content_xpath:
+    - //node()[@class="news_content"]
+    - //node()[@class="news_content"]
+    language: vietnamese
+    avatar_type: url
+    prevent_auto_redirect: false
+    topic_type: href
+    skip_repeat_topic: true
+    text_xpath:
+    - ./div[@class="fr-view info"]/p[text()]
+    - './div[@class="fr-view info"]/p[@style="text-align: right;"]'
+    browser_timeout: 60
+    remove_date_tag_html: false
+    web_url: https://baothaibinh.com.vn
+    get_detail_content: true

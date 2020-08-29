@@ -1,0 +1,64 @@
+- Sức Khỏe & Đời Sống:
+    timezone: Asia/Ho_Chi_Minh
+    maximum_url: 80
+    ignore_topic_not_have_publish_date: true
+    skip_checking_topic_length: false
+    text_xpath:
+    - .//p[text()]
+    remove_content_html_xpaths: []
+    get_publish_date_as_crawl_date: false
+    output_html: false
+    topic_type: href
+    avatar_type: url
+    audio_title_xpath: []
+    remove_date_tag_html: false
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/e27eb7d1-6f85-4d52-b7be-63e0fd7f9853_small.jpg
+    browser_timeout: 60
+    avatar_xpath: ''
+    last_run: 24/07/2019 08:40
+    crawl_url: https://suckhoedoisong.vn
+    sapo_xpath:
+    - //div[@class='sapo_detail']/text()
+    - //div[@class='sapo_detail']/text()
+    get_topic_from_link: true
+    display_browser: false
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    remove_content_html: true
+    content_xpath:
+    - //div[@id='content_detail_news']
+    - //div[@id='content_detail_news']
+    video_box_xpath: []
+    crawl_type: newspaper
+    image_box_xpath:
+    - .//p[descendant::img]
+    date_xpath:
+    - //span[@class="post-time"]
+    - //span[@class="post-time"]
+    minimum_topic_length: 4
+    url_pattern_re: https://suckhoedoisong.vn
+    get_detail_content: true
+    feature_image_xpath:
+    - .//img[not (parent::a[@target='_blank'])]/@src
+    skip_repeat_topic: true
+    audio_box_xpath: []
+    use_browser: false
+    id_type: href
+    web_url: https://suckhoedoisong.vn
+    image_title_xpath:
+    - ./em[text()]
+    video_title_xpath: []
+    language: vietnamese
+    browser_profile: ''
+    minimum_duration_between_crawls: 15
+    use_index_number: false
+    prevent_auto_redirect: false
+    date_place: detail_page
+    contain: ''
+    browser_fast_load: true
+    only_quality_post: true
+    tags: []

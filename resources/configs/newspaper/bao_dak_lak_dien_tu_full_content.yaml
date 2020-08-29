@@ -1,0 +1,65 @@
+- Báo Đắk Lắk điện tử:
+    id_type: href
+    browser_profile: ''
+    web_url: http://www.baodaklak.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //node()[@class='content']/p[1]
+    - //node()[@class='quote center']
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - //node()[@class='content']//img/@src
+    - //node()[@class='content']//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class='content']/node()[1]//text()
+    - //node()[@class='content']/node()[1]/node()//text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 02/06/2019 21:56
+    contain: ''
+    crawl_url: http://www.baodaklak.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class='date']
+    - //node()[@class='date']
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //node()[@class='content']
+    - //node()[@class='content']
+    text_xpath:
+    - //node()[@class='content']/p[not(table)]|//node()[@class='content']/div[not(table)]
+    image_box_xpath:
+    - //node()[@class='image center']
+    image_title_xpath:
+    - //node()[@class='image center']//td[@class='image_desc']
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://www.baodaklak.vn/common/v3/image/home/logo-header.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://www.baodaklak.vn
+    minimum_topic_length: 4
+    browser_timeout: 60
+    prevent_auto_redirect: false

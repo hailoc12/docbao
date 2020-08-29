@@ -1,0 +1,70 @@
+- Pháp Luật & Xã Hội:
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    image_box_xpath:
+    - ./div/table
+    id_type: href
+    ignore_topic_not_have_publish_date: true
+    skip_checking_topic_length: false
+    date_xpath:
+    - //node()[@class="datetime"]
+    - //node()[@class="datetime"]
+    sapo_xpath:
+    - //node()[@class="sapo"]
+    - //node()[@class="sapo"]
+    prevent_auto_redirect: false
+    audio_box_xpath: []
+    content_xpath:
+    - //node()[contains(@class,"content __MASTERCMS_CONTENT")]
+    - //node()[contains(@class,"content __MASTERCMS_CONTENT")]
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    remove_content_html_xpaths:
+    - //node()[@class="__MB_ARTICLE_A"]
+    - //node()[contains(@class,"mb_article_in_image")]
+    video_box_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    get_detail_content: true
+    last_run: 02/06/2019 21:56
+    timezone: Asia/Ho_Chi_Minh
+    avatar_type: url
+    video_title_xpath: []
+    language: vietnamese
+    remove_content_html: true
+    avatar_xpath: ''
+    image_title_xpath:
+    - ./tbody/tr[2]/td
+    - ./tbody/tr[2]/td/p
+    - ./tbody/tr[2]/td/span/em
+    - ./tbody/tr/td/table/tbody/tr[2]/td/em/span
+    - ./tbody/tr/td/table/tbody/tr[2]/td/span/em
+    display_browser: false
+    skip_repeat_topic: true
+    browser_profile: ''
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/aef81c41-535e-4d64-bc82-47560ca878cb_small.jpg
+    audio_title_xpath: []
+    crawl_type: newspaper
+    output_html: false
+    maximum_url: 30
+    date_place: detail_page
+    browser_fast_load: true
+    topic_type: href
+    browser_timeout: 60
+    use_browser: false
+    get_publish_date_as_crawl_date: false
+    minimum_topic_length: 4
+    text_xpath:
+    - ./div/p
+    - ./p
+    web_url: https://phapluatxahoi.vn
+    remove_date_tag_html: false
+    minimum_duration_between_crawls: 15
+    get_topic_from_link: true
+    use_index_number: false
+    url_pattern_re: https://phapluatxahoi.vn
+    crawl_url: https://phapluatxahoi.vn
+    contain: ''

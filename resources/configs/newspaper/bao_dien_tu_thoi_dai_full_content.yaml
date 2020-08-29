@@ -1,0 +1,77 @@
+- Thời Đại:
+    id_type: href
+    browser_profile: ''
+    web_url: https://thoidai.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //node()[@class='__MB_ARTICLE_A']
+    - //node()[@class='__mb_article_in_image __mb_article_in_image_large']
+    - '//node()[@style=''text-align: center;'']'
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class='post-sapo fw lt clearfix']/text()
+    - //node()[@class='post-sapo fw lt clearfix']/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 02/06/2019 21:56
+    contain: ''
+    crawl_url: https://thoidai.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class='format_time']
+    - //node()[@class='format_time']
+    topic_type: href
+    maximum_url: 40
+    get_detail_content: true
+    content_xpath:
+    - //node()[@class='__MASTERCMS_CONTENT __MB_CONTENT_FOR_PRINTER mb-10 fw lt clearfix']
+    - //node()[@class='__MASTERCMS_CONTENT __MB_CONTENT_FOR_PRINTER mb-10 fw lt clearfix']
+    text_xpath:
+    - //node()[@class='__MASTERCMS_CONTENT __MB_CONTENT_FOR_PRINTER mb-10 fw lt clearfix']/p
+    - //node()[@class='__MASTERCMS_CONTENT __MB_CONTENT_FOR_PRINTER mb-10 fw lt clearfix']/h2
+    - //node()[@class='__MASTERCMS_CONTENT __MB_CONTENT_FOR_PRINTER mb-10 fw lt clearfix']/h3/span
+    - //node()[@class='__MASTERCMS_CONTENT __MB_CONTENT_FOR_PRINTER mb-10 fw lt clearfix']/h2/span
+    - //node()[@align='right']/strong
+    - .//header/p
+    image_box_xpath:
+    - //node()[@class="MASTERCMS_TPL_TABLE"]
+    - ./figure[@class="image align-center"]
+    image_title_xpath:
+    - ./tbody/tr[2]/td
+    - ./tbody/tr[2]/td/em
+    - ./following-sibling::p/em
+    - ./figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/c1626c05-5881-426c-83d9-fa7ea21a789a_small.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://thoidai.com.vn
+    minimum_topic_length: 4
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    only_quality_post: true
+    tags: []

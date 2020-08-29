@@ -1,0 +1,63 @@
+- Lao Động Thủ Đô:
+    language: vietnamese
+    avatar_type: url
+    text_xpath:
+    - ./p
+    - './../p[contains(@style,"text-align: right")]'
+    video_box_xpath: []
+    get_topic_from_link: true
+    image_title_xpath:
+    - .//tr[2]/td
+    ignore_topic_not_have_publish_date: true
+    skip_checking_topic_length: false
+    date_xpath:
+    - //*[@id="homepage"]/div/div[2]/div[1]/i
+    - //*[@id="homepage"]/div/div[2]/div[1]/i
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    crawl_type: newspaper
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/13e65f1f-a680-451e-9955-a17a3d955cc1_small.jpg
+    display_browser: false
+    browser_fast_load: true
+    use_index_number: false
+    extract_xpath:
+    - ./text()
+    - ./@title
+    browser_profile: ''
+    remove_content_html_xpaths:
+    - //node()[@class="__MB_ARTICLE_A"]
+    url_pattern_re: http://laodongthudo.vn
+    timezone: Asia/Ho_Chi_Minh
+    minimum_duration_between_crawls: 15
+    output_html: false
+    id_type: href
+    video_title_xpath: []
+    last_run: 02/06/2019 21:56
+    get_detail_content: true
+    topic_type: href
+    audio_box_xpath: []
+    audio_title_xpath: []
+    crawl_url: http://laodongthudo.vn
+    avatar_xpath: ''
+    use_browser: false
+    maximum_url: 10
+    remove_date_tag_html: true
+    get_publish_date_as_crawl_date: false
+    content_xpath:
+    - //node()[@class="detail_info "]
+    - //node()[@class="detail_info "]
+    image_box_xpath:
+    - ./table
+    remove_content_html: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    minimum_topic_length: 4
+    contain: ''
+    web_url: http://laodongthudo.vn
+    date_place: detail_page
+    skip_repeat_topic: true
+    sapo_xpath:
+    - //node()[@class="sabo"]
+    - //node()[@class="sabo"]

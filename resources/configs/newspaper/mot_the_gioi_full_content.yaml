@@ -1,0 +1,65 @@
+- Một Thể Giới:
+    last_run: 02/06/2019 21:56
+    timezone: Asia/Ho_Chi_Minh
+    remove_content_html: true
+    language: vietnamese
+    output_html: false
+    skip_repeat_topic: true
+    avatar_xpath: ''
+    url_pattern_re: https://motthegioi.vn
+    prevent_auto_redirect: false
+    image_title_xpath:
+    - ./following-sibling::*[1][descendant::em][not(@class="post-content")]/*
+    - //node()[@class="image-caption"]
+    web_url: https://motthegioi.vn
+    get_publish_date_as_crawl_date: false
+    crawl_type: newspaper
+    browser_profile: ''
+    avatar_type: url
+    audio_title_xpath: []
+    content_xpath:
+    - //node()[@class="single-post-box"]
+    - //node()[@class="single-post-box"]
+    get_topic_from_link: true
+    audio_box_xpath: []
+    browser_timeout: 60
+    video_title_xpath: []
+    contain: ''
+    image_box_xpath:
+    - ./node()[@class="post-gallery"]
+    - ./node()[@class="post-content"]/p[descendant::img]
+    display_browser: false
+    crawl_url: https://motthegioi.vn
+    browser_fast_load: true
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/9268d80d-4744-49e9-a059-eaad7d5ff4db_small.jpg
+    get_detail_content: true
+    text_xpath:
+    - ./node()[@class="post-content"]/p[not(contains(@style,"center"))][not(descendant::em)][not(.//a)]
+    date_place: detail_page
+    use_browser: false
+    ignore_topic_not_have_publish_date: true
+    extract_xpath:
+    - ./text()
+    - ./@title
+    video_box_xpath: []
+    minimum_topic_length: 4
+    use_index_number: false
+    minimum_duration_between_crawls: 15
+    skip_checking_topic_length: false
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    remove_date_tag_html: false
+    date_xpath:
+    - //node()[@class="fa fa-clock-o"]
+    - //node()[@class="fa fa-clock-o"]
+    topic_type: href
+    id_type: href
+    maximum_url: 50
+    sapo_xpath:
+    - //node()[@class="post-summary"]
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    remove_content_html_xpaths:
+    - ./*[not(@class="post-gallery")][not(@class="post-content")]

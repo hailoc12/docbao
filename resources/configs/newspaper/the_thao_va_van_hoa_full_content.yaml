@@ -1,0 +1,69 @@
+- Thể Thao & Văn Hóa:
+    image_title_xpath:
+    - .//figcaption
+    last_run: 02/06/2019 21:56
+    minimum_topic_length: 4
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    video_box_xpath: []
+    topic_type: href
+    id_type: href
+    skip_repeat_topic: true
+    tags: []
+    maximum_url: 30
+    content_xpath:
+    - //div[@class='divContent']
+    - //div[@class='divContent']
+    sapo_xpath:
+    - //node()[@id='divfirst']/div
+    - //node()[@id='divfirst']/div
+    date_place: detail_page
+    remove_date_tag_html: false
+    skip_checking_topic_length: false
+    minimum_duration_between_crawls: 15
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/c7a8579d-f89f-4d91-86c1-b961882080a9_small.jpg
+    get_topic_from_link: true
+    remove_content_html: true
+    web_url: https://thethaovanhoa.vn
+    audio_title_xpath: []
+    text_xpath:
+    - //node()[@id="divfirst"]/div[not(@*)][not(position()=1)]
+    - //node()[@id="divend"]/div[not(@*)]
+    browser_profile: ''
+    remove_content_html_xpaths:
+    - //node()[@class='share' or @class='boxrelation' or @class='ovh sapo']
+    - //node()[@class='boxembedtinlienquan']
+    crawl_type: newspaper
+    avatar_type: url
+    browser_timeout: 60
+    extract_xpath:
+    - ./text()
+    - ./@title
+    crawl_url: https://thethaovanhoa.vn
+    use_browser: false
+    avatar_xpath: ''
+    url_pattern_re: https://thethaovanhoa.vn
+    contain: ''
+    image_box_xpath:
+    - //figure[@class='image']
+    - //node()[@id="divend"]/div[.//img][not(.//figure)]
+    get_detail_content: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    output_html: false
+    video_title_xpath: []
+    ignore_topic_not_have_publish_date: true
+    timezone: Asia/Ho_Chi_Minh
+    display_browser: false
+    use_index_number: false
+    date_xpath:
+    - //div[@class='ovh pub_time']
+    - //div[@class='ovh pub_time']
+    language: vietnamese
+    audio_box_xpath: []
+    prevent_auto_redirect: false
+    only_quality_post: true

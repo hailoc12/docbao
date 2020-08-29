@@ -1,0 +1,71 @@
+- Tuổi Trẻ:
+    contain: ''
+    image_title_xpath:
+    - .//div[@class='PhotoCMS_Caption']//node()[text()]
+    - .//tr[2]/td
+    output_html: false
+    id_type: href
+    topic_type: href
+    image_box_xpath:
+    - .//div[@type='Photo']
+    - .//tbody[descendant::img]
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/30d30b1a-74d3-49f3-924e-14d0e15f8b20_small.jpg
+    avatar_xpath: ''
+    maximum_url: 30
+    timezone: Asia/Ho_Chi_Minh
+    skip_checking_topic_length: false
+    get_detail_content: true
+    content_xpath:
+    - //node()[@class='main-content-body']
+    - //node()[@class='main-content-body']
+    remove_content_html: true
+    use_browser: false
+    display_browser: false
+    web_url: https://tuoitre.vn
+    language: vietnamese
+    crawl_url: https://tuoitre.vn
+    audio_title_xpath: ''
+    image_title_text_xpath: ./text()
+    remove_content_html_xpaths:
+    - //node()[@class='sapo' or @class='relate-container' or @type='SimpleQuote' or
+      @type='RelatedOneNews']
+    date_place: detail_page
+    url_pattern_re: https://tuoitre.vn
+    minimum_duration_between_crawls: 15
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    text_xpath:
+    - .//p[text()]
+    last_run: 22/07/2019 03:00
+    get_topic_from_link: true
+    audio_box_xpath: []
+    skip_repeat_topic: true
+    date_xpath:
+    - //node()[@class="date-time"]
+    - //node()[@class="date-time"]
+    avatar_type: url
+    sapo_xpath:
+    - //node()[@class='sapo']/text()
+    - //node()[@class='sapo']/text()
+    browser_fast_load: true
+    crawl_type: newspaper
+    minimum_topic_length: 4
+    use_index_number: false
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    browser_profile: ''
+    ignore_topic_not_have_publish_date: true
+    extract_xpath:
+    - ./text()
+    - ./@title
+    get_publish_date_as_crawl_date: false
+    remove_date_tag_html: false
+    image_xpath: .//img
+    video_title_xpath: .//div[@class='VideoCMS_Caption']
+    video_box_xpath: []
+    only_quality_post: true
+    tags: []
+    browser_timeout: 60
+    prevent_auto_redirect: false

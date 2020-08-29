@@ -1,0 +1,66 @@
+- Petrotimes:
+    id_type: href
+    browser_profile: ''
+    web_url: https://petrotimes.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //table[@class='__mb_article_in_image ember_k']
+    - //table[@class='__MB_ARTICLE_A']
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@id='__MB_MASTERCMS_EL_2']/text()
+    - //node()[@id='__MB_MASTERCMS_EL_2']/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 02/06/2019 21:56
+    contain: ''
+    crawl_url: https://petrotimes.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class='published-dated clearfix']
+    - //div[@class='published-dated clearfix']
+    topic_type: href
+    maximum_url: 30
+    get_detail_content: true
+    content_xpath:
+    - //node()[@id='__MB_MASTERCMS_EL_3']
+    - //node()[@id='__MB_MASTERCMS_EL_3']
+    text_xpath:
+    - .//p[text()]
+    - .//p/strong
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//tr[2]/td
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/e273301b-935a-4091-94ec-cd5312a3d222_small.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://petrotimes.vn
+    minimum_topic_length: 4
+    browser_timeout: 60
+    prevent_auto_redirect: false

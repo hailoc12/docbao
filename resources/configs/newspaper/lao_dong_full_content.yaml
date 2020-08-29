@@ -1,0 +1,69 @@
+- Lao Động:
+    browser_fast_load: true
+    get_publish_date_as_crawl_date: false
+    audio_title_xpath: []
+    browser_timeout: 60
+    video_box_xpath: []
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/efd2569d-6388-400b-99aa-159f86264c40_small.jpg
+    prevent_auto_redirect: false
+    maximum_url: 30
+    remove_content_html: true
+    id_type: href
+    language: vietnamese
+    timezone: Asia/Ho_Chi_Minh
+    minimum_duration_between_crawls: 15
+    image_box_xpath:
+    - //node()[@class="insert-center-image"]
+    remove_date_tag_html: false
+    output_html: false
+    topic_type: href
+    skip_checking_topic_length: false
+    date_place: detail_page
+    sapo_xpath:
+    - //p[@class="abs"]
+    - //p[@class="abs"]
+    skip_repeat_topic: true
+    extract_xpath:
+    - ./text()
+    - ./@title
+    ignore_topic_not_have_publish_date: true
+    browser_profile: ''
+    use_browser: false
+    get_topic_from_link: true
+    content_xpath:
+    - //node()[@class="_photo-content summary"]
+    - //node()[@class="_photo-content summary"]
+    minimum_topic_length: 4
+    use_index_number: false
+    get_detail_content: true
+    avatar_type: url
+    avatar_xpath: ''
+    text_xpath:
+    - ./div/p[not(@class)]
+    - //footer
+    image_title_xpath:
+    - .//node()[@class="image-caption"]
+    video_title_xpath: []
+    feature_image_xpath:
+    - //div[@class="section-title"]//figure[@class="_thumb"]/img/@src
+    - //div[@class="section-title"]//figure[@class="_thumb"]/img/@src
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    remove_content_html_xpaths:
+    - .//node()[@class="author-wrapper"]/following-sibling::*
+    - ./div/div[@class]
+    - .//node()[contains(@class,"for-reading-mode")]
+    display_browser: false
+    crawl_type: newspaper
+    last_run: 02/06/2019 21:56
+    date_xpath:
+    - //node()[@class="f-datetime"]
+    - //node()[@class="f-datetime"]
+    web_url: https://laodong.vn
+    audio_box_xpath: []
+    contain: ''
+    url_pattern_re: https://laodong.vn
+    crawl_url: https://laodong.vn
+    only_quality_post: true
+    tags: []

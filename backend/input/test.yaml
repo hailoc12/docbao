@@ -1,0 +1,71 @@
+minimum_freq_series_for_fast_growing_keyword_accepted: 2
+category_list:
+- chính trị:
+    index: 1
+    filename: category/chinh_tri.txt
+- Kinh Tế:
+    index: 2
+    filename: category/kinh_te.txt
+- Xã Hội:
+    index: 3
+    filename: category/xa_hoi.txt
+- An Ninh:
+    index: 4
+    filename: category/an_ninh.txt
+- Quốc Phòng:
+    index: 5
+    filename: category/quoc_phong.txt
+- Văn Hoá:
+    index: 6
+    filename: category/van_hoa.txt
+- Giáo Dục:
+    index: 7
+    filename: category/giao_duc.txt
+- Thể Thao:
+    index: 8
+    filename: category/the_thao.txt
+- Giải Trí:
+    index: 9
+    filename: category/giai_tri.txt
+- Công nghệ:
+    index: 10
+    filename: category/cong_nghe.txt
+- Giao Thông:
+    index: 11
+    filename: category/giao_thong.txt
+- Quốc gia:
+    index: 12
+    filename: category/quoc_gia.txt
+- Địa danh:
+    index: 13
+    filename: category/dia_danh.txt
+- Sự kiện:
+    index: 14
+    filename: category/su_kien.txt
+- Nhân vật:
+    index: 15
+    filename: category/nhan_vat.txt
+crawling_list: []
+use_CDN: False
+minimum_publish_speed: 600
+minimum_weight: 0.002
+number_of_hot_keywords: 2000
+minimum_topic_length: 4
+number_of_trending_keywords: 25
+waiting_time_between_each_crawl: 5
+display_timezone: Asia/Ho_Chi_Minh
+running_path: ~/docbao_test/
+loop_interval_for_new_keyword_accepted: 2
+crawling_interval: 10
+minimum_freq_for_two_length_keyword_appear_in_hot_keywords: 2
+days_to_crawl: 30
+max_crawler: 3
+minimum_keyword_length_for_fast_growing_keyword_accepted: 3
+maximum_url_to_visit_each_turn: 10
+trending_duration: 720
+hub_href: https://edu.theodoibaochi.com
+mininum_freq_for_new_keyword_accepted: 1
+maximum_topic_display_length: 20
+minimum_freq_for_fast_growing_keyword_accepted: 3
+hub_title: Theo Dõi Tin Tức Mùa Thi THPT Quốc gia 2019
+minimum_freq_for_more_than_two_length_keyword_appear_in_hot_keywords: 5

@@ -1,0 +1,71 @@
+- 'Hoàng Bách ':
+    id_type: href
+    browser_profile: ''
+    web_url: http://kinhtedothi.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //node()[@class="box_guests"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - //node()[@id="cotent_detail"]//img[not(contains(@src, "trungthu"))]/@src
+    - //node()[@id="cotent_detail"]//img[not(contains(@src, "trungthu"))]/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class='sapo_detail fr']//text()
+    - //node()[@class='sapo_detail fr']//text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 02/06/2019 21:56
+    contain: ''
+    crawl_url: http://kinhtedothi.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class='time_detail_news f11 fl']
+    - //node()[@class='time_detail_news f11 fl']
+    topic_type: href
+    maximum_url: 30
+    get_detail_content: true
+    content_xpath:
+    - //node()[@id="cotent_detail"]
+    - //node()[@id="cotent_detail"]
+    text_xpath:
+    - './div[@style="text-align: justify;"][not(.//table)]/text()/..'
+    - //node()[@class="mar_bottom10"]
+    - //node()[@class="clred f16"]
+    - //node()[@class="reply"]/p
+    - //node()[@class="reply"]/div
+    - //node()[@id="cotent_detail"]/p
+    image_box_xpath:
+    - ./div/table/tbody
+    image_title_xpath:
+    - ./tr[2]/td
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/332582de-e5a5-4223-8088-925c8ef210c3_origin.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://kinhtedothi.vn
+    minimum_topic_length: 4
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    only_quality_post: true
+    tags: []

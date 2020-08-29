@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Theo Dõi Báo Chí - Hệ thống quét và phân tích báo chí thông minh</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
+  <link href="css/tooltip.css" rel="stylesheet"> 
+  <!--Autocomplete-->
+  <link type="text/css" rel="stylesheet" href="vendor/autocomplete/jquery.auto-complete.css" >
+
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+  <script type="text/javascript" src="https://unpkg.com/popper.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tooltip.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.3.6/viewer.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.3.6/viewer.min.js"></script>
+
+</head>
+
+<body class="">
+ <div ng-app="docbaoApp" ng-controller="logCtrl">
+    <div class="content-wrapper">
+      <div class="container-fluid">
+       
+	<!--Search box--> 
+         <div class="card mb-3">  
+          <div class="card-header">
+		  <a data-toggle="collapse" href="{{log.hub_href}}" aria-expanded="true" aria-controls="search_card">
+		    <i class="fa fa-bar-chart"></i>THEO DÕI BÁO CHÍ - CÔNG CỤ QUÉT VÀ PHÂN TÍCH THÔNG MINH
+              <i class="fa fa-angle-down rotate-icon"></i>
+            </a>
+            
+
+          </div>
+          <div class="card-body" id="search_card" class="collapse">
+	    <div id="waiting" class="card-text">
+		    <div class="alert alert-primary">
+		    Xin đợi một lát trong khi website tải dữ liệu 
+		    </div>
+	    </div>
+	    <div id="load_success" class="card-text" style="display:none">
+		    <div class="alert alert-success">
+		    Dữ liệu được tải thành công. Mời sử dụng
+		    </div>
+	    </div>
+
+            <div class="card-text">
+		    Tìm kiếm nhanh bài báo theo từ khóa. Nhấn "Tìm kiếm" để có kết quả đầy đủ
+            </div>  
+            <br>
+
+            <div class="row">
+              <div class="col-sm-10 my-auto">
+                 <input id="keyword_search_text" type="text" class="form-control" placeholder="Gợi ý: {{keyword_string}}" name="search" onkeyup="keyup_on_keyword_search_text(event)">
+              
+              </div>
+              <div class="col-sm-2 my-auto">
+                <button onclick="search_keyword()"><i class="fa fa-search"> Tìm kiếm </i></button>  
+                <button onclick="clear_search_text()"><i class="fa fa-search"> Xoá </i></button>  
+            </div>
+
+          </div>
+  </div>
+        </div>
+       
+ 
+       <!-- Area Chart Example-->
+        <div class="card mb-3">
+          <div class="card-header">
+                <a data-toggle="collapse" href="#chart_card" aria-expanded="true" aria-controls="chart_card">
+                <div class="mb-0">
+                    <i class="fa fa-bar-chart"></i> Chủ đề nổi bật
+                    <i class="fa fa-angle-down rotate-icon"></i>
+                </div>
+            </a>
+	   
+          </div>
+              <div class="card-body" id="chart_card" class="collapse">
+
+                <div class="row">
+                  <div class="col-sm-10 my-auto chart-container">
+                    <canvas id="myBarChart" width="100" height="500"></canvas>
+                  </div>
+                  <div class="col-sm-2 text-center my-auto">
+                    <div class="h4 mb-0 text-primary">{{log.newspaper_count}}</div>
+                    <div class="small text-muted">Nguồn báo</div>
+                    <hr>
+		    <div class="small text-muted">Cập nhật lúc {{log.update_time}} </div>
+                  </div>
+                </div>
+              </div>          
+
+        </div>
+	<!-- Tin tức nổi bật -->
+        <div class="card mb-3">
+          <a name="trending_article_table"></a>
+          <div class="card-header">
+            <a data-toggle="collapse" href="#trending_article_card" aria-expanded="true" aria-controls="trending_article_card">
+            <i class="fa fa-table"></i> Tin tức nổi bật trong 12h qua
+            <i class="fa fa-angle-down rotate-icon"></i>
+            </a>
+          </div>
+
+          <div class="card-body" id="trending_article_card" class="collapse">
+		<div class="card-text"><a href="#category_table" onclick="go_to_search_card()"><i>Trở về đầu trang</i></a></div>
+            <div class="table-responsive">
+              <table class="table cell-bordered compact stripe hover" id="trending_article_table" width="100%" cellspacing="0">
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Example DataTables Card-->
+
+        <div class="card mb-3">
+          <a name="article_table"></a>
+          <div class="card-header">
+            <a data-toggle="collapse" href="#article_card" aria-expanded="true" aria-controls="article_card">
+              <i class="fa fa-table"></i> Tin mới xuất bản
+              <i class="fa fa-angle-down rotate-icon"></i>
+            </a>
+          </div>
+            
+          <div class="card-body" id="article_card" class="collapse">
+		  <div class="card-text"><a href="#category_table" onclick="go_to_search_card()"><i>Trở về đầu trang</i></a></div>
+            <div class="table-responsive">
+
+              <table class="table cell-bordered compact stripe hover" id="article_table" cellspacing="0">
+              </table>
+            </div>
+          </div>
+	<div class="card-footer"><a href="#category_table" onclick="go_to_search_card()">Trở về đầu trang</a></div>
+
+        </div>
+      </div>
+      <!-- /.container-fluid-->
+      <!-- /.content-wrapper-->
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="text-center">
+            <small>Copyright © Đặng Hải Lộc 2018</small>
+          </div>
+        </div>
+      </footer>
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+      </a>
+      <!-- Logout Modal-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="vendor/jquery/jquery.min.js"></script> 
+    <script src="vendor/autocomplete/jquery.auto-complete.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <script src="readdata_ajax.js"></script>
+    </div>
+  </div>
+</body>
+
+</html>

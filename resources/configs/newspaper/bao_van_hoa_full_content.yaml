@@ -1,0 +1,64 @@
+- Văn Hóa:
+    use_index_number: false
+    ignore_topic_not_have_publish_date: true
+    browser_profile: ''
+    maximum_url: 30
+    timezone: Asia/Ho_Chi_Minh
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/874f1ebe-e7b3-4752-8496-4b53de127ef3_small.jpg
+    audio_title_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    remove_content_html: true
+    skip_repeat_topic: true
+    prevent_auto_redirect: false
+    content_xpath:
+    - //node()[@class="main_content"]
+    - //node()[@class="main_content"]
+    feature_image_xpath:
+    - //node()[@class="main_content"]//img/@src
+    - //node()[@class="main_content"]//img/@src
+    crawl_type: newspaper
+    topic_type: href
+    crawl_url: http://vanhoaonline.vn
+    avatar_type: url
+    image_title_xpath:
+    - './following-sibling::p[contains( @style,"text-align: center")]//node()[text()]'
+    - './following-sibling::p[contains( @style,"text-align: center")]/*'
+    skip_checking_topic_length: false
+    date_place: detail_page
+    get_publish_date_as_crawl_date: false
+    remove_date_tag_html: false
+    output_html: false
+    get_topic_from_link: true
+    video_title_xpath: []
+    language: vietnamese
+    contain: ''
+    remove_content_html_xpaths: []
+    text_xpath:
+    - './/p[not(contains(@style,"text-align: center;"))]'
+    avatar_xpath: ''
+    image_box_xpath:
+    - ./*[descendant::img]
+    url_pattern_re: http://vanhoaonline.vn
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    minimum_duration_between_crawls: 15
+    id_type: href
+    get_detail_content: true
+    browser_fast_load: true
+    video_box_xpath: []
+    web_url: http://vanhoaonline.vn
+    sapo_xpath:
+    - //node()[@class="Detail_Summary"]/p
+    - //node()[@class="Detail_Summary"]/p
+    last_run: 02/06/2019 21:56
+    date_xpath:
+    - //node()[@class="edn_metaDetails1"]
+    - //node()[@class="edn_metaDetails1"]
+    audio_box_xpath: []
+    display_browser: false
+    minimum_topic_length: 4
+    use_browser: false
+    browser_timeout: 60

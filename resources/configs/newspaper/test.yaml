@@ -1,0 +1,51 @@
+- Thanh Nien:
+    web_url: https://thanhnien.vn
+    crawl_url: https://thanhnien.vn
+    crawl_type: newspaper
+    language: vietnamese
+    id_type: href
+    url_pattern_re: https://thanhnien.vn
+    get_topic_from_link: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    topic_type: href
+    extract_xpath:
+    - ./text()
+    - ./@title
+    contain: ''
+    minimum_topic_length: 4
+    skip_checking_topic_length: false
+    skip_repeat_topic: true
+    get_publish_date_as_crawl_date: false
+    date_place: detail_page
+    date_xpath:
+    - //node()[@class="meta"]
+    - //node()[@class="meta"]
+    use_index_number: false
+    timezone: Asia/Ho_Chi_Minh
+    output_html: false
+    use_browser: false
+    browser_profile: ''
+    display_browser: false
+    browser_fast_load: true
+    maximum_url: 10
+    last_run: 02/06/2019 21:56
+    minimum_duration_between_crawls: 15
+    remove_date_tag_html: false
+    ignore_topic_not_have_publish_date: true
+    sapo_xpath:
+    - //div[@class='sapo']
+    - //div[@class='sapo']
+    content_xpath:
+    - //div[@class='l-content']
+    - //div[@class='l-content']
+    feature_image_xpath:
+    - //div[@class='l-content']//img/@src
+    - //div[@class='l-content']//img/@src
+    get_detail_content: true
+    remove_content_html: true
+    remove_content_html_type: advanced
+    avatar_xpath: ''
+    remove_content_html_xpaths:
+    - //div[@id='contentAvatar']
