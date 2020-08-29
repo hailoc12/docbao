@@ -1,3 +1,0 @@
-[submodule "backend/profiles"]
-	path = backend/profiles
-	url = git@103.192.236.81:reader_habit/profiles.git

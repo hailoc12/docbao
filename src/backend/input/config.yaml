@@ -1,0 +1,3971 @@
+days_to_crawl: 7
+loop_interval_for_new_keyword_accepted: 2
+maximum_topic_display_length: 20
+crawling_list:
+- Báo Ninh Bình:
+    id_type: href
+    browser_profile: ''
+    web_url: https://baoninhbinh.org.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="entry-title"]
+    - //*[@class="post-social"]
+    - //*[@class="entry-sapo"]
+    - //*[@class="entry-tags"]
+    - //*[@class="entry-tags"]/following-sibling::div
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="entry-sapo"]/p
+    - //*[@class="entry-sapo"]/p
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://baoninhbinh.org.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="post-meta-date"][1]
+    - //*[@class="post-meta-date"][1]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="entry-main"]
+    - //*[@class="entry-main"]
+    text_xpath:
+    - .//*[@class="entry-content"]/p
+    image_box_xpath:
+    - //*[@class="entry-media"]
+    - //*[@class="entry-content"]//*[@class="image"]
+    image_title_xpath:
+    - .//p
+    - .//figcaption/i
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://baoninhbinh.org.vn/DATA/SHARED/2020/6/12/logo-bao-dien-tu-ninh-binh-e7114.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://baoninhbinh.org.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tin 247 (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.tin247.com
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - ./img/@src
+    - ./img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="teaser"]
+    - //*[@class="teaser"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.tin247.com
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="_box news_detail"]//*[@class="date"]
+    - //*[@class="_box news_detail"]//*[@class="date"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="content"]
+    - //*[@class="content"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - ./p/picture/..
+    image_title_xpath:
+    - ./em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://www.tin247.com/themes/images/logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.tin247.com
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Bắc Ninh:
+    id_type: href
+    browser_profile: ''
+    web_url: http://bacninh.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="sapoDetailId"]//span
+    - //*[@id="sapoDetailId"]//span
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://bacninh.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="date_time"]/span
+    - //*[@class="date_time"]/span
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="contentDetail"]
+    - //*[@id="contentDetail"]
+    text_xpath:
+    - .//p/span
+    image_box_xpath:
+    - .//p/span/img/../..
+    image_title_xpath:
+    - ./following-sibling::p[1]//em/span
+    - ./following-sibling::p[1]//span/span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://bacninh.gov.vn/documents/20182/23161/Banner+%C4%91%E1%BA%A7u+trang/74aebafb-7988-4006-a362-d624316e52ee?version=1.2&t=1450077800719
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://bacninh.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Lai Châu:
+    id_type: href
+    browser_profile: ''
+    web_url: http://laichau.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="clearfix mt-10"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="brief font-size-text mb-10"]/p
+    - //*[@class="brief font-size-text mb-10"]//span/span
+    - //*[@class="brief font-size-text mb-10"]/p/strong
+    - //*[@class="brief font-size-text mb-10"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://laichau.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="post-date left"]
+    - //*[@class="post-date left"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="block-core-a5"]
+    - //*[@class="block-core-a5"]
+    text_xpath:
+    - ./p
+    - .//p
+    image_box_xpath:
+    - //*[@class="image"]
+    image_title_xpath:
+    - //*[@class="image"]/figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://laichau.gov.vn/upload/2000066/20200108/logo-v2_70146fece2.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://laichau.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Đắk Nông:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baodaknong.org.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //p[@class="text-intro"]/text()
+    - //p[@class="text-intro"]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baodaknong.org.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="date"]
+    - //div[@class="date"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="newscontent"]
+    - //div[@class="newscontent"]
+    text_xpath:
+    - .//p/strong[text()]
+    - .//p[text()]
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//tr[2]//span[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baodaknong.org.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Cao Bằng:
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.caobang.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="ArticleContent"]//p[position()=1]//strong/text()[string-length()
+      > 1]
+    - //div[@class="ArticleContent"]//p[position()=1]//strong/text()[string-length()
+      > 1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.caobang.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="PostDate"]
+    - //div[@class="PostDate"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="ArticleContent"]
+    - //div[@class="ArticleContent"]
+    text_xpath:
+    - .//p[not (descendant::em)]//span[text()]
+    - .//p[not (descendant::em)][text()]
+    image_box_xpath:
+    - .//div[descendant::img]
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - ./following-sibling::p[descendant::em]//em/span[text()]
+    - .//tr[descendant::p]//p[text()][string-length() >1]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.caobang.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Yên Bái:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baoyenbai.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - (//div[@class="singlepage"]//p)[1]//b/text()
+    - (//div[@class="singlepage"]//p)[1]//b/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baoyenbai.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - (//div[@class="grid-header"])[1]//ul//span
+    - (//div[@class="grid-header"])[1]//ul//span
+    topic_type: href
+    maximum_url: 31
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="singlepage"]
+    - //div[@class="singlepage"]
+    text_xpath:
+    - './/div[@align="justify"]/div[text()] '
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//tr[2]//i[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baoyenbai.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Ellle thời trang (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.elle.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="content-detail__short-desc"]/p
+    - //*[@class="content-detail__short-desc"]/p
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.elle.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@itemprop="datePublished"]
+    - //*[@itemprop="datePublished"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="content-detail__content"]
+    - //*[@class="content-detail__content"]
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - //*[@class="wp-caption aligncenter"]
+    image_title_xpath:
+    - ./p
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://www.elle.vn/wp-content/themes/ellev3/images/img-logo-elle.svg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.elle.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Phú Thọ:
+    id_type: href
+    browser_profile: ''
+    web_url: https://phutho.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="post__summary"]
+    - //*[@id="post__summary"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://phutho.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="post__datetime post__item"]
+    - //*[@class="post__datetime post__item"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="post__content"]
+    - //*[@id="post__content"]
+    text_xpath:
+    - .//p//span
+    - .//p
+    image_box_xpath:
+    - ./p//img
+    - ./p//img/..
+    image_title_xpath:
+    - ./following-sibling::p[1]/span/span/span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://phutho.gov.vn/sites/default/files/logo_0.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://phutho.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Techz:
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.techz.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //div[@class="news-relation-top-detail"]
+    - //div[@class="news-other"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="sapo-detail"]//h2/text()
+    - //div[@class="sapo-detail"]//h2/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.techz.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class="post-time"]
+    - //node()[@class="post-time"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@itemprop="articleBody"]
+    - //div[@itemprop="articleBody"]
+    text_xpath:
+    - './/p[@style="text-align: justify;"][text()]'
+    - './/p[@style="text-align: justify;"]//span[text()]'
+    image_box_xpath:
+    - .//figure[@class="image align-center"]
+    - .//p[descendant::img]
+    image_title_xpath:
+    - ./figcaption[text()]
+    - './following-sibling::p[@style="text-align: center;"]//em//span[text()]'
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.techz.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Hà Giang:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baohagiang.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@id="content"]//p[position()=1]//span/text()
+    - //div[@id="content"]//p[position()=1]//span/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baohagiang.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@id="date"]
+    - //div[@id="date"]
+    topic_type: href
+    maximum_url: 31
+    get_detail_content: true
+    content_xpath:
+    - //div[@id="content"]
+    - //div[@id="content"]
+    text_xpath:
+    - './/p[position()>1]//span[text()] '
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//tr[2]//td[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baohagiang.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Xe công nghệ:
+    id_type: href
+    browser_profile: ''
+    web_url: http://xecongnghe.vn/
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: true
+    sapo_xpath:
+    - (//div[@class="noi-dung-tomtat"]//p)[2]/text()
+    - (//div[@class="noi-dung-tomtat"]//p)[2]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://xecongnghe.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //span[@id="span-ngaydang"]
+    - //span[@id="span-ngaydang"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="noi-dung"]
+    - //div[@class="noi-dung"]
+    text_xpath:
+    - .//p[text()]
+    image_box_xpath:
+    - .//p[descendant::img]
+    image_title_xpath: []
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://xecongnghe.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT TP Hồ Chí Minh:
+    id_type: href
+    browser_profile: ''
+    web_url: http://www.hochiminhcity.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="lv_description_mode1"]
+    - //*[@class="lv_description_mode1"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://www.hochiminhcity.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="Time"]
+    - //*[@class="Time"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="tableforprint"]/tbody/tr[3]/td/div
+    - //*[@class="content cms-body"]
+    text_xpath:
+    - .//p/span/span
+    - .//p/span/span
+    image_box_xpath:
+    - ./table
+    image_title_xpath:
+    - /p/span/span/span
+    - .//tr/td/span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://www.hochiminhcity.gov.vn/egovImages/_w/bmct_jpg.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://www.hochiminhcity.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tin Tây Nguyên:
+    id_type: href
+    browser_profile: ''
+    web_url: https://tintaynguyen.com
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - ./p[1]/strong
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="entry-content clearfix"]/p[1]/strong
+    - //*[@class="entry-content clearfix"]/p[1]/strong
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://tintaynguyen.com
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="the-article-publish"]/time
+    - //*[@class="the-article-publish"]/time
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="entry-content clearfix"]
+    - //*[@class="entry-content clearfix"]
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - .//*[@class="wp-caption alignnone"]
+    image_title_xpath:
+    - .//*[@class="wp-caption-text"]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://tintaynguyen.com/wp-content/themes/ttn/images/footer-logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://tintaynguyen.com
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Vietnam economic times:
+    id_type: href
+    browser_profile: ''
+    web_url: http://vneconomictimes.com
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="bold top-10"]
+    - ./div
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="bold top-10"]
+    - //*[@class="bold top-10"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://vneconomictimes.com
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="header-article"]//*[@class="date"]
+    - //*[@class="header-article"]//*[@class="date"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="content"]
+    - //*[@class="content"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="image-captioned"]
+    image_title_xpath:
+    - ./figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://vneconomictimes.com/images/economic_01.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://vneconomictimes.com
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tiêu dùng plus:
+    id_type: href
+    browser_profile: ''
+    web_url: https://tieudungplus.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="post-sapo"]
+    - //*[@class="post-sapo"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://tieudungplus.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="post-entity mt-10"]/preceding-sibling::div[@class="post-time mt-5"]/div[@class="pull-left"]
+    - //*[@class="post-entity mt-10"]/preceding-sibling::div[@class="post-time mt-5"]/div[@class="pull-left"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="post-content"]
+    - //*[@class="post-content"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="CmsPluginObject medium-insert-photo clicked"]
+    image_title_xpath:
+    - ./figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://tieudungplus.vn/images/logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://tieudungplus.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Kon Tum:
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.kontum.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="noidung sapo"]/text()
+    - //div[@class="noidung sapo"]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.kontum.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="thongke-ngay"]
+    - //div[@class="thongke-ngay"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="noidung"]
+    - //div[@class="noidung"]
+    text_xpath:
+    - .//p//span[text()]
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//tr[descendant::em]//node()[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.kontum.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Bắc Giang:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baobacgiang.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //p[@class="alead"]/text()
+    - //p[@class="alead"]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baobacgiang.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //p[@class="datetimes-detail-articlecontent spr-detail spr-cache-detail cache-detail
+      m-t-10"]
+    - //p[@class="datetimes-detail-articlecontent spr-detail spr-cache-detail cache-detail
+      m-t-10"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="ArticleContent BaoBacGiang8"][not (descendant::p[@class="alead"])]
+    - //div[@class="ArticleContent BaoBacGiang8"][not (descendant::p[@class="alead"])]
+    text_xpath:
+    - .//p[not (ancestor::table)][text()]
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//tr[2]//p[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baobacgiang.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Ninh Bình:
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.ninhbinh.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="ArticleSummary"]/b/i
+    - //*[@class="ArticleSummary"]/b/i
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.ninhbinh.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="PostDate"]
+    - //*[@class="PostDate"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="ArticleContent"]
+    - //*[@class="ArticleContent"]
+    text_xpath:
+    - ./p/span
+    - ./p/span/strong
+    - ./p
+    image_box_xpath:
+    - .//*[@align="center"]
+    image_title_xpath:
+    - .//em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://www.ninhbinh.gov.vn/SiteFolders/Root/1/Banner/baner-chinh-cong-moi.gif
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.ninhbinh.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Thái Nguyên:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baothainguyen.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - //div[@class="JustifyImage"]//img/@src
+    - //div[@class="JustifyImage"]//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="Summary"]//p//strong/text()
+    - //div[@class="Summary"]//p//strong/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baothainguyen.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //span[@class="date_up"]
+    - //span[@class="date_up"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="news_detail"]
+    - //div[@class="news_detail"]
+    text_xpath:
+    - .//p[text()]
+    image_box_xpath: []
+    image_title_xpath: []
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baothainguyen.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Bắc Kạn:
+    id_type: href
+    browser_profile: ''
+    web_url: http://www.baobackan.org.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@id="content"]//p[position()=1]//strong/text()[string-length() > 1]
+    - //div[@id="content"]//p[position()=1]//strong/text()[string-length() > 1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: true
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://www.baobackan.org.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@id="date"]
+    - //div[@id="date"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@id="content"]
+    - //div[@id="content"]
+    text_xpath:
+    - .//p[position()>1]//span[text()]
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - './/tr[2]/td[text()] '
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://www.baobackan.org.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Lạng Sơn:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baolangson.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="content"]//p//strong/text()
+    - //div[@class="content"]//p//strong/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baolangson.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //p[@class="post-date"]
+    - //p[@class="post-date"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="content"]
+    - //div[@class="content"]
+    text_xpath:
+    - .//p[text()]
+    image_box_xpath:
+    - .//p[descendant::img]
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//em[text()]
+    - ./following-sibling::p//strong[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baolangson.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Hà Tĩnh:
+    id_type: href
+    browser_profile: ''
+    web_url: https://hatinh.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="co-chu"]/div[1]
+    - //*[@id="co-chu"]/div[1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://hatinh.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="news_info"]/p/i
+    - //*[@class="news_info"]/p/i
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="co-chu"]/div[2]
+    - //*[@id="co-chu"]/div[2]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - ./p/img/..
+    image_title_xpath:
+    - ./following-sibling::p[1]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://hatinh.gov.vn/uploads/banners/15232802311756.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://hatinh.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Lào Cai:
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.laocai.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="ArticleSummary"]//node()/text()
+    - //div[@class="ArticleSummary"]//node()/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.laocai.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="PostDate"]
+    - //div[@class="PostDate"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="ArticleContent"]
+    - //div[@class="ArticleContent"]
+    text_xpath:
+    - .//p//span[text()]
+    image_box_xpath:
+    - .//div[descendant::img]
+    image_title_xpath:
+    - ./following-sibling::p[descendant::em]//node()[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.laocai.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Hà Nam:
+    id_type: href
+    browser_profile: ''
+    web_url: https://hanam.gov.vn/
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="article-short-Content"]
+    - //*[@class="article-short-Content"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://hanam.gov.vn/
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="date-line"]
+    - //*[@class="date-line"]
+    topic_type: href
+    maximum_url: 150
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="article-Content"]
+    - //*[@class="article-Content"]
+    text_xpath:
+    - .//p
+    - .//p/text()[preceding-sibling::br and following-sibling::br]
+    image_box_xpath:
+    - .//p/img/..
+    image_title_xpath:
+    - ./
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://hanam.gov.vn/Lists/QuanLyBannerFooter/Attachments/2/banner1170.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://hanam.gov.vn/
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Đời sống (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://doisong.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="detail-sapo"]
+    - //*[@class="detail-sapo"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://doisong.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="datetime left"]
+    - //*[@class="datetime left"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="__MB_MASTERCMS_EL item-content"]/section
+    - //div[@class="__MB_MASTERCMS_EL item-content"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - ./table/tbody
+    image_title_xpath:
+    - ./tr[2]/td
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://doisong.vn/modules/frontend/themes/doisong/images/logo.png?v=2.620200420100835
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://doisong.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Eva (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://eva.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="evtBox evtBoxPrBt"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="nwsCt"]/preceding-sibling::div[1]
+    - //*[@class="nwsCt"]/preceding-sibling::div[1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://eva.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="pubDte pdB10 pdT5"]//*[@class="clrGre"]
+    - //*[@class="pubDte pdB10 pdT5"]//*[@class="clrGre"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="nwsCt"]
+    - //*[@class="nwsCt"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="news-image"]
+    image_title_xpath:
+    - ../following-sibling::p[1]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://cdn.eva.vn/images/responsive/sprites_pc.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://eva.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Du lịch Việt Nam Online (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://dulichvietnam.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="the-short"]
+    - //*[@class="the-reference"]
+    - .//*[@class="table_responsive"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="the-short"]/p
+    - //*[@class="the-short"]/p
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://dulichvietnam.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="the-date"]
+    - //*[@class="the-date"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="desc"]
+    - //*[@class="desc"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - .//div/img/..
+    image_title_xpath:
+    - ./following-sibling::div[1]/span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://dulichvietnam.com.vn/vnt_upload/weblink/logo-dlvn-online-moi-nhat250.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://dulichvietnam.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Bắc Giang:
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.bacgiang.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="article-summary"]/node()/text()
+    - //div[@class="article-summary"]/node()/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.bacgiang.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //span[@class="title meta-data-date"]
+    - //span[@class="title meta-data-date"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="journal-content-article"]
+    - //div[@class="journal-content-article"]
+    text_xpath:
+    - .//p//span[text()]
+    - .//p[text()]
+    image_box_xpath:
+    - .//figure[descendant::img]
+    image_title_xpath:
+    - ./figcaption[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.bacgiang.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Yên Bái:
+    id_type: href
+    browser_profile: ''
+    web_url: http://yenbai.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="divArticleDescription"]
+    - //*[@id="divArticleDescription"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://yenbai.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="date-detail"]/span[1]
+    - //*[@class="date-detail"]/span[1]
+    topic_type: href
+    maximum_url: 150
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="divArticleContent"]
+    - //*[@id="divArticleContent"]
+    text_xpath:
+    - .//span/span
+    - ./p/span/span
+    image_box_xpath:
+    - //*[@id="anhdaidien"]
+    image_title_xpath:
+    - ./p
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://yenbai.gov.vn/PublishingImages/BannerCongChinh/2.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://yenbai.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tin Môi trường:
+    id_type: href
+    browser_profile: ''
+    web_url: http://www.tinmoitruong.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - ./ul
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="gioi_thieu"]
+    - //*[@class="gioi_thieu"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://www.tinmoitruong.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="news-left-content"]/span/font
+    - //*[@class="news-left-content"]/span/font
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="noi_dung"]
+    - //*[@id="noi_dung"]
+    text_xpath:
+    - ./div
+    - ./div/a
+    image_box_xpath:
+    - .//img/../..
+    - .//img/../..
+    image_title_xpath:
+    - /following-sibling::p/em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://www.tinmoitruong.vn/public/temp/logo/logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://www.tinmoitruong.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Xe hay:
+    id_type: href
+    browser_profile: ''
+    web_url: https://xehay.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - //node()[@class="single-title"]/following-sibling::img/@src
+    - //node()[@class="single-title"]/following-sibling::img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class="description"]//strong/text()
+    - //node()[@class="description"]//strong/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://xehay.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="datetime"]
+    - //div[@class="datetime"]
+    topic_type: href
+    maximum_url: 31
+    get_detail_content: true
+    content_xpath:
+    - //node()[@class="news-content"]
+    - //node()[@class="news-content"]
+    text_xpath:
+    - .//p[text()]
+    image_box_xpath:
+    - .//p[descendant::img]
+    image_title_xpath:
+    - './/p[@style="text-align: center;"]//em[text()]'
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://xehay.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Tuyên Quang:
+    id_type: href
+    browser_profile: ''
+    web_url: https://tuyenquang.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="divArticleDescription"]
+    - //*[@id="divArticleDescription"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://tuyenquang.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="date-detail"]/span[1]
+    - //*[@class="date-detail"]/span[1]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="news_detail"]//*[@class="news_detail"]
+    - //*[@class="news_detail"]//*[@class="news_detail"]
+    text_xpath:
+    - ./p
+    - .//p
+    image_box_xpath:
+    - ./p/img/..
+    image_title_xpath:
+    - ./following-sibling::p[1]/span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://tuyenquang.gov.vn/PublishingImages/BannerCongChinh/4.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://tuyenquang.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Hà Nội:
+    id_type: href
+    browser_profile: ''
+    web_url: https://hanoi.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="han6-content-detail"]/b
+    - //*[@class="han6-content-detail"]/b
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://hanoi.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="ngay-"]
+    - //*[@class="ngay-"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="han6-content-detail"]/div/..
+    - //*[@class="han6-content-detail"]/div/..
+    text_xpath:
+    - ./div
+    - ./p
+    image_box_xpath:
+    - ./div/img/..
+    image_title_xpath:
+    - ./following-sibling::div[1]//em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://hanoi.gov.vn/han6-trangchu-theme/img/logo_hn.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://hanoi.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tia sáng:
+    id_type: href
+    browser_profile: ''
+    web_url: https://tiasang.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="tag-n"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="desc-n"]
+    - //*[@class="desc-n"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://tiasang.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="update-time"]
+    - //*[@class="update-time"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="content-dt"]
+    - //*[@class="content-dt"]
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - ./p
+    image_title_xpath:
+    - .//em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://tiasang.com.vn/Portals/_default/Skins/tiasang/img/logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://tiasang.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Phú Thọ:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baophutho.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="content"]//strong
+    - //*[@id="content"]//strong
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baophutho.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="pt-post-detail__time"]
+    - //*[@class="pt-post-detail__time"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="content"]
+    - //*[@id="content"]
+    text_xpath:
+    - ./p/span/span
+    - ./p//span/text()
+    image_box_xpath:
+    - .//img
+    image_title_xpath:
+    - ./following-sibling::span[1]/span/span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://media.baophutho.vn/dataimages/2017/05/27/logo-1495873921.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baophutho.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Hà Nam:
+    id_type: href
+    browser_profile: ''
+    web_url: https://baohanam.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="entry-content"]/p[1]/strong
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="entry-content"]/p[1]/strong
+    - //*[@class="entry-content"]/p[1]/strong
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://baohanam.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="post-meta-date"]
+    - //*[@class="post-meta-date"]
+    topic_type: href
+    maximum_url: 150
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="entry-content"]
+    - //*[@class="entry-content"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="easyimage easyimage-full"]
+    image_title_xpath:
+    - ./figcaption//em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://cdn.baohanam.com.vn/nvcms/img/logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://baohanam.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Sơn La:
+    id_type: href
+    browser_profile: ''
+    web_url: https://sonla.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="ArticleSummary"]/b/i
+    - //*[@class="ArticleSummary"]/b/i
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://sonla.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="PostDate"]
+    - //*[@class="PostDate"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="ArticleContent"]
+    - //*[@class="ArticleContent"]
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - .//div/img/..
+    image_title_xpath:
+    - ./following-sibling::p/em
+    - ./following-sibling::p/em/span
+    - ./em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://sonla.gov.vn/SiteFolders/Root/ImageLibrary/636789998996532139.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://sonla.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Trang tin Đảng bộ TP Hồ Chí minh:
+    id_type: href
+    browser_profile: ''
+    web_url: https://hcmcpv.org.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="desc "]/p
+    - //*[@class="desc "]/p
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://hcmcpv.org.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="time-face"]
+    - //*[@class="time-face"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="content "]
+    - //*[@class="content "]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="article-photo"]
+    - //*[@class="article-photo "]
+    image_title_xpath:
+    - ./span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://hcmcpv.org.vn/assets/images/logo-1.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://hcmcpv.org.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Xe đời sống:
+    id_type: href
+    browser_profile: ''
+    web_url: https://xedoisong.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="sapo cms-desc"]/text()
+    - //div[@class="sapo cms-desc"]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://xedoisong.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="meta clearfix"]//time
+    - //div[@class="meta clearfix"]//time
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[@id="abody"]
+    - //div[@id="abody"]
+    text_xpath:
+    - .//p[text()]
+    - .//div[text() and not (descendant::img)]
+    image_box_xpath:
+    - .//div[descendant::img]/div[@class="fbShareImage"]
+    image_title_xpath: []
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://xedoisong.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- eChip Online (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: http://echip.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="time"]/following-sibling::*[@class="intro"]
+    - //*[@class="time"]/following-sibling::*[@class="intro"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://echip.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="time"]
+    - //*[@class="time"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="description"]
+    - //*[@class="description"]
+    text_xpath:
+    - .//p/span
+    - .//p
+    image_box_xpath:
+    - //*[@class="VCSortableInPreviewMode active"]
+    image_title_xpath:
+    - .//p/span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://echip.com.vn/Images/logo_echip.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://echip.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Nam Định:
+    id_type: href
+    browser_profile: ''
+    web_url: https://www.namdinh.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - ./p[1]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="ArticleContent"]/p[1]
+    - //*[@class="ArticleContent"]/p[1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://www.namdinh.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="PostDate"]
+    - //*[@class="PostDate"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="ArticleContent"]
+    - //*[@class="ArticleContent"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="image center"]
+    image_title_xpath:
+    - .//*[@class="image_desc"]/em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://www.namdinh.gov.vn/SiteFolders/Root/2286/bannermoi/webtinh%20(1).gif
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://www.namdinh.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tin nhanh:
+    id_type: href
+    browser_profile: ''
+    web_url: http://tintuc.timnhanh.com
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="lead"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="lead"]
+    - //*[@class="lead"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://tintuc.timnhanh.com
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="date"]/span
+    - //*[@class="date"]/span
+    topic_type: href
+    maximum_url: 150
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="newsDetail"]
+    - //*[@class="newsDetail"]
+    text_xpath:
+    - ./p
+    - ./div
+    image_box_xpath:
+    - //*[@class="center"]
+    image_title_xpath:
+    - ./span
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://static.timnhanh.com/tintucv3/images/graphics/logo_tinnhanh_229x32.gif
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://tintuc.timnhanh.com
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Hải Dương:
+    id_type: href
+    browser_profile: ''
+    web_url: http://www.haiduong.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@id="contenttin"]/p[1]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="contenttin"]/p[1]
+    - //*[@id="contenttin"]/p[1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://www.haiduong.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="col-xs-12 time-update"]/span
+    - //*[@class="col-xs-12 time-update"]/span
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="contenttin"]
+    - //*[@id="contenttin"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - ./p/span/em/../..
+    image_title_xpath:
+    - ./following-sibling::p[1]/span/em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://www.haiduong.gov.vn/TopBanner/bg.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://www.haiduong.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Vietnambiz (7/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://vietnambiz.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="vnbcbc-sapo"]
+    - //*[@class="vnbcbc-sapo"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://vietnambiz.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="vnbcbat-data "]
+    - //*[@class="vnbcbat-data "]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="vnbcbc-body vceditor-content"]
+    - //*[@class="vnbcbc-body vceditor-content"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="VCSortableInPreviewMode"]
+    image_title_xpath:
+    - //*[@class="PhotoCMS_Caption"]/p
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://static.mediacdn.vn/vietnambiz/web_images/vietnambiz_chon.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://vietnambiz.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Thể thao Hồ Chí Minh:
+    id_type: href
+    browser_profile: ''
+    web_url: https://thethaohcm.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //node()[@class="boxrelation"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - '(//div[@style="margin-bottom: 5px"]//strong/text())[2]'
+    - '(//div[@style="margin-bottom: 5px"]//strong/text())[2]'
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://thethaohcm.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="date fr"]
+    - //div[@class="date fr"]
+    topic_type: href
+    maximum_url: 30
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="description"]
+    - //div[@class="description"]
+    text_xpath:
+    - './/div[@style="text-align: justify;"][text()]'
+    - .//p[text()]
+    image_box_xpath:
+    - './/node()[(@style="text-align: center;") and descendant::img]'
+    - .//center[descendant::img]
+    image_title_xpath:
+    - './/node()[@style="text-align: center;"]//span[text()]'
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://thethaohcm.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Hà Giang:
+    id_type: href
+    browser_profile: ''
+    web_url: http://hagiang.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="ExternalClassBBF09D55C8554B1E8CCAFF8B9A099C41"]/p/span
+    - //*[@class="ExternalClassBBF09D55C8554B1E8CCAFF8B9A099C41"]/p/span
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://hagiang.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="timetitle"]
+    - //*[@class="timetitle"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="desriptiontitle"]
+    - //*[@class="desriptiontitle"]
+    text_xpath:
+    - .//p/span
+    image_box_xpath:
+    - .//span/img
+    image_title_xpath:
+    - ../../following-sibling::p[1]/span/em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://hagiang.gov.vn/workspace/PublishingImages/Banner%20Home/cong%20bao.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://hagiang.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- CTTĐT Thái Nguyên:
+    id_type: href
+    browser_profile: ''
+    web_url: http://thainguyen.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="journal-content-article"]//p[position()=1]/text()
+    - //div[@class="journal-content-article"]//p[position()=1]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://thainguyen.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //p[@class="date_post"]
+    - //p[@class="date_post"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="journal-content-article"]
+    - //div[@class="journal-content-article"]
+    text_xpath:
+    - './/p[position()>1 and @style="text-align: justify;"][text()]'
+    image_box_xpath:
+    - .//p[descendant::img]
+    image_title_xpath:
+    - ./following-sibling::p[descendant::em]//em/span[text()]
+    - ./following-sibling::p[descendant::em]//em[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://thainguyen.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Hòa Bình:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baohoabinh.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //div[@class="related-post margin-top-20 clearfix"]
+    - //div[@class="post margin-top-20 clearfix"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class="summary"]/text()
+    - //node()[@class="summary"]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baohoabinh.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - (//span[@class="meta"])[1]
+    - (//span[@class="meta"])[1]
+    topic_type: href
+    maximum_url: 31
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="post clearfix"]
+    - //div[@class="post clearfix"]
+    text_xpath:
+    - './/div[@style="text-align: justify;"][text()]'
+    image_box_xpath:
+    - .//div[descendant::img]
+    image_title_xpath:
+    - './following-sibling::div[@style="text-align: center;"]//span[text()]'
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baohoabinh.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Hòa Bình điện tử:
+    id_type: href
+    browser_profile: ''
+    web_url: http://www.hoabinh.gov.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - //div[@class="content_detail_news"]//img[@class="img-responsive"]/@src
+    - //div[@class="content_detail_news"]//img[@class="img-responsive"]/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class="summary"]/text()
+    - //node()[@class="summary"]/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://www.hoabinh.gov.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class="date_time"]
+    - //node()[@class="date_time"]
+    topic_type: href
+    maximum_url: 31
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="textdetail"]
+    - //div[@class="textdetail"]
+    text_xpath:
+    - .//p[not (descendant::em)]//span[text()]
+    image_box_xpath:
+    - .//p[descendant::img]
+    image_title_xpath:
+    - ./following-sibling::p[descendant::em]//span[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://www.hoabinh.gov.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Tuyên Quang:
+    id_type: href
+    browser_profile: ''
+    web_url: https://baotuyenquang.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="summary"]
+    - //*[@class="summary"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://baotuyenquang.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="share"]/time
+    - //*[@class="share"]/time
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@id="content"]/article
+    - //*[@id="content"]/article
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - .//p/img
+    image_title_xpath:
+    - ../following-sibling::p/span/em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://baotuyenquang.com.vn/media/banner/2020/img_20200204113117.jpg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://baotuyenquang.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tin tức du lịch trực tuyến (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: http://dulichvn.org.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="summery"]
+    - //*[@class="summery"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://dulichvn.org.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="meta"]
+    - //*[@class="meta"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="content"]
+    - //*[@class="content"]
+    text_xpath:
+    - ./div/div/span
+    - .//p
+    image_box_xpath:
+    - '//*[@style="text-align: center;"]'
+    image_title_xpath:
+    - ./span/span/em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://www.dulichvn.org.vn/web/templates/2018/image/tcdl.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://dulichvn.org.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tổ quốc (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: http://toquoc.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="sapo"]
+    - //*[@class="sapo"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://toquoc.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="publishdate"]
+    - //*[@class="publishdate"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@data-role="content"]
+    - //*[@data-role="content"]
+    text_xpath:
+    - ./p
+    - ./p/span
+    image_box_xpath:
+    - //*[@class="VCSortableInPreviewMode active"]
+    image_title_xpath:
+    - .//*[@class="PhotoCMS_Caption"]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://static.mediacdn.vn/toquoc/web_images/header_new_sprite.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://toquoc.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Thời báo doanh nhân (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://thoibaodoanhnhan.com
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - .//*[@class="td-post-content"]/h3/strong
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="td-post-content"]/h3/strong
+    - //*[@class="td-post-content"]/h3/strong
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://thoibaodoanhnhan.com
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="td-post-header"]//*[@class="entry-date updated td-module-date"]
+    - //*[@class="td-post-header"]//*[@class="entry-date updated td-module-date"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="td-post-content"]
+    - //*[@class="td-post-content"]
+    text_xpath:
+    - ./p
+    image_box_xpath: []
+    image_title_xpath: []
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://thoibaodoanhnhan.com/wp-content/uploads/2019/09/images.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://thoibaodoanhnhan.com
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Báo Kon Tum:
+    id_type: href
+    browser_profile: ''
+    web_url: http://baokontum.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@id="content"]//p[position()=1]/strong/text()
+    - //div[@id="content"]//p[position()=1]/strong/text()
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://baokontum.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="date-contentL"]
+    - //div[@class="date-contentL"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@id="content"]
+    - //div[@id="content"]
+    text_xpath:
+    - .//p[position()>1][text()]
+    image_box_xpath:
+    - .//tbody[descendant::img]
+    image_title_xpath:
+    - .//tr[2]/node()[text()]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://baokontum.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Fica (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: http://fica.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - //*[@class="bs-tags clearfix"]
+    - //*[@class="pull-right"]
+    - //*[@class="bg-share"]
+    - //*[@class="post-nav"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="col-md-8 blog-single"]/p[1]
+    - //*[@class="col-md-8 blog-single"]/p[1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: http://fica.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="fa fa-calendar"]/..
+    - //*[@class="fa fa-calendar"]/..
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="col-md-8 blog-single"]/div[2]
+    - //*[@class="col-md-8 blog-single"]/div[2]
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - .//p/em/..
+    image_title_xpath:
+    - ./following-sibling::p/em
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: http://fica.vn/images/logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://fica.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tin tức Online (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://tintuconline.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - ./div
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="sapo-detail"]/h2
+    - //*[@class="sapo-detail"]/h2
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://tintuconline.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="detail-article-date"]/span
+    - //*[@class="detail-article-date"]/span
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="main-detail-content"]
+    - //*[@class="main-detail-content"]
+    text_xpath:
+    - ./p[not(.//img)][not(contains(@style, "center"))]
+    image_box_xpath:
+    - ./p[.//img]
+    image_title_xpath:
+    - ./em
+    - ./following-sibling::*[1][contains(@style, "center")]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://tintuconline.com.vn/Content/v2/img/logo2.svg
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://tintuconline.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: true
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Tin tức 24h hàng ngày (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://tintuc.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - ./div
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@id="articleSapo"]
+    - //*[@id="articleSapo"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 18/08/2020 14:00
+    contain: ''
+    crawl_url: https://tintuc.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //*[@class="publish-date dim w125"]/a
+    - //*[@class="publish-date dim w125"]/a
+    topic_type: href
+    maximum_url: 15
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="content_article"]
+    - //*[@class="content_article"]
+    text_xpath:
+    - ./p[not(.//img)][not(@class="imgnote")]
+    image_box_xpath:
+    - ./p[.//img]
+    image_title_xpath:
+    - ./following-sibling::p[1][@class="imgnote"]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://static.tintuc.com.vn/tintuc/icon/logo.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://tintuc.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: true
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+running_path: ~/docbao_test/
+number_of_trending_keywords: 25
+number_of_hot_keywords: 2000
+minimum_topic_length: 4
+display_timezone: Asia/Ho_Chi_Minh
+hub_href: https://edu.theodoibaochi.com
+minimum_keyword_length_for_fast_growing_keyword_accepted: 2
+crawling_interval: 10
+minimum_freq_for_more_than_two_length_keyword_appear_in_hot_keywords: 5
+minimum_freq_series_for_fast_growing_keyword_accepted: 2
+max_crawler: 15
+category_list:
+- chính trị:
+    index: 1
+    filename: category/chinh_tri.txt
+- Kinh Tế:
+    index: 2
+    filename: category/kinh_te.txt
+- Xã Hội:
+    index: 3
+    filename: category/xa_hoi.txt
+- An Ninh:
+    index: 4
+    filename: category/an_ninh.txt
+- Quốc Phòng:
+    index: 5
+    filename: category/quoc_phong.txt
+- Văn Hoá:
+    index: 6
+    filename: category/van_hoa.txt
+- Giáo Dục:
+    index: 7
+    filename: category/giao_duc.txt
+- Thể Thao:
+    index: 8
+    filename: category/the_thao.txt
+- Giải Trí:
+    index: 9
+    filename: category/giai_tri.txt
+- Công nghệ:
+    index: 10
+    filename: category/cong_nghe.txt
+- Giao Thông:
+    index: 11
+    filename: category/giao_thong.txt
+- Quốc gia:
+    index: 12
+    filename: category/quoc_gia.txt
+- Địa danh:
+    index: 13
+    filename: category/dia_danh.txt
+- Sự kiện:
+    index: 14
+    filename: category/su_kien.txt
+- Nhân vật:
+    index: 15
+    filename: category/nhan_vat.txt
+use_CDN: true
+waiting_time_between_each_crawl: 3
+trending_duration: 720
+minimum_publish_speed: 600
+minimum_freq_for_two_length_keyword_appear_in_hot_keywords: 2
+maximum_url_to_visit_each_turn: 15
+minimum_weight: 0.002
+timeout: 500
+hub_title: Theo Dõi Tin Tức Mùa Thi THPT Quốc gia 2019
+minimum_freq_for_new_keyword_accepted: 1
+mininum_freq_for_new_keyword_accepted: 1
+minimum_freq_for_fast_growing_keyword_accepted: 3
