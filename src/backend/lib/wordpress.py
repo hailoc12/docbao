@@ -6,14 +6,15 @@ from wordpress_xmlrpc.compat import xmlrpc_client
 from wordpress_xmlrpc.methods import media
 import uuid
 import io
+import os
 from .utils import print_exception
 import requests
 import os.path
 class Wordpress():
     def __init__(self):
-        USERNAME="admin"
-        PASSWORD="bangtin_ainews_2811#"
-        WORDPRESS_URL = 'https://bangtin.vn/xmlrpc.php'
+        USERNAME=os.environ['DOCBAO_WORDPRESS_USERNAME']
+        PASSWORD=os.environ['DOCBAO_WORDPRESS_PASSWORD']
+        WORDPRESS_URL = os.environ['DOCBAO_WORDPRESS_SITE'] + '/xmlrpc.php'
         self._client = Client(WORDPRESS_URL, USERNAME, PASSWORD)
 
     def add_new_post(self, title, content, image_url, trending, tags, category):

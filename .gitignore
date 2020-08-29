@@ -1,5 +1,4 @@
 led / optimized / DLL files
-venv/*
 backend/input/*.php
 backend/input/config.yaml
 backend/export/*.json

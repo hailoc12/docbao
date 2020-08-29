@@ -264,7 +264,7 @@ class ConfigManager:
     _filename = ""
     _config={}
 
-    def __init__(self, config_filename, kol_filename, fb_account_filename):
+    def __init__(self, config_filename, kol_filename=None, fb_account_filename=None):
         self._filename = config_filename
         self._kol_filename = kol_filename
         self._fb_account_filename = fb_account_filename

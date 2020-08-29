@@ -1,6 +1,5 @@
 from .utils import *
 from .rabbitmq_client import RabbitMQ_Client
-from .classify import classify
 #from .cdn import CDNManager
 import yaml                   # text-based object serialization
 import re                     # regular expression to extract data from article
@@ -55,14 +54,7 @@ class Article:
         self._author_id = non_unicode_author_id.strip().replace(' ', '_')
         self._author_fullname = author_fullname
 
-        self.set_category_by_AI()
         self._wordpress_id = -1
-
-    def set_category_by_AI(self):
-        try:
-            self._category = classify(self)
-        except:
-            self._category = ["Xã hội"]
 
     def set_wordpress_id(self, post_id):
         self._wordpress_id = post_id

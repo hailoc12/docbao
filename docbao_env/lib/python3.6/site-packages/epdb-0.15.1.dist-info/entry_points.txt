@@ -1,0 +1,6 @@
+[console_scripts]
+epdb = epdb.epdb_client:main
+
+[nose.plugins.0.10]
+epdb-debug = epdb.epdb_nose:Epdb
+

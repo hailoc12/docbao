@@ -1,21 +1,19 @@
 
 # IMPORT LIB:
 import copy
-from .data import *
-from .config import *
-from .keyword import *
-from .elasticsearch_data import *
-from .rabbitmq_client import *
+from .data import Article, ArticleManager
+from .config import ConfigManager
+from .keyword import KeywordManager
+from .elasticsearch_data import ElasticSearch_Client
+from .rabbitmq_client import RabbitMQ_Client
 from .utils import *
-from .wordpress import *
-from .trend import *
+from .wordpress import Wordpress
 
 #from backend.lib import *
 import multiprocessing
 import os
 import time
 import epdb
-import redis
 import jsonpickle
 
 
@@ -37,7 +35,7 @@ class Docbao_Crawler():
     _crawl_kols = False
 
     def __init__(self, crawl_newspaper=True, crawl_kols=False, crawl_kols_by_smcc = False, max_kols=100,
-                 export_to_json=True, export_to_queue=True, export_to_elasticsearch=True, export_to_wordpress=True):
+                 export_to_json=True, export_to_queue=False, export_to_elasticsearch=False, export_to_wordpress=False):
         '''
         input
         -----
@@ -72,53 +70,6 @@ class Docbao_Crawler():
         self._data_manager.save_data()
         self._keyword_manager.save_data()
         self._config_manager.save_data(self._crawl_newspaper, self._crawl_kols)
-
-    def load_data_from_redis(self):
-        '''
-        :output:
-            True if success
-            False if error
-        '''
-        try:
-            r=redis.Redis(host="103.192.236.67",port=6379, password=None, socket_timeout=60)
-            data_manager_stream = r.get("data_manager")
-            config_manager_stream = r.get("config_manager")
-            keyword_manager_stream = r.get("keyword_manager")
-
-            if data_manager_stream and config_manager_stream and keyword_manager_stream:
-                self._data_manager = pickle.loads(data_manager_stream)
-                self._config_manager = pickle.loads(config_manager_stream)
-                self._keyword_manager = pickle.loads(keyword_manager_stream)
-                #return (data_manager, config_manager, keyword_manager)
-                self._data_manager.compress_database(self._keyword_manager)
-                self._data_manager.compress_blacklist()
-                return True
-            else:
-                return False
-        except:
-            print_exception()
-            pass
-            print("Error to connect to Redis. Load data from file")
-            return False
-
-
-    def save_data_to_redis(self):
-        '''
-        :output:
-            True if success
-            False if error
-        '''
-        try:
-            r=redis.Redis(host="103.192.236.67",port=6379, password=None, socket_timeout=60)
-            r.set("data_manager", pickle.dumps(self._data_manager))
-            r.set("keyword_manager",pickle.dumps(self._keyword_manager))
-            r.set("config_manager", pickle.dumps(self._config_manager))
-            return True
-        except:
-            print_exception()
-            print("Error to connect to Redis. Check Redis server")
-            return False
-
 
     def crawler_process(self, process_name, lock, timeout_flag, browser_list, crawl_queue, data_manager, crawled_articles, new_blacklists, export_to_queue):
         # Function: work as an worker in multiprocessed crawling

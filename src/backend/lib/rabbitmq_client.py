@@ -4,17 +4,17 @@
 #Created date: 2019-07-10                                                      #
 #################################################################################
 
-import pika
 import jsonpickle
+import os
+import pika
 import pytz
-from .topic_modeling import *
 from random import randint
-from .utils import get_independent_os_path, open_utf8_file_to_read, try_download
+from lib.utils import get_independent_os_path, open_utf8_file_to_read, try_download
 
 # Rabbit MQ Username
-HOST = "103.192.236.67"
-USERNAME = "admin"
-PASSWORD = 'omah7Eecaht7ooqu'
+HOST = os.environ['DOCBAO_RABBITMQ_HOST']
+USERNAME = os.environ['DOCBAO_RABBITMQ_USERNAME']
+PASSWORD = os.environ['DOCBAO_RABBITMQ_PASSWORD']
 
 # Represent a post
 class Post():
@@ -127,14 +127,12 @@ class RabbitMQ_Client():
         connection = self._connection
 
         # get queues
-        newspaper_queue = 'newspaper_news_temp'
-        analysis_queue = 'analysis_news'
+        newspaper_queue = os.environ['DOCBAO_RABBITMQ_QUEUE']
         kol_queue = 'kol_news'
 
         channel = connection.channel()
         channel.queue_declare(newspaper_queue, durable=True)
-        channel.queue_declare(analysis_queue, durable=True)
-        channel.queue_declare(kol_queue, durable=True)
+        # channel.queue_declare(kol_queue, durable=True)
 
         # push post
         for article in articles:
@@ -144,9 +142,6 @@ class RabbitMQ_Client():
                 #newspaper
                 channel.basic_publish(exchange='',
                                   routing_key=newspaper_queue,
-                                  body=post_body)
-                channel.basic_publish(exchange='',
-                                  routing_key=analysis_queue,
                                   body=post_body)
             else:
                 channel.basic_publish(exchange='',

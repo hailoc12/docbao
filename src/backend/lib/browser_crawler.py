@@ -107,7 +107,7 @@ class BrowserCrawler:
         self._driver.set_page_load_timeout(timeout)
         self._quited = False
 
-    def load_page(self, url, prevent_auto_redirect, wait=5, entropy=3):
+    def load_page(self, url, prevent_auto_redirect=False, wait=5, entropy=3):
         # Function: load page with url
         # Input:
         # - wait: time waiting for page to load

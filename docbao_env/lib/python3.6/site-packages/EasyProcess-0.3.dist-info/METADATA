@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: EasyProcess
+Version: 0.3
+Summary: Easy to use Python subprocess interface.
+Home-page: https://github.com/ponty/easyprocess
+Author: ponty
+Author-email: UNKNOWN
+License: BSD
+Keywords: subprocess interface
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+
+Easy to use Python subprocess interface.
+
+home: https://github.com/ponty/easyprocess
+

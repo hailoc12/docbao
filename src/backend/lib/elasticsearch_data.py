@@ -1,10 +1,10 @@
+import copy
+from datetime import datetime
 from elasticsearch_dsl import *
 from elasticsearch_dsl.connections import connections
-from datetime import datetime
-from .data import *
-import copy
+import os
 
-HOST = "103.192.236.67"
+HOST = os.environ['DOCBAO_ELASTICSEARCH_HOST']
 
 class Content(InnerDoc):
     type = Text()

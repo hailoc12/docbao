@@ -23,8 +23,6 @@ if not is_another_session_running():
                 )
         crawler.load_data_from_file()
         crawler.multiprocess_crawl()
-        crawler.save_data_to_redis()
-        crawler.save_data_to_file()
     except:
         print_exception()
     finish_session()

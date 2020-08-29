@@ -57,54 +57,42 @@ Một điểm mạnh của *"Đọc báo Crawler"* là trả về dữ liệu b�
 
 ### Cài đặt
 
-Để chạy được Đọc Báo, bạn cần một máy tính để quét dữ liệu và một host hỗ trợ php và ftp để chạy website hiển thị dữ liệu. 
+Để chạy được Docbao Crawler, bạn cần một máy tính/VPS chạy hệ điều hành Ubuntu, hoặc Windows 10 chạy Linux Subsystem. Docbao Crawler cũng có thể chạy được trên Raspberry Pi với số lượng nguồn báo quét nhỏ 
 
-Về máy tính quét thì bạn có thể mua VPS, dùng một con Raspberry Pi hoặc chạy trên máy tính cá nhân của bạn. Còn host nếu bạn chưa có thì có thể inbox mình để mượn hoặc dùng tạm tài khoản sau để test:
+#### 1. Cài đặt trên Ubuntu 
+Để cài đặt Docbao Crawler trên Ubuntu (16.04 hoặc 18.04 đều được), bạn cần có quyền admin và sẽ cần nhập mật khẩu admin trong quá trình cài đặt. Các bước cài đặt cụ thể như sau: 
 
-host: ftp.tudonghoamaytinh.com  
-user: admin@demo.theodoibaochi.com  
-pass: docbaotheotukhoa  
-
-## Cài đặt trên Ubuntu và Raspberry Pi
-
-#### Bước 1: Clone mã nguồn từ github
+##### Bước 1: Clone mã nguồn từ github
 Mở terminal trong Ubuntu (Ctr+Alt+T) và gõ dòng lệnh sau
 ~~~~
 git clone http://github.com/hailoc12/docbao
 ~~~~
 
-#### Bước 2: Chạy trình cài đặt tự động
-Nếu bạn cài trên Ubuntu thì gõ lệnh sau:
-~~~~
-cd ~/docbao
-./install_on_ubuntu.sh
-~~~~
-Còn nếu dùng Raspberry Pi thì gõ lệnh:
-~~~~
-cd ~/docbao
-./install_on_raspberry.sh
-~~~~
-Trình cài đặt sẽ tự động chạy. Bạn hãy chờ cho đến trình cài đặt dừng lại và hiện thông báo sau:
+##### Bước 2: Kiểm tra lại đường dẫn của bộ cài (SETTING.env)
+Nếu folder cài đặt nằm ở địa chỉ ~/docbao_crawler thì bạn có thể bỏ qua bước này. Còn nếu bạn đặt mã nguồn Docbao_crawler tại đường dẫn khác, thì hãy thay đổi biến DOCBAO_BASE_DIR trong file SETTING.env
 
+~~~
+export DOCBAO_BASE_DIR=[đường dẫn tới folder docbao_crawler]
+~~~
+Lưu ý: nếu bạn thực hiện sai bước này, thì các bước cài đặt sẽ không chạy được 
+
+##### Bước 3: Chạy file cài đặt 
+Hãy bảo đảm bạn đang ở trong thư mục docbao_crawler khi chạy các lệnh cài đặt sau: 
 ~~~~
-"Step 5: config remoate ftp host in rclone as 'docbao'"
-REMEMBER: use remote hostname as 'docbao'
+source SETTINGS.env
+bash install_on_ubuntu.sh
 ~~~~
 
-#### Bước 3: Tạo và nhập tài khoản ftp để đẩy file lên host hiển thị website
-Tại bước này, bạn hãy nhập n + Enter để tạo một config mới. 
+Trình cài đặt sẽ tự động chạy. Kết thúc quá trình cài đặt, script sẽ tự động chạy test. Bạn thấy các kết quả test đều báo OK nghĩa là đã cài đặt thành công 
 
-Tiếp đến hãy nhập name là docbao
 
-Nhập tiếp 10 + Enter để tạo cấu hình host FTP
 
-Tiếp theo hãy nhập tài khoản FTP để đẩy file lên host của bạn. Nếu bạn chưa có host, thì có thể dùng tạm host demo của mình theo thông tin như sau:
+#### 2. Cài đặt trên Windows 10 
+(Đang bổ sung)
 
-host: ftp.tudonghoamaytinh.com  
-user: admin@demo.theodoibaochi.com  
-pass: docbaotheotukhoa  
+#### 3. Cài đặt trên Raspberry Pi 
+(Đang bổ sung. File install_on_raspberry3.sh chưa hoạt động đúng và chưa được test. Đề nghị không sử dụng)
 
-Sau khi tạo config, nhập q + Enter để trình cài đặt chạy tiếp.
 
 ### Vận hành  
 

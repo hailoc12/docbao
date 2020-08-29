@@ -1,7 +1,6 @@
-from lib.crawl import *
-from lib.config import * 
-from lib.utils import *
-
+from lib.browser_crawler import BrowserCrawler
+from lib.config import ConfigManager
+from lib.utils import get_independent_os_path
 
 # Test 1: Test firefox, geckodrive and selenium are installed ok
 print("Test 1: check if Firefox, Geckodrive and Selenium are installed ok")
@@ -23,12 +22,12 @@ web_crawler.quit()
 
 print("Test 2: check if config file can be parsed")
 
-config_file = get_independent_os_path(["input", "config.txt"])
+config_file = get_independent_os_path(["input", "config.yaml"])
 
 config_manager = ConfigManager(config_file)
 config_manager.load_data()
 
-if len(config_manager.get_newspaper_list()) > 0:
+if len(config_manager.get_newspaper_list()) >= 0:
     print("Result: OK")
 else:
     print("Result: FAIL")

@@ -1,0 +1,22 @@
+.tfidf-word {
+    border: solid 1px #b3b3b3;
+    float: left;
+    padding: 1px;
+    margin: 2px;
+    border-radius: 6px;
+}
+
+circle {
+    fill: #e91e6387;
+}
+
+.domain {
+    stroke: red;
+    fill: none;
+    stroke-width: 1;
+}
+
+.point-tooltip {
+    padding: 2px;
+    font-weight: bold;
+}
