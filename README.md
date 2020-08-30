@@ -168,8 +168,20 @@ Mặc định, frontend sẽ chạy ở địa chỉ https://localhost:8085. B�
 Nếu bạn nhìn thấy bài viết từ các nguồn quét đã xuất hiện trên frontend thì có nghĩa bộ quét đã hoạt động thành công 
 
 #### Bước 5: thiết lập crontab 
+Để *Đọc báo Crawler* tự động thực hiện các chu trình quét, bạn cần cài đặt chạy tự động trong crontab như sau 
 
+Mở crontab 
+~~~
+crontab -e 
+~~~
 
+Thêm vào hai dòng dưới đây 
+~~~
+*/15 * * * * bash ~/docbao/scripts/crawl.sh
+*/60 * * * * bash ~/docbao/scripts/clean_temp.sh
+~~~
+
+Thiết lập ở trên là mỗi 15 phút, bộ quét sẽ tiến hành quét và update dữ liệu một lần. Bạn có thể thay đổi thành mốc thời gian khác, nhưng nên để > 10 phút để bộ quét chạy ổn định. 
  
 ### Lịch sử phát triển  
 
