@@ -33,7 +33,8 @@ echo "__________________________________________________________________________
 sleep 1
 cd $install_dir
 python3 -m venv docbao_env
-$install_dir/docbao_env/bin/pip3 install -r requirements.txt
+source docbao_env/bin/activate
+pip3 install -r requirements.txt
 sleep 1
 echo "Step 3: install firefox and xvfb"
 echo "__________________________________________________________________________"
