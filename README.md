@@ -69,7 +69,7 @@ git clone http://github.com/hailoc12/docbao
 ~~~~
 
 ##### Bước 2: Kiểm tra lại đường dẫn của bộ cài (SETTING.env)
-Nếu folder cài đặt nằm ở địa chỉ ~/docbao_crawler thì bạn có thể bỏ qua bước này. Còn nếu bạn đặt mã nguồn Docbao_crawler tại đường dẫn khác, thì hãy thay đổi biến DOCBAO_BASE_DIR trong file SETTING.env
+Nếu folder cài đặt nằm ở địa chỉ ~/docbao thì bạn có thể bỏ qua bước này. Còn nếu bạn đặt mã nguồn Docbao_crawler tại đường dẫn khác, thì hãy thay đổi biến DOCBAO_BASE_DIR trong file SETTING.env
 
 ~~~
 export DOCBAO_BASE_DIR=[đường dẫn tới folder docbao_crawler]
@@ -124,8 +124,7 @@ Trình cài đặt sẽ tự động chạy. Kết thúc quá trình cài đặt
 
 ### Hướng dẫn vận hành bộ quét  
 
-#### Thiết lập các thông số cấu hình cho bộ quét  
-##### Bước 1: thiết lập nguồn quét   
+#### Bước 1: thiết lập nguồn quét   
 *Docbao Crawler* lưu toàn bộ thông tin mô tả về nguồn quét trong file src/backend/input/config.yaml. Mặc định sau khi cài đặt, trong file config.yaml sẽ bao gồm 5 nguồn quét là các trang VnExpress, VOV, VTV, Dân Trí, Vietnamnet. Tần suất quét mặc định là 15 phút. 
 
 Việc chỉnh sửa trực tiếp file config.yaml là không khuyến khích, để thay đổi thiết lập quét, *Docbao Crawler* cung cấp sẵn một tool quản lý cấu hình. Chạy tool này như sau 
@@ -138,9 +137,17 @@ Sau đó, vào mục "2.Manager program settings/Edit Crawl list" để thêm/b�
 
 (đang phát triển tài liệu hướng dẫn sử dụng tool config_manager)  
 
-##### Bước 2: thiết lập tần suất quét  
+#### Bước 2: thiết lập kênh đổ dữ liệu   
+Hiện tại *Docbao Crawler* hỗ trợ 4 hình thức lưu trữ dữ liệu quét: 
+1. Lưu trữ dữ liệu dưới dạng pickle file (src/backend/data) và export ra dạng json (src/backend/export). Đây là hình thức lưu trữ mặc định   
+2. Đỗ dữ liệu vào Elasticsearch (cài đặt qua file SETTINGS.env)  
+3. Đổ dữ liệu vào RabbitMQ (cài đặt qua file SETTINGS.env)
+4. Đẩy bài viết lên wordpress (cài đặt qua file SETTINGS.env)  
+5. Truy cập dữ liệu thông qua API Server tích hợp sẵn (đang xây dựng tài liệu) 
 
-###### Chạy quét thử chu kỳ đầu tiên để bảo đảm bộ quét hoạt động đúng  
+Tuỳ theo nhu cầu sử dụng, các bạn thiết lập cấu hình tương ứng  
+
+#### Bước 3: chạy quét thử chu kỳ đầu tiên để bảo đảm bộ quét hoạt động đúng  
 Từ thư mục gốc, các bạn chạy lệnh sau để khởi động chu trình quét  
 
 ~~~
@@ -148,6 +155,20 @@ bash scripts/crawl.sh
 ~~~  
 
 *Docbao Crawler* sẽ bắt đầu quét tin tức từ các nguồn được cấu hình trong file src/backend/input/config.yaml (mặc định gồm VTV, VOV, Dân Trí, Vnexpress, Vietnamnet) 
+
+#### Bước 4: bật frontend để kiểm tra kết quả quét  
+*Docbao Crawler* tích hợp sẵn một frontend đơn giản, có thể dùng để xem các bài viết đã quét được. Để bật frontend này, sử dụng câu lệnh sau đây 
+
+~~~
+bash scripts/start_frontend.sh
+~~~
+
+Mặc định, frontend sẽ chạy ở địa chỉ https://localhost:8085. Bạn có thể thay đổi địa chỉ và port frontend chạy bằng cách thay đổi tham sốD BAONOI_FRONTEND_HOST và BAONOI_FRONTEND_PORT trong file SETTINGS.env.
+
+Nếu bạn nhìn thấy bài viết từ các nguồn quét đã xuất hiện trên frontend thì có nghĩa bộ quét đã hoạt động thành công 
+
+#### Bước 5: thiết lập crontab 
+
 
  
 ### Lịch sử phát triển  
@@ -167,3 +188,4 @@ Vì tác giả đã học hỏi được rất nhiều về lập trình thông 
 1. Đặng Hải Lộc (hailoc12)
 Email: danghailochp@gmail.com  
 Facebook: https://www.facebook.com/danghailochp
+a

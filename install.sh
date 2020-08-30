@@ -6,15 +6,20 @@
 
 echo "INSTALL DOCBAO ON UBUNTU/RASPBERRY PI"
 echo "__________________________________________________________________________"
+set -a 
+source SETTINGS.env
+set +a 
 export install_dir=$DOCBAO_BASE_DIR
+export PYTHONPATH=$PYTHONPATH:$local_dir
 cd $install_dir
 sleep 1
-echo "Step 1: Ensure python3, pip3, curl and php are installed"
+echo "Step 1: Ensure python3, pip3, venv, curl and php are installed"
 echo "__________________________________________________________________________"
 sleep 1
 sudo apt update
 sudo apt install python3
 sudo apt install python3-pip
+sudo apt-get install python3-venv
 sudo apt install curl
 sudo apt install php7.2-cli
 sudo apt install php7.2-mbstring

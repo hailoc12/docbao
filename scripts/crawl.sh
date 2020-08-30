@@ -1,5 +1,7 @@
 #!/bin/bash
+set -a
 source SETTINGS.env
+set +a
 export local_dir=$DOCBAO_BASE_DIR
 export PYTHONPATH=$PYTHONPATH:$local_dir
 source $local_dir/docbao_env/bin/activate
