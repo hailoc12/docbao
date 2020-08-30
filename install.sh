@@ -6,6 +6,10 @@
 
 echo "INSTALL DOCBAO ON UBUNTU/RASPBERRY PI"
 echo "__________________________________________________________________________"
+
+echo "IMPORTANT!!!"
+echo "REMEMBER TO RUN source SETTINGS.env BEFORE RUN THIS SCRIPT !!!"
+
 set -a 
 source SETTINGS.env
 set +a 
@@ -30,7 +34,7 @@ sleep 1
 cd $install_dir
 python3 -m venv docbao_env
 source $install_dir/docbao_env/bin/activate
-pip3 install -r requirements.txt
+$install_dir/docbao_env/pip3 install -r requirements.txt
 sleep 1
 echo "Step 3: install firefox and xvfb"
 echo "__________________________________________________________________________"
@@ -49,6 +53,6 @@ echo "Step 5: run test"
 echo "__________________________________________________________________________"
 sleep 1
 cd $install_dir/src/backend
-python3 test.py
+$install_dir/docbao_env/bin/python3 test.py
 sleep 1
 echo "Finish !"
