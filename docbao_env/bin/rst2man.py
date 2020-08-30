@@ -1,4 +1,4 @@
-#!/home/administrator/docbao_crawler/docbao_env/bin/python3
+#!/home/administrator/docbao/docbao_env/bin/python3
 
 # Author: 
 # Contact: grubert@users.sf.net

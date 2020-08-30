@@ -1,4 +1,5 @@
 led / optimized / DLL files
+docbao_env/*
 backend/input/*.php
 backend/input/config.yaml
 backend/export/*.json
