@@ -1,4 +1,3 @@
-from .utils import *
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from multiprocessing import Process
