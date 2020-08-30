@@ -6,7 +6,7 @@ PyYAML==5.1
 requests==2.18.4
 selenium==3.141.0
 underthesea==1.1.8
-urllib3==1.22
+urllib3==1.24.2
 XlsxWriter==1.1.1
 PyVirtualDisplay==0.2.1
 xvfbwrapper==0.2.9
