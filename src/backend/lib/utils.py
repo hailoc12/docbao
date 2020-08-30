@@ -3,7 +3,6 @@ import re
 import codecs
 from datetime import datetime
 import os
-import urllib.request
 from src.backend.lib.browser_crawler import BrowserCrawler
 import time
 import psutil
@@ -45,7 +44,7 @@ def print_exception():
     exec_info = sys.exc_info()
     traceback.print_exception(*exec_info)
 
-def trim_topic(topic, max_length):
+def trim_topic(topic, max_length=10):
     topic = html.unescape(topic)
     result = ""
     i = 0
@@ -290,22 +289,13 @@ def read_url_source(url, webconfig,_firefox_browser=None):
     try:
         html_source = None
         if use_browser == False:
-            req = urllib.request.Request(
-                url,
-                data=None,
-                headers=hdr)
-            f=None
             try:
-                f = urllib.request.urlopen(req, timeout=30)
+                response = requests.get(url, headers=hdr, timeout=30)
             except:
-                f=None
                 print_exception()
-                print("request timeout")
-            if f is None:
-                result = False
-            else:
-                result = True
-                html_source = f.read().decode('utf-8')
+                print("Request timeout")
+            result = response.status_code == 200
+            html_source = response.text
         else:
             print("use browser to open %s" % url)
             if _firefox_browser.get_browser() is not None:

@@ -9,13 +9,15 @@ echo "__________________________________________________________________________
 export install_dir=$DOCBAO_BASE_DIR
 cd $install_dir
 sleep 1
-echo "Step 1: Ensure python3, pip3 and curl are installed"
+echo "Step 1: Ensure python3, pip3, curl and php are installed"
 echo "__________________________________________________________________________"
 sleep 1
 sudo apt update
 sudo apt install python3
 sudo apt install python3-pip
 sudo apt install curl
+sudo apt install php7.2-cli
+sudo apt install php7.2-mbstring
 sleep 1
 echo "Step 2: activate docbao virtual environment & install libraries"
 echo "__________________________________________________________________________"

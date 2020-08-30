@@ -6,7 +6,6 @@ PyYAML==5.1
 requests==2.18.4
 selenium==3.141.0
 underthesea==1.1.8
-urllib3==1.22
 XlsxWriter==1.1.1
 PyVirtualDisplay==0.2.1
 xvfbwrapper==0.2.9
@@ -23,3 +22,4 @@ pytz==2019.2
 opencv-python-headless==4.1.1.26
 textdistance==4.1.4
 python-wordpress-xmlrpc==2.3
+python-crfsuite==0.9.7

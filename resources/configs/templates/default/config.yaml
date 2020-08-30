@@ -33,7 +33,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 02/06/2019 21:56
+    last_run: 30/08/2020 18:02
     contain: ''
     crawl_url: https://vnexpress.net
     output_html: false
@@ -65,7 +65,7 @@ crawling_list:
     url_pattern_re: https://vnexpress.net
     minimum_topic_length: 4
     tags: []
-    only_quality_post: true
+    only_quality_post: false
     browser_timeout: 60
     prevent_auto_redirect: false
     remove_me: false
@@ -100,7 +100,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 02/06/2019 21:56
+    last_run: 30/08/2020 18:02
     contain: ''
     crawl_url: https://dantri.com.vn
     output_html: false
@@ -132,7 +132,7 @@ crawling_list:
     url_pattern_re: https://dantri.com.vn
     minimum_topic_length: 4
     tags: []
-    only_quality_post: true
+    only_quality_post: false
     browser_timeout: 60
     prevent_auto_redirect: false
     remove_me: false
@@ -200,8 +200,9 @@ crawling_list:
     - //h2[@class='sapo']
     use_index_number: false
     url_pattern_re: https://vtv.vn
-    last_run: 22/07/2019 04:44
+    last_run: 30/08/2020 18:02
     remove_me: false
+    only_quality_post: false
 - VOV:
     crawl_url: https://vov.vn
     timezone: Asia/Ho_Chi_Minh
@@ -234,7 +235,7 @@ crawling_list:
     minimum_topic_length: 4
     avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/a1e35547-1fd4-4331-aea0-fd1bc355635b_small.jpg
     image_title_text_xpath: ''
-    last_run: 22/07/2019 04:02
+    last_run: 30/08/2020 18:02
     audio_title_text: ''
     crawl_type: newspaper
     display_browser: false
@@ -271,6 +272,7 @@ crawling_list:
     browser_profile: ''
     web_url: https://vov.vn
     remove_me: false
+    only_quality_post: false
 - Vietnamnet:
     date_place: detail_page
     remove_content_html: true
@@ -310,7 +312,7 @@ crawling_list:
     crawl_type: newspaper
     crawl_url: https://vietnamnet.vn
     audio_box_xpath: []
-    last_run: 22/07/2019 07:54
+    last_run: 30/08/2020 18:02
     timezone: Asia/Ho_Chi_Minh
     feature_image_xpath:
     - .//img/@src
@@ -336,7 +338,7 @@ crawling_list:
     avatar_xpath: ''
     topic_type: href
     remove_date_tag_html: true
-    only_quality_post: true
+    only_quality_post: false
     tags: []
     remove_me: false
 running_path: ~/docbao_crawler/

@@ -99,11 +99,10 @@ class BrowserCrawler:
 
         self._driver = webdriver.Firefox(firefox_options=options, firefox_profile=profile)
 
-        if os.environ['DOCBAO_RUN_ON_RASPBERRY']:
+        if os.environ['DOCBAO_RUN_ON_RASPBERRY']=='true':
             # Create a virtual screen to with Raspberry too
             self._display = Display(visible=0, size=(1024,768))
             self._display.start()
-            self._driver = webdriver.Firefox()
 
         self._driver.set_page_load_timeout(timeout)
         self._quited = False

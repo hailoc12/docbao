@@ -1,13 +1,16 @@
 
 # IMPORT LIB:
 import copy
-from .data import Article, ArticleManager
-from .config import ConfigManager
-from .keyword import KeywordManager
-from .elasticsearch_data import ElasticSearch_Client
-from .rabbitmq_client import RabbitMQ_Client
-from .utils import *
-from .wordpress import Wordpress
+from src.backend.lib.data import Article, ArticleManager
+from src.backend.lib.config import ConfigManager
+from src.backend.lib.keyword import KeywordManager
+from src.backend.lib.elasticsearch_data import ElasticSearch_Client
+from src.backend.lib.rabbitmq_client import RabbitMQ_Client
+from src.backend.lib.wordpress import Wordpress
+from src.backend.lib.browser_crawler import BrowserWrapper, BrowserCrawler
+from src.backend.lib.utils import get_independent_os_path, get_utc_now_date
+from src.backend.lib.utils import print_exception, get_max_crawler_can_be_run
+from src.backend.lib.utils import open_utf8_file_to_write, get_date_string
 
 #from backend.lib import *
 import multiprocessing
@@ -49,12 +52,15 @@ class Docbao_Crawler():
         self._export_to_elasticsearch = export_to_elasticsearch
         self._export_to_wordpress = export_to_wordpress
 
+        base_dir = os.environ['DOCBAO_BASE_DIR']
+
         # Create shared object
-        self._config_manager = ConfigManager(get_independent_os_path(['input', 'config.yaml']),
-                                            get_independent_os_path(['input', 'kols_list.txt']),
-                                            get_independent_os_path(['input', 'fb_list.txt'])) #config object
-        self._data_manager = ArticleManager(self._config_manager, get_independent_os_path(["data", "article.dat"]),get_independent_os_path(["data","blacklist.dat"]) ) #article database object
-        self._keyword_manager = KeywordManager(self._data_manager, self._config_manager, get_independent_os_path(["data", "keyword.dat"]), get_independent_os_path(["input", "collocation.txt"]), get_independent_os_path(["input", "keywords_to_remove.txt"]))    #keyword analyzer object
+        self._config_manager = ConfigManager(get_independent_os_path([base_dir, 'src', 'backend', 'input', 'config.yaml']),
+                                            get_independent_os_path([base_dir, 'src', 'backend', 'input', 'kols_list.txt']),
+                                            get_independent_os_path([base_dir, 'src', 'input', 'fb_list.txt'])) #config object
+
+        self._data_manager = ArticleManager(self._config_manager, get_independent_os_path([base_dir, 'src', 'backend', 'data', 'article.dat']),get_independent_os_path([base_dir, 'src', 'backend', "data","blacklist.dat"]) ) #article database object
+        self._keyword_manager = KeywordManager(self._data_manager, self._config_manager, get_independent_os_path([base_dir, 'src', 'backend', "data", "keyword.dat"]), get_independent_os_path([base_dir, 'src', 'backend', "input", "collocation.txt"]), get_independent_os_path(["input", "keywords_to_remove.txt"]))    #keyword analyzer object
 
     def load_data_from_file(self):
         # Load data from file
@@ -189,7 +195,7 @@ class Docbao_Crawler():
                         print("Crawler %s is crawling Kols post by using smcc service" % process_name)
                         data_manager.add_articles_from_facebook_by_smcc(process_name, webconfig)
 
-                    sleep(10)
+                    time.sleep(10)
 
                 else: # timeout or no more job left
                     if timeout_flag.value != 0:
@@ -391,7 +397,7 @@ class Docbao_Crawler():
                         #crawler.join()
                     running = False
 
-                sleep(10)
+                time.sleep(10)
 
             # join process to wait for all crawler to finish
             #for crawler in crawler_processes:
@@ -466,29 +472,26 @@ class Docbao_Crawler():
                 except:
                     print_exception()
 
-            # if self._export_to_wordpress:
-            #     trending_keywords = get_trending_keywords()
-            #     print("Trending keywords")
-            #     print(trending_keywords)
-            #     try:
-            #         # push to wordpress
-            #         wp = Wordpress()
-            #         for article in rb_articles:
-            #             if article.get_post_type() == 0: # newspaper post
-            #                 topic = article.get_topic().lower()
-            #                 trending = False
-            #                 if trending_keywords:
-            #                     for keyword in trending_keywords:
-            #                         if keyword in topic:
-            #                             trending = True
-            #                             break
+            if self._export_to_wordpress:
+                try:
+                    # push to wordpress
+                    wp = Wordpress()
+                    for article in rb_articles:
+                        if article.get_post_type() == 0: # newspaper post
+                            topic = article.get_topic().lower()
+                            # trending = False
+                            # if trending_keywords:
+                            #     for keyword in trending_keywords:
+                            #         if keyword in topic:
+                            #             trending = True
+                            #             break
 
-            #                 post_id = wp.add_new_article(article, trending)
-            #                 if post_id:
-            #                     article.set_wordpress_id(post_id)
-            #                 #sleep(15) # avoid being banned by wordpress host
-            #     except:
-            #         print_exception()
+                            post_id = wp.add_new_article(article, [])
+                            if post_id:
+                                article.set_wordpress_id(post_id)
+                            #sleep(15) # avoid being banned by wordpress host
+                except:
+                    print_exception()
 
 
             if self._export_to_elasticsearch:

@@ -1,4 +1,4 @@
-from .utils import *
+from src.backend.lib.utils import *
 import underthesea
 import nltk
 import yaml                   # text-based object serialization

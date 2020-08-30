@@ -2,6 +2,10 @@ from src.backend.lib.utils import print_exception, get_independent_os_path
 from src.backend.lib.utils import open_binary_file_to_read, open_binary_file_to_write
 from src.backend.lib.utils import open_utf8_file_to_read, open_utf8_file_to_write
 from src.backend.lib.utils import check_contain_filter, get_utc_now_date, get_fullurl
+from src.backend.lib.utils import read_url_source, remove_accents, remove_html
+from src.backend.lib.utils import get_tagstring_from_etree, parse_date_from_string, get_date_string
+from src.backend.lib.utils import trim_topic
+from src.backend.lib.utils import get_facebook_id_from_url
 
 from src.backend.lib.rabbitmq_client import RabbitMQ_Client
 #from .cdn import CDNManager
@@ -665,7 +669,7 @@ class ArticleManager:
             if result is not None:
                 if result != False:
                     (topic, detail_page_html_tree) = result
-                    print("Topic found: %s" % trim_string(topic))
+                    print("Topic found: %s" % trim_topic(topic, 10))
                     topic_word_list = topic.split()
                 else:
                     print("Ignore. Can't find topic. This link is not an article")

@@ -2,142 +2,139 @@ days_to_crawl: 14
 loop_interval_for_new_keyword_accepted: 2
 maximum_topic_display_length: 20
 crawling_list:
-- Vietnamnet:
-    date_place: detail_page
-    remove_content_html: true
-    prevent_auto_redirect: false
-    display_browser: false
-    get_detail_content: true
-    minimum_topic_length: 4
-    remove_content_html_xpaths:
-    - .//node()[@class='bold ArticleLead' or @class='article-relate']
-    - //div[@class='inner-article']
-    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/028b5766-50bc-4b5b-8c0b-e99ff05821c5_small.jpg
-    minimum_duration_between_crawls: 15
-    avatar_type: url
-    image_box_xpath:
-    - .//table[contains(@class, "image")]
-    sapo_xpath:
-    - //div[@class='bold ArticleLead']
-    - //div[@class='bold ArticleLead']
-    browser_profile: ''
-    maximum_url: 80
-    language: vietnamese
-    content_xpath:
-    - //div[@class='ArticleContent']
-    - //div[@class='ArticleContent']
-    browser_fast_load: true
-    use_browser: true
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    text_xpath:
-    - .//p[text()]
+- VnExpress:
     id_type: href
-    contain: ''
-    get_publish_date_as_crawl_date: false
-    ignore_topic_not_have_publish_date: true
-    video_box_xpath: []
-    crawl_type: newspaper
-    crawl_url: https://vietnamnet.vn
-    audio_box_xpath: []
-    last_run: 22/07/2019 07:54
+    browser_profile: ''
+    web_url: https://vnexpress.net
     timezone: Asia/Ho_Chi_Minh
-    feature_image_xpath:
-    - .//img/@src
-    - .//img/@src
-    image_title_xpath:
-    - ./tbody/tr[2]/td
-    use_index_number: false
-    date_xpath:
-    - //span[@class="ArticleDate"]
-    - //span[@class="ArticleDate"]
-    skip_repeat_topic: true
-    web_url: https://vietnamnet.vn
-    browser_timeout: 60
-    video_title_xpath: []
-    url_pattern_re: https://vietnamnet.vn
-    skip_checking_topic_length: false
-    output_html: false
-    audio_title_xpath: []
-    extract_xpath:
-    - ./text()
-    - ./@title
-    get_topic_from_link: true
-    avatar_xpath: ''
-    topic_type: href
-    remove_date_tag_html: true
-    only_quality_post: true
-    tags: []
-    remove_me: false
-- VOV:
-    crawl_url: https://vov.vn
-    timezone: Asia/Ho_Chi_Minh
-    browser_fast_load: true
-    contain: ''
-    date_place: detail_page
-    image_title_xpath:
-    - .//tr[2]/td//node()[text()]
-    - .//div[text()]
-    get_topic_from_link: true
-    video_title_text_xpath: ''
-    topic_type: href
-    audio_box_xpath: []
-    language: vietnamese
-    skip_checking_topic_length: false
     remove_date_tag_html: false
-    remove_content_html_xpaths:
-    - //node()[@class='sapo' or @class='relate-container' or contains(@class, 'VCSortableInPreviewMode')]
-    skip_repeat_topic: true
-    extract_xpath:
-    - ./text()
-    - ./@title
-    image_box_xpath:
-    - .//table[@class='contentimg']
-    - .//div[@class='item contentimg']
-    date_xpath:
-    - //node()[@class="article__meta"]
-    - //node()[@class="article__meta"]
     remove_content_html: true
-    minimum_topic_length: 4
-    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/a1e35547-1fd4-4331-aea0-fd1bc355635b_small.jpg
-    image_title_text_xpath: ''
-    last_run: 22/07/2019 04:02
-    audio_title_text: ''
-    crawl_type: newspaper
-    display_browser: false
-    maximum_url: 10
-    output_html: false
-    text_xpath:
-    - .//p[text()]
-    get_detail_content: true
-    use_browser: false
-    get_publish_date_as_crawl_date: false
-    avatar_type: url
-    image_xpath: ''
     use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
     feature_image_xpath:
     - .//img/@src
     - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
     topics_xpath:
     - //a[text()]
     - //a[@title]
-    content_xpath:
-    - //div[@class='text main-contents article__body']
-    - //div[@class='text main-contents article__body']
-    video_box_xpath: []
-    id_type: href
-    video_title_xpath: []
-    avatar_xpath: ''
-    ignore_topic_not_have_publish_date: true
-    audio_title_xpath: []
-    url_pattern_re: https://vov.vn
-    minimum_duration_between_crawls: -5
+    skip_checking_topic_length: false
+    display_browser: false
     sapo_xpath:
-    - //div[@class='article__sapo']
-    - //div[@class='article__sapo']
+    - //p[@class="description"]
+    - //p[@class="description"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 30/08/2020 18:37
+    contain: ''
+    crawl_url: https://vnexpress.net
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //span[@class="date"]
+    - //span[@class="date"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //*[@class="fck_detail "]
+    - //*[@class="fck_detail "]
+    text_xpath:
+    - ./p
+    - ./div/p
+    image_box_xpath:
+    - .//figure
+    image_title_xpath:
+    - ./figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://vnexpress.net
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- Dân trí:
+    id_type: href
     browser_profile: ''
-    web_url: https://vov.vn
+    web_url: https://dantri.com.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@class="dt-news__sapo"]
+    - //div[@class="dt-news__sapo"]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 30/08/2020 18:37
+    contain: ''
+    crawl_url: https://dantri.com.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //span[@class="dt-news__time"]
+    - //span[@class="dt-news__time"]
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class="dt-news__content"]
+    - //div[@class="dt-news__content"]
+    text_xpath:
+    - ./p
+    - ./div/p
+    image_box_xpath:
+    - .//figure
+    image_title_xpath:
+    - ./figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://dantri.com.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
     remove_me: false
 - VTV:
     crawl_type: newspaper
@@ -203,141 +200,146 @@ crawling_list:
     - //h2[@class='sapo']
     use_index_number: false
     url_pattern_re: https://vtv.vn
-    last_run: 22/07/2019 04:44
+    last_run: 30/08/2020 18:37
     remove_me: false
-- Dân trí:
-    id_type: href
-    browser_profile: ''
-    web_url: https://dantri.com.vn
+    only_quality_post: false
+- VOV:
+    crawl_url: https://vov.vn
     timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: false
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths: []
-    minimum_duration_between_crawls: 15
+    browser_fast_load: true
+    contain: ''
+    date_place: detail_page
+    image_title_xpath:
+    - .//tr[2]/td//node()[text()]
+    - .//div[text()]
+    get_topic_from_link: true
+    video_title_text_xpath: ''
+    topic_type: href
+    audio_box_xpath: []
     language: vietnamese
-    feature_image_xpath:
-    - .//img/@src
-    - .//img/@src
+    skip_checking_topic_length: false
+    remove_date_tag_html: false
+    remove_content_html_xpaths:
+    - //node()[@class='sapo' or @class='relate-container' or contains(@class, 'VCSortableInPreviewMode')]
+    skip_repeat_topic: true
     extract_xpath:
     - ./text()
     - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //div[@class="dt-news__sapo"]
-    - //div[@class="dt-news__sapo"]
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: false
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 02/06/2019 21:56
-    contain: ''
-    crawl_url: https://dantri.com.vn
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //span[@class="dt-news__time"]
-    - //span[@class="dt-news__time"]
-    topic_type: href
-    maximum_url: 50
-    get_detail_content: true
-    content_xpath:
-    - //div[@class="dt-news__content"]
-    - //div[@class="dt-news__content"]
-    text_xpath:
-    - ./p
-    - ./div/p
     image_box_xpath:
-    - .//figure
-    image_title_xpath:
-    - ./figcaption
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://dantri.com.vn
-    minimum_topic_length: 4
-    tags: []
-    only_quality_post: true
-    browser_timeout: 60
-    prevent_auto_redirect: false
-    remove_me: false
-- VnExpress:
-    id_type: href
-    browser_profile: ''
-    web_url: https://vnexpress.net
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: false
+    - .//table[@class='contentimg']
+    - .//div[@class='item contentimg']
+    date_xpath:
+    - //node()[@class="article__meta"]
+    - //node()[@class="article__meta"]
     remove_content_html: true
+    minimum_topic_length: 4
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/a1e35547-1fd4-4331-aea0-fd1bc355635b_small.jpg
+    image_title_text_xpath: ''
+    last_run: 30/08/2020 18:37
+    audio_title_text: ''
+    crawl_type: newspaper
+    display_browser: false
+    maximum_url: 10
+    output_html: false
+    text_xpath:
+    - .//p[text()]
+    get_detail_content: true
+    use_browser: false
+    get_publish_date_as_crawl_date: false
+    avatar_type: url
+    image_xpath: ''
     use_index_number: false
-    remove_content_html_xpaths: []
-    minimum_duration_between_crawls: 15
-    language: vietnamese
     feature_image_xpath:
     - .//img/@src
     - .//img/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
     topics_xpath:
     - //a[text()]
     - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //p[@class="description"]
-    - //p[@class="description"]
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: false
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 02/06/2019 21:56
-    contain: ''
-    crawl_url: https://vnexpress.net
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //span[@class="date"]
-    - //span[@class="date"]
-    topic_type: href
-    maximum_url: 50
-    get_detail_content: true
     content_xpath:
-    - //*[@class="fck_detail "]
-    - //*[@class="fck_detail "]
-    text_xpath:
-    - ./p
-    - ./div/p
-    image_box_xpath:
-    - .//figure
-    image_title_xpath:
-    - ./figcaption
+    - //div[@class='text main-contents article__body']
+    - //div[@class='text main-contents article__body']
     video_box_xpath: []
+    id_type: href
     video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
     avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://vnexpress.net
-    minimum_topic_length: 4
-    tags: []
-    only_quality_post: true
-    browser_timeout: 60
+    ignore_topic_not_have_publish_date: true
+    audio_title_xpath: []
+    url_pattern_re: https://vov.vn
+    minimum_duration_between_crawls: -5
+    sapo_xpath:
+    - //div[@class='article__sapo']
+    - //div[@class='article__sapo']
+    browser_profile: ''
+    web_url: https://vov.vn
+    remove_me: false
+    only_quality_post: false
+- Vietnamnet:
+    date_place: detail_page
+    remove_content_html: true
     prevent_auto_redirect: false
+    display_browser: false
+    get_detail_content: true
+    minimum_topic_length: 4
+    remove_content_html_xpaths:
+    - .//node()[@class='bold ArticleLead' or @class='article-relate']
+    - //div[@class='inner-article']
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/028b5766-50bc-4b5b-8c0b-e99ff05821c5_small.jpg
+    minimum_duration_between_crawls: 15
+    avatar_type: url
+    image_box_xpath:
+    - .//table[contains(@class, "image")]
+    sapo_xpath:
+    - //div[@class='bold ArticleLead']
+    - //div[@class='bold ArticleLead']
+    browser_profile: ''
+    maximum_url: 80
+    language: vietnamese
+    content_xpath:
+    - //div[@class='ArticleContent']
+    - //div[@class='ArticleContent']
+    browser_fast_load: true
+    use_browser: true
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    text_xpath:
+    - .//p[text()]
+    id_type: href
+    contain: ''
+    get_publish_date_as_crawl_date: false
+    ignore_topic_not_have_publish_date: true
+    video_box_xpath: []
+    crawl_type: newspaper
+    crawl_url: https://vietnamnet.vn
+    audio_box_xpath: []
+    last_run: 30/08/2020 18:37
+    timezone: Asia/Ho_Chi_Minh
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    image_title_xpath:
+    - ./tbody/tr[2]/td
+    use_index_number: false
+    date_xpath:
+    - //span[@class="ArticleDate"]
+    - //span[@class="ArticleDate"]
+    skip_repeat_topic: true
+    web_url: https://vietnamnet.vn
+    browser_timeout: 60
+    video_title_xpath: []
+    url_pattern_re: https://vietnamnet.vn
+    skip_checking_topic_length: false
+    output_html: false
+    audio_title_xpath: []
+    extract_xpath:
+    - ./text()
+    - ./@title
+    get_topic_from_link: true
+    avatar_xpath: ''
+    topic_type: href
+    remove_date_tag_html: true
+    only_quality_post: false
+    tags: []
     remove_me: false
 running_path: ~/docbao_crawler/
 number_of_trending_keywords: 25

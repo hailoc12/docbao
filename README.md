@@ -125,8 +125,29 @@ Trình cài đặt sẽ tự động chạy. Kết thúc quá trình cài đặt
 ### Hướng dẫn vận hành bộ quét  
 
 #### Thiết lập các thông số cấu hình cho bộ quét  
-##### Bước 1: thiết lập nguồn quét và tần suất quét   
-*Docbao Crawler* lưu toàn bộ thông tin mô tả về nguồn quét và tần suất quét trong file src/backend/input/config.yaml. Mặc định sau khi cài đặt, trong file config.yaml sẽ bao gồm 5 nguồn quét là các trang VnExpress, VOV, VTV, Dân Trí, Vietnamnet. Tần suất quét mặc định là 15 phút. 
+##### Bước 1: thiết lập nguồn quét   
+*Docbao Crawler* lưu toàn bộ thông tin mô tả về nguồn quét trong file src/backend/input/config.yaml. Mặc định sau khi cài đặt, trong file config.yaml sẽ bao gồm 5 nguồn quét là các trang VnExpress, VOV, VTV, Dân Trí, Vietnamnet. Tần suất quét mặc định là 15 phút. 
+
+Việc chỉnh sửa trực tiếp file config.yaml là không khuyến khích, để thay đổi thiết lập quét, *Docbao Crawler* cung cấp sẵn một tool quản lý cấu hình. Chạy tool này như sau 
+
+~~~
+bash tools/config_manager.sh  
+
+Sau đó, vào mục "2.Manager program settings/Edit Crawl list" để thêm/bớt nguồn quét 
+~~~  
+
+(đang phát triển tài liệu hướng dẫn sử dụng tool config_manager)  
+
+##### Bước 2: thiết lập tần suất quét  
+
+###### Chạy quét thử chu kỳ đầu tiên để bảo đảm bộ quét hoạt động đúng  
+Từ thư mục gốc, các bạn chạy lệnh sau để khởi động chu trình quét  
+
+~~~
+bash scripts/crawl.sh
+~~~  
+
+*Docbao Crawler* sẽ bắt đầu quét tin tức từ các nguồn được cấu hình trong file src/backend/input/config.yaml (mặc định gồm VTV, VOV, Dân Trí, Vnexpress, Vietnamnet) 
 
  
 ### Lịch sử phát triển  
