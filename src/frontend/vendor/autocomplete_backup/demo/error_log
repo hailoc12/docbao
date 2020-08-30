@@ -1,0 +1,14 @@
+[13-Jan-2019 21:07:24 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/system_m.php on line 1
+[13-Jan-2019 21:07:24 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/system_m.php on line 1
+[13-Jan-2019 21:07:24 UTC] PHP Notice:  Undefined variable: mode in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/system_m.php on line 1
+[13-Jan-2019 21:07:24 UTC] PHP Notice:  Undefined index: send_email in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/system_m.php on line 1
+[13-Jan-2019 21:07:34 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:07:45 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:12:51 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:13:00 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:17:44 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:17:45 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:22:34 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:22:35 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:27:25 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1
+[13-Jan-2019 21:27:33 UTC] PHP Warning:  preg_replace(): The /e modifier is no longer supported, use preg_replace_callback instead in /home/tudongh1/haiphong.theodoibaochi.com/vendor/autocomplete/demo/engine_functions.php on line 1

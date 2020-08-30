@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-6">
+                <table class="table table-bordered">
+                    <tr>
+                        <td></td>
+                        <td ng-repeat="label in labels">{{ label }}</td>
+                    </tr>
+                    <tr ng-repeat="row in score">
+                        <td>{{ row["label"] }}</td>
+                        <td ng-repeat="item in row['scores'] track by $index"
+                            style="cursor:pointer"
+                            class="row-item"
+                            ng-class="{
+                'n-high': item > 0.7 && $index > 4,
+                'n-low': item < 0.3 && $index > 4,
+                'focus': isFocusItem(row, $index)
+              }"
+                            ng-click="toggleItem(row, $index)">
+                            {{ item }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-xs-6">
+                {{ filter(text).length }} text
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        ng-repeat="t in filter(text) track by $index">
+                        {{ t.content }}
+                        <br/>
+                        Expected:
+                        <span class="label label-success"
+                              style="margin-right:2px;"
+                              ng-repeat="item in t['expected'] track by $index">
+            {{ item }}
+          </span>
+                        <br/>
+                        Actual: <span class="label label-warning"
+                                      style="margin-right:2px;"
+                                      ng-repeat="item in t['actual'] track by $index">
+            {{ item }}
+          </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

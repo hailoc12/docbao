@@ -1,0 +1,69 @@
+- Chính Phủ:
+    get_publish_date_as_crawl_date: false
+    contain: ''
+    minimum_topic_length: 4
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    image_title_xpath:
+    - ./tbody/tr[2]/td
+    content_xpath:
+    - //node()[@class="article-body cmscontents"]
+    - //node()[@class="article-body cmscontents"]
+    minimum_duration_between_crawls: 15
+    skip_checking_topic_length: false
+    extract_xpath:
+    - ./text()
+    - ./@title
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    use_browser: false
+    remove_date_tag_html: false
+    maximum_url: 30
+    url_pattern_re: http://baodientu.chinhphu.vn
+    avatar_xpath: ''
+    web_url: http://baodientu.chinhphu.vn
+    ignore_topic_not_have_publish_date: true
+    audio_title_xpath: []
+    browser_fast_load: true
+    date_xpath:
+    - //node()[@class="article-header"]/p
+    - //node()[@class="article-header"]/p
+    timezone: Asia/Ho_Chi_Minh
+    skip_repeat_topic: true
+    audio_box_xpath: []
+    last_run: 02/06/2019 21:56
+    display_browser: false
+    sapo_xpath:
+    - //node()[@class="summary"]
+    - //node()[@class="summary"]
+    browser_profile: ''
+    browser_timeout: 60
+    avatar_type: url
+    get_topic_from_link: true
+    image_box_xpath:
+    - .//table
+    remove_content_html: true
+    topic_type: href
+    remove_content_html_xpaths:
+    - //node()[@class="summary"]
+    - //node()[@class="inline-related"]
+    - //node()[@class="sharing_tool atbottom"]
+    - //node()[@class="keywords"]
+    get_detail_content: true
+    video_title_xpath: []
+    crawl_type: newspaper
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/e73260d6-6715-40f9-bec2-ac1ed661d6fd_small.jpg
+    video_box_xpath: []
+    prevent_auto_redirect: false
+    date_place: detail_page
+    text_xpath:
+    - ./*
+    id_type: href
+    use_index_number: false
+    crawl_url: http://baodientu.chinhphu.vn
+    output_html: false
+    only_quality_post: true
+    tags: []

@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: languageflow
+Version: 1.1.7a3
+Summary: Useful stuffs for NLP experiments
+Home-page: https://github.com/undertheseanlp/languageflow
+Author: Vu Anh
+Author-email: anhv.ict91@gmail.com
+License: MIT license
+Keywords: languageflow
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+
+============
+LanguageFlow
+============
+
+.. image:: https://img.shields.io/pypi/v/languageflow.svg
+        :target: https://pypi.python.org/pypi/languageflow
+
+.. image:: https://img.shields.io/pypi/pyversions/languageflow.svg
+        :target: https://pypi.python.org/pypi/languageflow
+
+.. image:: https://img.shields.io/pypi/l/languageflow.svg
+        :target: https://pypi.python.org/pypi/languageflow
+
+.. image:: https://img.shields.io/travis/undertheseanlp/languageflow.svg
+        :target: https://travis-ci.org/undertheseanlp/languageflow
+
+.. image:: https://readthedocs.org/projects/languageflow/badge/?version=latest
+        :target: http://languageflow.readthedocs.io/en/latest/
+        :alt: Documentation Status
+
+Data loaders and abstractions for text and NLP
+
+Requirements
+------------
+
+Dependencies:
+
+* future
+* tox
+* joblib
+* pandas
+* numpy
+* scipy
+* python-crfsuite
+* scikit-learn==0.19.0
+* fasttext==0.8.3
+* xgboost
+
+Install dependencies
+
+.. code-block:: bash
+
+    $ pip install joblib future numpy scipy pandas
+    $ pip install scikit-learn==0.19.0
+    $ pip install python-crfsuite==0.9.5
+    $ pip install Cython
+    $ pip install -U fasttext --no-cache-dir --no-deps --force-reinstall
+    $ pip install xgboost
+
+
+Installation
+------------
+
+
+Stable version
+
+.. code-block:: bash
+
+    $ pip install https://github.com/undertheseanlp/languageflow/archive/master.zip
+
+Develop version
+
+.. code-block:: bash
+
+    $ pip install https://github.com/undertheseanlp/languageflow/archive/develop.zip
+
+
+=======
+History
+=======
+
+1.1.7-alpha (2018-04-10)
+------------------------
+
+* Fix dependencies hell
+
+
+1.1.6 (2017-12-26)
+------------------
+
+* Add data module to handle data downloading and data preprocessing
+* Add many new models: SGDClassifier, XGBoostClassier, FastTextClassifier, CRF
+* Add new feature: LanguageBoard
+* Automatic continuous integration with travis-ci
+* Build docs with readthedocs.org
+
+
+1.1.5 (2017-12-11)
+------------------
+
+* Refactor project to integrate with underthesea experiment
+
+0.1.0 (2017-09-18)
+------------------
+
+* First release on PyPI.
+
+
+

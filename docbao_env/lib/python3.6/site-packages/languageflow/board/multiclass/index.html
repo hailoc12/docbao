@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>LanguageBoard</title>
+    <style>
+        .navbar-inverse {
+            background-color: #E91E63;
+            border: solid 0px black;
+            border-radius: 0px;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: white;
+        }
+    </style>
+</head>
+<body ng-controller="Controller">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">LanguageBoard</a>
+        </div>
+    </div>
+</nav>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-6">
+                <table class="table table-bordered">
+                    <tr>
+                        <td></td>
+                        <td ng-repeat="label in labels">{{ label }}</td>
+                    </tr>
+                    <tr ng-repeat="row in score">
+                        <td>{{ row["label"] }}</td>
+                        <td ng-repeat="item in row['scores'] track by $index"
+                            style="cursor:pointer"
+                            class="row-item"
+                            ng-class="{
+                'n-high': item > 0.7 && $index > 4,
+                'n-low': item < 0.3 && $index > 4,
+                'focus': isFocusItem(row, $index)
+              }"
+                            ng-click="toggleItem(row, $index)">
+                            {{ item }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-xs-6">
+                {{ filter(text).length }} text
+                <ul class="list-group">
+
+                    <li class="list-group-item"
+                        ng-repeat="t in filter(text) track by $index">
+                        {{ t.content }}
+                        <br/>
+                        Expected: <span class="label label-success"
+                                        style="margin-right:2px;">
+            {{ t['expected'] }}
+          </span>
+                        <br/>
+                        Actual: <span class="label label-warning"
+                                      style="margin-right:2px;">
+            {{ t['actual'] }}
+          </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.1.1/sprintf.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+<script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<style>
+    .n-high {
+        background-color: green
+    }
+
+    .row-item:hover {
+        background-color: grey;
+    }
+
+    .focus {
+        background-color: grey;
+    }
+
+    .n-low {
+        background-color: red
+    }
+</style>
+<script>
+    window.app = angular.module("myApp", []);
+    window.app.controller('Controller', function ($scope, $http) {
+        $scope.labels = ["TP", "TN", "FP", "FN", "accuracy", "precision", "recall", "f1"];
+        $scope.filterLabel = "";
+        $scope.filterExpectedClass = true;
+        $scope.filterActualClass = true;
+        $scope.toggleItem = function (row, index) {
+            $scope.filterIndex = index;
+            $scope.filterLabel = row["label"];
+            if (index == 0) {
+                $scope.filterActualClass = true;
+                $scope.filterExpectedClass = true;
+            }
+            if (index == 1) {
+                $scope.filterActualClass = false;
+                $scope.filterExpectedClass = false;
+            }
+            if (index == 2) {
+                $scope.filterActualClass = true;
+                $scope.filterExpectedClass = false;
+            }
+            if (index == 3) {
+                $scope.filterActualClass = false;
+                $scope.filterExpectedClass = true;
+            }
+//            $scope.$apply();
+        };
+
+        $scope.isFocusItem = function (row, index) {
+            return $scope.filterIndex == index && $scope.filterLabel == row["label"];
+        };
+        $scope.filter = function (text) {
+            return _.filter(text, function (item) {
+                var expectedClass = item["expected"] == $scope.filterLabel;
+                var actualClass = item["actual"] == $scope.filterLabel;
+                return expectedClass == $scope.filterExpectedClass && actualClass == $scope.filterActualClass;
+            });
+        };
+        $http.get("result.json")
+            .then(function (result) {
+                var data = result["data"];
+                var text = [];
+                for (var i = 0; i < data["X_test"].length; i++) {
+                    text.push({
+                        "content": data["X_test"][i],
+                        "expected": data["y_test"][i],
+                        "actual": data["y_pred"][i]
+
+                    })
+                }
+                $scope.text = text;
+                $scope.score = _.map(data["score"], function (v, i) {
+                    return {
+                        "label": i,
+                        "scores": _.chain(v).map(function (value, name) {
+                            return {
+                                "name": name,
+                                "value": value
+                            }
+                        }).sortBy(function (item) {
+                            return $scope.labels.indexOf(item["name"])
+                        }).map(function (item) {
+                            return item["value"];
+                        }).value()
+                    }
+                });
+                $scope.score = _.sortBy($scope.score, function (item) {
+                    return item.label;
+                });
+                console.log($scope.score);
+            });
+    });
+</script>
+</body>
+</html>

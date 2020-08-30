@@ -1,0 +1,72 @@
+- Nhân Dân:
+    remove_date_tag_html: false
+    crawl_type: newspaper
+    ignore_topic_not_have_publish_date: true
+    remove_content_html: true
+    extract_xpath:
+    - ./text()
+    - ./@title
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/f43fa8b8-b0a0-46d2-865c-8ff4e59e4cbc_small.jpg
+    minimum_topic_length: 4
+    get_topic_from_link: true
+    image_box_xpath:
+    - ./div[@class="item-content"]/p[contains(@style,"center")][descendant::img]
+    - ./div[@class='media content-box mgb-0']
+    content_xpath:
+    - //div[@class="item-container"]
+    - //div[@class="item-container"]
+    use_index_number: false
+    skip_repeat_topic: true
+    sapo_xpath:
+    - //div[@class="sapo"]/p/text()
+    - //div[@class="sapo"]/p/text()
+    maximum_url: 30
+    language: vietnamese
+    image_title_xpath:
+    - .//node()[contains(@class,"image-caption")]
+    - ./following-sibling::p[contains(@style,"center")]/em
+    browser_profile: ''
+    topic_type: href
+    audio_box_xpath: []
+    audio_title_xpath: []
+    get_publish_date_as_crawl_date: false
+    crawl_url: https://nhandan.com.vn
+    prevent_auto_redirect: false
+    minimum_duration_between_crawls: 15
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    avatar_type: url
+    video_title_xpath: []
+    browser_timeout: 60
+    display_browser: false
+    date_place: detail_page
+    web_url: https://nhandan.com.vn
+    contain: ''
+    skip_checking_topic_length: false
+    output_html: false
+    avatar_xpath: ''
+    timezone: Asia/Ho_Chi_Minh
+    id_type: href
+    url_pattern_re: https://nhandan.com.vn
+    date_xpath:
+    - //h5[@class="date-created"]
+    - //h5[@class="date-created"]
+    last_run: 02/06/2019 21:56
+    remove_content_html_xpaths:
+    - ./h3
+    - ./h5
+    - ./div[@class="sapo"]
+    - ./div[@class="social-box text-right"]
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    use_browser: false
+    browser_fast_load: true
+    get_detail_content: true
+    text_xpath:
+    - ./div[@class="item-content"]//p[not(contains(@style,"center"))]
+    - ./div[@class="item-content"]//p/strong/em
+    - ./div[@class="item-content"]//table/tbody/tr/td
+    - ./*[contains(@class,"author")]
+    video_box_xpath: []

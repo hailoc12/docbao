@@ -1,0 +1,65 @@
+- VTV:
+    crawl_type: newspaper
+    video_box_xpath: []
+    remove_date_tag_html: false
+    get_topic_from_link: true
+    remove_content_html: true
+    remove_content_html_xpaths:
+    - //node()[@class='title_detail' or @class='author' or @class='facebook_bt fbLikeWrap
+      mgr5' or @class='fb-like fb_iframe_widget' or @class='linkhay_bt' or @class='mail_bt'
+      or @class='tinlienquan clearfix' or @class='clearfix chiase bottom-social' or
+      @class='sapo' or @class='news_keyword']
+    get_publish_date_as_crawl_date: false
+    topic_type: href
+    ignore_topic_not_have_publish_date: true
+    content_xpath:
+    - //div[@class='noidung']
+    - //div[@class='noidung']
+    use_browser: false
+    date_place: detail_page
+    get_detail_content: true
+    avatar_type: url
+    image_box_xpath:
+    - .//div[@type='Photo']
+    text_xpath:
+    - .//p[text()]
+    video_title_xpath: []
+    display_browser: false
+    output_html: false
+    date_xpath:
+    - //node()[@class="time"]
+    - //node()[@class="time"]
+    avatar_url: http://ainewsobj.6112cf5e.viettel-cdn.vn/bangtin/4e14b9e5-6963-44b7-9d75-664efe086430_small.jpg
+    audio_box_xpath: []
+    language: vietnamese
+    audio_title_xpath: []
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    browser_fast_load: true
+    browser_profile: ''
+    skip_repeat_topic: true
+    minimum_topic_length: 4
+    skip_checking_topic_length: false
+    timezone: Asia/Ho_Chi_Minh
+    maximum_url: 10
+    contain: ''
+    id_type: href
+    image_title_xpath:
+    - .//div[@class='PhotoCMS_Caption']
+    extract_xpath:
+    - ./text()
+    - ./@title
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    minimum_duration_between_crawls: 15
+    crawl_url: https://vtv.vn
+    web_url: https://vtv.vn
+    avatar_xpath: ''
+    sapo_xpath:
+    - //h2[@class='sapo']
+    - //h2[@class='sapo']
+    use_index_number: false
+    url_pattern_re: https://vtv.vn
+    last_run: 22/07/2019 04:44
