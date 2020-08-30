@@ -15,6 +15,7 @@ from src.backend.lib.utils import get_independent_os_path, open_utf8_file_to_rea
 HOST = os.environ['DOCBAO_RABBITMQ_HOST']
 USERNAME = os.environ['DOCBAO_RABBITMQ_USERNAME']
 PASSWORD = os.environ['DOCBAO_RABBITMQ_PASSWORD']
+QUEUE = os.encoding['DOCBAO_RABBITMQ_QUEUE']
 
 # Represent a post
 class Post():
@@ -127,7 +128,7 @@ class RabbitMQ_Client():
         connection = self._connection
 
         # get queues
-        newspaper_queue = os.environ['DOCBAO_RABBITMQ_QUEUE']
+        newspaper_queue = QUEUE
         kol_queue = 'kol_news'
 
         channel = connection.channel()
