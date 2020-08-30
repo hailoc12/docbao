@@ -15,7 +15,7 @@ from src.backend.lib.utils import get_independent_os_path, open_utf8_file_to_rea
 HOST = os.environ['DOCBAO_RABBITMQ_HOST']
 USERNAME = os.environ['DOCBAO_RABBITMQ_USERNAME']
 PASSWORD = os.environ['DOCBAO_RABBITMQ_PASSWORD']
-QUEUE = os.encoding['DOCBAO_RABBITMQ_QUEUE']
+QUEUE = os.environ['DOCBAO_RABBITMQ_QUEUE']
 
 # Represent a post
 class Post():
