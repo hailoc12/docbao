@@ -403,7 +403,7 @@ def remove_html(html_string, seperator='\n'):
 
 def get_tagstring_from_etree(html_tree):
     #tagstring = str(etree.tostring(html_tree, encoding='utf-8'), encoding='utf-8')
-    if html_tree is etree._ElementUnicodeResult:
+    if type(html_tree) is etree._ElementUnicodeResult:
         tagstring = str(html_tree)
     else:
         tagstring = etree.tostring(html_tree, encoding='unicode')
