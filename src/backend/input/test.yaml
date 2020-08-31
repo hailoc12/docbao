@@ -1,4 +1,4 @@
-days_to_crawl: 14 
+days_to_crawl: 100
 loop_interval_for_new_keyword_accepted: 2
 maximum_topic_display_length: 20
 crawling_list: []
