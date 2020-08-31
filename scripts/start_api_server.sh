@@ -1,3 +1,4 @@
+#!/bin/bash -l
 export localdir="bangtin_api"
 export port=8080
 cd ~/$localdir/backend

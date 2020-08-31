@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 set -a
 source SETTINGS.env
 set +a

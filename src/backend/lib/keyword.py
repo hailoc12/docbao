@@ -802,10 +802,12 @@ class KeywordManager:
 
             for index in range(0, len(fast_growing_list)):
                 keyword = fast_growing_list[index]['keyword']
-                article = self._data_manager.get_latest_article_contain_keyword(keyword)[0]
-                if article.get_id() not in latest_article_set:
-                    latest_article_set.add(article.get_id())
-                    compact_list.append(fast_growing_list[index])
+                articles = self._data_manager.get_latest_article_contain_keyword(keyword)
+                if articles:
+                    article = articles[0]
+                    if article.get_id() not in latest_article_set:
+                        latest_article_set.add(article.get_id())
+                        compact_list.append(fast_growing_list[index])
 
             self._fast_growing_list[str(trending_duration)] = compact_list
 
