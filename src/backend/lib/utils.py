@@ -270,7 +270,7 @@ def read_url_source(url, webconfig,_firefox_browser=None):
     hdr = {
         'user-agent': 'mozilla/5.0 (x11; linux x86_64) applewebkit/537.11 (khtml, like gecko) chrome/23.0.1271.64 safari/537.11',
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'accept-charset': 'iso-8859-1,utf-8;q=0.7,*;q=0.3',
+        'accept-charset': 'utf-8;q=0.7,*;q=0.3',
         'accept-encoding': 'none',
         'accept-language': 'en-us,en;q=0.8',
         'connection': 'keep-alive'}
@@ -295,7 +295,10 @@ def read_url_source(url, webconfig,_firefox_browser=None):
                 print_exception()
                 print("Request timeout")
             result = response.status_code == 200
-            html_source = response.text
+            if response.encoding=='ISO-8859-1':
+                html_source = response.content.decode('utf-8')
+            else:
+                html_source = response.text
         else:
             print("use browser to open %s" % url)
             if _firefox_browser.get_browser() is not None:
