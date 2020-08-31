@@ -39,7 +39,7 @@ class WebConfig:
             return False
 
     def get_only_quality_post(self):
-        return self.get_config('only_quality_post', True)
+        return self.get_config('only_quality_post', False)
 
     def get_text_xpath(self):
         return self.get_config('text_xpath', './/node()[text()]')
