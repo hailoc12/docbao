@@ -822,11 +822,15 @@ class ArticleManager:
                                         if box not in image_boxes:
                                             image_boxes.append(box)
 
-                                    for box in boxes:
-                                        # get image_title from image box
-                                        image_title_xpath = image_title_xpaths[image_index]
-                                        image_title = box.xpath(image_title_xpath)[0]
-                                        image_titles.append(image_title)
+                                    try:
+                                        for box in boxes:
+                                            # get image_title from image box
+                                            image_title_xpath = image_title_xpaths[image_index]
+                                            image_title = box.xpath(image_title_xpath)[0]
+                                            image_titles.append(image_title)
+                                    except:
+                                        print("Can't extract title box from image box")
+                                        pass
 
                                 except:
                                     print_exception()
@@ -892,8 +896,17 @@ class ArticleManager:
 
                                 elif element in image_boxes: # catch image box
                                     # get image_url
-                                    image_url = element.xpath('.//img')[0].xpath('./@src')[0]
-                                    image_url = get_fullurl(webconfig.get_weburl(), str(image_url))
+                                    try:
+                                        image_list = element.xpath('.//img')
+                                        if image_list: # image box is real
+                                            image_url = element.xpath('.//img')[0].xpath('./@src')[0]
+                                            image_url = get_fullurl(webconfig.get_weburl(), str(image_url))
+                                        else: # image box is image
+                                            image_url = element.xpath('./@src')[0]
+                                            image_url = get_fullurl(webconfig.get_weburl(), str(image_url))
+                                    except:
+                                        image_url = ''
+                                        print("Can't extract image url")
 
 
                                     image_title = ''
