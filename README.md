@@ -177,8 +177,8 @@ crontab -e
 
 Thêm vào hai dòng dưới đây 
 ~~~
-*/15 * * * * bash ~/docbao/scripts/crawl.sh
-*/60 * * * * bash ~/docbao/scripts/clean_temp.sh
+*/15 * * * * cd ~/docbao/ && bash scripts/crawl.sh
+*/60 * * * * cd ~/docbao/ && bash scripts/clean_temp.sh
 ~~~
 
 Thiết lập ở trên là mỗi 15 phút, bộ quét sẽ tiến hành quét và update dữ liệu một lần. Bạn có thể thay đổi thành mốc thời gian khác, nhưng nên để > 10 phút để bộ quét chạy ổn định. 
