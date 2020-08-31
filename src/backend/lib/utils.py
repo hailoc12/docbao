@@ -403,7 +403,10 @@ def remove_html(html_string, seperator='\n'):
 
 def get_tagstring_from_etree(html_tree):
     #tagstring = str(etree.tostring(html_tree, encoding='utf-8'), encoding='utf-8')
-    tagstring = etree.tostring(html_tree, encoding='unicode')
+    if html_tree is lxml.etree._ElementUnicodeResult:
+        tagstring = str(html_tree)
+    else:
+        tagstring = etree.tostring(html_tree, encoding='unicode')
     #tagstring = str(etree.tostring(html_tree, encoding='utf-8'))
     # turn multispace to one space. Important for date recogination
     #print(tagstring)
