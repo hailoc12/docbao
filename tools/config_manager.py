@@ -222,6 +222,8 @@ def process_create_blank_newspaper():
         date_xpath = '//node()[@class="' + css + '"]'
     elif date_extract_type == 2:
         date_xpath = input("Please enter single xpath that extract html tag containing publish date: ")
+    else: # Autofind. Not implement yet
+        date_xpath = ''
 
     xpath_count = len(webconfig.get_topics_xpath())
 
@@ -319,7 +321,8 @@ def process_create_blank_newspaper():
 
     # use the same date_xpath for every topic_xpath
     for i in range(0, xpath_count):
-        date_xpath_list.append(date_xpath)
+        if date_xpath:
+            date_xpath_list.append(date_xpath)
     webconfig.set_config('date_xpath', date_xpath_list) 
     # topic type
     choice = display_yes_no_dialog("Do you want to run test with default config (y/n) ?")
