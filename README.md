@@ -183,6 +183,15 @@ Thêm vào hai dòng dưới đây
 
 Thiết lập ở trên là mỗi 15 phút, bộ quét sẽ tiến hành quét và update dữ liệu một lần. Bạn có thể thay đổi thành mốc thời gian khác, nhưng nên để > 10 phút để bộ quét chạy ổn định. 
  
+### Một số thao tác khác 
+
+#### 1. Reset dữ liệu  
+Khi bạn muốn quét lại các trang từ đầu và không lưu bất kì dữ liệu gì thì có thể sử dụng script reset_data.sh mà *Docbao Crawler* cung cấp. Sử dụng script này bằng lệnh sau 
+
+~~~
+bash scripts/reset_data.sh
+~~~
+
 ### Lịch sử phát triển  
 
 Dự án *"Đọc báo"* (hay *Theo Dõi Báo Chí*) được phát triển từ đầu năm 2018 khi tác giả vẫn đang là một phóng viên. Ý tưởng ban đầu của dự án là gom tin tức từ nhiều nguồn lại với nhau, hiển thị trên một giao diện đơn giản để theo dõi tin tức nhanh chóng hơn (chính vì vậy mà dự án có tên là *"Đọc báo"*). Những phiên bản đầu tiên của dự án này hoạt động đơn luồng, chạy trên Raspberry Pi B và quét khoảng 30 đầu báo.  
