@@ -192,6 +192,13 @@ Khi bạn muốn quét lại các trang từ đầu và không lưu bất kì d�
 bash scripts/reset_data.sh
 ~~~
 
+#### 2. Fix lỗi UnicodeError khi chạy Docbao Crawler trên một số server  
+Lỗi này xuất hiện do server chưa thiết lập locale. Để fix chạy lệnh sau  
+
+~~~
+bash scripts/run_fix_env_encoding.sh  
+~~~
+
 ### Lịch sử phát triển  
 
 Dự án *"Đọc báo"* (hay *Theo Dõi Báo Chí*) được phát triển từ đầu năm 2018 khi tác giả vẫn đang là một phóng viên. Ý tưởng ban đầu của dự án là gom tin tức từ nhiều nguồn lại với nhau, hiển thị trên một giao diện đơn giản để theo dõi tin tức nhanh chóng hơn (chính vì vậy mà dự án có tên là *"Đọc báo"*). Những phiên bản đầu tiên của dự án này hoạt động đơn luồng, chạy trên Raspberry Pi B và quét khoảng 30 đầu báo.  
@@ -209,4 +216,3 @@ Vì tác giả đã học hỏi được rất nhiều về lập trình thông 
 1. Đặng Hải Lộc (hailoc12)
 Email: danghailochp@gmail.com  
 Facebook: https://www.facebook.com/danghailochp
-a
