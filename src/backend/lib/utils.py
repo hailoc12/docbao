@@ -100,9 +100,11 @@ def parse_date_from_string(tagstring, webconfig):
         "(\d{1,2}:\d{1,2} \| \d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})",
         "(\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})",
         "(\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2} \d{1,2}:\d{1,2})",
+        "(\d{2,4}[\/\-\.]\d{1,2}[\/\-\.]\d{1,2})",
         "(ngày \d{1,2} tháng \d{1,2} \, \d{2,4})",
         "(NGÀY \d{1,2} THÁNG \d{1,2}, \d{2,4} \| \d{1,2}:\d{1,2})",
         "(Ngày \d{1,2} Tháng \d{1,2}, \d{2,4} \| \d{1,2}:\d{1,2})",
+        "(Ngày \d{1,2} tháng \d{1,2} năm \d{2,4})",
         "(\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4} \d{1,2}:\d{1,2})"]
 
     date_patterns = [
@@ -124,9 +126,11 @@ def parse_date_from_string(tagstring, webconfig):
         "%H:%M | %d/%m/%Y",
         "%d/%m/%Y",
         "%Y-%m-%d %H:%M",
+        "%Y-%m-%d",
         "ngày %d tháng %m , %Y",
         "NGÀY %d THÁNG %m, %Y | %H:%M",
         "Ngày %d Tháng %m, %Y | %H:%M",
+        "Ngày %d tháng %m năm %Y",
         "%d-%m-%Y %H:%M"]
 
     count = len(date_res)
