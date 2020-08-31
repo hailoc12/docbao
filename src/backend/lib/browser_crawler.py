@@ -93,7 +93,8 @@ class BrowserCrawler:
             # Disable Flash
             profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', 'false')
             # Adblock Extension
-            profile.exp = "input/adblock.xpi"
+            base_dir = os.environ['DOCBAO_BASE_DIR']
+            profile.exp = get_independent_os_path([base_dir, 'src', 'backend', 'input', "adblock.xpi"])
             profile.add_extension(extension=profile.exp)
 
         self._driver = webdriver.Firefox(firefox_options=options, firefox_profile=profile)
