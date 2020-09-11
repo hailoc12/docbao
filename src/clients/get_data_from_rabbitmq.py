@@ -14,14 +14,15 @@ Some task must be done to make this works:
 3. Run this file with Python
 """
 
-from time import sleep
 from datetime import datetime, timedelta
-import pika
-import sys
 import jsonpickle
-import requests
-import time
+import pika
+import jsonpickle
 from random import randint
+import sys
+import time
+from time import sleep
+import traceback
 
 # RabbitMQ host
 HOST = ''
@@ -51,6 +52,21 @@ class Post():
 
         # TODO: write code to push Post to your favorite database here
         print(f'Pushing {self.get_title()} to database')
+
+        print("Post source: %s" % self.get_author_fullname())
+        print("Post url: %s" % self.get_url())
+        print("Post publish_date: %s" % self.get_publish_date())
+        print("Post crawl date: %s" % self.get_create_date())
+
+        print("Post content")
+        for paragraph in self.get_content():
+            if paragraph['type'] == 'text':
+                print(paragraph['content'])
+            elif paragraph['type'] == 'image':
+                print(f"[{paragraph['content']}]({paragraph['link']})")
+            else:
+                pass
+
         pass
 
     has_error = False
@@ -139,7 +155,7 @@ class Post():
         else:
             return None
 
-     def validate(self):
+    def validate(self):
         if self.has_error: #parse json unsuccesfully
             return False
 
@@ -274,7 +290,7 @@ def get_data_from_rabbitmq():
     # Get  posts from queue 
 
     channel = connection.channel()
-    queue_state = channel.queue_declare(queue_name, durable=True, passive=True)
+    queue_state = channel.queue_declare(queue, durable=True, passive=True)
     channel.queue_bind(exchange=exchange, queue=queue)
 
     queue_length = queue_state.method.message_count
@@ -284,7 +300,7 @@ def get_data_from_rabbitmq():
     count_post = 0
     posts = []
     while (queue_length >= 1):
-        method, properties, body = channel.basic_get(queue_name, auto_ack=True)
+        method, properties, body = channel.basic_get(queue, auto_ack=True)
 
         if body is not None:
             posts.append(body)
@@ -299,17 +315,20 @@ def get_data_from_rabbitmq():
         if post.validate():         # post is in right format
             post.push_to_database() # push article to database
 
-            print("Post title: %s" % post.get_title())
-
-            upload_post += 1
             print()
 
     # Close
     connection.close()
 
 
+def print_exception():
+    # Print error message in try..exception
+    exec_info = sys.exc_info()
+    traceback.print_exception(*exec_info)
+
 # MAIN PROGRAM HERE
 if __name__ == '__main__':
+    print("GET CRAWLED DATA FROM RABBITMQ")
     while True:
         try:
             # connection might be corrupted for many reasons

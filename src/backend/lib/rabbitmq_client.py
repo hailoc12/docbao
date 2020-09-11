@@ -135,9 +135,9 @@ class RabbitMQ_Client():
 
         channel = connection.channel()
         channel.exchange_declare(exchange=EXCHANGE, exchange_type='fanout') 
+        channel.queue_declare(newspaper_queue, durable=True)
         channel.queue_bind(exchange=EXCHANGE, queue=newspaper_queue)
 
-        # channel.queue_declare(newspaper_queue, durable=True)
         # channel.queue_declare(kol_queue, durable=True)
 
         # push post
