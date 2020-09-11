@@ -183,6 +183,37 @@ Thêm vào hai dòng dưới đây
 
 Thiết lập ở trên là mỗi 15 phút, bộ quét sẽ tiến hành quét và update dữ liệu một lần. Bạn có thể thay đổi thành mốc thời gian khác, nhưng nên để > 10 phút để bộ quét chạy ổn định. 
  
+### Đọc dữ liệu từ docbao crawler để sử dụng. 
+
+#### 1. Đọc dữ liệu thông qua RabbitMQ 
+
+##### a. Cấu hình để đẩy dữ liệu lên RabbitMQ.
+ 
+Sử dụng RabbitMQ khi muốn xử lý dữ liệu quét được theo thời gian thực, hoặc có nhiều client cùng lấy dữ liệu từ Docbao Crawler một cách độc lập thông qua cơ chế exchange và queue binding. 
+
+Để đẩy dữ liệu quét được qua RabbitMQ, bạn cần bổ sung các tham số liên quan tới RabbitMQ trong file SETTINGS.env. Ví dụ: 
+
+~~~
+export DOCBAO_EXPORT_TO_RABBITMQ=true
+export DOCBAO_RABBITMQ_HOST=127.0.0.1
+export DOCBAO_RABBITMQ_USERNAME='admin'
+export DOCBAO_RABBITMQ_PASSWORD='password'
+export DOCBAO_RABBITMQ_EXCHANGE='exchange_name'
+export DOCBAO_RABBITMQ_DEFAULT_QUEUE='default_queue_name'
+~~~  
+Lưu ý, username 'admin' cần được set quyền admin và full permission tới vhost /. 
+
+Mặc định, Docbao Crawler bất kì khi nào quét được bài viét mới, Docbao Crawler sẽ đẩy dữ liệu quét được lên exchange trong DOCBAO_RABBITMQ_EXCHANGE và bind DOCBAO_RABBITMQ_DEFAULT_QUEUE vào exchange trên. Client cũng có thể bind thêm các queue khác vào exchange để "subscribe" dữ liệu từ Docbao Crawler 
+
+##### b. Đọc dữ liệu từ RabbitMQ. 
+Docbao Crawler cung cấp một file boilerplate để bạn đọc dữ liệu từ RabbitMQ và đẩy vào database/xử lý theo cách mong muốn. File này nằm tại: /src/clients/get_data_from_rabbitmq.py. Hướng dẫn sử dụng mời xem trong file 
+
+##### c. Đẩy toàn bộ dữ liệu đã quét lên RabbitMQ. 
+Sau khi cấu hình đẩy dữ liệu lên RabbitMQ, mặc định, Docbao Crawler sẽ chỉ đẩy những dữ liệu mới. Nếu muốn đẩy toàn bộ các bài viết hiện có ở local database lên RabbitMQ, bạn có thể chạy script sau:
+~~~
+bash scripts/push_all_articles_to_rabbitmq.sh
+~~~
+
 ### Một số thao tác khác 
 
 #### 1. Reset dữ liệu  
@@ -198,6 +229,7 @@ Lỗi này xuất hiện do server chưa thiết lập locale. Để fix chạy 
 ~~~
 bash scripts/run_fix_env_encoding.sh  
 ~~~
+
 
 ### Lịch sử phát triển  
 

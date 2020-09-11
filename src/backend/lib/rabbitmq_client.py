@@ -16,6 +16,7 @@ HOST = os.environ['DOCBAO_RABBITMQ_HOST']
 USERNAME = os.environ['DOCBAO_RABBITMQ_USERNAME']
 PASSWORD = os.environ['DOCBAO_RABBITMQ_PASSWORD']
 EXCHANGE = os.environ['DOCBAO_RABBITMQ_EXCHANGE']
+DEFAULT_QUEUE = os.environ['DOCBAO_RABBITMQ_DEFAULT_QUEUE']
 
 # Represent a post
 class Post():
@@ -128,14 +129,15 @@ class RabbitMQ_Client():
         connection = self._connection
 
         # get queues
-        # newspaper_queue = QUEUE
+        newspaper_queue = DEFAULT_QUEUE
         exchange = EXCHANGE
         kol_queue = 'kol_news'
 
         channel = connection.channel()
-        channel.exchange_declare(exchange=EXCHANGE, exchange_type='fanout')
+        channel.exchange_declare(exchange=EXCHANGE, exchange_type='fanout') 
+        channel.queue_declare(newspaper_queue, durable=True)
+        channel.queue_bind(exchange=EXCHANGE, queue=newspaper_queue)
 
-        # channel.queue_declare(newspaper_queue, durable=True)
         # channel.queue_declare(kol_queue, durable=True)
 
         # push post
@@ -144,6 +146,8 @@ class RabbitMQ_Client():
             post_body = post.get_body()
             if article.get_post_type() == 0:
                 #newspaper
+
+                # push post to exchange and save in default_queue
                 channel.basic_publish(exchange=EXCHANGE,
                                   routing_key='',
                                   body=post_body)

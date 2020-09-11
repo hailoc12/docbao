@@ -33,7 +33,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://codeaholicguy.com/
     output_html: false
@@ -98,7 +98,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: http://vuilaptrinh.com/
     output_html: false
@@ -165,7 +165,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://topdev.vn/blog/
     output_html: false
@@ -229,7 +229,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://idesign.vn
     output_html: false
@@ -295,7 +295,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://ictpress.vn
     output_html: false
@@ -361,7 +361,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://ictnews.vietnamnet.vn/
     output_html: false
@@ -427,7 +427,7 @@ crawling_list:
     use_browser: true
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://vhnam.github.io
     output_html: false
@@ -493,7 +493,7 @@ crawling_list:
     use_browser: true
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://viblo.asia/newest
     output_html: false
@@ -563,7 +563,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: http://cafebiz.vn
     output_html: false
@@ -629,7 +629,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: http://genk.vn
     output_html: false
@@ -694,7 +694,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: false
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://tinhte.vn/
     output_html: false
@@ -756,7 +756,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 09:51
     contain: ''
     crawl_url: https://toidicodedao.com/
     output_html: false
