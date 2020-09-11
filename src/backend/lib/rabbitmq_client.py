@@ -15,7 +15,7 @@ from src.backend.lib.utils import get_independent_os_path, open_utf8_file_to_rea
 HOST = os.environ['DOCBAO_RABBITMQ_HOST']
 USERNAME = os.environ['DOCBAO_RABBITMQ_USERNAME']
 PASSWORD = os.environ['DOCBAO_RABBITMQ_PASSWORD']
-QUEUE = os.environ['DOCBAO_RABBITMQ_QUEUE']
+EXCHANGE = os.environ['DOCBAO_RABBITMQ_EXCHANGE']
 
 # Represent a post
 class Post():
@@ -128,11 +128,14 @@ class RabbitMQ_Client():
         connection = self._connection
 
         # get queues
-        newspaper_queue = QUEUE
+        # newspaper_queue = QUEUE
+        exchange = EXCHANGE
         kol_queue = 'kol_news'
 
         channel = connection.channel()
-        channel.queue_declare(newspaper_queue, durable=True)
+        channel.exchange_declare(exchange=EXCHANGE, exchange_type='fanout')
+
+        # channel.queue_declare(newspaper_queue, durable=True)
         # channel.queue_declare(kol_queue, durable=True)
 
         # push post
@@ -141,8 +144,8 @@ class RabbitMQ_Client():
             post_body = post.get_body()
             if article.get_post_type() == 0:
                 #newspaper
-                channel.basic_publish(exchange='',
-                                  routing_key=newspaper_queue,
+                channel.basic_publish(exchange=EXCHANGE,
+                                  routing_key='',
                                   body=post_body)
             else:
                 channel.basic_publish(exchange='',
