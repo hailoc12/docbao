@@ -6,8 +6,8 @@ thế giới
 trung quốc
 ứng dụng
 hà nội
-e m
 điện thoại
+e m
 tỷ phú
 công ty
 tỷ usd
@@ -369,6 +369,7 @@ mối quan hệ
 tên gọi
 20 năm
 nói là
+sao không
 tầm nhìn
 bán dẫn
 hợp đồng
@@ -478,7 +479,6 @@ phát sóng
 tài xế
 joy 4
 face id
-sao không
 ví điện tử
 tỷ phú đôla
 thành công của
@@ -856,6 +856,7 @@ vạn vật
 khu kinh tế vân phong
 thuộc tính
 thái lan
+lộ trình
 mang tên
 amazon trốn thuế
 đỉnh cao
@@ -1998,4 +1999,3 @@ một chiếc gimbal
 dây chuyền cô gái
 nam thanh niên
 giành giật điện thoại
-clip cô gái

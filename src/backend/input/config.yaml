@@ -2,75 +2,10 @@ days_to_crawl: 1000
 loop_interval_for_new_keyword_accepted: 2
 maximum_topic_display_length: 20
 crawling_list:
-- Codeaholicguy:
+- Toidicodedao:
     id_type: href
     browser_profile: ''
-    web_url: https://codeaholicguy.com/
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: false
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths: []
-    minimum_duration_between_crawls: 15
-    language: vietnamese
-    feature_image_xpath:
-    - .//img/@src
-    - .//img/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //meta[@property='og:description']/@content
-    - //meta[@property='og:description']/@content
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: false
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
-    contain: ''
-    crawl_url: https://codeaholicguy.com/
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //time[@class='entry-date published']/@datetime
-    - //time[@class='entry-date published']/@datetime
-    topic_type: href
-    maximum_url: 10
-    get_detail_content: true
-    content_xpath:
-    - //div[@class='site-content']
-    - //div[@class='site-content']
-    text_xpath:
-    - .//p
-    - .//h2
-    - .//h3
-    - .//h4
-    image_box_xpath:
-    - .//img
-    image_title_xpath: []
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://codeaholicguy.com/
-    minimum_topic_length: 4
-    tags: []
-    remove_me: false
-- vuilaptrinh.com:
-    id_type: href
-    browser_profile: ''
-    web_url: http://vuilaptrinh.com/
+    web_url: https://toidicodedao.com/
     timezone: Asia/Ho_Chi_Minh
     remove_date_tag_html: false
     remove_content_html: true
@@ -90,97 +25,31 @@ crawling_list:
     skip_checking_topic_length: false
     display_browser: false
     sapo_xpath:
-    - //meta[@name='description']/@content
-    - //meta[@name='description']/@content
+    - //h1[@class='entry-title']
+    - //h1[@class='entry-title']
     get_publish_date_as_crawl_date: false
     browser_fast_load: true
     skip_repeat_topic: true
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 08:40
     contain: ''
-    crawl_url: http://vuilaptrinh.com/
+    crawl_url: https://toidicodedao.com/
     output_html: false
     get_topic_from_link: true
     date_xpath:
-    - //meta[@property='og:url']/@content
-    - //meta[@property='og:url']/@content
+    - //time[@class='entry-date']/@datetime
+    - //time[@class='entry-date']/@datetime
     topic_type: href
     maximum_url: 10
     get_detail_content: true
     content_xpath:
-    - //div[@class='blog-post']
-    - //div[@class='blog-post']
+    - //div[@class='entry-content']
+    - //div[@class='entry-content']
     text_xpath:
     - .//p
-    - .//h2
-    - .//h3
-    - .//h4
-    image_box_xpath:
-    - .//img
-    image_title_xpath: []
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: http://vuilaptrinh.com/
-    minimum_topic_length: 4
-    tags: []
-    remove_me: false
-    only_quality_post: false
-- topdev.vn:
-    id_type: href
-    browser_profile: ''
-    web_url: https://topdev.vn/blog/
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: false
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths:
-    - (//strong[contains(text(),'Có thể bạn quan tâm:')]/..)/following::*
-    minimum_duration_between_crawls: 15
-    language: vietnamese
-    feature_image_xpath:
-    - .//img[1]/@src
-    - .//img[1]/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //meta[@property='og:description']/@content
-    - //meta[@property='og:description']/@content
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: false
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
-    contain: ''
-    crawl_url: https://topdev.vn/blog/
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //meta[@property='article:published_time']/@content
-    - //meta[@property='article:published_time']/@content
-    topic_type: href
-    maximum_url: 10
-    get_detail_content: true
-    content_xpath:
-    - //div[contains(@class, 'td-post-content')]
-    - //div[contains(@class, 'td-post-content')]
-    text_xpath:
-    - .//p
+    - .//ul
     - .//li
     image_box_xpath:
     - .//img
@@ -193,25 +62,24 @@ crawling_list:
     avatar_url: ''
     avatar_xpath: ''
     crawl_type: newspaper
-    url_pattern_re: https://topdev.vn/blog/
+    url_pattern_re: https://toidicodedao.com/
     minimum_topic_length: 4
     tags: []
     remove_me: false
-    only_quality_post: false
-- idesign.vn:
+- Tinhte:
     id_type: href
     browser_profile: ''
-    web_url: https://idesign.vn
+    web_url: https://tinhte.vn/
     timezone: Asia/Ho_Chi_Minh
     remove_date_tag_html: false
     remove_content_html: true
     use_index_number: false
-    remove_content_html_xpaths: []
+    remove_content_html_xpaths: //div[contains(@class,'comment__attachments')] | //div[contains(@class,'comment__attachments')]/following-sibling::*
     minimum_duration_between_crawls: 15
     language: vietnamese
     feature_image_xpath:
-    - .//img[1]/@src
-    - .//img[1]/@src
+    - .//img/@src
+    - .//img/@src
     extract_xpath:
     - ./text()
     - ./@title
@@ -221,299 +89,32 @@ crawling_list:
     skip_checking_topic_length: false
     display_browser: false
     sapo_xpath:
-    - //h4[1]
-    - //h4[1]
+    - //meta[@name='description']/@content
+    - //meta[@name='description']/@content
     get_publish_date_as_crawl_date: false
     browser_fast_load: true
     skip_repeat_topic: true
     use_browser: false
     date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    ignore_topic_not_have_publish_date: false
+    last_run: 11/09/2020 08:40
     contain: ''
-    crawl_url: https://idesign.vn
+    crawl_url: https://tinhte.vn/
     output_html: false
     get_topic_from_link: true
     date_xpath:
-    - //time[@class='updated']/@datetime
-    - //time[@class='updated']/@datetime
-    topic_type: href
-    maximum_url: 50
-    get_detail_content: true
-    content_xpath:
-    - //div[@class='post-content']/div[2]
-    - //div[@class='post-content']/div[2]
-    text_xpath:
-    - .//p
-    image_box_xpath:
-    - .//div[contains(@class,'wp-block-image')]
-    image_title_xpath:
-    - .//figcaption
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://idesign.vn
-    minimum_topic_length: 4
-    tags: []
-    only_quality_post: false
-    browser_timeout: 60
-    prevent_auto_redirect: false
-    remove_me: false
-- ICTPress:
-    id_type: href
-    browser_profile: ''
-    web_url: https://ictpress.vn
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: true
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths: []
-    minimum_duration_between_crawls: 15
-    language: vietnamese
-    feature_image_xpath:
-    - .//img/@src
-    - .//img/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //div[@id="node-content"]/p[1][.//strong]
-    - //div[@id="node-content"]/p[1][.//strong]
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: false
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
-    contain: ''
-    crawl_url: https://ictpress.vn
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //div[@class="submitted"]
-    - //div[@class="submitted"]
+    - //div[@class="datePublished"]
+    - //div[@class="datePublished"]
     topic_type: href
     maximum_url: 10
     get_detail_content: true
     content_xpath:
-    - //div[@id="node-content"]
-    - //div[@id="node-content"]
+    - //div[contains(@class, "content-wrapper")]
+    - //div[contains(@class, "content-wrapper")]
     text_xpath:
-    - //div[@id="node-content"]//p[.//text()][not(./strong and position()=1)]
-    image_box_xpath:
-    - //table[@class="image image-center"]
-    image_title_xpath:
-    - ./tbody/tr[2]
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://ictpress.vn
-    minimum_topic_length: 4
-    tags: []
-    remove_me: false
-    only_quality_post: false
-- ICTNEWS (6/20):
-    id_type: href
-    browser_profile: ''
-    web_url: https://ictnews.vietnamnet.vn/
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: true
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths:
-    - .//*[@class="inner-article"]
-    - .//*[@class="box-adv d-none d-xl-block box-taitro clearfix"]
-    minimum_duration_between_crawls: 15
-    language: vietnamese
-    feature_image_xpath:
-    - .//img/@src
-    - .//img/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //*[@class="ArticleLead mt-4"]/h2
-    - //*[@class="ArticleLead mt-4"]/h2
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: false
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
-    contain: ''
-    crawl_url: https://ictnews.vietnamnet.vn/
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //*[@class="ArticleDate ml-auto"]
-    - //*[@class="ArticleDate ml-auto"]
-    topic_type: href
-    maximum_url: 10
-    get_detail_content: true
-    content_xpath:
-    - //*[@class="ArticleContent mt-3 text-justify"]
-    - //*[@class="ArticleContent mt-3 text-justify"]
-    text_xpath:
-    - ./p
-    image_box_xpath:
-    - //*[@class="FmsArticleBoxStyle ImageBox ImageCenterBox Border-1 image"]
-    image_title_xpath:
-    - .//*[@class="FmsArticleBoxStyle-Content image_desc"]
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: https://info-res-s.vgcloud.vn/ictnews/images/logo-ictnews.png
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://ictnews.vietnamnet.vn/
-    minimum_topic_length: 4
-    tags: []
-    only_quality_post: false
-    browser_timeout: 60
-    prevent_auto_redirect: false
-    remove_me: false
-- Nam Vo 's Blog:
-    id_type: href
-    browser_profile: ''
-    web_url: https://vhnam.github.io
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: false
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths: []
-    minimum_duration_between_crawls: 15
-    language: vietnamese
-    feature_image_xpath:
-    - .//img[1]/@src
-    - .//img[1]/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //meta[@itemprop='mainEntityOfPage']/@content
-    - //meta[@itemprop='mainEntityOfPage']/@content
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: true
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
-    contain: ''
-    crawl_url: https://vhnam.github.io
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //meta[@itemprop='datePublished']/@content
-    - //meta[@itemprop='datePublished']/@content
-    topic_type: href
-    maximum_url: 10
-    get_detail_content: true
-    content_xpath:
-    - //div[@class='content__heading']/..
-    - //div[@class='content__heading']/..
-    text_xpath:
-    - .//p
+    - .//div[@data-author]
     image_box_xpath:
     - .//img
-    image_title_xpath:
-    - .//img/@alt
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://vhnam.github.io
-    minimum_topic_length: 2
-    tags: []
-    only_quality_post: false
-    browser_timeout: 60
-    prevent_auto_redirect: false
-    remove_me: false
-- Viblo:
-    id_type: href
-    browser_profile: ''
-    web_url: https://viblo.asia
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: false
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths: []
-    minimum_duration_between_crawls: 15
-    language: vietnamese
-    feature_image_xpath:
-    - .//img[1]/@src
-    - .//img[1]/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //meta[@name='description']/@content
-    - //meta[@name='description']/@content
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: true
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
-    contain: ''
-    crawl_url: https://viblo.asia/newest
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //meta[contains(@name, 'modified_time')]/@content
-    - //meta[contains(@name, 'modified_time')]/@content
-    topic_type: href
-    maximum_url: 30
-    get_detail_content: true
-    content_xpath:
-    - //div[contains(@class, 'article-content')]
-    - //div[contains(@class, 'article-content')]
-    text_xpath:
-    - .//p
-    - .//h2
-    - .//h3
-    - .//h4
-    image_box_xpath:
-    - //img
     image_title_xpath: []
     video_box_xpath: []
     video_title_xpath: []
@@ -523,7 +124,69 @@ crawling_list:
     avatar_url: ''
     avatar_xpath: ''
     crawl_type: newspaper
-    url_pattern_re: https://viblo.asia
+    url_pattern_re: https://tinhte.vn/
+    minimum_topic_length: 4
+    tags: []
+    remove_me: false
+- genk:
+    id_type: href
+    browser_profile: ''
+    web_url: http://genk.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //h2[@class='knc-sapo'] | //meta[@property='og:description']/@content
+    - //h2[@class='knc-sapo'] | //meta[@property='og:description']/@content
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 11/09/2020 08:40
+    contain: ''
+    crawl_url: http://genk.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //node()[@class="kbwcm-time"]/@title | //meta[@itemprop="datePublished"]/@content
+    - //node()[@class="kbwcm-time"]/@title | //meta[@itemprop="datePublished"]/@content
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[contains(@class, 'new-content') or contains(@class, 'body-content')]
+    - //div[contains(@class, 'new-content') or contains(@class, 'body-content')]
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - .//img
+    image_title_xpath: []
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://genk.vn
     minimum_topic_length: 4
     tags: []
     only_quality_post: false
@@ -563,7 +226,7 @@ crawling_list:
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 08:40
     contain: ''
     crawl_url: http://cafebiz.vn
     output_html: false
@@ -598,10 +261,10 @@ crawling_list:
     browser_timeout: 60
     prevent_auto_redirect: false
     remove_me: false
-- genk:
+- Viblo:
     id_type: href
     browser_profile: ''
-    web_url: http://genk.vn
+    web_url: https://viblo.asia
     timezone: Asia/Ho_Chi_Minh
     remove_date_tag_html: false
     remove_content_html: true
@@ -610,8 +273,8 @@ crawling_list:
     minimum_duration_between_crawls: 15
     language: vietnamese
     feature_image_xpath:
-    - .//img/@src
-    - .//img/@src
+    - .//img[1]/@src
+    - .//img[1]/@src
     extract_xpath:
     - ./text()
     - ./@title
@@ -621,32 +284,35 @@ crawling_list:
     skip_checking_topic_length: false
     display_browser: false
     sapo_xpath:
-    - //h2[@class='knc-sapo'] | //meta[@property='og:description']/@content
-    - //h2[@class='knc-sapo'] | //meta[@property='og:description']/@content
+    - //meta[@name='description']/@content
+    - //meta[@name='description']/@content
     get_publish_date_as_crawl_date: false
     browser_fast_load: true
     skip_repeat_topic: true
-    use_browser: false
+    use_browser: true
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 08:40
     contain: ''
-    crawl_url: http://genk.vn
+    crawl_url: https://viblo.asia/newest
     output_html: false
     get_topic_from_link: true
     date_xpath:
-    - //node()[@class="kbwcm-time"]/@title | //meta[@itemprop="datePublished"]/@content
-    - //node()[@class="kbwcm-time"]/@title | //meta[@itemprop="datePublished"]/@content
+    - //meta[contains(@name, 'modified_time')]/@content
+    - //meta[contains(@name, 'modified_time')]/@content
     topic_type: href
-    maximum_url: 10
+    maximum_url: 30
     get_detail_content: true
     content_xpath:
-    - //div[contains(@class, 'new-content') or contains(@class, 'body-content')]
-    - //div[contains(@class, 'new-content') or contains(@class, 'body-content')]
+    - //div[contains(@class, 'article-content')]
+    - //div[contains(@class, 'article-content')]
     text_xpath:
     - .//p
+    - .//h2
+    - .//h3
+    - .//h4
     image_box_xpath:
-    - .//img
+    - //img
     image_title_xpath: []
     video_box_xpath: []
     video_title_xpath: []
@@ -656,79 +322,17 @@ crawling_list:
     avatar_url: ''
     avatar_xpath: ''
     crawl_type: newspaper
-    url_pattern_re: http://genk.vn
+    url_pattern_re: https://viblo.asia
     minimum_topic_length: 4
     tags: []
     only_quality_post: false
     browser_timeout: 60
     prevent_auto_redirect: false
     remove_me: false
-- Tinhte:
+- Nam Vo 's Blog:
     id_type: href
     browser_profile: ''
-    web_url: https://tinhte.vn/
-    timezone: Asia/Ho_Chi_Minh
-    remove_date_tag_html: false
-    remove_content_html: true
-    use_index_number: false
-    remove_content_html_xpaths: //div[contains(@class,'comment__attachments')] | //div[contains(@class,'comment__attachments')]/following-sibling::*
-    minimum_duration_between_crawls: 15
-    language: vietnamese
-    feature_image_xpath:
-    - .//img/@src
-    - .//img/@src
-    extract_xpath:
-    - ./text()
-    - ./@title
-    topics_xpath:
-    - //a[text()]
-    - //a[@title]
-    skip_checking_topic_length: false
-    display_browser: false
-    sapo_xpath:
-    - //meta[@name='description']/@content
-    - //meta[@name='description']/@content
-    get_publish_date_as_crawl_date: false
-    browser_fast_load: true
-    skip_repeat_topic: true
-    use_browser: false
-    date_place: detail_page
-    ignore_topic_not_have_publish_date: false
-    last_run: 11/09/2020 08:20
-    contain: ''
-    crawl_url: https://tinhte.vn/
-    output_html: false
-    get_topic_from_link: true
-    date_xpath:
-    - //div[@class="datePublished"]
-    - //div[@class="datePublished"]
-    topic_type: href
-    maximum_url: 10
-    get_detail_content: true
-    content_xpath:
-    - //div[contains(@class, "content-wrapper")]
-    - //div[contains(@class, "content-wrapper")]
-    text_xpath:
-    - .//div[@data-author]
-    image_box_xpath:
-    - .//img
-    image_title_xpath: []
-    video_box_xpath: []
-    video_title_xpath: []
-    audio_box_xpath: []
-    audio_title_xpath: []
-    avatar_type: url
-    avatar_url: ''
-    avatar_xpath: ''
-    crawl_type: newspaper
-    url_pattern_re: https://tinhte.vn/
-    minimum_topic_length: 4
-    tags: []
-    remove_me: false
-- Toidicodedao:
-    id_type: href
-    browser_profile: ''
-    web_url: https://toidicodedao.com/
+    web_url: https://vhnam.github.io
     timezone: Asia/Ho_Chi_Minh
     remove_date_tag_html: false
     remove_content_html: true
@@ -748,31 +352,295 @@ crawling_list:
     skip_checking_topic_length: false
     display_browser: false
     sapo_xpath:
-    - //h1[@class='entry-title']
-    - //h1[@class='entry-title']
+    - //meta[@itemprop='mainEntityOfPage']/@content
+    - //meta[@itemprop='mainEntityOfPage']/@content
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: true
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 11/09/2020 08:40
+    contain: ''
+    crawl_url: https://vhnam.github.io
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //meta[@itemprop='datePublished']/@content
+    - //meta[@itemprop='datePublished']/@content
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[@class='content__heading']/..
+    - //div[@class='content__heading']/..
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - .//img
+    image_title_xpath:
+    - .//img/@alt
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://vhnam.github.io
+    minimum_topic_length: 2
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- ICTNEWS (6/20):
+    id_type: href
+    browser_profile: ''
+    web_url: https://ictnews.vietnamnet.vn/
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - .//*[@class="inner-article"]
+    - .//*[@class="box-adv d-none d-xl-block box-taitro clearfix"]
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //*[@class="ArticleLead mt-4"]/h2
+    - //*[@class="ArticleLead mt-4"]/h2
     get_publish_date_as_crawl_date: false
     browser_fast_load: true
     skip_repeat_topic: true
     use_browser: false
     date_place: detail_page
     ignore_topic_not_have_publish_date: true
-    last_run: 11/09/2020 08:20
+    last_run: 11/09/2020 08:40
     contain: ''
-    crawl_url: https://toidicodedao.com/
+    crawl_url: https://ictnews.vietnamnet.vn/
     output_html: false
     get_topic_from_link: true
     date_xpath:
-    - //time[@class='entry-date']/@datetime
-    - //time[@class='entry-date']/@datetime
+    - //*[@class="ArticleDate ml-auto"]
+    - //*[@class="ArticleDate ml-auto"]
     topic_type: href
     maximum_url: 10
     get_detail_content: true
     content_xpath:
-    - //div[@class='entry-content']
-    - //div[@class='entry-content']
+    - //*[@class="ArticleContent mt-3 text-justify"]
+    - //*[@class="ArticleContent mt-3 text-justify"]
+    text_xpath:
+    - ./p
+    image_box_xpath:
+    - //*[@class="FmsArticleBoxStyle ImageBox ImageCenterBox Border-1 image"]
+    image_title_xpath:
+    - .//*[@class="FmsArticleBoxStyle-Content image_desc"]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: https://info-res-s.vgcloud.vn/ictnews/images/logo-ictnews.png
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://ictnews.vietnamnet.vn/
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- ICTPress:
+    id_type: href
+    browser_profile: ''
+    web_url: https://ictpress.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: true
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //div[@id="node-content"]/p[1][.//strong]
+    - //div[@id="node-content"]/p[1][.//strong]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 11/09/2020 08:40
+    contain: ''
+    crawl_url: https://ictpress.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //div[@class="submitted"]
+    - //div[@class="submitted"]
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[@id="node-content"]
+    - //div[@id="node-content"]
+    text_xpath:
+    - //div[@id="node-content"]//p[.//text()][not(./strong and position()=1)]
+    image_box_xpath:
+    - //table[@class="image image-center"]
+    image_title_xpath:
+    - ./tbody/tr[2]
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://ictpress.vn
+    minimum_topic_length: 4
+    tags: []
+    remove_me: false
+    only_quality_post: false
+- idesign.vn:
+    id_type: href
+    browser_profile: ''
+    web_url: https://idesign.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img[1]/@src
+    - .//img[1]/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //h4[1]
+    - //h4[1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 11/09/2020 08:40
+    contain: ''
+    crawl_url: https://idesign.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //time[@class='updated']/@datetime
+    - //time[@class='updated']/@datetime
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class='post-content']/div[2]
+    - //div[@class='post-content']/div[2]
     text_xpath:
     - .//p
-    - .//ul
+    image_box_xpath:
+    - .//div[contains(@class,'wp-block-image')]
+    image_title_xpath:
+    - .//figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://idesign.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
+    remove_me: false
+- topdev.vn:
+    id_type: href
+    browser_profile: ''
+    web_url: https://topdev.vn/blog/
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths:
+    - (//strong[contains(text(),'Có thể bạn quan tâm:')]/..)/following::*
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img[1]/@src
+    - .//img[1]/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //meta[@property='og:description']/@content
+    - //meta[@property='og:description']/@content
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 11/09/2020 08:40
+    contain: ''
+    crawl_url: https://topdev.vn/blog/
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //meta[@property='article:published_time']/@content
+    - //meta[@property='article:published_time']/@content
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[contains(@class, 'td-post-content')]
+    - //div[contains(@class, 'td-post-content')]
+    text_xpath:
+    - .//p
     - .//li
     image_box_xpath:
     - .//img
@@ -785,7 +653,139 @@ crawling_list:
     avatar_url: ''
     avatar_xpath: ''
     crawl_type: newspaper
-    url_pattern_re: https://toidicodedao.com/
+    url_pattern_re: https://topdev.vn/blog/
+    minimum_topic_length: 4
+    tags: []
+    remove_me: false
+    only_quality_post: false
+- vuilaptrinh.com:
+    id_type: href
+    browser_profile: ''
+    web_url: http://vuilaptrinh.com/
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img[1]/@src
+    - .//img[1]/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //meta[@name='description']/@content
+    - //meta[@name='description']/@content
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 11/09/2020 08:40
+    contain: ''
+    crawl_url: http://vuilaptrinh.com/
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //meta[@property='og:url']/@content
+    - //meta[@property='og:url']/@content
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[@class='blog-post']
+    - //div[@class='blog-post']
+    text_xpath:
+    - .//p
+    - .//h2
+    - .//h3
+    - .//h4
+    image_box_xpath:
+    - .//img
+    image_title_xpath: []
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: http://vuilaptrinh.com/
+    minimum_topic_length: 4
+    tags: []
+    remove_me: false
+    only_quality_post: false
+- Codeaholicguy:
+    id_type: href
+    browser_profile: ''
+    web_url: https://codeaholicguy.com/
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img/@src
+    - .//img/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //meta[@property='og:description']/@content
+    - //meta[@property='og:description']/@content
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 11/09/2020 08:40
+    contain: ''
+    crawl_url: https://codeaholicguy.com/
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //time[@class='entry-date published']/@datetime
+    - //time[@class='entry-date published']/@datetime
+    topic_type: href
+    maximum_url: 10
+    get_detail_content: true
+    content_xpath:
+    - //div[@class='site-content']
+    - //div[@class='site-content']
+    text_xpath:
+    - .//p
+    - .//h2
+    - .//h3
+    - .//h4
+    image_box_xpath:
+    - .//img
+    image_title_xpath: []
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://codeaholicguy.com/
     minimum_topic_length: 4
     tags: []
     remove_me: false
