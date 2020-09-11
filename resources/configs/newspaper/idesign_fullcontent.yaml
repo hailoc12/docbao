@@ -1,0 +1,65 @@
+- idesign.vn:
+    id_type: href
+    browser_profile: ''
+    web_url: https://idesign.vn
+    timezone: Asia/Ho_Chi_Minh
+    remove_date_tag_html: false
+    remove_content_html: true
+    use_index_number: false
+    remove_content_html_xpaths: []
+    minimum_duration_between_crawls: 15
+    language: vietnamese
+    feature_image_xpath:
+    - .//img[1]/@src
+    - .//img[1]/@src
+    extract_xpath:
+    - ./text()
+    - ./@title
+    topics_xpath:
+    - //a[text()]
+    - //a[@title]
+    skip_checking_topic_length: false
+    display_browser: false
+    sapo_xpath:
+    - //h4[1]
+    - //h4[1]
+    get_publish_date_as_crawl_date: false
+    browser_fast_load: true
+    skip_repeat_topic: true
+    use_browser: false
+    date_place: detail_page
+    ignore_topic_not_have_publish_date: true
+    last_run: 02/06/2019 21:56
+    contain: ''
+    crawl_url: https://idesign.vn
+    output_html: false
+    get_topic_from_link: true
+    date_xpath:
+    - //time[@class='updated']/@datetime
+    - //time[@class='updated']/@datetime
+    topic_type: href
+    maximum_url: 50
+    get_detail_content: true
+    content_xpath:
+    - //div[@class='post-content']/div[2]
+    - //div[@class='post-content']/div[2]
+    text_xpath:
+    - .//p
+    image_box_xpath:
+    - .//div[contains(@class,'wp-block-image')]
+    image_title_xpath:
+    - .//figcaption
+    video_box_xpath: []
+    video_title_xpath: []
+    audio_box_xpath: []
+    audio_title_xpath: []
+    avatar_type: url
+    avatar_url: ''
+    avatar_xpath: ''
+    crawl_type: newspaper
+    url_pattern_re: https://idesign.vn
+    minimum_topic_length: 4
+    tags: []
+    only_quality_post: false
+    browser_timeout: 60
+    prevent_auto_redirect: false
