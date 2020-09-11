@@ -25,11 +25,11 @@ from time import sleep
 import traceback
 
 # RabbitMQ host
-HOST = '192.168.90.60'
-USERNAME = 'admin'
-PASSWORD = 'omah7Eecaht7ooqu'
-EXCHANGE = 'docbao_tech_protect'
-POST_QUEUE = 'tech_protect_AI' # queue to bind to get posts 
+HOST = ''
+USERNAME = ''
+PASSWORD = ''
+EXCHANGE = ''
+POST_QUEUE = '' # queue to bind to get posts 
 MAX_POST = 5000 # number of post to push each queue
 WAIT_BETWEEN_POST = 0.5
 
