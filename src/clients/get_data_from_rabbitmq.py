@@ -9,8 +9,8 @@ it will parse binary message into Post() object, and for each Post instance, cal
 to save it in database.
 
 Some task must be done to make this works:
-1. Provide host, username, password, exchange and queue name for RabbitMQ connection  
-2. Rewrite Post.push_to_database() function to save post in your favourite database 
+1. Provide host, username, password, exchange and queue name for RabbitMQ connection
+2. Rewrite Post.push_to_database() function to save post in your favourite database
 3. Run this file with Python
 """
 
@@ -26,21 +26,21 @@ import traceback
 
 # RabbitMQ host
 HOST = ''
-PORT = 5672
+PORT = ''
 USERNAME = ''
 PASSWORD = ''
 EXCHANGE = ''
-POST_QUEUE = '' # queue to bind to get posts 
-MAX_POST = 5000 # number of post to push each queue
+POST_QUEUE = '' # queue to bind to get posts
+MAX_POST = 5 # number of post to push each queue
 WAIT_BETWEEN_POST = 0.5
 
 class Post():
     """Represent a crawled article"""
     """
         @Post main function:
-            - get_title(): 
+            - get_title():
             - get_url():
-            - get_author_fullname(): get source of this post 
+            - get_author_fullname(): get source of this post
             - get_pushlish_date():
             - get_create_date(): get crawled date
             - get_content(): return a list of image/text paragraphs. First paragraph is post description
@@ -54,19 +54,19 @@ class Post():
         # TODO: write code to push Post to your favorite database here
         print(f'Pushing {self.get_title()} to database')
 
-        print("Post source: %s" % self.get_author_fullname())
-        print("Post url: %s" % self.get_url())
-        print("Post publish_date: %s" % self.get_publish_date())
-        print("Post crawl date: %s" % self.get_create_date())
+        # print("Post source: %s" % self.get_author_fullname())
+        # print("Post url: %s" % self.get_url())
+        # print("Post publish_date: %s" % self.get_publish_date())
+        # print("Post crawl date: %s" % self.get_create_date())
 
-        print("Post content")
-        for paragraph in self.get_content():
-            if paragraph['type'] == 'text':
-                print(paragraph['content'])
-            elif paragraph['type'] == 'image':
-                print(f"[{paragraph['content']}]({paragraph['link']})")
-            else:
-                pass
+        # print("Post content")
+        # for paragraph in self.get_content():
+        #     if paragraph['type'] == 'text':
+        #         print(paragraph['content'])
+        #     elif paragraph['type'] == 'image':
+        #         print(f"[{paragraph['content']}]({paragraph['link']})")
+        #     else:
+        #         pass
 
         pass
 
@@ -130,7 +130,7 @@ class Post():
 
     def set_dummy_image(self):
         self._data['featureImages'] = [{'small':DUMMY_IMAGE, 'large': DUMMY_IMAGE}]
-    
+
     def get_publish_date(self):
         return self._data['publish_date']
 
@@ -140,7 +140,7 @@ class Post():
     def set_create_date(self, value):
         self._data['createdAt'] = value
 
-  
+
     def get_categories(self):
         return self._data['categories']
 
@@ -288,7 +288,7 @@ def get_data_from_rabbitmq():
     queue = POST_QUEUE
     number_of_post = MAX_POST
 
-    # Get  posts from queue 
+    # Get  posts from queue
 
     channel = connection.channel()
     queue_state = channel.queue_declare(queue, durable=True, passive=True)
@@ -300,14 +300,16 @@ def get_data_from_rabbitmq():
     # get message
     count_post = 0
     posts = []
-    while (queue_length >= 1):
+    while (queue_length >= 1 and count_post<MAX_POST):
         method, properties, body = channel.basic_get(queue, auto_ack=True)
 
         if body is not None:
             posts.append(body)
         queue_length -=1
+        count_post +=1
 
     # parse message into Post and push to database
+    count_post = 0
     for body in posts:
         count_post+=1
         print("Processing post %s: " % str(count_post))
@@ -315,7 +317,6 @@ def get_data_from_rabbitmq():
         post = Post(body)
         if post.validate():         # post is in right format
             post.push_to_database() # push article to database
-
             print()
 
     # Close
