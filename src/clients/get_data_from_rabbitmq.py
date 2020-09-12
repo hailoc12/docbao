@@ -26,6 +26,7 @@ import traceback
 
 # RabbitMQ host
 HOST = ''
+PORT = 5672
 USERNAME = ''
 PASSWORD = ''
 EXCHANGE = ''
@@ -280,7 +281,7 @@ def get_data_from_rabbitmq():
     # connect to RabbitMQ
     # login
     credentials = pika.PlainCredentials(USERNAME, PASSWORD)
-    parameters = pika.ConnectionParameters(HOST, 5672,'/', credentials)
+    parameters = pika.ConnectionParameters(HOST, PORT,'/', credentials)
     connection = pika.BlockingConnection(parameters)
 
     exchange = EXCHANGE
