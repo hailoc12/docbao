@@ -57,7 +57,7 @@ class Docbao_Crawler():
         # Create shared object
         self._config_manager = ConfigManager(get_independent_os_path([base_dir, 'src', 'backend', 'input', 'config.yaml']),
                                             get_independent_os_path([base_dir, 'src', 'backend', 'input', 'kols_list.txt']),
-                                            get_independent_os_path([base_dir, 'src', 'input', 'fb_list.txt'])) #config object
+                                            get_independent_os_path([base_dir, 'src', 'backend', 'input', 'fb_list.txt'])) #config object
 
         self._data_manager = ArticleManager(self._config_manager, get_independent_os_path([base_dir, 'src', 'backend', 'data', 'article.dat']),get_independent_os_path([base_dir, 'src', 'backend', "data","blacklist.dat"]) ) #article database object
         self._keyword_manager = KeywordManager(self._data_manager, self._config_manager, get_independent_os_path([base_dir, 'src', 'backend', "data", "keyword.dat"]), get_independent_os_path([base_dir, 'src', 'backend', "input", "collocation.txt"]), get_independent_os_path(["input", "keywords_to_remove.txt"]))    #keyword analyzer object

@@ -16,8 +16,8 @@ if not is_another_session_running():
     new_session()
     try:
         crawler = Docbao_Crawler(
-                crawl_newspaper=True,
-                crawl_kols=False,
+                crawl_newspaper=False,
+                crawl_kols=True,
                 crawl_kols_by_smcc=False,
                 export_to_json=True,
                 export_to_queue=os.environ['DOCBAO_EXPORT_TO_RABBITMQ']=='true',

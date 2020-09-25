@@ -11,6 +11,7 @@ import yaml
 from datetime import datetime
 from datetime import timedelta
 from src.backend.lib.rabbitmq_client import RabbitMQ_Client
+import os
 
 # class represents config to crawl a specific website
 class WebConfig:
@@ -237,7 +238,8 @@ class WebConfig:
 
     def load_default_config(self, site_type=None, config_base_path=None):
         if config_base_path is None:
-            config_base_path = get_independent_os_path(['resources', 'configs', 'newspaper'])
+            base_path = os.environ['DOCBAO_BASE_DIR']
+            config_base_path = get_independent_os_path([base_path, 'resources', 'configs', 'newspaper'])
 
         if site_type is None:
             filepath = get_independent_os_path([config_base_path,'website_template.md'])
@@ -275,7 +277,7 @@ class ConfigManager:
         self._kol_filename = kol_filename
         self._fb_account_filename = fb_account_filename
 
-    def load_data(self, crawl_newspaper=True, crawl_kols=False, crawl_kols_by_smcc=False, random_kols=True, random_fb_account=True, max_kols=5, base_path='..'):
+    def load_data(self, crawl_newspaper=True, crawl_kols=False, crawl_kols_by_smcc=False, random_kols=True, random_fb_account=True, max_kols=5, base_path=None):
         '''
         input
         -----
@@ -284,8 +286,11 @@ class ConfigManager:
             random_kols: choose random (max_kols) from kols list to crawl
             random_fb_account: set random fb bot (presetup in /backend/input/fb_list.txt file to crawl kol posts
         crawl_kols_by_smcc: crawl kols posts using smcc service (push some kol id to queue and get back post from queue). Choose random kols id (100 in number) by default and create only one webconfig with crawl_type = "kols smcc"
-        base_path: get value '..' or '.' to specify path to resources folder in comparision with running path
+        base_path: specify path to resources folder 
         '''
+        if not base_path:
+            base_path = os.environ['DOCBAO_BASE_DIR']
+
         #print(self._config)
         stream = open_utf8_file_to_read(self._filename)
         self._config = yaml.full_load(stream)

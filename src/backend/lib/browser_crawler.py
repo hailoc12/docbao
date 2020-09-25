@@ -29,7 +29,8 @@ def get_firefox_profile(profile_name):
     -----
     profile_name (str): profile in name
     '''
-    profile_path = get_independent_os_path(['profiles',profile_name])
+    base_dir = os.environ['DOCBAO_BASE_DIR']
+    profile_path = get_independent_os_path([base_dir, 'src', 'backend', 'profiles',profile_name])
     
     if os.path.isdir(profile_path):
         return webdriver.FirefoxProfile(profile_path)
@@ -39,6 +40,29 @@ def get_firefox_profile(profile_name):
         print("you default profile in this session") 
         os.mkdir(profile_path)
         return None
+
+def save_firefox_profile(profile_name, profile_temp_path):
+    """Save temp profile back to profile"""
+    """
+        @Args:
+            - profile_name: name of profile folder
+            - profile_temp_path: path to temp profile folder
+        @Return:
+            - True: success
+            - False: fail 
+    """
+    if profile_name:
+        try:
+            base_dir = os.environ['DOCBAO_BASE_DIR']
+            profile_path = get_independent_os_path([base_dir, 'src', 'backend', 'profiles',profile_name])
+            os.system("cp -R " + profile_temp_path + "/* " + profile_path)
+        except:
+            return False
+        return True
+    else:
+        return True
+
+
 
  
 class BrowserWrapper:
@@ -80,9 +104,12 @@ class BrowserCrawler:
 
         if profile_name is None or profile_name=="": 
             profile= webdriver.FirefoxProfile()
+            self._profile = None
         else:
             profile= get_firefox_profile(profile_name)
+            self._profile = profile_name
             print("Firefox profile: %s" % profile_name)
+
 
         if fast_load==True:
             profile.set_preference('permissions.default.stylesheet', 2)
@@ -98,6 +125,8 @@ class BrowserCrawler:
             profile.add_extension(extension=profile.exp)
 
         self._driver = webdriver.Firefox(firefox_options=options, firefox_profile=profile)
+
+        self._profile_temp_path = self._driver.firefox_profile.path # Firefox copy file from profile path to this temp path
 
         if os.environ['DOCBAO_RUN_ON_RASPBERRY']=='true':
             # Create a virtual screen to with Raspberry too
@@ -149,6 +178,11 @@ class BrowserCrawler:
         return self._quited
 
     def quit(self):
+        
+        if not save_firefox_profile(self._profile, self._profile_temp_path):
+            print(f"Can't save profile {self._profile}")
+        # save profile to old profile
+
         self._driver.quit()
         self._quited = True
 
