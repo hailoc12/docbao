@@ -1,6 +1,6 @@
 beautifulsoup4==4.6.3
 jsonpickle==1.0
-lxml==4.2.5
+lxml==4.6.2
 nltk==3.3
 PyYAML==5.1
 requests==2.18.4
