@@ -59,8 +59,12 @@ class Article:
         self._post_type = post_type # 0= newspaper, 1=facebook
         self._tags = tags
 
-        non_unicode_author_id = remove_accents(author_id)
-        self._author_id = non_unicode_author_id.strip().replace(' ', '_')
+        if author_id:
+            non_unicode_author_id = remove_accents(author_id)
+            self._author_id = non_unicode_author_id.strip().replace(' ', '_')
+        else:
+            self._author_id = None
+
         self._author_fullname = author_fullname
 
         self._wordpress_id = -1
@@ -1406,7 +1410,7 @@ class ArticleManager:
                                                 href = webconfig.get_crawl_url()
                                             else:
                                                 href = fullurl
-                                            
+
                                             new_article = Article(article_id=next_id,
                                                                      topic=topic,
                                                                      date = publish_date,

@@ -22,7 +22,8 @@ if not is_another_session_running():
                 export_to_json=True,
                 export_to_queue=os.environ['DOCBAO_EXPORT_TO_RABBITMQ']=='true',
                 export_to_elasticsearch=os.environ['DOCBAO_EXPORT_TO_ELASTICSEARCH']=='true',
-                export_to_wordpress=os.environ['DOCBAO_EXPORT_TO_WORDPRESS']=='true'
+                export_to_wordpress=os.environ['DOCBAO_EXPORT_TO_WORDPRESS']=='true',
+                export_to_postgres=os.environ['DOCBAO_EXPORT_TO_POSTGRES']=='true'
                 )
         crawler.load_data_from_file()
         crawler.multiprocess_crawl()

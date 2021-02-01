@@ -22,4 +22,5 @@ pytz==2019.2
 opencv-python-headless==4.4.0.44
 textdistance==4.1.4
 python-wordpress-xmlrpc==2.3
-python-crfsuite==0.9.7
+psycopg2-binary==2.8.6
+SQLAlchemy==1.3.22

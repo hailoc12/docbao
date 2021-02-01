@@ -8,6 +8,7 @@ from src.backend.lib.elasticsearch_data import ElasticSearch_Client
 from src.backend.lib.rabbitmq_client import RabbitMQ_Client
 from src.backend.lib.wordpress import Wordpress
 from src.backend.lib.browser_crawler import BrowserWrapper, BrowserCrawler
+from src.backend.lib.postgresql_client import PostgresClient
 from src.backend.lib.utils import get_independent_os_path, get_utc_now_date
 from src.backend.lib.utils import print_exception, get_max_crawler_can_be_run
 from src.backend.lib.utils import open_utf8_file_to_write, get_date_string
@@ -38,7 +39,7 @@ class Docbao_Crawler():
     _crawl_kols = False
 
     def __init__(self, crawl_newspaper=True, crawl_kols=False, crawl_kols_by_smcc = False, max_kols=100,
-                 export_to_json=True, export_to_queue=False, export_to_elasticsearch=False, export_to_wordpress=False):
+                 export_to_json=True, export_to_queue=False, export_to_elasticsearch=False, export_to_wordpress=False, export_to_postgres=False):
         '''
         input
         -----
@@ -51,6 +52,7 @@ class Docbao_Crawler():
         self._export_to_queue = export_to_queue
         self._export_to_elasticsearch = export_to_elasticsearch
         self._export_to_wordpress = export_to_wordpress
+        self._export_to_postgres = export_to_postgres
 
         base_dir = os.environ['DOCBAO_BASE_DIR']
 
@@ -503,6 +505,17 @@ class Docbao_Crawler():
 
                 except:
                     print_exception()
+
+            if self._export_to_postgres:
+                try:
+                    # push to Posgres
+                    postgres = PostgresClient()
+                    for article in rb_articles:
+                        postgres.push_article(article)
+                except:
+                    print_exception()
+
+
 
             # write log data
             try:
