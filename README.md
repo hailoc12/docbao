@@ -1,4 +1,4 @@
-# BỘ QUÉT ĐỌC BÁO CRAWLER (Version 2.0)  
+# BỘ QUÉT ĐỌC BÁO CRAWLER (Version 2.1)  
 
 ### Giới thiệu   
 *"Đọc báo Crawler"* là bộ quét chuyên dụng viết bằng Python, dùng để thu thập tin tức/bài viết trên các trang báo mạng điện tử và website, blog tiếng Việt. Dự án có thể được sử dụng để đơn giản hoá nhiệm vụ thu thập dữ liệu trong các Data Project, hoặc dùng trong mục đích giáo dục để giúp sinh viên và những người mới học có thể hiểu được cách sử dụng nhiều kĩ thuật thực tế trong Python (OOP, multiprocessing, parse HTML, json, yaml...)  
@@ -12,7 +12,7 @@ Trước khi sử dụng dự án, mời đọc qua CODE_OF_CONDUCT.md để n�
 
 ### Nguyên tắc hoạt động  
 
-*"Đọc báo Crawler"* hoạt động theo nguyên tắc quét nhiều trang cùng lúc theo chu kỳ định sẵn (qua crontab). Mỗi chu kỳ quét (cách nhau tối thiểu 10-15 phút), bộ quét sẽ duyệt qua tất cả các trang có trong thiết lập cấu hình. Với mỗi trang bộ quét sẽ duyệt qua một số lượng đường link nhất định, xác định những link dẫn tới bài viết và lấy về dữ liệu. Cuối chu kỳ quét, toàn bộ dữ liệu sẽ được lưu vào database và đẩy ra các kênh dữ liệu khác (như Elasticsearch, RabbitMQ, export json) tuỳ thuộc thiết lập. 
+*"Đọc báo Crawler"* hoạt động theo nguyên tắc quét nhiều trang cùng lúc theo chu kỳ định sẵn (qua crontab). Mỗi chu kỳ quét (cách nhau tối thiểu 10-15 phút), bộ quét sẽ duyệt qua tất cả các trang có trong thiết lập cấu hình. Với mỗi trang bộ quét sẽ duyệt qua một số lượng đường link nhất định, xác định những link dẫn tới bài viết và lấy về dữ liệu. Cuối chu kỳ quét, toàn bộ dữ liệu sẽ được lưu vào database (PostgreSQL) và đẩy ra các kênh dữ liệu khác (như Elasticsearch, RabbitMQ, export json) tuỳ thuộc thiết lập. 
 
 Ưu điểm chính của *"Đọc báo Crawler"* so với cách sử dụng trực tiếp các thư viện scrapy, requests, selenium...là tối ưu cho việc quét nhiều site cùng một lúc, và đơn giản hoá việc phân tích cấu trúc site cần quét thành các file plain text dễ chia sẻ, giúp những người không có kiến thức, kinh nghiệm parse HTML, sử dụng xpath, css selection...cũng có thể tự thiết lập bộ quét và có được dữ liệu mong muốn (xem chi tiết ở mục "Những tính năng chính")
 
@@ -36,6 +36,7 @@ Một điểm mạnh của *"Đọc báo Crawler"* là trả về dữ liệu b�
 
 **6. Tích hợp đa dạng hình thức lấy dữ liệu quét** 
 *"Đọc báo Crawler"* hỗ trợ nhiều hình thức để lấy ra dữ liệu và sử dụng trong các dự án lớn hơn: 
+- Đổ dữ liệu vào PostgreSQL 
 - Đổ dữ liệu vào Elasticsearch 
 - Đỗ dữ liệu vào queue của RabbitMQ 
 - Truy cập dữ liệu qua API Server được tích hợp sẵn 
