@@ -44,6 +44,13 @@ class PostgresClient():
         sqlalchemy_base.metadata.create_all(db)
 
     def push_article(self, article):
+        feature_image = article.get_feature_image()
+        feature_image_url = ''
+
+        if feature_image:
+            if feature_image[0] != '':
+                feature_image_url = feature_image[0]
+
         new_article = Postgres_Article(
             article_id = article.get_id(),
             topic = article.get_topic(),
@@ -54,7 +61,7 @@ class PostgresClient():
             language = article.get_language(),
             sapo = article.get_sapo(),
             content = article.get_full_content(),
-            feature_image = article.get_feature_image(),
+            feature_image = feature_image_url
         )
 
         self._session.add(new_article)
