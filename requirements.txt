@@ -3,7 +3,7 @@ jsonpickle==1.0
 lxml==4.6.3
 nltk==3.3
 PyYAML==5.4
-requests==2.18.4
+requests==2.31.0
 selenium==3.141.0
 underthesea==1.1.8
 XlsxWriter==1.1.1
